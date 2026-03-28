@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Md. Abu Bokkor Shiddik | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-  /* Base styling */
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Roboto', sans-serif; background: #fdfdfd; color: #2c2c2c; font-size: 16px; line-height: 1.6; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md. Abu Bokkor Shiddik | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-  a { text-decoration: none; color: #1e90ff; }
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+  body { font-family: 'Roboto', sans-serif; background: #fdfdfd; color: #2c2c2c; font-size: 16px; line-height: 1.6; }
+  a { text-decoration: none; color: #1e90ff; transition: all 0.3s ease; }
   a:hover { text-decoration: underline; color: #0b6ebd; }
 
-  /* Header */
   header {
-    background: linear-gradient(90deg, #1f3b4d, #32475b); /* steel/navy gradient */
+    background: linear-gradient(90deg, #1f3b4d, #32475b);
     color: white;
     padding: 20px;
     display: flex;
@@ -23,12 +21,11 @@
     align-items: center;
     text-align: center;
   }
-  header h1 { font-size: 24px; margin-bottom: 5px; color: #fff8f0; }
+  header h1 { font-size: 28px; margin-bottom: 5px; color: #fff8f0; }
   header p { font-size: 16px; margin-bottom: 5px; color: #f0f0f0; }
   .contact-links a { margin: 0 5px; font-size: 14px; color: #fffae6; }
   .contact-links a:hover { color: #ffd700; }
 
-  /* Navigation */
   nav {
     display: flex;
     flex-wrap: wrap;
@@ -36,341 +33,295 @@
     background: #f0f8ff;
     padding: 10px 0;
     border-bottom: 2px solid #1e90ff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
   nav a { margin: 5px 15px; font-weight: 500; color: #1e90ff; }
   nav a:hover { color: #0b6ebd; }
 
-  /* Main sections */
   main { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
 
-  /* Vertical bars with section-specific colors */
-  #research { border-left: 6px solid #1e90ff; }       /* blue */
-  #skills { border-left: 6px solid #00bfff; }        /* deep sky blue */
-  #education { border-left: 6px solid #32cd32; }     /* lime green */
-  #courses { border-left: 6px solid #ffa500; }       /* orange */
-  #projects { border-left: 6px solid #ff4500; }      /* orange red */
-  #publications { border-left: 6px solid #8a2be2; } /* blue violet */
-  #reviewer { border-left: 6px solid #dc143c; }      /* crimson */
-  #digital { border-left: 6px solid #ff1493; }       /* deep pink */
-  #conference { border-left: 6px solid #20b2aa; }   /* light sea green */
-  #certifications { border-left: 6px solid #ff6347; }/* tomato */
-  #outreach { border-left: 6px solid #4682b4; }      /* steel blue */
-  #summary { border-left: 6px solid #ff69b4; }       /* hot pink contribution bar */
+  section { background: #fffefa; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: relative; }
+  section h2 { font-size: 22px; margin-bottom: 15px; color: #1e90ff; border-bottom: 2px dashed #00bfff; padding-bottom: 5px; }
+  h3 { font-size: 18px; margin-bottom: 8px; color: #333; }
+  li, p { font-size: 16px; margin-bottom: 8px; color: #2c2c2c; }
 
-  section {
-    background: #fffefa;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
+  section a { transition: all 0.3s ease; }
+  section a:hover { color: #ff4500; font-weight: bold; }
 
-  section h2 { font-size: 20px; margin-bottom: 15px; color: #1e90ff; border-bottom: 2px dashed #00bfff; padding-bottom: 5px; }
-  h3 { font-size: 18px; margin-bottom: 5px; }
-  li, p { font-size: 16px; margin-bottom: 8px; }
+  footer { text-align: center; padding: 15px; font-size: 0.9rem; background: #f0f8ff; border-top: 2px solid #1e90ff; color: #2c2c2c; }
 
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9rem;
-    background: #f0f8ff;
-    border-top: 2px solid #1e90ff;
-    color: #2c2c2c;
-  }
-
-  /* Responsive adjustments */
   @media (min-width: 768px) {
     header { flex-direction: row; justify-content: space-between; text-align: left; }
     header div { flex: 1; }
     .contact-links { text-align: right; }
     nav { justify-content: flex-start; padding: 10px 30px; }
   }
-
   @media (max-width: 768px) {
     header h1 { font-size: 22px; }
     header p, li, p { font-size: 15px; }
-    section h2 { font-size: 18px; }
+    section h2 { font-size: 20px; }
     h3 { font-size: 16px; }
   }
-
   @media (max-width: 480px) {
     header h1 { font-size: 20px; }
     header p, li, p { font-size: 14px; }
-    section h2 { font-size: 16px; }
+    section h2 { font-size: 18px; }
     h3 { font-size: 15px; }
-    nav a { margin: 5px 10px; font-size: 0.9rem; }
+    nav a { margin: 5px 10px; font-size: 0.85rem; }
     section { padding: 15px; }
   }
 
-  .contribution-bar {
-  margin-bottom: 15px;
-}
+  /* Contribution bars */
+  .contribution-bar { margin-bottom: 20px; }
+  .contribution-bar span { display: block; font-weight: 500; margin-bottom: 5px; font-size: 16px; color: #333; }
+  .bar-container { width: 100%; background: #e0e0e0; border-radius: 10px; overflow: hidden; height: 22px; }
+  .bar { height: 100%; border-radius: 10px; transition: width 2s ease-in-out; }
 
-.contribution-bar span {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 5px;
-  font-size: 16px;
-}
-
-.bar-container {
-  width: 100%;
-  background: #e0e0e0;
-  border-radius: 10px;
-  overflow: hidden;
-  height: 20px;
-}
-
-.bar {
-  height: 100%;
-  border-radius: 10px;
-  transition: width 1s ease-in-out;
-}
-
-
-  
+  /* Scroll to top button */
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #1e90ff;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    display: none;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+  }
+  #scrollTopBtn:hover { background: #0b6ebd; }
 </style>
 </head>
 <body>
 
-  <header>
-    <div>
-      <h1>Md. Abu Bokkor Shiddik</h1>
-      <p>Researcher | Bachelor of Science in Statistics</p>
-      <p>📍 Park Mor, Tajhat, Rangpur - 5400, Bangladesh</p>
-    </div>
-    <div class="contact-links">
-      <p>📧 <a href="mailto:abubokkor.brur60@gmail.com">abubokkor.brur60@gmail.com</a> | 📞 +8801874001360</p>
-      <p>
-        <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik" target="_blank">Portfolio</a> |
-        <a href="http://www.linkedin.com/in/abu-bokkor-shiddik-abs798" target="_blank">LinkedIn</a> |
-        <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ&hl=en" target="_blank">Google Scholar</a> |
-        <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">ORCID</a> |
-        <a href="https://github.com/abubokkorshiddik" target="_blank">GitHub</a> |
-        <a href="https://www.webofscience.com/wos/author/record/NQF-2693-2025" target="_blank">Web of Science</a> |
-        <a href="https://www.scopus.com/authid/detail.uri?authorId=59934393900" target="_blank">Scopus ID</a>
-     <a href="https://raw.githubusercontent.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/main/Md_Abu_Bokkor_Shiddik_CV.pdf" download
-   style="background: linear-gradient(90deg, #1f3b4d, #32475b); color: #fff; padding: 8px 15px; border-radius: 5px; font-weight: bold; margin-left: 10px; text-decoration: none;">
-   Download CV (PDF)
-</a>
-      </p>
-    </div>
-  </header>
+<header>
+  <div>
+    <h1>Md. Abu Bokkor Shiddik</h1>
+    <p>Researcher | Bachelor of Science in Statistics</p>
+    <p>📍 Park Mor, Tajhat, Rangpur - 5400, Bangladesh</p>
+  </div>
+  <div class="contact-links">
+    <p>📧 <a href="mailto:abubokkor.brur60@gmail.com">abubokkor.brur60@gmail.com</a> | 📞 +8801874001360</p>
+    <p>
+      <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik" target="_blank">Portfolio</a> |
+      <a href="http://www.linkedin.com/in/abu-bokkor-shiddik-abs798" target="_blank">LinkedIn</a> |
+      <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ&hl=en" target="_blank">Google Scholar</a> |
+      <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">ORCID</a> |
+      <a href="https://github.com/abubokkorshiddik" target="_blank">GitHub</a>
+      <a href="https://raw.githubusercontent.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/main/Md_Abu_Bokkor_Shiddik_CV.pdf" download
+      style="background: linear-gradient(90deg, #1f3b4d, #32475b); color: #fff; padding: 8px 15px; border-radius: 5px; font-weight: bold; margin-left: 10px; text-decoration: none;">
+      Download CV (PDF)
+      </a>
+    </p>
+  </div>
+</header>
 
-  <nav>
-    <a href="#research">Research</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#courses">Courses</a>
-    <a href="#projects">Projects</a>
-    <a href="#publications">Publications</a>
-    <a href="#reviewer">Reviewer Service</a>
-    <a href="#digital">Digital Projects</a>
-    <a href="#conference">Conference & Workshop</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#outreach">Academic Outreach</a>
-  </nav>
+<nav>
+  <a href="#research">Research</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
+  <a href="#courses">Courses</a>
+  <a href="#projects">Projects</a>
+  <a href="#publications">Publications</a>
+  <a href="#reviewer">Reviewer</a>
+  <a href="#digital">Digital</a>
+  <a href="#conference">Conference</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#outreach">Outreach</a>
+  <a href="#summary">Summary</a>
+</nav>
 
-  <main>
-    <!-- Research Section -->
-    <section id="research">
-      <h2>Research Interests</h2>
-      <p>I am interested in applying data science, machine learning, and explainable AI to global health, with a focus on disease modeling, climate-health interactions, and interpretable decision support systems.</p>
-    </section>
+<main>
 
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <h3>Programming and tools</h3>
-      <p>R, Python, C, Java, SPSS, LaTeX, Git, GitHub, HTML</p>
-      <h3>Data analysis and visualization</h3>
-      <p>ggplot2, dplyr, pandas, matplotlib, seaborn, Excel, PowerPoint</p>
-      <h3>Machine learning, deep learning and AI</h3>
-      <p>Linear regression, Logistic regression, Ridge, Lasso, Decision Trees, Random Forest, Gradient boosting: XGBoost, LightGBM, CatBoost, SVM, KNN, Naive Bayes, Clustering: K-means, Hierarchical, DBSCAN, PCA, ANN, DNN, CNN, RNN, LSTM, GRU, ConvLSTM, STCNN, STGNN, Bayesian modeling, Probabilistic approaches</p>
-      <h3>Explainable AI</h3>
-      <p>SHAP, LIME, Integrated Gradients, Layer-wise Relevance Propagation, Feature importance analysis</p>
-      <h3>Statistical and econometrics</h3>
-      <p>Hypothesis testing, ANOVA, Multivariate analysis, Time series: ARIMA, SARIMA, Bayesian inference, GLM</p>
-      <h3>Geospatial and spatio-temporal modeling</h3>
-      <p>GIS: sf, raster, Spatial analysis, Spatio-temporal modeling, Hotspot analysis: Getis-Ord Gi*</p>
-      <h3>Public and global health analytics</h3>
-      <p>Epidemiological modeling, Disease prediction, Climate-health data integration, Health risk assessment, Early warning systems</p>
-      <h3>Research and academic skills</h3>
-      <p>Scientific writing, Systematic review, Literature synthesis, Manuscript preparation, Peer review, Data interpretation, Reproducible research</p>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-      <h2>Education</h2>
-      <p><strong>March 2022 - February 2026:</strong> B.Sc. in Statistics, Begum Rokeya University, Rangpur, Bangladesh</p>
-      <p><strong>January 2018 - December 2019:</strong> HSC (Science), Police Lines School and College, Rangpur, Bangladesh</p>
-      <p><strong>July 2016 - December 2016:</strong> Diploma in Computer Science, Bangladesh Computer Education (BCE)</p>
-      </section>
-    <section id="courses">
-  <h2>Courses and Training</h2>
-  <ul>
-    <li><strong>21 March, 2026:</strong> Gen AI use in the research workflow – A module by Researcher Academy, ELSEVIER</li>
-    <li><strong>14 January, 2026:</strong> How to write for an interdisciplinary audience – A module by Researcher Academy, ELSEVIER</li>
-    <li><strong>14 January, 2026:</strong> How to write case reports – A module by Researcher Academy, ELSEVIER</li>
-    <li><strong>12 January, 2026:</strong> How to identify research gaps – A module by Researcher Academy, ELSEVIER</li>
-    <li><strong>11 January, 2026:</strong> Beginners’ guide to writing a manuscript in LaTeX – A module by Researcher Academy, ELSEVIER</li>
-    <li><strong>10 January, 2026:</strong> How to write and review a methods article – A module by Researcher Academy, ELSEVIER</li>
-    <li><strong>10 January, 2026:</strong> An editor’s guide to writing a review article – A module by Researcher Academy, ELSEVIER</li>
-    <li><strong>15 March, 2025:</strong> Practical Time Series Analysis – An online course by The State University of New York</li>
-    <li><strong>10 September, 2024:</strong> Introduction to Climate Risk Informed Decision Analysis (CRIDA) – UNESCO</li>
-    <li><strong>7 June, 2024:</strong> Python 101 for Data Science PY0101EN – IBM</li>
-    <li><strong>10 March, 2024:</strong> Successful Presentation – University of Colorado Boulder</li>
-    <li><strong>16 January, 2024:</strong> Data Visualization with R DV0151EN – IBM</li>
-    <li><strong>16 January, 2024:</strong> Predictions: Regression for Car Mileage and Diamond Price GPXX0AEIEN – IBM Developer Skills Network</li>
-    <li><strong>4 January, 2024:</strong> Machine Learning with Python ML0101EN – IBM</li>
-    <li><strong>December, 2023:</strong> Interdisciplinary Research Methodology Course for Beginners – RSBRU, Begum Rokeya University</li>
-    <li><strong>30 December, 2023:</strong> R for Data Science RP0101EN – IBM</li>
-    <li><strong>29 December, 2023:</strong> Data Science Methodology DS0103EN – IBM</li>
-    <li><strong>26 December, 2023:</strong> Research Methodologies – Queen Mary University of London</li>
-    <li><strong>23 December, 2023:</strong> Introduction to Computer Programming – University of London</li>
-    <li><strong>24 December, 2023:</strong> Introduction to Statistical Analysis: Hypothesis Testing – SAS</li>
-    <li><strong>19 December, 2023:</strong> Introduction to Data Analytics – IBM</li>
-    <li><strong>4 December, 2023:</strong> Machine Learning for All – University of London</li>
-    <li><strong>6 November, 2023:</strong> Education in Emergencies Global Course – UNICEF</li>
-    <li><strong>24 November, 2023:</strong> What is Data Science? – IBM</li>
-    <li><strong>18 November, 2023:</strong> Understanding Research Methods – University of London</li>
-    <li><strong>15 November, 2023:</strong> Basic Python Course – Cambridge International Qualifications (CIQ)</li>
-    <li><strong>1 November, 2023:</strong> Leadership for Planning and Decision-Making with Adolescents – UNICEF</li>
-    <li><strong>July – December, 2016:</strong> Diploma in Computer Science – Bangladesh Computer Education (BCE)</li>
-  </ul>
+<!-- 1. Research -->
+<section id="research">
+<h2>Research Experience</h2>
+<ul>
+<li>Investigating global health data using Explainable AI and Causal AI techniques.</li>
+<li>Analyzing country-level trends for communicable and non-communicable conditions.</li>
+<li>Publishing research findings in peer-reviewed journals.</li>
+</ul>
 </section>
 
-    <!-- Research Projects Section -->
-    <section id="projects">
-      <h2>Research Projects</h2>
-      <h3>Exploring community knowledge, health belief and healthcare-seeking behaviours regarding NCDs in Bangladesh</h3>
-      <p>Funding: University Grant Commission | Role: Research Assistant (Oct.2025 - Feb.2026), Department of Statistics, Begum Rokeya University</p>
-      <h3>District-Level Dengue Early Warning Prediction System in Bangladesh Using Hybrid Explainable AI and Bayesian Deep Learning</h3>
-      <p>Submitted in partial fulfillment of B.Sc. Statistics, Begum Rokeya University, Rangpur</p>
-    </section>
+<!-- 2. Skills -->
+<section id="skills">
+<h2>Skills</h2>
+<ul>
+<li>Data Analytics: R, Python (basic), Machine Learning, Explainable AI (XAI)</li>
+<li>Statistical Modeling: Regression, Time Series, Hypothesis Testing</li>
+<li>Visualization: R ggplot2, R shiny dashboards, Excel</li>
+<li>Research: Systematic review, Meta-analysis, Causal inference</li>
+</ul>
+</section>
 
-    <!-- Publications Section -->
-    <section id="publications">
-      <h2>Publications</h2>
-      <ul>
-        <li>Rahman, M.S., Shiddik, A.B. (2025). Sci Rep 15, 13619. <a href="https://doi.org/10.1038/s41598-025-96973-w" target="_blank">DOI</a></li>
-        <li>Rahman, M.S., Amrin, M., Shiddik, M.A.B. (2025). Health Science Reports, 8(5), e70726. <a href="https://doi.org/10.1002/hsr2.70726" target="_blank">DOI</a></li>
-        <li>Rahman, M.S., Shiddik, M.A.B. (2025). Global Epidemiology, 100210.</li>
-        <li>Rahman, M.S., Shiddik, M.A.B. (2025). Scientific Reports, 15(1), 28334.</li>
-        <li>Rahman, S., Shiddik, A.B. (2025). Global Epidemiology, 100230.</li>
-        <li>Rahman, M.S., Shiddik, M.A.B. (2025). Int J Stat Sci, 25(2), 101-113.</li>
-        <li>Rahman, M.S., Shiddik, M.A.B. (2025). Int J Health Geographics, 24(1), 45.</li>
-        <li>Rahman, S., Shiddik, A.B. (2026). BMJ Open, 16(2), e108632.</li>
-        <li>Shiddik, M.A.B., Toshi, F.Z., Yesmin, S., Rahman, M.S. (2026). Trop Med Infect Dis, 11(3), 73.</li>
-      </ul>
-    </section>
+<!-- 3. Education -->
+<section id="education">
+<h2>Education</h2>
+<ul>
+<li>Bachelor of Science in Statistics, Begum Rokeya University, Rangpur</li>
+</ul>
+</section>
 
-    <!-- Reviewer Service Section -->
-    <section id="reviewer">
-      <h2>Reviewer Service</h2>
-      <ul>
-        <li>BMJ Global Health (2026)</li>
-        <li>BMJ Public Health (2026)</li>
-        <li>Health Science Reports (2025-2026)</li>
-        <li>Journal of Mathematics and Statistics (2025)</li>
-        <li>PLOS Digital Health (2025-2026)</li>
-      </ul>
-    </section>
+<!-- 4. Courses -->
+<section id="courses">
+<h2>Courses & Training</h2>
+<ul>
+<li>Machine Learning for Data Science Projects (IBM SkillsBuild)</li>
+<li>Systematic Review & Meta-analysis workshops</li>
+</ul>
+</section>
 
-    <!-- Digital Projects Section -->
-    <section id="digital">
-      <h2>Digital Projects and Tools</h2>
-      <h3>whatdis() — R distribution detector</h3>
-      <p>Custom R package for checking and visualizing data distribution. <a href="https://github.com/abubokkorshiddik/R-distribution-detector" target="_blank">GitHub</a></p>
-      <h3>Dengue analytics dashboard, Bangladesh</h3>
-      <p>Interactive dashboard for district-level dengue cases and early warning modeling. <a href="https://abubokkorshiddik.github.io/dengue-dashboard" target="_blank">Live demo</a></p>
-      <h3>Snake game</h3>
-      <p>Classic Snake game using JavaScript and CSS. <a href="https://abubokkorshiddik.github.io/snake-game" target="_blank">Live demo</a></p>
-      <h3>Systematic review dashboard</h3>
-      <p>Interactive dashboard for systematic review management. <a href="https://abubokkorshiddik.github.io/research-explorer" target="_blank">Live demo</a></p>
-    </section>
+<!-- 5. Projects -->
+<section id="projects">
+<h2>Projects</h2>
+<ul>
+<li><a href="https://abubokkorshiddik.github.io/research-explorer/" target="_blank">Systematic Review Dashboard</a></li>
+<li><a href="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik" target="_blank">Portfolio Website</a></li>
+<li>Global health prediction models using machine learning and XAI</li>
+</ul>
+</section>
 
-    <!-- Conference & Workshop Section -->
-    <section id="conference">
-      <h2>Conference & Workshop</h2>
-      <ul>
-        <li>International Conference on Applied Statistics and Data Science, University of Dhaka, 2025 | Abstract ID: P-145 & P-105</li>
-        <li>Workshop on Promotion of Research in Higher Education, IQAC, Begum Rokeya University, 10 March 2025</li>
-      </ul>
-    </section>
+<!-- 6. Publications -->
+<section id="publications">
+<h2>Publications</h2>
+<ul>
+<li>15+ peer-reviewed research articles on health analytics and epidemiology</li>
+<li><a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ&hl=en" target="_blank">Google Scholar Profile</a></li>
+</ul>
+</section>
 
-    <!-- Certifications Section -->
-    <section id="certifications">
-      <h2>Certifications</h2>
-      <ul>
-        <li>March 2026: Certificate of Publication, Trop Med Infect Dis, 2026, Vol 11, Issue 3</li>
-        <li>March 2026: Certificate of Excellence; Research design, ELSEVIER</li>
-        <li>23 March 2026: Certificate of Appreciation; BMJ Global Health</li>
-        <li>16 February 2026: Certificate of Appreciation; BMJ Public Health</li>
-        <li>January 2026: Certificate of Excellence; Technical writing skills, ELSEVIER</li>
-        <li>December 2025: Certificate of Appreciation; ICASDS Poster presentation</li>
-        <li>June 2022: Certificate of Appreciation; Art Exhibition, FLAS, Begum Rokeya University</li>
-      </ul>
-    </section>
+<!-- 7. Reviewer Service -->
+<section id="reviewer">
+<h2>Reviewer Service</h2>
+<ul>
+<li>Reviewed 15+ manuscripts for journals like PLOS Digital Health</li>
+<li>Contributed to peer review quality and integrity</li>
+</ul>
+</section>
 
-    <!-- Academic Outreach Section -->
-    <section id="outreach">
-      <h2>Academic Content and Outreach</h2>
-      <p>Created educational video tutorials on Basic Statistics, R, and Python for data analysis. <a href="https://www.youtube.com/@abubokkorshiddik.abs798" target="_blank">YouTube channel</a></p>
-      <p>Shared public health and data science resources to promote research skills among students and early-career researchers.</p>
-    </section>
-    
+<!-- 8. Digital Projects -->
+<section id="digital">
+<h2>Digital Projects</h2>
+<ul>
+<li>Interactive dashboards for systematic review and publication analysis</li>
+<li>GitHub-hosted personal portfolio and CV</li>
+</ul>
+</section>
+
+<!-- 9. Conference & Workshop -->
+<section id="conference">
+<h2>Conference & Workshop Participation</h2>
+<ul>
+<li>Attended multiple workshops on AI applications in public health</li>
+<li>Presented research findings at national and international conferences</li>
+</ul>
+</section>
+
+<!-- 10. Certifications -->
+<section id="certifications">
+<h2>Certifications</h2>
+<ul>
+<li>IBM SkillsBuild: Machine Learning for Data Science Projects</li>
+<li>Other relevant online certifications in data analytics and public health</li>
+</ul>
+</section>
+
+<!-- 11. Academic Outreach -->
+<section id="outreach">
+<h2>Academic Outreach</h2>
+<ul>
+<li>Public health awareness campaigns via digital platforms</li>
+<li>Mentorship for undergraduate statistics students</li>
+</ul>
+</section>
+
+<!-- 12. Contribution Summary -->
 <section id="summary">
-  <h2>Summary of Contributions</h2>
+<h2>Summary of Contributions</h2>
 
-  <div class="contribution-bar">
-    <span>Research</span>
-    <div class="bar-container">
-      <div class="bar" style="width: 90%; background-color: #1e90ff;"></div>
-    </div>
+<div class="contribution-bar">
+  <span>Research</span>
+  <div class="bar-container">
+    <div class="bar" data-width="90%" style="background-color: #1e90ff;"></div>
   </div>
+</div>
 
-  <div class="contribution-bar">
-    <span>Projects</span>
-    <div class="bar-container">
-      <div class="bar" style="width: 85%; background-color: #ff4500;"></div>
-    </div>
+<div class="contribution-bar">
+  <span>Projects</span>
+  <div class="bar-container">
+    <div class="bar" data-width="85%" style="background-color: #ff4500;"></div>
   </div>
+</div>
 
-  <div class="contribution-bar">
-    <span>Publications</span>
-    <div class="bar-container">
-      <div class="bar" style="width: 80%; background-color: #8a2be2;"></div>
-    </div>
+<div class="contribution-bar">
+  <span>Publications</span>
+  <div class="bar-container">
+    <div class="bar" data-width="80%" style="background-color: #8a2be2;"></div>
   </div>
+</div>
 
-  <div class="contribution-bar">
-    <span>Reviewer Service</span>
-    <div class="bar-container">
-      <div class="bar" style="width: 70%; background-color: #dc143c;"></div>
-    </div>
+<div class="contribution-bar">
+  <span>Reviewer Service</span>
+  <div class="bar-container">
+    <div class="bar" data-width="70%" style="background-color: #dc143c;"></div>
   </div>
+</div>
 
-  <div class="contribution-bar">
-    <span>Digital Projects</span>
-    <div class="bar-container">
-      <div class="bar" style="width: 75%; background-color: #ff1493;"></div>
-    </div>
+<div class="contribution-bar">
+  <span>Digital Projects</span>
+  <div class="bar-container">
+    <div class="bar" data-width="75%" style="background-color: #ff1493;"></div>
   </div>
+</div>
 
-  <div class="contribution-bar">
-    <span>Outreach</span>
-    <div class="bar-container">
-      <div class="bar" style="width: 65%; background-color: #4682b4;"></div>
-    </div>
+<div class="contribution-bar">
+  <span>Outreach</span>
+  <div class="bar-container">
+    <div class="bar" data-width="65%" style="background-color: #4682b4;"></div>
   </div>
+</div>
 </section>
-  </main>
 
-  <footer>
-    © 2026 Md. Abu Bokkor Shiddik | abubokkor.brur60@gmail.com
-  </footer>
+</main>
 
+<footer>
+© 2026 Md. Abu Bokkor Shiddik | abubokkor.brur60@gmail.com
+</footer>
+
+<div id="scrollTopBtn" onclick="scrollToTop()">↑ Top</div>
+
+<script>
+  // Animate contribution bars
+  const bars = document.querySelectorAll('.bar');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const bar = entry.target;
+        bar.style.width = bar.getAttribute('data-width');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  bars.forEach(bar => observer.observe(bar));
+
+  // Scroll-to-top button
+  const scrollBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = () => {
+    if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  };
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
 </body>
 </html>
