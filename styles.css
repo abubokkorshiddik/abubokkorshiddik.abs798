@@ -19,64 +19,54 @@ body {
    HEADER SECTION
 ========================= */
 
+/* Header background */
 header {
   background: linear-gradient(135deg, #0b1220, #1e293b);
   color: white;
   padding: 50px 20px;
 }
 
-/* Header container (LEFT TEXT + RIGHT IMAGE) */
+/* Main header layout */
 .header-container {
   max-width: 1100px;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  align-items: center; /* keeps text and image aligned */
+  gap: 40px;
 }
 
-/* Left side text */
+/* Left text section */
 .header-text {
   flex: 1;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px; /* small spacing between lines */
 }
 
-/* Header title */
+/* Name styling */
 .header-text h1 {
-  margin: 6px 0;
-  font-size: 28px;
+  margin: 0;
+  font-size: 30px;
+  color: #ffffff;
 }
 
-/* Header paragraph text */
+/* Paragraph text */
 .header-text p {
-  margin: 4px 0;
+  margin: 6px 0;
   font-size: 14px;
   color: #cbd5e1;
 }
 
-/* Right side image */
-.header-image {
-  flex-shrink: 0;
-}
-
-/* Profile image styling */
-.profile-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 10px;
-  object-fit: cover;
-  border: 3px solid #fbbf24;
-}
-
-/* Header links */
+/* Links container */
 .header-links {
   margin-top: 12px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255,255,255,0.2);
+  text-align: left;
 }
 
-/* Header links style */
+/* Link style */
 .header-links a {
   color: white;
   margin: 0 5px;
@@ -86,10 +76,48 @@ header {
   border-radius: 5px;
 }
 
-/* Hover effect for links */
+/* Hover effect */
 .header-links a:hover {
   background: #fbbf24;
   color: #0b1220;
+}
+
+/* Right image section */
+.header-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Profile image */
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 3px solid #fbbf24;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-text {
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-links {
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
 }
 
 /* =========================
