@@ -1,97 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+.top-header {
+  background: #0b1f3a;
+  color: #ffffff;
+  padding: 40px 20px;
+}
 
-<title>Md. Abu Bokkor Shiddik | Academic Portfolio</title>
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  gap: 40px;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+.header-left {
+  flex: 1;
+}
 
-<link rel="stylesheet" href="styles.css">
-</head>
+.header-left h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
 
-<body>
+.role {
+  font-size: 18px;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+}
 
-<header>
-<div class="header-container">
+.contact, .location {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #e2e8f0;
+}
 
-<div class="header-text">
+.links a {
+  color: #93c5fd;
+  text-decoration: none;
+  margin-right: 5px;
+}
 
-<h1>Md. Abu Bokkor Shiddik</h1>
+.links a:hover {
+  text-decoration: underline;
+}
 
-<p>Researcher | Bachelor of Science in Statistics</p>
+.cv-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #1d4ed8;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
 
-<p>📧 abubokkor.brur60@gmail.com | 📞 +8801874001360</p>
+.cv-button:hover {
+  background: #2563eb;
+}
 
-<p>📍 Park Mor, Tajhat, Rangpur - 5400, Bangladesh</p>
+/* Right image */
+.header-right img {
+  width: 220px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 3px solid #1e3a8a;
+}
 
-<div class="header-links">
-<a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik">Portfolio</a> |
-<a href="https://www.linkedin.com">LinkedIn</a> |
-<a href="https://scholar.google.com">Google Scholar</a> |
-<a href="https://orcid.org">ORCID</a> |
-<a href="https://github.com">GitHub</a>
-</div>
+/* Responsive */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
 
-</div>
-
-<div class="header-image">
-<img src="https://raw.githubusercontent.com/abubokkorriddik/Portfolio-AbuBokkorShiddik/main/ABS.jpeg" class="profile-img" alt="Profile">
-</div>
-
-</div>
-</header>
-
-<nav>
-<a href="#research">Research</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#publications">Publications</a>
-<a href="#certifications">Certifications</a>
-</nav>
-
-<section id="research">
-<h2>Research</h2>
-<p>Explain your research here...</p>
-</section>
-
-<section id="skills">
-<h2>Skills</h2>
-<p>Your skills...</p>
-</section>
-
-<section id="projects">
-<h2>Projects</h2>
-
-<div class="project-item">
-<h3>Dengue Dashboard</h3>
-<p>Interactive visualization project.</p>
-</div>
-
-</section>
-
-<section id="publications">
-<h2>Publications</h2>
-
-<div class="project-item">
-<p>Your publications here...</p>
-</div>
-
-</section>
-
-<section id="certifications">
-<h2>Certifications</h2>
-
-<div class="certification-item">
-<p>Certification 1</p>
-</div>
-
-</section>
-
-<footer>
-<p>© 2026 Md. Abu Bokkor Shiddik</p>
-</footer>
-
-</body>
-</html>
+  .header-right img {
+    margin-top: 20px;
+  }
+}
