@@ -7,7 +7,6 @@
 
 <style>
 
-/* same CSS as yours */
 html { scroll-behavior: smooth; }
 
 body {
@@ -87,10 +86,6 @@ body {
 }
 
 /* BUTTONS */
-.actions {
-  margin-top: 20px;
-}
-
 .btn {
   background: #1d4ed8;
   color: white;
@@ -145,21 +140,6 @@ h2 {
   line-height: 1.7;
 }
 
-/* GRID */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-/* PUBLICATION */
-.pub {
-  background: white;
-  padding: 14px;
-  margin-top: 10px;
-  border-left: 4px solid #1d4ed8;
-}
-
 /* FOOTER */
 footer {
   background: #020617;
@@ -195,12 +175,13 @@ footer {
 <!-- NAV -->
 <nav class="navbar">
   <div class="nav-inner">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#skills">Skills</a>
-    <a href="#publications">Publications</a>
-    <a href="#projects">Projects</a>
-    <a href="#service">Service</a>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="skills.html">Skills</a>
+    <a href="publications.html">Publications</a>
+    <a href="projects.html">Projects</a>
+    <a href="service.html">Service</a>
   </div>
 </nav>
 
@@ -210,7 +191,7 @@ footer {
 
     <div>
       <h1>Md. Abu Bokkor Shiddik</h1>
-      <p class="title">Researcher | Bachelor of Science in Statistics</p>
+      <p class="title">Researcher | Machine Learning | Public Health</p>
 
       <p>
         Email: abubokkor.brur60@gmail.com<br>
@@ -218,10 +199,8 @@ footer {
         Location: Rangpur, Bangladesh
       </p>
 
-      <div class="actions">
-        <a class="btn" href="Md_Abu_Bokkor_Shiddik_CV.pdf">Download CV</a>
-        <a class="btn-outline" href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ">Google Scholar</a>
-      </div>
+      <a class="btn" href="Md_Abu_Bokkor_Shiddik_CV.pdf">Download CV</a>
+      <a class="btn-outline" href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ">Scholar</a>
 
     </div>
 
@@ -234,104 +213,27 @@ footer {
 
 <main class="container">
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About</h2>
-
-  <div class="box">
-    Researcher in statistics focusing on machine learning, public health analytics, and
-    explainable AI. My work integrates environmental, socioeconomic, and health data to
-    understand disease dynamics and support evidence-based decision making.
-  </div>
-</section>
-
-<!-- RESEARCH -->
-<section id="research">
-  <h2>Research Areas</h2>
-
-  <div class="box">
-    Machine Learning, Deep Learning, Explainable AI, Spatial and spatio-temporal modeling,
-    Climate-health analysis, Epidemiological modeling, and Data-driven public health systems.
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Technical Skills</h2>
-
-  <div class="grid-2">
-
-    <div class="box">
-      <strong>Programming</strong><br>
-      R, Python, C, Java, SPSS, Git, HTML, LaTeX
-    </div>
-
-    <div class="box">
-      <strong>ML & AI</strong><br>
-      XGBoost, RF, SVM, LSTM, ANN, CNN, clustering
-    </div>
-
-    <div class="box">
-      <strong>Statistics</strong><br>
-      ANOVA, GLM, ARIMA, Bayesian methods
-    </div>
-
-    <div class="box">
-      <strong>Explainable AI</strong><br>
-      SHAP, LIME, IG, LRP
-    </div>
-
-  </div>
-
-</section>
-
-<!-- EDUCATION -->
+<!-- INTRO SUMMARY -->
 <section>
-  <h2>Education</h2>
+  <h2>Welcome</h2>
 
   <div class="box">
-    <strong>B.Sc. in Statistics</strong><br>
-    Begum Rokeya University (2022–2026)
+    This portfolio presents my academic profile, including research, skills, publications,
+    projects, and academic service. It highlights my work in machine learning, AI, and public health
+    analytics using real-world data and interpretable models.
   </div>
-
-  <div class="box">
-    <strong>HSC (Science)</strong><br>
-    Police Lines School and College (2018–2019)
-  </div>
-
 </section>
 
-<!-- PUBLICATIONS -->
-<section id="publications">
-  <h2>Selected Publications</h2>
-
-  <div class="pub">Explainable AI for dengue prediction — Global Epidemiology (2025)</div>
-  <div class="pub">Tuberculosis prediction using ML — Scientific Reports (2025)</div>
-  <div class="pub">Malaria modeling using AI — Scientific Reports (2025)</div>
-
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Projects</h2>
+<!-- QUICK HIGHLIGHTS -->
+<section>
+  <h2>Highlights</h2>
 
   <div class="box">
-    Dengue Early Warning System using Hybrid AI and Bayesian Deep Learning
-  </div>
-
-  <div class="box">
-    Community health behavior analysis for NCDs in Bangladesh
-  </div>
-
-</section>
-
-<!-- SERVICE -->
-<section id="service">
-  <h2>Academic Service</h2>
-
-  <div class="box">
-    Reviewer for BMJ Global Health, BMJ Public Health, Health Science Reports,
-    PLOS Digital Health, and other journals.
+    • Machine learning and deep learning for disease modeling<br>
+    • Explainable AI using SHAP, IG, LRP<br>
+    • Public health and climate data integration<br>
+    • Interactive dashboards and digital tools<br>
+    • Reviewer for international journals
   </div>
 
 </section>
@@ -344,8 +246,9 @@ footer {
   <p>Md. Abu Bokkor Shiddik</p>
 
   <div class="footer-links">
-    <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ">Google Scholar</a>
-    <a href="Md_Abu_Bokkor_Shiddik_CV.pdf">Download CV</a>
+    <a href="home.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
   </div>
 
 </footer>
