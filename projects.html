@@ -14,40 +14,54 @@ body {
   color: #1f2937;
 }
 
+/* NAVIGATION */
 .navbar {
   background: #020617;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
   padding: 12px 20px;
 }
 
-.navbar a {
+.nav-inner a {
   color: #cbd5e1;
   margin-right: 15px;
   text-decoration: none;
+  font-weight: 500;
 }
 
-.navbar a:hover {
+.nav-inner a:hover {
   color: #60a5fa;
 }
 
+/* HEADER */
 .header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
-  padding: 40px 20px;
+  padding: 45px 20px;
   text-align: center;
 }
 
+/* CONTAINER */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 40px 20px;
 }
 
+/* PROJECT CARD */
 .project {
   background: white;
   border-radius: 8px;
   padding: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   border-left: 4px solid #1d4ed8;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .project h3 {
@@ -55,19 +69,22 @@ body {
 }
 
 .project p {
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
+/* LINKS */
 .links a {
   color: #1d4ed8;
   text-decoration: none;
   margin-right: 12px;
+  font-weight: 500;
 }
 
 .links a:hover {
   text-decoration: underline;
 }
 
+/* DEMO */
 .demo-box {
   margin-top: 15px;
   border: 1px solid #e5e7eb;
@@ -77,16 +94,27 @@ body {
 
 .demo-box iframe {
   width: 100%;
-  height: 350px;
+  height: 320px;
   border: none;
 }
 
+/* FOOTER */
 footer {
   background: #020617;
   color: #e2e8f0;
   text-align: center;
   padding: 25px;
   margin-top: 40px;
+}
+
+footer a {
+  color: #93c5fd;
+  text-decoration: none;
+  margin: 0 6px;
+}
+
+footer a:hover {
+  color: white;
 }
 
 </style>
@@ -98,8 +126,7 @@ footer {
 <!-- NAV -->
 <div class="navbar">
   <div class="nav-inner">
-    <a href="index.html">Home</a>
-    <a href="home.html">Profile</a>
+    <a href="home.html">Home</a>
     <a href="publications.html">Publications</a>
     <a href="projects.html">Projects</a>
     <a href="courses.html">Courses</a>
@@ -120,8 +147,9 @@ footer {
   <h3>whatdis() — R distribution detector</h3>
   <p>
     Developed a custom R package <strong>whatdis()</strong> for identifying and visualizing data distributions.
-    It helps researchers quickly assess distributional properties for statistical modeling and analysis.
+    It supports exploratory data analysis and improves statistical modeling decisions.
   </p>
+
   <div class="links">
     <a href="https://github.com/abubokkorshiddik/R-distribution-detector" target="_blank">GitHub Repository</a>
   </div>
@@ -130,8 +158,8 @@ footer {
 <div class="project">
   <h3>Dengue analytics dashboard, Bangladesh</h3>
   <p>
-    An interactive dashboard designed to analyze dengue patterns and early warning signals at the district level.
-    It integrates visualization, predictive analytics, and spatial insights.
+    An interactive system for analyzing dengue trends using spatial and temporal visualization.
+    It supports early warning insights and district-level analysis.
   </p>
 
   <div class="links">
@@ -141,14 +169,13 @@ footer {
   <div class="demo-box">
     <iframe src="https://abubokkorshiddik.github.io/dengue-dashboard"></iframe>
   </div>
-
 </div>
 
 <div class="project">
   <h3>Systematic review dashboard</h3>
   <p>
-    A comprehensive tool for systematic reviews with features such as searching, screening,
-    filtering, PRISMA-based analysis, and data export.
+    A web-based research tool for literature screening, filtering, and PRISMA-based analysis.
+    It enables efficient management of systematic reviews.
   </p>
 
   <div class="links">
@@ -158,7 +185,6 @@ footer {
   <div class="demo-box">
     <iframe src="https://abubokkorshiddik.github.io/research-explorer"></iframe>
   </div>
-
 </div>
 
 </div>
@@ -169,7 +195,7 @@ footer {
   <p>
     <a href="home.html">Home</a> |
     <a href="publications.html">Publications</a> |
-    <a href="contact.html">Contact</a>
+    <a href="courses.html">Courses</a>
   </p>
 </footer>
 
