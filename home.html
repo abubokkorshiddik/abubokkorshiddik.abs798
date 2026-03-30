@@ -42,30 +42,23 @@ body {
   max-width: 1200px;
   margin: auto;
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 30px;
-  align-items: start;
+  align-items: center;
 }
 
-/* IMAGE STACK */
-.image-stack {
+.image-row {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  gap: 10px;
+  justify-content: flex-end;
 }
 
-.image-stack img {
-  width: 100%;
-  height: 180px;
+.image-row img {
+  width: 30%;
+  height: 160px;
   object-fit: cover;
   border-radius: 6px;
   border: 3px solid #1e3a8a;
-}
-
-/* TEXT */
-.hero-text h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
 }
 
 .links a {
@@ -74,7 +67,6 @@ body {
   text-decoration: none;
 }
 
-/* CV BUTTON */
 .cv-btn {
   display: inline-block;
   margin-top: 12px;
@@ -85,7 +77,7 @@ body {
   border-radius: 4px;
 }
 
-/* MAIN */
+/* CONTENT */
 .container {
   max-width: 1200px;
   margin: auto;
@@ -98,7 +90,6 @@ h2 {
   margin-top: 40px;
 }
 
-/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
@@ -106,7 +97,6 @@ h2 {
   margin-top: 15px;
 }
 
-/* CARD */
 .card {
   background: white;
   padding: 14px;
@@ -114,7 +104,6 @@ h2 {
   border: 1px solid #e5e7eb;
 }
 
-/* FOOTER */
 footer {
   background: #020617;
   color: #e2e8f0;
@@ -128,6 +117,10 @@ footer {
   .hero-grid {
     grid-template-columns: 1fr;
   }
+
+  .image-row {
+    justify-content: center;
+  }
 }
 
 </style>
@@ -138,26 +131,18 @@ footer {
 
 <!-- NAV -->
 <div class="navbar">
-  <a href="/">Home</a>
-  <a href="/publications">Publications</a>
-  <a href="/projects">Projects</a>
-  <a href="/courses">Courses</a>
-  <a href="/service">Service</a>
+  <a href="index.html">Home</a>
+  <a href="publications.html">Publications</a>
+  <a href="projects.html">Projects</a>
+  <a href="courses.html">Courses</a>
+  <a href="service.html">Service</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-grid">
 
-    <!-- LEFT IMAGES -->
-    <div class="image-stack">
-      <img src="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/ABS.jpeg?raw=true">
-      <img src="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/isrt.jpeg?raw=true">
-      <img src="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/stst.jpeg?raw=true">
-    </div>
-
-    <!-- RIGHT TEXT -->
-    <div class="hero-text">
+    <div>
       <h1>Md. Abu Bokkor Shiddik</h1>
       <p>Researcher | Machine Learning | Public Health</p>
 
@@ -175,9 +160,14 @@ footer {
         <a href="https://github.com">GitHub</a>
       </p>
 
-      <a href="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/Md_Abu_Bokkor_Shiddik_CV.pdf" 
+      <a href="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/Md_Abu_Bokkor_Shiddik_CV.pdf"
          class="cv-btn" target="_blank">Download CV</a>
+    </div>
 
+    <div class="image-row">
+      <img src="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/ABS.jpeg?raw=true">
+      <img src="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/isrt.jpeg?raw=true">
+      <img src="https://github.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/blob/main/stst.jpeg?raw=true">
     </div>
 
   </div>
@@ -185,100 +175,38 @@ footer {
 
 <div class="container">
 
-<!-- ABOUT -->
 <h2>About</h2>
 <div class="card">
 Researcher in statistics focusing on machine learning, explainable AI, and public health analytics.
-Work includes dengue, tuberculosis, malaria, and global disease modeling using interpretable methods.
 </div>
 
-<!-- PUBLICATIONS -->
 <h2>Publications</h2>
 <div class="grid">
-
-<div class="card">
-<strong>Tuberculosis prediction using AI</strong><br>
-Scientific Reports, 2025
+<div class="card"><strong>Tuberculosis prediction using AI</strong><br>Scientific Reports, 2025</div>
+<div class="card"><strong>Dengue early warning system</strong><br>Health Science Reports, 2025</div>
+<div class="card"><strong>Explainable dengue modeling</strong><br>Global Epidemiology, 2025</div>
+<div class="card"><strong>Malaria modeling</strong><br>Scientific Reports, 2025</div>
 </div>
 
-<div class="card">
-<strong>Dengue early warning system</strong><br>
-Health Science Reports, 2025
-</div>
-
-<div class="card">
-<strong>Explainable dengue modeling</strong><br>
-Global Epidemiology, 2025
-</div>
-
-<div class="card">
-<strong>Malaria modeling</strong><br>
-Scientific Reports, 2025
-</div>
-
-</div>
-
-<!-- PROJECTS -->
 <h2>Projects</h2>
 <div class="grid">
-
-<div class="card">
-<strong>Dengue Dashboard</strong><br>
-Interactive prediction and visualization system
+<div class="card"><strong>Dengue Dashboard</strong><br>Prediction and visualization</div>
+<div class="card"><strong>Systematic Review Dashboard</strong><br>Filtering and PRISMA tool</div>
+<div class="card"><strong>whatdis() R Package</strong><br>Distribution analysis</div>
 </div>
 
-<div class="card">
-<strong>Systematic Review Dashboard</strong><br>
-Search, filter, PRISMA visualization tool
-</div>
-
-<div class="card">
-<strong>whatdis() R Package</strong><br>
-Distribution detection and visualization
-</div>
-
-</div>
-
-<!-- COURSES -->
 <h2>Courses</h2>
 <div class="grid">
-
-<div class="card">
-<strong>Gen AI in Research Workflow</strong><br>
-Elsevier, 2026
+<div class="card"><strong>Gen AI Research Workflow</strong><br>Elsevier, 2026</div>
+<div class="card"><strong>Machine Learning with Python</strong><br>IBM, 2024</div>
+<div class="card"><strong>Climate Risk Analysis</strong><br>UNESCO, 2024</div>
 </div>
 
-<div class="card">
-<strong>Machine Learning with Python</strong><br>
-IBM, 2024
-</div>
-
-<div class="card">
-<strong>Climate Risk Decision Analysis</strong><br>
-UNESCO, 2024
-</div>
-
-</div>
-
-<!-- SERVICE -->
-<h2>Academic Service</h2>
+<h2>Service</h2>
 <div class="grid">
-
-<div class="card">
-<strong>BMJ Global Health</strong><br>
-Reviewer, 2026
-</div>
-
-<div class="card">
-<strong>PLOS Digital Health</strong><br>
-Reviewer, 2025–2026
-</div>
-
-<div class="card">
-<strong>Health Science Reports</strong><br>
-Reviewer, 2025–2026
-</div>
-
+<div class="card"><strong>BMJ Global Health</strong><br>Reviewer, 2026</div>
+<div class="card"><strong>PLOS Digital Health</strong><br>Reviewer, 2025–2026</div>
+<div class="card"><strong>Health Science Reports</strong><br>Reviewer, 2025–2026</div>
 </div>
 
 </div>
