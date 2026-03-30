@@ -1,218 +1,97 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background: #f5f7fa;
-    color: #1f2933;
-    line-height: 1.6;
-}
+<title>Md. Abu Bokkor Shiddik | Academic Portfolio</title>
 
-/* Container */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-}
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-/* Header Card */
-header {
-    padding: 40px 20px;
-}
+<link rel="stylesheet" href="styles.css">
+</head>
 
-.header-container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #ffffff;
-    padding: 30px;
-    border: 1px solid #e4e7eb;
-    border-radius: 10px;
-}
+<body>
 
-/* Header Text */
-.header-text h1 {
-    font-size: 30px;
-    margin-bottom: 6px;
-    color: #1f2933;
-}
+<header>
+<div class="header-container">
 
-.header-text p {
-    font-size: 14.5px;
-    color: #52606d;
-    margin: 5px 0;
-}
+<div class="header-text">
 
-/* Links */
-.header-links {
-    margin-top: 12px;
-}
+<h1>Md. Abu Bokkor Shiddik</h1>
 
-.header-links a {
-    text-decoration: none;
-    color: #1d4ed8;
-    margin-right: 10px;
-    font-weight: 500;
-    font-size: 14px;
-}
+<p>Researcher | Bachelor of Science in Statistics</p>
 
-.header-links a:hover {
-    text-decoration: underline;
-}
+<p>📧 abubokkor.brur60@gmail.com | 📞 +8801874001360</p>
 
-/* Profile Image */
-.header-image {
-    margin-left: 25px;
-}
+<p>📍 Park Mor, Tajhat, Rangpur - 5400, Bangladesh</p>
 
-.profile-img {
-    width: 150px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 0;
-    border: 1px solid #e4e7eb;
-}
+<div class="header-links">
+<a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik">Portfolio</a> |
+<a href="https://www.linkedin.com">LinkedIn</a> |
+<a href="https://scholar.google.com">Google Scholar</a> |
+<a href="https://orcid.org">ORCID</a> |
+<a href="https://github.com">GitHub</a>
+</div>
 
-/* Navigation */
-nav {
-    max-width: 1100px;
-    margin: 20px auto;
-    text-align: center;
-    padding: 12px;
-    background: #ffffff;
-    border: 1px solid #e4e7eb;
-    border-radius: 10px;
-}
+</div>
 
-nav a {
-    margin: 0 12px;
-    text-decoration: none;
-    color: #1f2933;
-    font-weight: 500;
-    font-size: 14px;
-}
+<div class="header-image">
+<img src="https://raw.githubusercontent.com/abubokkorriddik/Portfolio-AbuBokkorShiddik/main/ABS.jpeg" class="profile-img" alt="Profile">
+</div>
 
-nav a:hover {
-    color: #1d4ed8;
-}
+</div>
+</header>
 
-/* Section Cards */
-section {
-    max-width: 1100px;
-    margin: 20px auto;
-    background: #ffffff;
-    padding: 25px;
-    border: 1px solid #e4e7eb;
-    border-radius: 10px;
-}
+<nav>
+<a href="#research">Research</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#publications">Publications</a>
+<a href="#certifications">Certifications</a>
+</nav>
 
-/* Headings */
-h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #1f2933;
-}
+<section id="research">
+<h2>Research</h2>
+<p>Explain your research here...</p>
+</section>
 
-h3 {
-    font-size: 18px;
-    margin-top: 10px;
-    color: #1f2933;
-}
+<section id="skills">
+<h2>Skills</h2>
+<p>Your skills...</p>
+</section>
 
-/* Paragraph */
-p {
-    font-size: 14.5px;
-    color: #52606d;
-    margin-bottom: 10px;
-}
+<section id="projects">
+<h2>Projects</h2>
 
-/* Lists */
-ul {
-    padding-left: 20px;
-}
+<div class="project-item">
+<h3>Dengue Dashboard</h3>
+<p>Interactive visualization project.</p>
+</div>
 
-ul li {
-    margin-bottom: 8px;
-    font-size: 14.5px;
-    color: #52606d;
-}
+</section>
 
-/* Project Cards */
-.project-item {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #e4e7eb;
-    border-radius: 8px;
-    background: #fafbfc;
-}
+<section id="publications">
+<h2>Publications</h2>
 
-.project-item a {
-    display: inline-block;
-    margin-top: 8px;
-    color: #1d4ed8;
-    text-decoration: none;
-    font-weight: 500;
-}
+<div class="project-item">
+<p>Your publications here...</p>
+</div>
 
-.project-item a:hover {
-    text-decoration: underline;
-}
+</section>
 
-/* Certification Cards */
-.certification-item {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #e4e7eb;
-    border-radius: 8px;
-    background: #fafbfc;
-}
+<section id="certifications">
+<h2>Certifications</h2>
 
-.certification-item a {
-    display: inline-block;
-    margin-top: 8px;
-    color: #1d4ed8;
-    text-decoration: none;
-    font-weight: 500;
-}
+<div class="certification-item">
+<p>Certification 1</p>
+</div>
 
-.certification-item a:hover {
-    text-decoration: underline;
-}
+</section>
 
-/* Chart Section */
-.chart-container {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-}
+<footer>
+<p>© 2026 Md. Abu Bokkor Shiddik</p>
+</footer>
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    color: #52606d;
-    font-size: 14px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .header-image {
-        margin: 15px 0 0 0;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 6px 8px;
-    }
-}
+</body>
+</html>
