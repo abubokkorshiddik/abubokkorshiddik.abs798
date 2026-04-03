@@ -7,7 +7,9 @@
 
 <style>
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -90,10 +92,15 @@ body {
   margin-top: 12px;
   background: #1d4ed8;
   color: white;
-  padding: 12px 4px;
+  padding: 12px 18px;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.cv-button:hover {
+  background: #0b3a6e;
 }
 
 /* CONTAINER */
@@ -103,7 +110,7 @@ body {
   padding: 35px 20px;
 }
 
-/* SECTION */
+/* SECTION TITLE */
 .section-title {
   border-left: 4px solid #1d4ed8;
   padding-left: 12px;
@@ -114,17 +121,54 @@ body {
 /* GRID */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
   margin-top: 18px;
 }
 
 /* CARD */
 .card {
-  background: white;
+  background: #ffffff;
   border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* PUBLICATION TEXT */
+.pub-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.pub-journal {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+/* PUBLICATION LINK */
+.pub-link {
+  display: inline-block;
+  font-size: 13px;
+  text-decoration: none;
+  color: #ffffff;
+  background: #1d4ed8;
+  padding: 6px 12px;
   border-radius: 6px;
-  padding: 16px;
+  transition: background 0.3s ease;
+}
+
+.pub-link:hover {
+  background: #0b3a6e;
 }
 
 /* FOOTER */
@@ -136,9 +180,7 @@ footer {
   margin-top: 50px;
 }
 
-/* ===================================== */
-/* 🔥 MOBILE ONLY (DESKTOP UNCHANGED) */
-/* ===================================== */
+/* MOBILE */
 @media (max-width: 768px) {
 
   body {
@@ -146,7 +188,6 @@ footer {
     line-height: 1.6;
   }
 
-  /* NAV FIX */
   .nav-inner {
     justify-content: center;
   }
@@ -156,7 +197,6 @@ footer {
     font-size: 14px;
   }
 
-  /* HERO */
   .hero {
     padding: 40px 15px;
     text-align: center;
@@ -171,7 +211,6 @@ footer {
     font-size: 24px;
   }
 
-  /* IMAGE */
   .image-row {
     justify-content: center;
     margin-top: 15px;
@@ -183,7 +222,6 @@ footer {
     height: 110px;
   }
 
-  /* LINKS */
   .links {
     display: block;
     line-height: 1.8;
@@ -194,13 +232,11 @@ footer {
     margin: 4px 6px;
   }
 
-  /* SECTION */
   .section-title {
     font-size: 18px;
     margin-top: 30px;
   }
 
-  /* GRID → STACK */
   .card-grid {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -210,13 +246,11 @@ footer {
     padding: 14px;
   }
 
-  /* BUTTON */
   .cv-button {
     width: 100%;
     text-align: center;
   }
 
-  /* FOOTER */
   footer {
     font-size: 14px;
     padding: 25px 15px;
@@ -259,15 +293,18 @@ footer {
   </p>
 
   <p class="links">
-    <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik/" target="_blank">Portfolio</a> |
+    <a href="https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/" target="_blank">Portfolio</a> |
     <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">LinkedIn</a> |
     <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">Google Scholar</a> |
     <a href="https://orcid.org/" target="_blank">ORCID</a> |
     <a href="https://github.com/abubokkorshiddik" target="_blank">GitHub</a>
   </p>
 
-  <a href="#" class="cv-button">Download Academic CV</a>
-</div>
+  <a href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/AbuBokkorShiddik_CV_2026_STAT_Center.pdf" 
+   class="cv-button" 
+   target="_blank">
+   Download Academic CV
+</a>
 
     <div class="image-row">
       <img src="https://raw.githubusercontent.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/main/ABS.jpeg">
@@ -316,48 +353,57 @@ footer {
 <div class="card-grid">
 
   <div class="card">
-    <p><strong>Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally</strong></p>
-    <p>Scientific Reports, 2025</p>
+    <p class="pub-title">Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally</p>
+    <p class="pub-journal"><strong>Scientific Reports, 2025</strong></p>
+    <a href="https://doi.org/10.1038/s41598-025-96973-w" target="_blank" class="pub-link">View Publication</a>
   </div>
 
   <div class="card">
-    <p><strong>Dengue Early Warning System and Outbreak Prediction Tool in Bangladesh Using Interpretable Tree-Based Machine Learning Model</strong></p>
-    <p>Health Science Reports, 2025</p>
+    <p class="pub-title">Dengue Early Warning System and Outbreak Prediction Tool in Bangladesh using interpretable machine learning</p>
+    <p class="pub-journal"><strong>Health Science Reports, 2025</strong></p>
+    <a href="https://doi.org/10.1002/hsr2.70726" target="_blank" class="pub-link">View Publication</a>
   </div>
 
   <div class="card">
-    <p><strong>Explainable artificial intelligence for predicting dengue outbreaks in Bangladesh using eco-climatic triggers</strong></p>
-    <p>Global Epidemiology, 2025</p>
+    <p class="pub-title">Explainable artificial intelligence for predicting dengue outbreaks in Bangladesh using eco-climatic triggers</p>
+    <p class="pub-journal"><strong>Global Epidemiology, 2025</strong></p>
+    <a href="https://www.sciencedirect.com/science/article/pii/S2590113325000288" target="_blank" class="pub-link">View Publication</a>
   </div>
 
   <div class="card">
-    <p><strong>Unraveling global malaria incidence and mortality using machine learning and artificial intelligence–driven spatial analysis</strong></p>
-    <p>Scientific Reports, 2025</p>
+    <p class="pub-title">Unraveling global malaria incidence and mortality using machine learning and spatial analysis</p>
+    <p class="pub-journal"><strong>Scientific Reports, 2025</strong></p>
+    <a href="https://www.nature.com/articles/s41598-025-12872-0" target="_blank" class="pub-link">View Publication</a>
   </div>
 
   <div class="card">
-    <p><strong>Reflections on explainable artificial intelligence for predicting dengue outbreaks in Bangladesh</strong></p>
-    <p>Global Epidemiology, 2025</p>
+    <p class="pub-title">Reflections on explainable artificial intelligence for predicting dengue outbreaks</p>
+    <p class="pub-journal"><strong>Global Epidemiology, 2025</strong></p>
+    <a href="https://www.sciencedirect.com/science/article/pii/S2590113325000483" target="_blank" class="pub-link">View Publication</a>
   </div>
 
   <div class="card">
-    <p><strong>Data-Driven Dengue Prevention Strategies in Bangladesh using Explainable Artificial Intelligence and Causal Inference</strong></p>
-    <p>International Journal of Statistical Sciences, 2025</p>
+    <p class="pub-title">Data-driven dengue prevention strategies using explainable AI and causal inference</p>
+    <p class="pub-journal"><strong>International Journal of Statistical Sciences, 2025</strong></p>
+    <a href="https://www.banglajol.info/index.php/ijss/article/view/85772" target="_blank" class="pub-link">View Publication</a>
   </div>
 
   <div class="card">
-    <p><strong>Leveraging explainable artificial intelligence and spatial analysis for communicable diseases in Asia (2000–2022)</strong></p>
-    <p>International Journal of Health Geographics, 2025</p>
+    <p class="pub-title">Leveraging explainable AI and spatial analysis for communicable diseases in Asia (2000–2022)</p>
+    <p class="pub-journal"><strong>International Journal of Health Geographics, 2025</strong></p>
+    <a href="https://link.springer.com/article/10.1186/s12942-025-00433-7" target="_blank" class="pub-link">View Publication</a>
   </div>
 
   <div class="card">
-    <p><strong>Bayesian spatiotemporal modelling of neonatal, infant and under-5 mortality (2000–2022) in 41 Asian countries</strong></p>
-    <p>BMJ Open, 2026</p>
+    <p class="pub-title">Bayesian spatiotemporal modelling of neonatal, infant and under-5 mortality (2000–2022) in 41 Asian countries</p>
+    <p class="pub-journal"><strong>BMJ Open, 2026</strong></p>
+    <a href="https://bmjopen.bmj.com/content/16/2/e108632" target="_blank" class="pub-link">View Publication</a>
   </div>
 
   <div class="card">
-    <p><strong>District-Level Dengue Early Warning Prediction System in Bangladesh Using Hybrid Explainable AI and Bayesian Deep Learning</strong></p>
-    <p>Tropical Medicine and Infectious Disease, 2026</p>
+    <p class="pub-title">District-level dengue early warning prediction system using hybrid explainable AI and Bayesian deep learning</p>
+    <p class="pub-journal"><strong>Tropical Medicine and Infectious Disease, 2026</strong></p>
+    <a href="https://www.mdpi.com/2414-6366/11/3/73" target="_blank" class="pub-link">View Publication</a>
   </div>
 
 </div>
