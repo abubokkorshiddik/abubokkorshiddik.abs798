@@ -126,12 +126,18 @@ body {
   margin-top: 18px;
 }
 
-/* CARD */
+/* CARD (FULL ALIGNMENT FIX) */
 .card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -147,6 +153,8 @@ body {
   font-weight: 600;
   margin-bottom: 10px;
   color: #111827;
+  line-height: 1.4;
+  min-height: 60px;
 }
 
 .pub-journal {
@@ -155,8 +163,9 @@ body {
   margin-bottom: 12px;
 }
 
-/* PUBLICATION LINK */
+/* PUBLICATION LINK (BOTTOM ALIGN FIX) */
 .pub-link {
+  margin-top: auto;
   display: inline-block;
   font-size: 13px;
   text-decoration: none;
@@ -256,7 +265,6 @@ footer {
     padding: 25px 15px;
   }
 }
-
 </style>
 </head>
 
