@@ -7,6 +7,58 @@
 <meta name="description" content="Insights, research activities, and learning posts by Md. Abu Bokkor Shiddik.">
 
 <style>
+  .nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 6px 10px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.dropbtn:hover {
+  color: #60a5fa;
+  background: rgba(255,255,255,0.1);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #020617;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 9999;
+  border-radius: 6px;
+  flex-direction: column;
+}
+
+.dropdown-content a {
+  color: #cbd5e1;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #004080;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -183,7 +235,17 @@ footer {
     <a href="projects.html">Projects</a>
     <a href="courses.html">Courses</a>
     <a href="service.html">Service</a>
-    <a href="insights.html">Insights</a>
+
+    <!-- Insights Dropdown -->
+    <div class="dropdown">
+      <a href="insights.html" class="dropbtn">Insights ▼</a>
+      <div class="dropdown-content">
+        <a href="videos.html">Videos</a>
+        <a href="contents.html">Contents</a>
+        <!-- Future pages -->
+        <!-- <a href="facebook.html">Facebook</a> -->
+      </div>
+    </div>
   </div>
 </nav>
 
