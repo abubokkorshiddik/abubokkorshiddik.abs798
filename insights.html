@@ -3,44 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Insights | Md. Abu Bokkor Shiddik</title>
-
-<meta name="description" content="Insights, research activities, and learning posts by Md. Abu Bokkor Shiddik.">
-
-<style>
-
-/* BASE */
-body {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  background: #ffffff;
-  color: #222;
-  line-height: 1.7;
-}
-
-/* HEADER */
-.header {
-  background: #f9fafb;
-  padding: 25px 15px;
-  text-align: center;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 32px;
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insights | Md. Abu Bokkor Shiddik</title>
 <meta name="description" content="Insights, research activities, and learning posts by Md. Abu Bokkor Shiddik.">
 
 <style>
-/* ===================================== */
-/* BODY AND BASE STYLES */
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -48,35 +14,26 @@ body {
   color: #1f2937;
 }
 
-/* ===================================== */
-/* NAVBAR */
+/* NAV */
 .navbar {
   background: #020617;
   position: sticky;
   top: 0;
-  z-index: 999;
 }
-
 .nav-inner {
   max-width: 1200px;
   margin: auto;
   padding: 14px 20px;
-  display: flex;
-  flex-wrap: wrap;
 }
-
 .nav-inner a {
   color: #cbd5e1;
   margin-right: 18px;
   text-decoration: none;
-  font-weight: 500;
 }
-
 .nav-inner a:hover {
   color: #60a5fa;
 }
 
-/* ===================================== */
 /* CONTAINER */
 .container {
   max-width: 900px;
@@ -84,111 +41,85 @@ body {
   padding: 30px 15px;
 }
 
-/* ===================================== */
-/* POST CARD */
+/* POST */
 .post {
-  background: #ffffff;
-  margin-bottom: 30px;
-  border-radius: 12px;
+  background: white;
+  margin-bottom: 25px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
-
-.post:hover {
-  transform: translateY(-4px);
-}
-
 .post img {
   width: 100%;
-  object-fit: cover;
-  border-bottom: 1px solid #e5e7eb;
 }
-
-/* POST CONTENT */
 .post-content {
   padding: 20px;
 }
-
-/* TITLE */
 .post-title {
   font-size: 22px;
-  font-weight: 600;
   color: #1e3a8a;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
 }
 
 /* AUTHOR LINE */
 .author-line {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
   margin-bottom: 10px;
 }
-
 .author-line img {
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #1e3a8a;
 }
-
 .author-name {
-  font-weight: 600;
-  color: #000000;
   text-decoration: none;
+  color: #000000; /* black author name */
+  font-weight: 500;
 }
-
 .author-name:hover {
   color: #1d4ed8;
 }
-
-/* ICONS */
 .author-icons a {
-  display: inline-block;
-  margin-left: 6px;
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
   text-decoration: none;
+  font-size: 14px;
   color: white;
-  font-weight: 500;
+  margin-left: 6px;
 }
-
 .orcid {
   background: #16a34a; /* ORCID green */
 }
-
 .email {
-  background: #2563eb; /* Blue for email */
+  background: #2563eb; /* email blue */
 }
 
-/* META DATE */
+/* META */
 .meta {
   font-size: 13px;
-  color: #555;
+  color: #777;
   margin-bottom: 12px;
 }
 
 /* TEXT */
-.post-text {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #1f2937;
-}
-
 .short-text {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
-
 .full-text {
   -webkit-line-clamp: unset;
 }
-
 .read-more {
   color: #2563eb;
   cursor: pointer;
@@ -197,21 +128,15 @@ body {
   margin-top: 6px;
 }
 
-/* SHARE BUTTON */
+/* BUTTON */
 .share-btn {
   margin-top: 15px;
   background: #1d4ed8;
   color: white;
   border: none;
   padding: 8px 12px;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: 500;
-  transition: background 0.2s ease;
-}
-
-.share-btn:hover {
-  background: #2563eb;
 }
 
 /* FOOTER */
@@ -220,30 +145,10 @@ footer {
   padding: 25px;
   background: #020617;
   color: #e2e8f0;
-  margin-top: 50px;
-}
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
-  .nav-inner {
-    justify-content: center;
-  }
-
-  .post-title {
-    font-size: 20px;
-  }
-
-  .author-line {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .author-icons {
-    margin-top: 4px;
-  }
 }
 </style>
 </head>
+
 <body>
 
 <!-- NAV -->
@@ -263,17 +168,19 @@ footer {
 
 <!-- POST 1 -->
 <div class="post" id="ml-journey">
-<img src="images/post1.jpg" alt="Machine Learning Research">
+<img src="images/post1.jpg">
 
 <div class="post-content">
   <div class="post-title">My Journey into Machine Learning Research</div>
 
   <div class="author-line">
     <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
-    <a href="home.html" class="author-name">Md. Abu Bokkor Shiddik</a>
+    <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
     <span class="author-icons">
-      <a href="https://orcid.org/my-orcid?orcid=0009-0002-0424-446X" target="_blank" class="orcid">🔗 ORCID</a>
-      <a href="mailto:abubokkor.brur60@gmail.com" class="email">✉️ Email</a>
+      <a href="https://orcid.org/my-orcid?orcid=0009-0002-0424-446X" target="_blank" class="orcid">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/ORCID_iD_icon.svg" alt="ORCID" style="width:16px;height:16px;">
+      </a>
+      <a href="mailto:abubokkor.brur60@gmail.com" class="email">✉️</a>
     </span>
   </div>
 
@@ -295,17 +202,19 @@ footer {
 
 <!-- POST 2 -->
 <div class="post" id="data-vis">
-<img src="images/post2.jpg" alt="Data Visualization">
+<img src="images/post2.jpg">
 
 <div class="post-content">
   <div class="post-title">Learning Data Visualization in R</div>
 
   <div class="author-line">
     <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
-    <a href="home.html" class="author-name">Md. Abu Bokkor Shiddik</a>
+    <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
     <span class="author-icons">
-      <a href="https://orcid.org/my-orcid?orcid=0009-0002-0424-446X" target="_blank" class="orcid">🔗 ORCID</a>
-      <a href="mailto:abubokkor.brur60@gmail.com" class="email">✉️ Email</a>
+      <a href="https://orcid.org/my-orcid?orcid=0009-0002-0424-446X" target="_blank" class="orcid">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/ORCID_iD_icon.svg" alt="ORCID" style="width:16px;height:16px;">
+      </a>
+      <a href="mailto:abubokkor.brur60@gmail.com" class="email">✉️</a>
     </span>
   </div>
 
@@ -331,7 +240,7 @@ footer {
 </footer>
 
 <script>
-// READ MORE TOGGLE
+// READ MORE
 function toggleText(el) {
   const text = el.previousElementSibling;
   if (text.classList.contains("short-text")) {
@@ -345,14 +254,14 @@ function toggleText(el) {
   }
 }
 
-// COPY LINK BUTTON
+// COPY LINK
 function copyLink(postId) {
   const url = window.location.origin + window.location.pathname + "?post=" + postId;
   navigator.clipboard.writeText(url);
   alert("Link copied! Share anywhere.");
 }
 
-// OPEN SINGLE POST FROM URL
+// OPEN SINGLE POST
 window.onload = function() {
   const params = new URLSearchParams(window.location.search);
   const postId = params.get("post");
