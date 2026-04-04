@@ -99,11 +99,6 @@ body {
   font-weight: 600;
 }
 
-  
-
-
-
-  
 /* VIDEO BLOCK */
 .video-block {
   background: white;
@@ -112,15 +107,19 @@ body {
   margin-bottom: 35px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
   width: 100%;
-  max-width: 100%; /* make sure it doesn’t overflow */
+  max-width: 100%;
 }
+
+/* Aspect ratio wrapper for more square videos */
 .video-block iframe {
   width: 100%;
-  display: block; /* removes any inline spacing issues */
+  aspect-ratio: 4/3; /* Makes videos more square-ish */
+  display: block;
+  border: none;
 }
 
 /* VIDEO CONTENT */
-.video-content { padding: 10px 20px; }
+.video-content { padding: 15px 20px; }
 .video-title { font-size: 20px; margin-bottom: 6px; color: #1e3a8a; }
 .video-description { font-size: 15px; color: #555; line-height: 1.5; }
 
@@ -134,7 +133,7 @@ footer {
 
 /* MOBILE */
 @media(max-width:768px){
-  .video-block iframe { height: 280px; }
+  .video-block iframe { aspect-ratio: 16/9; height: auto; }
 }
 </style>
 </head>
@@ -228,24 +227,20 @@ footer {
     </div>
   </div>
 
-</div>
-
-  
-<!-- Digital Project Explor -->
-<div class="section-title">Digital Project Explor</div>
-<div class="video-block">
-  <iframe class="youtube-video" id="video5"
-    src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX-0hAM0T15l2732WJeKllcl&rel=0&modestbranding=1"
-    allowfullscreen>
-  </iframe>
-  <div class="video-content">
-    <div class="video-title">Digital Project Playlist</div>
-    <div class="video-description">
-      Reviews and explorations of developed tools by Md. Abu Bokkor Shiddik.
+  <!-- DIGITAL PROJECT EXPLOR -->
+  <div class="section-title">Digital Project Explor</div>
+  <div class="video-block">
+    <iframe class="youtube-video" id="video5" src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX-0hAM0T15l2732WJeKllcl&rel=0&modestbranding=1" allowfullscreen></iframe>
+    <div class="video-content">
+      <div class="video-title">Digital Project Playlist</div>
+      <div class="video-description">
+        Reviews and explorations of developed tools by Md. Abu Bokkor Shiddik.
+      </div>
     </div>
   </div>
+
 </div>
-  
+
 <footer>© 2026 Md. Abu Bokkor Shiddik</footer>
 
 <script src="https://www.youtube.com/iframe_api"></script>
@@ -255,9 +250,7 @@ function onYouTubeIframeAPIReady() {
   const iframes = document.querySelectorAll('.youtube-video');
   iframes.forEach((iframe, i) => {
     players[i] = new YT.Player(iframe.id, {
-      events: {
-        'onStateChange': onPlayerStateChange
-      }
+      events: { 'onStateChange': onPlayerStateChange }
     });
   });
 }
