@@ -50,7 +50,7 @@ body {
 /* POST */
 .post {
   background: white;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -67,24 +67,20 @@ body {
 .post-title {
   font-size: 22px;
   color: #1e3a8a;
-  margin-bottom: 5px;
 }
 
-/* AUTHOR LINE */
+/* AUTHOR */
 .author-line {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .author-line img {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  object-fit: cover;
 }
 
 .author-name {
@@ -93,21 +89,27 @@ body {
   font-weight: 500;
 }
 
-.author-line a.btn {
-  text-decoration: none;
-  padding: 3px 8px;
-  border-radius: 5px;
-  font-size: 12px;
-  color: white;
+.author-actions {
+  display: flex;
+  gap: 8px;
 }
 
-.orcid { background: #16a34a; }
-.email { background: #2563eb; }
+.icon {
+  width: 18px;
+  height: 18px;
+  filter: grayscale(100%);
+  cursor: pointer;
+}
 
+.icon:hover {
+  filter: none;
+}
+
+/* META */
 .meta {
   font-size: 13px;
   color: #777;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 /* TEXT */
@@ -126,17 +128,15 @@ body {
   color: #2563eb;
   cursor: pointer;
   font-size: 14px;
-  display: inline-block;
-  margin-top: 6px;
 }
 
 /* BUTTON */
 .share-btn {
-  margin-top: 15px;
+  margin-top: 10px;
   background: #1d4ed8;
   color: white;
   border: none;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -158,11 +158,6 @@ footer {
 <nav class="navbar">
   <div class="nav-inner">
     <a href="home.html">Home</a>
-    <a href="conference-and-workshop.html">Conference & Workshop</a>
-    <a href="publications.html">Publications</a>
-    <a href="projects.html">Projects</a>
-    <a href="courses.html">Courses</a>
-    <a href="service.html">Service</a>
     <a href="insights.html">Insights</a>
   </div>
 </nav>
@@ -183,8 +178,14 @@ footer {
   
   <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
 
-  <a href="https://orcid.org/" target="_blank" class="btn orcid">ORCID</a>
-  <a href="mailto:abubokkor.brur60@gmail.com" class="btn email">Email</a>
+  <div class="author-actions">
+    <a href="https://orcid.org/my-orcid?orcid=0009-0002-0424-446X" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" class="icon">
+    </a>
+    <a href="mailto:abubokkor.brur60@gmail.com">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" class="icon">
+    </a>
+  </div>
 </div>
 
 <div class="meta">📅 April 2026 | ⏰ 10:30 AM</div>
@@ -193,7 +194,7 @@ footer {
 Today I explored advanced machine learning models and their application in global health data. 
 Understanding feature importance and explainability is becoming essential in modern research. 
 I also explored interpretability tools such as SHAP and LIME. These tools help explain complex models 
-and build trust in AI systems used in decision making. This learning is very important for future research.
+and build trust in AI systems used in decision making.
 </div>
 
 <span class="read-more" onclick="toggleText(this)">Read more</span>
@@ -218,16 +219,22 @@ and build trust in AI systems used in decision making. This learning is very imp
 
   <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
 
-  <a href="https://orcid.org/" target="_blank" class="btn orcid">ORCID</a>
-  <a href="mailto:abubokkor.brur60@gmail.com" class="btn email">Email</a>
+  <div class="author-actions">
+    <a href="https://orcid.org/my-orcid?orcid=0009-0002-0424-446X" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" class="icon">
+    </a>
+    <a href="mailto:abubokkor.brur60@gmail.com">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" class="icon">
+    </a>
+  </div>
 </div>
 
 <div class="meta">📅 April 2026 | ⏰ 4:00 PM</div>
 
 <div class="post-text short-text">
 Data visualization is essential for communicating research findings. Today I practiced creating 
-clear and effective plots in R. Visualization helps transform raw data into meaningful insights. 
-It also improves the readability of research papers and presentations significantly.
+clear and effective plots in R. Visualization helps transform raw data into meaningful insights 
+and improves research communication significantly.
 </div>
 
 <span class="read-more" onclick="toggleText(this)">Read more</span>
@@ -249,19 +256,12 @@ It also improves the readability of research papers and presentations significan
 // READ MORE
 function toggleText(el) {
   const text = el.previousElementSibling;
-
-  if (text.classList.contains("short-text")) {
-    text.classList.remove("short-text");
-    text.classList.add("full-text");
-    el.innerText = "Show less";
-  } else {
-    text.classList.add("short-text");
-    text.classList.remove("full-text");
-    el.innerText = "Read more";
-  }
+  text.classList.toggle("short-text");
+  text.classList.toggle("full-text");
+  el.innerText = text.classList.contains("short-text") ? "Read more" : "Show less";
 }
 
-// COPY LINK
+// SHARE
 function copyLink(postId) {
   const url = window.location.origin + window.location.pathname + "?post=" + postId;
   navigator.clipboard.writeText(url);
@@ -275,9 +275,7 @@ window.onload = function() {
 
   if (postId) {
     document.querySelectorAll(".post").forEach(p => {
-      if (p.id !== postId) {
-        p.style.display = "none";
-      }
+      if (p.id !== postId) p.style.display = "none";
     });
   }
 };
