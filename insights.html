@@ -31,12 +31,12 @@ body {
   display: flex;
   gap: 15px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-/* NAV LINKS */
 .nav-inner a {
-  color: white;       /* white color */
-  font-weight: bold;  /* bold text */
+  color: white;
+  font-weight: bold;
   text-decoration: none;
   padding: 6px 10px;
   border-radius: 4px;
@@ -175,9 +175,9 @@ body {
 
 .author-icons {
   display: inline-flex;
-  gap: 3px;
-  vertical-align: super;
-  font-size: 12px;
+  gap: 6px;
+  vertical-align: middle;
+  font-size: 14px;
 }
 
 /* META */
@@ -238,8 +238,8 @@ body {
 
 .sidebar a {
   display: block;
-  color: black;       /* white color */
-  font-weight: bold;  /* bold text */
+  color: black;
+  font-weight: bold;
   text-decoration: none;
   margin-bottom: 10px;
   font-size: 15px;
@@ -256,7 +256,8 @@ footer {
   background: #020617;
   color: #e2e8f0;
 }
-  /* MOBILE FIXES */
+
+/* MOBILE FIXES */
 @media (max-width: 768px) {
   .main-wrapper {
     flex-direction: column;
@@ -270,8 +271,8 @@ footer {
 
   .sidebar {
     width: 100%;
-    max-height: unset;  /* remove fixed height */
-    position: relative; /* no sticky */
+    max-height: unset;
+    position: relative;
     top: unset;
     padding: 10px 0;
     border-radius: 6px;
@@ -349,13 +350,15 @@ footer {
 
     <!-- POST 1 -->
     <div class="post" id="ml-journey">
-      <img src="images/post1.jpg">
+      <img src="images/post1.jpg" alt="ML Journey">
       <div class="post-content">
         <div class="post-title">My Journey into Machine Learning Research</div>
         <div class="author-line">
-          <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" class="author-pic">
-          <span class="author-name">Md. Abu Bokkor Shiddik
-            <span class="author-icons">👤 ✉️</span>
+          <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" class="author-pic" alt="Author">
+          <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
+          <span class="author-icons">
+            <a href="https://orcid.org/0000-0000-0000-0000" target="_blank">👤</a>
+            <a href="mailto:abubokkor.brur60@gmail.com">✉️</a>
           </span>
         </div>
         <div class="meta">📅 April 2026 | ⏰ 10:30 AM</div>
@@ -371,13 +374,15 @@ footer {
 
     <!-- POST 2 -->
     <div class="post" id="data-vis">
-      <img src="images/post2.jpg">
+      <img src="images/post2.jpg" alt="Data Visualization">
       <div class="post-content">
         <div class="post-title">Learning Data Visualization in R</div>
         <div class="author-line">
-          <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" class="author-pic">
-          <span class="author-name">Md. Abu Bokkor Shiddik
-            <span class="author-icons">👤 ✉️</span>
+          <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" class="author-pic" alt="Author">
+          <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
+          <span class="author-icons">
+            <a href="https://orcid.org/0000-0000-0000-0000" target="_blank">👤</a>
+            <a href="mailto:abubokkor.brur60@gmail.com">✉️</a>
           </span>
         </div>
         <div class="meta">📅 April 2026 | ⏰ 4:00 PM</div>
@@ -396,7 +401,6 @@ footer {
   <div class="sidebar">
     <h3>Quick View</h3>
     <a href="videos.html">🎥 Videos</a>
-    <!-- Future: add Facebook posts -->
     <a href="insights.html#ml-journey">📝 ML Journey</a>
     <a href="insights.html#data-vis">📝 Data Viz</a>
   </div>
