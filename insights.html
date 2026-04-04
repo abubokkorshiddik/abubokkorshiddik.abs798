@@ -30,106 +30,154 @@ body {
 .header h1 {
   margin: 0;
   font-size: 32px;
-  color: #1d4ed8;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights | Md. Abu Bokkor Shiddik</title>
+<meta name="description" content="Insights, research activities, and learning posts by Md. Abu Bokkor Shiddik.">
+
+<style>
+/* ===================================== */
+/* BODY AND BASE STYLES */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f8fafc;
+  color: #1f2937;
 }
 
-.header p {
-  margin: 5px 0 0 0;
-  font-size: 16px;
-  color: #6b7280;
-}
-
-/* NAV (LIGHT) */
+/* ===================================== */
+/* NAVBAR */
 .navbar {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  background: #020617;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .nav-inner {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
-  padding: 12px 15px;
+  padding: 14px 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .nav-inner a {
-  color: #374151;
+  color: #cbd5e1;
   margin-right: 18px;
   text-decoration: none;
-  font-size: 15px;
+  font-weight: 500;
 }
 
 .nav-inner a:hover {
-  color: #1d4ed8;
+  color: #60a5fa;
 }
 
+/* ===================================== */
 /* CONTAINER */
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   padding: 30px 15px;
 }
 
-/* POST */
+/* ===================================== */
+/* POST CARD */
 .post {
-  margin-bottom: 50px;
+  background: #ffffff;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.post:hover {
+  transform: translateY(-4px);
 }
 
 .post img {
   width: 100%;
-  border-radius: 6px;
-  margin-bottom: 15px;
+  object-fit: cover;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* POST CONTENT */
+.post-content {
+  padding: 20px;
 }
 
 /* TITLE */
 .post-title {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 600;
-  margin-bottom: 8px;
+  color: #1e3a8a;
+  margin-bottom: 12px;
 }
 
-/* AUTHOR */
+/* AUTHOR LINE */
 .author-line {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 .author-line img {
-  width: 32px;
-  height: 32px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1e3a8a;
 }
 
 .author-name {
+  font-weight: 600;
+  color: #000000;
   text-decoration: none;
+}
+
+.author-name:hover {
   color: #1d4ed8;
+}
+
+/* ICONS */
+.author-icons a {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
   font-weight: 500;
 }
 
-.author-actions {
-  display: flex;
-  gap: 8px;
+.orcid {
+  background: #16a34a; /* ORCID green */
 }
 
-.icon {
-  width: 16px;
-  height: 16px;
-  opacity: 0.7;
+.email {
+  background: #2563eb; /* Blue for email */
 }
 
-.icon:hover {
-  opacity: 1;
-}
-
-/* META */
+/* META DATE */
 .meta {
   font-size: 13px;
-  color: #6b7280;
-  margin-bottom: 15px;
+  color: #555;
+  margin-bottom: 12px;
 }
 
 /* TEXT */
+.post-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #1f2937;
+}
+
 .short-text {
   overflow: hidden;
   display: -webkit-box;
@@ -142,49 +190,61 @@ body {
 }
 
 .read-more {
-  color: #1d4ed8;
+  color: #2563eb;
   cursor: pointer;
   font-size: 14px;
   display: inline-block;
   margin-top: 6px;
 }
 
-/* SHARE */
+/* SHARE BUTTON */
 .share-btn {
   margin-top: 15px;
-  background: none;
-  border: 1px solid #1d4ed8;
-  color: #1d4ed8;
-  padding: 6px 12px;
-  border-radius: 4px;
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
 }
 
 .share-btn:hover {
-  background: #1d4ed8;
-  color: white;
+  background: #2563eb;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
-  border-top: 1px solid #e5e7eb;
-  font-size: 14px;
-  color: #6b7280;
+  padding: 25px;
+  background: #020617;
+  color: #e2e8f0;
+  margin-top: 50px;
 }
 
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-inner {
+    justify-content: center;
+  }
+
+  .post-title {
+    font-size: 20px;
+  }
+
+  .author-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .author-icons {
+    margin-top: 4px;
+  }
+}
 </style>
 </head>
-
 <body>
-
-<!-- HEADER -->
-<div class="header">
-  <h1>Md. Abu Bokkor Shiddik</h1>
-  <p>Researcher | Insights and Learning Journal</p>
-</div>
 
 <!-- NAV -->
 <nav class="navbar">
@@ -203,75 +263,65 @@ footer {
 
 <!-- POST 1 -->
 <div class="post" id="ml-journey">
+<img src="images/post1.jpg" alt="Machine Learning Research">
 
-<img src="images/post1.jpg">
+<div class="post-content">
+  <div class="post-title">My Journey into Machine Learning Research</div>
 
-<div class="post-title">My Journey into Machine Learning Research</div>
-
-<div class="author-line">
-  <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg">
-  <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
-
-  <div class="author-actions">
-    <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" class="icon">
-    </a>
-    <a href="mailto:abubokkor.brur60@gmail.com">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" class="icon">
-    </a>
+  <div class="author-line">
+    <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+    <a href="home.html" class="author-name">Md. Abu Bokkor Shiddik</a>
+    <span class="author-icons">
+      <a href="https://orcid.org/my-orcid?orcid=0009-0002-0424-446X" target="_blank" class="orcid">🔗 ORCID</a>
+      <a href="mailto:abubokkor.brur60@gmail.com" class="email">✉️ Email</a>
+    </span>
   </div>
+
+  <div class="meta">📅 April 2026 | ⏰ 10:30 AM</div>
+
+  <div class="post-text short-text">
+    Today I explored advanced machine learning models and their application in global health data. 
+    Understanding feature importance and explainability is becoming essential in modern research. 
+    I also explored interpretability tools such as SHAP and LIME. These tools help explain complex models 
+    and build trust in AI systems used in decision making. This learning is very important for future research.
+  </div>
+
+  <span class="read-more" onclick="toggleText(this)">Read more</span>
+
+  <br>
+  <button class="share-btn" onclick="copyLink('ml-journey')">🔗 Share</button>
 </div>
-
-<div class="meta">April 2026 · 10:30 AM</div>
-
-<div class="post-text short-text">
-Today I explored advanced machine learning models and their application in global health data. 
-Understanding feature importance and explainability is becoming essential in modern research. 
-I also explored interpretability tools such as SHAP and LIME. These tools help explain complex models 
-and build trust in AI systems used in decision making.
-</div>
-
-<span class="read-more" onclick="toggleText(this)">Read more</span>
-
-<br>
-<button class="share-btn" onclick="copyLink('ml-journey')">Share</button>
-
 </div>
 
 <!-- POST 2 -->
 <div class="post" id="data-vis">
+<img src="images/post2.jpg" alt="Data Visualization">
 
-<img src="images/post2.jpg">
+<div class="post-content">
+  <div class="post-title">Learning Data Visualization in R</div>
 
-<div class="post-title">Learning Data Visualization in R</div>
-
-<div class="author-line">
-  <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg">
-  <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
-
-  <div class="author-actions">
-    <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" class="icon">
-    </a>
-    <a href="mailto:abubokkor.brur60@gmail.com">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" class="icon">
-    </a>
+  <div class="author-line">
+    <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+    <a href="home.html" class="author-name">Md. Abu Bokkor Shiddik</a>
+    <span class="author-icons">
+      <a href="https://orcid.org/my-orcid?orcid=0009-0002-0424-446X" target="_blank" class="orcid">🔗 ORCID</a>
+      <a href="mailto:abubokkor.brur60@gmail.com" class="email">✉️ Email</a>
+    </span>
   </div>
+
+  <div class="meta">📅 April 2026 | ⏰ 4:00 PM</div>
+
+  <div class="post-text short-text">
+    Data visualization is essential for communicating research findings. Today I practiced creating 
+    clear and effective plots in R. Visualization helps transform raw data into meaningful insights. 
+    It also improves the readability of research papers and presentations significantly.
+  </div>
+
+  <span class="read-more" onclick="toggleText(this)">Read more</span>
+
+  <br>
+  <button class="share-btn" onclick="copyLink('data-vis')">🔗 Share</button>
 </div>
-
-<div class="meta">April 2026 · 4:00 PM</div>
-
-<div class="post-text short-text">
-Data visualization is essential for communicating research findings. Today I practiced creating 
-clear and effective plots in R. Visualization helps transform raw data into meaningful insights 
-and improves research communication significantly.
-</div>
-
-<span class="read-more" onclick="toggleText(this)">Read more</span>
-
-<br>
-<button class="share-btn" onclick="copyLink('data-vis')">Share</button>
-
 </div>
 
 </div>
@@ -281,34 +331,37 @@ and improves research communication significantly.
 </footer>
 
 <script>
-
-// READ MORE
+// READ MORE TOGGLE
 function toggleText(el) {
   const text = el.previousElementSibling;
-  text.classList.toggle("short-text");
-  text.classList.toggle("full-text");
-  el.innerText = text.classList.contains("short-text") ? "Read more" : "Show less";
+  if (text.classList.contains("short-text")) {
+    text.classList.remove("short-text");
+    text.classList.add("full-text");
+    el.innerText = "Show less";
+  } else {
+    text.classList.add("short-text");
+    text.classList.remove("full-text");
+    el.innerText = "Read more";
+  }
 }
 
-// SHARE
+// COPY LINK BUTTON
 function copyLink(postId) {
   const url = window.location.origin + window.location.pathname + "?post=" + postId;
   navigator.clipboard.writeText(url);
   alert("Link copied! Share anywhere.");
 }
 
-// OPEN SINGLE POST
+// OPEN SINGLE POST FROM URL
 window.onload = function() {
   const params = new URLSearchParams(window.location.search);
   const postId = params.get("post");
-
   if (postId) {
     document.querySelectorAll(".post").forEach(p => {
       if (p.id !== postId) p.style.display = "none";
     });
   }
 };
-
 </script>
 
 </body>
