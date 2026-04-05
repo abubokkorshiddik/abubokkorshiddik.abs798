@@ -4,10 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Videos | Md. Abu Bokkor Shiddik</title>
-<meta name="description" content="Programming, statistics, and book review videos by Md. Abu Bokkor Shiddik.">
 
 <style>
-html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -21,7 +19,6 @@ body {
   background: linear-gradient(90deg, #00264d, #004080);
   position: sticky;
   top: 0;
-  z-index: 9999;
 }
 
 .nav-inner {
@@ -29,94 +26,31 @@ body {
   margin: auto;
   padding: 12px 20px;
   display: flex;
-  flex-wrap: wrap;
   gap: 12px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-inner a {
   color: #cbd5e1;
   text-decoration: none;
-  font-weight: 500;
   padding: 6px 10px;
   border-radius: 4px;
 }
 
 .nav-inner a:hover {
-  color: #60a5fa;
   background: rgba(255,255,255,0.1);
-}
-
-/* DROPDOWN */
-.nav-inner .dropdown {
-  position: relative;
-}
-
-.nav-inner .dropbtn {
-  background: none;
-  border: none;
-  color: #cbd5e1;
-  font-weight: 500;
-  font-size: 17px;
-  font-family: inherit;
-  cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 4px;
-}
-
-.nav-inner .dropbtn:hover {
-  color: #60a5fa;
-  background: rgba(255,255,255,0.1);
-}
-
-.nav-inner .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #0b2d5c;
-  min-width: 160px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-  border-radius: 6px;
-  z-index: 9999;
-  top: 100%;
-  left: 0;
-}
-
-.nav-inner .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.nav-inner .dropdown-content a {
-  color: #cbd5e1;
-  padding: 8px 12px;
-  text-decoration: none;
-  display: block;
-}
-
-.nav-inner .dropdown-content a:hover {
-  background-color: #1e3a8a;
-  color: white;
 }
 
 /* HEADER */
 .header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
-  padding: 50px 20px;
   text-align: center;
+  padding: 40px 20px;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 34px;
-}
-
-.header p {
-  margin-top: 8px;
-  font-size: 16px;
-  color: #cfd8e8;
-}
-
-/* CONTAINER GRID (3 in one row) */
+/* GRID */
 .container {
   max-width: 1100px;
   margin: auto;
@@ -126,13 +60,12 @@ body {
   gap: 20px;
 }
 
-/* SECTION TITLE FULL WIDTH */
+/* SECTION TITLE */
 .section-title {
   grid-column: 1 / -1;
   font-size: 22px;
-  margin-bottom: 10px;
   color: #1e3a8a;
-  font-weight: 600;
+  margin-top: 10px;
 }
 
 /* VIDEO CARD */
@@ -143,37 +76,33 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
-/* VIDEO */
 .video-block iframe {
   width: 100%;
-  aspect-ratio: 4/3;
-  display: block;
+  aspect-ratio: 16/9;
   border: none;
 }
 
-/* CONTENT */
 .video-content {
-  padding: 12px 15px;
+  padding: 12px;
 }
 
 .video-title {
-  font-size: 18px;
-  margin-bottom: 6px;
   color: #1e3a8a;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .video-description {
   font-size: 14px;
   color: #555;
-  line-height: 1.5;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 25px;
+  padding: 20px;
   background: #020617;
-  color: #e2e8f0;
+  color: white;
 }
 
 /* RESPONSIVE */
@@ -188,154 +117,89 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- NAV --> 
+<!-- NAV -->
 <nav class="navbar">
   <div class="nav-inner">
     <a href="home.html">Home</a>
-    <a href="conference-and-workshop.html">Conference & Workshop</a>
     <a href="publications.html">Publications</a>
     <a href="projects.html">Projects</a>
     <a href="courses.html">Courses</a>
-    <a href="service.html">Service</a>
-    <div class="dropdown">
-      <button class="dropbtn">Insights ▼</button>
-      <div class="dropdown-content">
-        <a href="insights.html">Posts</a>
-        <a href="videos.html">Videos</a>
-      </div>
-    </div>
+    <a href="videos.html">Videos</a>
   </div>
 </nav>
 
-
 <!-- HEADER -->
 <div class="header">
-  <h1>Videos & Learning Resources</h1>
-  <p>Programming, statistics, and knowledge-sharing content</p>
+  <h1>Videos & Learning</h1>
+  <p>Programming and research tutorials</p>
 </div>
 
+<!-- CONTENT -->
 <div class="container">
 
-  <!-- LATEST VIDEO -->
-  <div class="section-title">Latest Video</div>
-  <div class="video-block">
-    <iframe class="youtube-video" id="video0" src="https://www.youtube.com/embed?listType=user_uploads&list=UCmue_D64tjDjTueuhLUx67g&rel=0&modestbranding=1" allowfullscreen></iframe>
-    <div class="video-content">
-      <div class="video-title">Newest Upload from My Channel</div>
-      <div class="video-description">
-        Automatically shows the most recent video uploaded to my YouTube channel.
-      </div>
-    </div>
-  </div>
-
-  <!-- PYTHON -->
   <div class="section-title">Python Programming</div>
+
   <div class="video-block">
-    <iframe class="youtube-video" id="video1" src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX9bhNDXnYs4D3NPELKC74NB&rel=0&modestbranding=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX9bhNDXnYs4D3NPELKC74NB" allowfullscreen></iframe>
     <div class="video-content">
-      <div class="video-title">Python Programming Playlist</div>
-      <div class="video-description">
-        Learn Python for machine learning, data science, and research applications.
-      </div>
+      <div class="video-title">Python Playlist</div>
+      <div class="video-description">Learn Python step by step</div>
     </div>
   </div>
 
-  <!-- R -->
+  <div class="video-block">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX9bhNDXnYs4D3NPELKC74NB" allowfullscreen></iframe>
+    <div class="video-content">
+      <div class="video-title">Python Playlist</div>
+      <div class="video-description">Learn Python step by step</div>
+    </div>
+  </div>
+
+  <div class="video-block">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX9bhNDXnYs4D3NPELKC74NB" allowfullscreen></iframe>
+    <div class="video-content">
+      <div class="video-title">Python Playlist</div>
+      <div class="video-description">Learn Python step by step</div>
+    </div>
+  </div>
+
   <div class="section-title">R Programming</div>
+
   <div class="video-block">
-    <iframe class="youtube-video" id="video2" src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX_Vlid1zJ3vvHfi_0yeQYBe&rel=0&modestbranding=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX_Vlid1zJ3vvHfi_0yeQYBe" allowfullscreen></iframe>
     <div class="video-content">
-      <div class="video-title">R Programming Playlist</div>
-      <div class="video-description">
-        Statistical analysis, visualization, and research-focused workflows using R.
-      </div>
+      <div class="video-title">R Playlist</div>
+      <div class="video-description">Statistics with R</div>
     </div>
   </div>
 
-  <!-- STATISTICS -->
-  <div class="section-title">Statistics</div>
   <div class="video-block">
-    <iframe class="youtube-video" id="video3" src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX8rcFR38G-JZVMrClNyNIrE&rel=0&modestbranding=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX_Vlid1zJ3vvHfi_0yeQYBe" allowfullscreen></iframe>
     <div class="video-content">
-      <div class="video-title">Statistics Playlist</div>
-      <div class="video-description">
-        Core statistical concepts, hypothesis testing, and data analysis techniques for students and researchers.
-      </div>
+      <div class="video-title">R Playlist</div>
+      <div class="video-description">Statistics with R</div>
     </div>
   </div>
 
-  <!-- BOOK REVIEW -->
-  <div class="section-title">Book Reviews</div>
   <div class="video-block">
-    <iframe class="youtube-video" id="video4" src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX9e1yPUnjXNE-46HC3Kd9hs&rel=0&modestbranding=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX_Vlid1zJ3vvHfi_0yeQYBe" allowfullscreen></iframe>
     <div class="video-content">
-      <div class="video-title">Book Review Playlist</div>
-      <div class="video-description">
-        Reviews of academic and knowledge-building books to support continuous learning.
-      </div>
-    </div>
-  </div>
-
-  <!-- DIGITAL PROJECT EXPLOR -->
-  <div class="section-title">Digital Project Explor</div>
-  <div class="video-block">
-    <iframe class="youtube-video" id="video5" src="https://www.youtube.com/embed/videoseries?list=PLEyQp_lYcUX-0hAM0T15l2732WJeKllcl&rel=0&modestbranding=1" allowfullscreen></iframe>
-    <div class="video-content">
-      <div class="video-title">Digital Project Playlist</div>
-      <div class="video-description">
-        Reviews and explorations of developed tools by Md. Abu Bokkor Shiddik.
-      </div>
+      <div class="video-title">R Playlist</div>
+      <div class="video-description">Statistics with R</div>
     </div>
   </div>
 
 </div>
 
-<footer>© 2026 Md. Abu Bokkor Shiddik</footer>
-
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-let players = [];
-function onYouTubeIframeAPIReady() {
-  const iframes = document.querySelectorAll('.youtube-video');
-  iframes.forEach((iframe, i) => {
-    players[i] = new YT.Player(iframe.id, {
-      events: { 'onStateChange': onPlayerStateChange }
-    });
-  });
-}
-
-function onPlayerStateChange(event) {
-  if(event.data === YT.PlayerState.PLAYING){
-    // Pause all other videos
-    players.forEach(player => {
-      if(player !== event.target){
-        player.pauseVideo();
-      }
-    });
-  }
-}
-
-// Pause when scrolling out of viewport
-function isInViewport(el){
-  const rect = el.getBoundingClientRect();
-  return rect.top < window.innerHeight && rect.bottom > 0;
-}
-function checkVideos(){
-  players.forEach(player => {
-    const iframe = player.getIframe();
-    if(!isInViewport(iframe)){
-      player.pauseVideo();
-    }
-  });
-}
-window.addEventListener('scroll', checkVideos);
-window.addEventListener('resize', checkVideos);
-</script>
+<footer>
+  © 2026 Md. Abu Bokkor Shiddik
+</footer>
 
 </body>
 </html>
