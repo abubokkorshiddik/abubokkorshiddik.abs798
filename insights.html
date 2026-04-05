@@ -7,6 +7,8 @@
 <meta name="description" content="Insights, research activities, and learning posts by Md. Abu Bokkor Shiddik.">
 
 <style>
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -34,6 +36,7 @@ body {
   flex-wrap: wrap;
 }
 
+/* NAV LINKS */
 .nav-inner a {
   color: white;
   font-weight: bold;
@@ -47,26 +50,32 @@ body {
   background: rgba(255,255,255,0.1);
 }
 
-/* Dropdown menu */
+/* DROPDOWN */
 .nav-inner .dropdown {
   position: relative;
 }
 
+/* FIX ALIGNMENT (same as links) */
 .nav-inner .dropbtn {
   color: white;
   font-weight: bold;
+  font-size: 17px;
+  font-family: inherit;
   background: none;
   border: none;
   cursor: pointer;
   padding: 6px 10px;
+  margin: 0;
   border-radius: 4px;
 }
 
+/* MATCH HOVER */
 .nav-inner .dropbtn:hover {
-  background: rgba(255,255,255,0.1);
   color: #60a5fa;
+  background: rgba(255,255,255,0.1);
 }
 
+/* FIX DROPDOWN POSITION + STABILITY */
 .nav-inner .dropdown-content {
   display: none;
   position: absolute;
@@ -75,9 +84,17 @@ body {
   box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
   border-radius: 6px;
   z-index: 9999;
-  top: 36px;
+
+  top: 100%;   /* FIX GAP ISSUE */
+  left: 0;
 }
 
+/* KEEP HOVER ACTIVE */
+.nav-inner .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* DROPDOWN LINKS */
 .nav-inner .dropdown-content a {
   color: #cbd5e1;
   padding: 8px 12px;
@@ -88,10 +105,6 @@ body {
 .nav-inner .dropdown-content a:hover {
   background-color: #1e3a8a;
   color: white;
-}
-
-.nav-inner .dropdown:hover .dropdown-content {
-  display: block;
 }
 
 /* HEADER */
@@ -150,7 +163,7 @@ body {
   margin-bottom: 5px;
 }
 
-/* AUTHOR LINE */
+/* AUTHOR */
 .author-line {
   display: flex;
   align-items: center;
@@ -170,13 +183,11 @@ body {
   text-decoration: none;
   color: #1f2937;
   font-weight: 500;
-  position: relative;
 }
 
 .author-icons {
   display: inline-flex;
   gap: 6px;
-  vertical-align: middle;
   font-size: 14px;
 }
 
@@ -207,7 +218,7 @@ body {
   margin-top: 6px;
 }
 
-/* SHARE BUTTON */
+/* BUTTON */
 .share-btn {
   margin-top: 15px;
   background: #1d4ed8;
@@ -218,7 +229,7 @@ body {
   cursor: pointer;
 }
 
-/* RIGHT SIDEBAR */
+/* SIDEBAR */
 .sidebar {
   flex: 1;
   background: #f1f5f9;
@@ -257,8 +268,9 @@ footer {
   color: #e2e8f0;
 }
 
-/* MOBILE FIXES */
+/* MOBILE */
 @media (max-width: 768px) {
+
   .main-wrapper {
     flex-direction: column;
     padding: 20px 10px;
