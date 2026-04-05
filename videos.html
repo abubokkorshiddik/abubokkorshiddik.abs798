@@ -7,6 +7,8 @@
 <meta name="description" content="Programming, statistics, and book review videos by Md. Abu Bokkor Shiddik.">
 
 <style>
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -29,19 +31,48 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  align-items: center;
 }
 
-.nav-inner .dropdown { position: relative; }
+/* NAV LINKS */
+.nav-inner a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.nav-inner a:hover {
+  color: #60a5fa;
+  background: rgba(255,255,255,0.1);
+}
+
+/* DROPDOWN */
+.nav-inner .dropdown {
+  position: relative;
+}
+
+/* ALIGN FIX */
 .nav-inner .dropbtn {
   background: none;
   border: none;
-  color: white;
-  font-weight: bold;
+  color: #cbd5e1;
+  font-weight: 500;
+  font-size: 17px;
+  font-family: inherit;
   cursor: pointer;
   padding: 6px 10px;
   border-radius: 4px;
 }
-.nav-inner .dropbtn:hover { background: rgba(255,255,255,0.1); }
+
+/* MATCH HOVER */
+.nav-inner .dropbtn:hover {
+  color: #60a5fa;
+  background: rgba(255,255,255,0.1);
+}
+
+/* DROPDOWN FIX */
 .nav-inner .dropdown-content {
   display: none;
   position: absolute;
@@ -50,8 +81,17 @@ body {
   box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
   border-radius: 6px;
   z-index: 9999;
-  top: 36px;
+
+  top: 100%;   /* REMOVE GAP */
+  left: 0;
 }
+
+/* KEEP OPEN */
+.nav-inner .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* DROPDOWN LINKS */
 .nav-inner .dropdown-content a {
   color: #cbd5e1;
   padding: 8px 12px;
@@ -59,19 +99,11 @@ body {
   display: block;
   font-weight: 500;
 }
+
 .nav-inner .dropdown-content a:hover {
   background-color: #1e3a8a;
   color: white;
 }
-.nav-inner .dropdown:hover .dropdown-content { display: block; }
-.nav-inner a {
-  color: #cbd5e1;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 10px;
-  border-radius: 4px;
-}
-.nav-inner a:hover { color: #60a5fa; background: rgba(255,255,255,0.1); }
 
 /* HEADER */
 .header {
@@ -109,15 +141,15 @@ body {
   width: 100%;
 }
 
-/* Aspect ratio wrapper for square-ish videos */
+/* VIDEO */
 .video-block iframe {
   width: 100%;
-  aspect-ratio: 4/3; /* desktop */
+  aspect-ratio: 4/3;
   display: block;
   border: none;
 }
 
-/* VIDEO CONTENT */
+/* CONTENT */
 .video-content { padding: 15px 20px; }
 .video-title { font-size: 20px; margin-bottom: 6px; color: #1e3a8a; }
 .video-description { font-size: 15px; color: #555; line-height: 1.5; }
