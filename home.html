@@ -5,22 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Md. Abu Bokkor Shiddik</title>
 
-<style>
-
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background: #f8fafc;
   color: #1f2937;
-  font-size: 17px;
-  line-height: 1.7;
+
+  /* FIX: better scaling */
+  font-size: 16px;
+  line-height: 1.65;
 }
 
-/* ========================= */
-/* NAV (UPDATED ONLY) */
-/* ========================= */
+/* CONTAINER FIX */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 24px;
+}
+
+/* NAV */
 .navbar {
   background: linear-gradient(90deg, #00264d, #004080);
   position: sticky;
@@ -34,153 +41,70 @@ body {
   padding: 12px 16px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-/* LINKS */
-.nav-inner a {
+/* NAV LINKS */
+.nav-inner a,
+.nav-inner .dropbtn {
   color: white;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
   padding: 6px 10px;
-  border-radius: 5px;
-  transition: 0.25s;
+  border-radius: 6px;
   font-size: 15px;
-}
-
-.nav-inner a:hover {
-  color: #60a5fa;
-  background: rgba(255,255,255,0.12);
-}
-
-.nav-inner .dropdown {
-  position: relative;
-}
-
-.nav-inner .dropbtn {
   background: none;
   border: none;
-  color: white;
-  font-weight: 700;
-  font-size: 15px;
   cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 5px;
 }
 
+.nav-inner a:hover,
 .nav-inner .dropbtn:hover {
-  color: #60a5fa;
   background: rgba(255,255,255,0.12);
+  color: #60a5fa;
 }
 
-/* DROPDOWN */
-.nav-inner .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #0b2d5c;
-  min-width: 160px;
-  border-radius: 6px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-  top: 100%;
-  left: 0;
-  z-index: 9999;
-}
-
-.nav-inner .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.nav-inner .dropdown.active .dropdown-content {
-  display: block;
-}
-
-.nav-inner .dropdown-content a {
-  display: block;
-  padding: 10px 12px;
-  color: #cbd5e1;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.nav-inner .dropdown-content a:hover {
-  background-color: #1e3a8a;
-  color: white;
-}
-
-/* ========================= */
-/* DROPDOWN (FIXED ONLY) */
-/* ========================= */
-
-.nav-inner .dropdown {
+/* DROPDOWN FIX (only one definition kept) */
+.dropdown {
   position: relative;
 }
 
-.nav-inner .dropbtn {
-  background: none;
-  border: none;
-  color: #cbd5e1;
-  font-weight: 700;
-  font-size: 15px;
-  font-family: inherit;
-  cursor: pointer;
-  padding: 0;
-  margin-right: 18px;
-}
-
-/* dropdown hidden state */
-.nav-inner .dropdown-content {
-  display: block;
+.dropdown-content {
   position: absolute;
   background-color: #0b2d5c;
-  min-width: 160px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  min-width: 170px;
   border-radius: 6px;
-  z-index: 9999;
   top: 100%;
   left: 0;
 
   opacity: 0;
   visibility: hidden;
-  transform: translateY(6px);
+  transform: translateY(8px);
   transition: 0.2s ease;
   pointer-events: none;
 }
 
-/* links */
-.nav-inner .dropdown-content a {
-  color: #cbd5e1;
-  padding: 8px 12px;
-  text-decoration: none;
-  display: block;
-  font-weight: 700;
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-.nav-inner .dropdown-content a:hover {
-  background-color: #1e3a8a;
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background: #1e3a8a;
   color: white;
 }
 
-/* hover open */
-.nav-inner .dropdown:hover .dropdown-content {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-/* click open */
-.nav-inner .dropdown.active .dropdown-content {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-/* ========================= */
 /* HERO */
-/* ========================= */
 .hero {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
@@ -204,45 +128,36 @@ body {
 }
 
 .image-row img {
-  width: 170px;
-  height: 170px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 8px;
   border: 2px solid #1e3a8a;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 /* LINKS */
 .links a {
   color: #93c5fd;
-  margin-right: 10px;
+  margin-right: 8px;
   text-decoration: none;
 }
 
 /* BUTTON */
 .cv-button {
   display: inline-block;
-  margin-top: 12px;
+  margin-top: 14px;
   background: #1d4ed8;
   color: white;
-  padding: 12px 4px;
+  padding: 10px 16px;
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 5px;
-  font-weight: 500;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 35px 20px;
-}
-
-/* SECTION */
+/* SECTION TITLE */
 .section-title {
   border-left: 4px solid #1d4ed8;
   padding-left: 12px;
-  margin-top: 45px;
+  margin-top: 40px;
   font-size: 22px;
 }
 
@@ -250,7 +165,7 @@ body {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  gap: 18px;
   margin-top: 18px;
 }
 
@@ -258,8 +173,9 @@ body {
 .card {
   background: white;
   border: 1px solid #e5e7eb;
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 16px;
+  box-sizing: border-box;
 }
 
 /* FOOTER */
@@ -271,33 +187,18 @@ footer {
   margin-top: 50px;
 }
 
-/* ========================= */
 /* TABLET */
-/* ========================= */
 @media (max-width: 900px) {
-  .nav-inner a,
-  .nav-inner .dropbtn {
-    font-size: 14px;
+  .hero-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-/* ========================= */
 /* MOBILE */
-/* ========================= */
 @media (max-width: 768px) {
 
   body {
     font-size: 15px;
-    line-height: 1.6;
-  }
-
-  .nav-inner {
-    justify-content: center;
-  }
-
-  .nav-inner a {
-    margin: 8px 10px;
-    font-size: 13px;
   }
 
   .hero {
@@ -307,16 +208,10 @@ footer {
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .hero h1 {
-    font-size: 24px;
   }
 
   .image-row {
     justify-content: center;
-    margin-top: 15px;
     flex-wrap: wrap;
   }
 
@@ -325,41 +220,15 @@ footer {
     height: 110px;
   }
 
-  .links {
-    display: block;
-    line-height: 1.8;
-  }
-
-  .links a {
-    display: inline-block;
-    margin: 4px 6px;
-  }
-
-  .section-title {
-    font-size: 18px;
-    margin-top: 30px;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .card {
-    padding: 14px;
-  }
-
   .cv-button {
     width: 100%;
     text-align: center;
   }
 
-  footer {
-    font-size: 14px;
-    padding: 25px 15px;
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 }
-</style>
   
 </head>
 <meta name="description" content="Md. Abu Bokkor Shiddik is a statistics graduate and researcher working on machine learning, health data analysis, and global studies.">
