@@ -46,17 +46,23 @@ body {
 }
 /* DROPDOWN */
 .nav-inner .dropdown {
-  position: relative;  /* required for positioning the dropdown items */
+  position: relative;
 }
 
+.nav-inner .dropdown-content {
+  pointer-events: auto;
+}
+  
 .nav-inner .dropbtn {
   background: none;
   border: none;
-  color: white;        /* dropdown text white */
-  font-weight: bold;   /* bold text */
+  color: #cbd5e1;      /* same as links */
+  font-weight: 500;    /* same as links */
+  font-size: 17px;     /* match body/nav */
+  font-family: inherit;
   cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 4px;
+  padding: 0;          /* remove extra spacing */
+  margin-right: 18px;  /* match links */
 }
 
 .nav-inner .dropbtn:hover {
@@ -71,7 +77,8 @@ body {
   box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
   border-radius: 6px;
   z-index: 9999;
-  top: 36px;                   /* space below button */
+   top: 100%;   /* attach directly under button */
+  left: 0;                 /* space below button */
 }
 
 .nav-inner .dropdown-content a {
