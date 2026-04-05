@@ -71,7 +71,6 @@ body {
 }
 
 .dropdown-content {
-  display: none;
   position: absolute;
   background: #ffffff;
   min-width: 150px;
@@ -80,18 +79,33 @@ body {
   overflow: hidden;
   top: 100%;
   left: 0;
+
+  /* hidden state */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: 0.2s ease;
 }
 
+/* open on hover */
 .dropdown:hover .dropdown-content {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
+/* links */
 .dropdown-content a {
   display: block;
   padding: 10px;
   color: #1f2937;
+  font-weight: 700;
+  text-decoration: none;
 }
 
+/* hover effect */
 .dropdown-content a:hover {
   background: #e5e7eb;
 }
