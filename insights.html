@@ -314,37 +314,27 @@ footer {
 /* MOBILE */
 @media (max-width: 320px) {
 
+  /* move header content to right */
+  .header {
+    text-align: right;
+    padding: 25px 12px;
+  }
+
+  /* navbar alignment */
+  .nav-inner {
+    justify-content: flex-end;
+    padding: 10px 12px;
+  }
+
+  /* footer alignment */
+  footer {
+    text-align: right;
+    padding: 20px 12px;
+  }
+
+  /* optional: reduce spacing to look cleaner */
   .main-wrapper {
-    flex-direction: column;
-    padding: 10px 6px;
-  }
-
-  body {
-    font-size: 14px;
-  }
-
-  .post-content {
-    padding: 14px;
-    font-size: 14px;
-  }
-
-  .post-title {
-    font-size: 18px;
-  }
-
-  .header h1 {
-    font-size: 20px;
-  }
-
-  .nav-inner a,
-  .nav-inner .dropbtn {
-    font-size: 13px;
-    padding: 6px 8px;
-  }
-
-  .share-btn {
-    padding: 6px 10px;
-    font-size: 13px;
+    padding: 10px 8px;
   }
 
 }
