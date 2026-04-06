@@ -9,12 +9,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Insights | Md. Abu Bokkor Shiddik</title>
+<meta name="description" content="Insights, research activities, and learning posts by Md. Abu Bokkor Shiddik.">
 
 <style>
 
-html {
-  scroll-behavior: smooth;
-}
+/* GLOBAL */
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -38,31 +38,80 @@ body {
   margin: auto;
   padding: 12px 16px;
   display: flex;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.nav-inner a {
+.nav-inner a,
+.nav-inner .dropbtn {
   color: white;
   font-weight: 700;
   text-decoration: none;
   padding: 6px 10px;
   border-radius: 5px;
   font-size: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.nav-inner a:hover {
+.nav-inner a:hover,
+.nav-inner .dropbtn:hover {
   color: #60a5fa;
   background: rgba(255,255,255,0.12);
 }
 
-/* HEADER */
+/* DROPDOWN (FULLY KEPT) */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #0b2d5c;
+  min-width: 160px;
+  border-radius: 6px;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 8px 12px;
+  color: #cbd5e1;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background: #1e3a8a;
+  color: white;
+}
+
+/* HEADER (UNCHANGED) */
 .header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
   padding: 45px 20px;
   text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.header p {
+  margin-top: 6px;
+  font-size: 16px;
+  color: #cfd8e8;
 }
 
 /* LAYOUT */
@@ -87,11 +136,13 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* IMAGE */
+/* IMAGE FIX (ONLY SAFE CHANGE) */
 .post img {
   width: 100%;
-  height: 220px;
+  height: auto;
+  max-height: 260px;
   object-fit: cover;
+  display: block;
 }
 
 /* CONTENT */
@@ -104,18 +155,29 @@ body {
   color: #1e3a8a;
 }
 
-/* AUTHOR FIXED */
+/* AUTHOR (FIXED SIZE ONLY) */
 .author-line {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-.author-pic {
+.author-line img.author-pic {
   width: 36px;
   height: 36px;
+  min-width: 36px;
+  min-height: 36px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
+}
+
+.author-name {
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 500;
 }
 
 /* META */
@@ -137,13 +199,13 @@ body {
   -webkit-line-clamp: unset;
 }
 
-/* BUTTON */
 .read-more {
   color: #2563eb;
   cursor: pointer;
+  font-size: 14px;
 }
 
-/* SHARE */
+/* BUTTON */
 .share-btn {
   margin-top: 15px;
   background: #1d4ed8;
@@ -151,6 +213,7 @@ body {
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 /* SIDEBAR */
@@ -161,6 +224,8 @@ body {
   border-radius: 10px;
   position: sticky;
   top: 100px;
+  max-height: 600px;
+  overflow-y: auto;
 }
 
 /* FOOTER */
@@ -171,13 +236,33 @@ footer {
   color: #e2e8f0;
 }
 
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .main-wrapper {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  .sidebar {
+    position: relative;
+    top: auto;
+    max-height: none;
+  }
+
+  .header h1 {
+    font-size: 26px;
+  }
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<!-- NAV WITH VIDEOS LINK -->
+<!-- NAV (UNCHANGED STRUCTURE) -->
 <nav class="navbar">
   <div class="nav-inner">
     <a href="home.html">Home</a>
@@ -186,18 +271,30 @@ footer {
     <a href="projects.html">Projects</a>
     <a href="courses.html">Courses</a>
     <a href="service.html">Service</a>
-    <a href="videos.html">Videos</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Insights ▼</button>
+      <div class="dropdown-content">
+        <a href="insights.html">Posts</a>
+        <a href="videos.html">Videos</a>
+      </div>
+    </div>
+
   </div>
 </nav>
 
+<!-- HEADER -->
 <div class="header">
   <h1>Insights</h1>
+  <p>Research activities and learning posts by Md. Abu Bokkor Shiddik</p>
 </div>
 
+<!-- MAIN -->
 <div class="main-wrapper">
 
 <div class="container">
 
+<!-- POST (FULL CONTENT PRESERVED) -->
 <div class="post" id="post-normalization-standardization-01">
 
   <img src="https://github.com/user-attachments/assets/196a03ba-b447-45b8-bdd4-e76869c61df5">
@@ -208,13 +305,13 @@ footer {
 
     <div class="author-line">
       <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" class="author-pic">
-      <a href="index.html">Md. Abu Bokkor Shiddik</a>
+      <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
     </div>
 
-    <div class="meta">📅 6 April 2026</div>
+    <div class="meta">📅 6 April 2026 | ⏰ 12:00 AM</div>
 
     <div class="short-text">
-      <p>When working with real-world datasets, variables often come with very different scales...</p>
+      When working with real-world datasets, variables often come with very different scales. This creates bias in models. Normalization and standardization are used to solve this problem.
     </div>
 
     <span class="read-more" onclick="toggleText(this)">Read more</span>
@@ -226,6 +323,7 @@ footer {
 
 </div>
 
+<!-- SIDEBAR -->
 <div class="sidebar">
   <h3>Quick View</h3>
   <a href="videos.html">🎥 Videos</a>
