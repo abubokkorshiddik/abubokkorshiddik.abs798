@@ -314,73 +314,125 @@ footer {
 /* MOBILE */
 @media (max-width: 768px) {
 
-  /* stop flex layout on mobile */
-  body {
+  /* reset everything */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
     display: block;
   }
 
-  /* full width container reset */
-  .nav-inner,
-  .main-wrapper,
+  /* global box sizing */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* full width main sections */
+  .navbar,
   .header,
+  .main-wrapper,
   footer {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* NAVBAR */
+  .nav-inner {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 25px 10px;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  /* MAIN LAYOUT */
+  .main-wrapper {
+    display: block;
+    padding: 10px;
+  }
+
+  /* CONTENT AREA */
+  .container {
     width: 100%;
     max-width: 100%;
   }
 
-  /* navbar fix */
-  .nav-inner {
-    margin: 0;
-    padding: 12px;
-    justify-content: center;
+  /* POSTS */
+  .post {
+    width: 100%;
+    margin-bottom: 15px;
   }
 
-  /* header fix */
-  .header {
-    padding: 28px 10px;
-    text-align: center;
+  .post-content {
+    padding: 14px;
+    font-size: 14px;
+    overflow-x: auto;
   }
 
-  /* main layout fix */
-  .main-wrapper {
-    display: block;
-    margin: 0;
-    padding: 10px;
+  .post-title {
+    font-size: 18px;
   }
 
-  /* sidebar fix */
+  /* TABLE FIX */
+  .post-content table {
+    width: 100%;
+    min-width: 600px;
+  }
+
+  .post-content th,
+  .post-content td {
+    padding: 8px 6px;
+    font-size: 13px;
+  }
+
+  /* SIDEBAR */
   .sidebar {
     width: 100%;
     max-width: 100%;
     position: relative;
     top: auto;
     margin-top: 15px;
+    max-height: none;
   }
 
-  /* post fix */
-  .post {
-    width: 100%;
-  }
-
-  /* content fix */
-  .post-content {
-    padding: 14px;
-    overflow-x: auto;
-  }
-
-  /* table fix (very important) */
-  .post-content table {
-    width: 100%;
-    min-width: 600px;
-  }
-
-  /* footer fix */
+  /* FOOTER */
   footer {
+    width: 100%;
     text-align: center;
-    padding: 28px 10px;
+    padding: 20px 10px;
+  }
+
+  /* NAV TEXT */
+  .nav-inner a,
+  .nav-inner .dropbtn {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  /* BUTTON */
+  .share-btn {
+    padding: 6px 10px;
+    font-size: 13px;
   }
 
 }
+  
 </style>
 
 </head>
