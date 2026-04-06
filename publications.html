@@ -173,7 +173,47 @@ body {
 .pub a:hover {
   text-decoration: underline;
 }
+.pub {
+  padding: 18px;
+  border-bottom: 1px solid #e5e7eb;
+}
 
+.title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.authors {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.meta {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.links a {
+  margin-right: 10px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #2563eb;
+}
+
+.abstract-box {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.figures img {
+  width: 120px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+}
 /* FOOTER */
 footer {
   background: #020617;
@@ -191,6 +231,12 @@ footer a {
 
 footer a:hover {
   color: white;
+}
+  .figures img {
+  width: 150px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -230,42 +276,59 @@ footer a:hover {
 <div class="pub">
 
   <!-- TITLE -->
-  <p>
-   Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally
+  <p class="title">
+    Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally
   </p>
 
   <!-- AUTHORS -->
-  <strong>
-    Md. Siddikur Rahman & Abu Bokkor Shiddik 
-  </strong>
-
-  <!-- ABSTRACT (manual) -->
-  <div class="abstract-box">
-    <p class="abstract-short">
-      Abstract
-Tuberculosis (TB) is a major global health issue, contributing significantly to mortality and morbidity rates worldwide. Socioeconomic, environmental, and healthcare factors significantly impact TB trends. Therefore, we aimed to predict TB and identify the determinants of the disease using advanced artificial intelligence (AI). 
-    </p>
-
-    <p class="abstract-full" style="display:none;">
-      This study employed the advanced machine learning (ML) model, XGBoost (eXtreme gradient boosting), combined with XAI (eXplainable artificial intelligence) and spatial analysis to describe global TB incidence and mortality rates across 194 countries from 2000 to 2022. Spatial autocorrelation analysis utilizing Moran’s I revealed geographical clusters and significant determinants affecting TB incidence. Treatment success rates and MDR-TB treatment initiation were identified as pivotal determinants of TB incidence. The correlation study revealed a substantial positive relationship between TB incidence in HIV-positive patients and overall TB incidence (r = 0.83). Confirmed cases of MDR-TB had the most significant impact on TB incidence (SHAP = 0.874). Additionally, air pollution had a notable impact on TB incidence (SHAP = 1.36). The XGBoost model demonstrated the best predictive performance for TB incidence and mortality, exhibiting the lowest RMSE (0.88), the highest R2 (0.67), and Adjusted R2 (0.65). This study highlights the potential of integrating XGBoost and XAI methodologies as a holistic framework for effectively tackling global tuberculosis incidence and mortality rates, as well as for the proficient application of advanced analytical techniques in public health.
-    </p>
-
-    <a href="#" onclick="toggleAbstract(this); return false;">Show more</a>
+  <div class="authors">
+    Md. Siddikur Rahman, Abu Bokkor Shiddik
   </div>
 
-  <!-- FIGURES -->
-  <div class="figures">
+  <!-- META -->
+  <div class="meta">
+    <span class="journal">Scientific Reports</span>
+    <span class="year">2025</span>
+  </div>
+
+  <!-- DOI / LINK -->
+  <div class="links">
+    <a href="https://doi.org/10.1038/s41598-025-96973-w" target="_blank">DOI</a>
+    <a href="https://www.nature.com/articles/s41598-025-96973-w" target="_blank">Journal</a>
+  </div>
+
+  <!-- ABSTRACT -->
+  <div class="abstract-box">
+
+  <p class="abstract-short">
+    <strong>Abstract</strong><br>
+    Tuberculosis (TB) is a major global health issue, contributing significantly to mortality and morbidity rates worldwide...
+  </p>
+
+  <p class="abstract-full" style="display:none;">
+    <strong>Abstract</strong><br>
+    Tuberculosis (TB) is a major global health issue, contributing significantly to mortality and morbidity rates worldwide. Socioeconomic, environmental, and healthcare factors significantly impact TB trends. Therefore, we aimed to predict TB and identify the determinants of the disease using advanced artificial intelligence (AI). This study employed the advanced machine learning (ML) model, XGBoost (eXtreme gradient boosting), combined with XAI (eXplainable artificial intelligence) and spatial analysis to describe global TB incidence and mortality rates across 194 countries from 2000 to 2022. Spatial autocorrelation analysis utilizing Moran’s I revealed geographical clusters and significant determinants affecting TB incidence. Treatment success rates and MDR-TB treatment initiation were identified as pivotal determinants of TB incidence. The correlation study revealed a substantial positive relationship between TB incidence in HIV-positive patients and overall TB incidence (r = 0.83). Confirmed cases of MDR-TB had the most significant impact on TB incidence (SHAP = 0.874). Additionally, air pollution had a notable impact on TB incidence (SHAP = 1.36). The XGBoost model demonstrated the best predictive performance for TB incidence and mortality, exhibiting the lowest RMSE (0.88), the highest R2 (0.67), and Adjusted R2 (0.65). This study highlights the potential of integrating XGBoost and XAI methodologies as a holistic framework for effectively tackling global tuberculosis incidence and mortality rates, as well as for the proficient application of advanced analytical techniques in public health.
+  </p>
+
+  <a href="#" onclick="toggleAbstract(this); return false;">Show more</a>
+
+</div>
+
+<!-- FIGURES -->
+<div class="figures">
 
   <div class="fig-preview">
-    <img src="preview1.jpg" onclick="openFigureLink('https://www.nature.com/articles/s41598-025-96973-w/figures/1')">
-    <img src="preview2.jpg" onclick="openFigureLink('https://www.nature.com/articles/s41598-025-96973-w/figures/2')">
+    <img src="https://github.com/user-attachments/assets/9a2b292c-919a-4b7a-8106-7cac14ee4fb5" onclick="openFigure(this)">
+    <img src="https://github.com/user-attachments/assets/025439ef-f880-41c5-b202-7585cddf912d" onclick="openFigure(this)">
   </div>
 
   <div class="fig-full" style="display:none;">
-    <img src="preview1.jpg" onclick="openFigureLink('https://www.nature.com/articles/s41598-025-96973-w/figures/1')">
-    <img src="preview2.jpg" onclick="openFigureLink('https://www.nature.com/articles/s41598-025-96973-w/figures/2')">
-    <img src="preview3.jpg" onclick="openFigureLink('https://www.nature.com/articles/s41598-025-96973-w/figures/3')">
-    <img src="preview4.jpg" onclick="openFigureLink('https://www.nature.com/articles/s41598-025-96973-w/figures/4')">
+    <img src="https://github.com/user-attachments/assets/9a2b292c-919a-4b7a-8106-7cac14ee4fb5">
+    <img src="https://github.com/user-attachments/assets/025439ef-f880-41c5-b202-7585cddf912d">
+    <img src="https://github.com/user-attachments/assets/b25a2489-bb83-4f7b-9039-c3c87844f7a0">
+    <img src="https://github.com/user-attachments/assets/dab00be0-e460-47ba-975c-d1f593172106">
+    <img src="https://github.com/user-attachments/assets/90a6b33e-aa01-4ff8-a645-e1b80f046f28">
+    <img src="https://github.com/user-attachments/assets/b25a2489-bb83-4f7b-9039-c3c87844f7a0">
   </div>
 
   <a href="#" onclick="toggleFigures(this); return false;">
@@ -273,14 +336,6 @@ Tuberculosis (TB) is a major global health issue, contributing significantly to 
   </a>
 
 </div>
-
-    <a href="#" onclick="toggleFigures(this); return false;">View all figures</a>
-  </div>
-
-  <!-- LINK -->
-  <a href="https://doi.org/10.1038/s41598-025-96973-w" target="_blank">
-    View Publication
-  </a>
 
 </div>
 
@@ -391,11 +446,6 @@ function openFigure(img) {
   const w = window.open("");
   w.document.write(`<img src="${img.src}" style="width:100%">`);
 }
-</script>
-  <script>
-function openFigureLink(url) {
-  window.open(url, "_blank");
-}
-</script>
+
 </body>
 </html>
