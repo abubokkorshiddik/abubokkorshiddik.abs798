@@ -4,7 +4,6 @@
 <head>
 
 <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,41 +26,19 @@ body {
   color: #1f2937;
 }
 
-/* TOP BAR */
-.top-bar {
-  background: #020617;
-  color: #cbd5e1;
-  font-size: 13px;
-  padding: 6px 15px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.top-bar span {
-  opacity: 0.9;
-}
-
 /* HEADER */
 .header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
   text-align: center;
-  padding: 40px 15px;
+  padding: 45px 15px;
 }
 
 .header h1 {
-  font-size: 30px;
+  font-size: 32px;
 }
 
-.header p {
-  font-size: 14px;
-  margin-top: 6px;
-  color: #cbd5e1;
-}
-
-/* NAVBAR */
+/* NAVBAR (NOW BELOW HEADER) */
 .navbar {
   background: #0b1f3a;
   position: sticky;
@@ -75,8 +52,8 @@ body {
   margin: auto;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 12px;
+  flex-wrap: wrap;
   padding: 10px 15px;
 }
 
@@ -89,6 +66,9 @@ body {
   padding: 10px 14px;
   border-radius: 6px;
   font-size: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 /* HOVER */
@@ -98,34 +78,45 @@ body {
   color: #ffffff;
 }
 
+/* ACTIVE */
+.nav-inner a.active {
+  background: #1d4ed8;
+  color: white;
+}
+
 /* DROPDOWN */
 .dropdown {
   position: relative;
 }
 
+/* DROPDOWN MENU (FIXED COLOR) */
 .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
-  background: #0f2a4d;
-  min-width: 190px;
+  background: #0b1f3a;   /* unified with navbar */
+  min-width: 200px;
   border-radius: 6px;
   overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
+/* SHOW */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
+/* DROPDOWN LINKS */
 .dropdown-content a {
   display: block;
   padding: 10px;
-  color: #cbd5e1;
+  color: #e2e8f0;
 }
 
+/* HOVER INSIDE DROPDOWN */
 .dropdown-content a:hover {
-  background: #1e3a8a;
-  color: white;
+  background: #1d4ed8;
+  color: #ffffff;
 }
 
 /* CONTAINER */
@@ -144,54 +135,6 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
-/* TABLE */
-.table-box {
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  border: 1px solid #e5e7eb;
-  padding: 10px;
-  font-size: 14px;
-}
-
-/* CODE BOX */
-.code-box {
-  background: #0b1220;
-  color: #e5e7eb;
-  padding: 12px;
-  border-radius: 8px;
-  font-family: monospace;
-  font-size: 13px;
-  max-height: 140px;
-  overflow: hidden;
-}
-
-.code-box.expanded {
-  max-height: 400px;
-  overflow: auto;
-}
-
-/* BUTTON */
-.btn {
-  margin-top: 10px;
-  padding: 8px 14px;
-  border: none;
-  background: #1d4ed8;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: #1e40af;
-}
-
 /* FOOTER */
 footer {
   background: #020617;
@@ -206,33 +149,19 @@ footer a {
   text-decoration: none;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .nav-inner {
-    justify-content: flex-start;
-  }
-}
-
 </style>
 
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  <span>📧 email@domain.com</span>
-  <span>📍 Bangladesh</span>
-  <span>🌐 Research Portfolio</span>
-</div>
-
 <!-- HEADER -->
 <div class="header">
   <h1>Data & Code</h1>
-  <p>Datasets, Code, and Reproducible Research</p>
+  <p>Datasets and reproducible research</p>
 </div>
 
-<!-- NAVBAR -->
+<!-- NAVBAR (BELOW HEADER) -->
 <nav class="navbar">
   <div class="nav-inner">
 
@@ -256,7 +185,6 @@ footer a {
     </div>
 
     <a href="service.html">Services</a>
-
     <a href="insights.html">Insights</a>
 
   </div>
@@ -267,43 +195,21 @@ footer a {
 
   <div class="card">
     <h2>Dataset</h2>
-    <a href="files/dataset.csv" download class="btn">Download</a>
-
-    <div class="table-box">
-      <table id="csvTable"></table>
-    </div>
-
+    <p>Upload and explore datasets here.</p>
   </div>
 
   <div class="card">
     <h2>Code</h2>
-
-    <div class="code-box" id="code">
-import pandas as pd
-df = pd.read_csv("dataset.csv")
-print(df.head())
-    </div>
-
-    <button class="btn" onclick="toggleCode()">Show More</button>
-
+    <p>Display your scripts and notebooks here.</p>
   </div>
 
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Md. Abu Bokkor Shiddik</p>
+  <p>Md. Abu Bokkor Shiddik</p>
   <p><a href="home.html">Home</a> | <a href="publications.html">Publications</a></p>
 </footer>
-
-<script>
-
-function toggleCode(){
-  let box = document.getElementById("code");
-  box.classList.toggle("expanded");
-}
-
-</script>
 
 </body>
 </html>
