@@ -301,14 +301,14 @@ footer {
   <div class="flex">
 
     <div class="box">
-      <h3>Dataset (20 rows)</h3>
+      <h3>Dataset</h3>
       <div class="scroll">
         <table id="dataTable"></table>
       </div>
     </div>
 
     <div class="box">
-      <h3>Variables (100 rows)</h3>
+      <h3>Variables</h3>
       <div class="scroll">
         <table id="varTable"></table>
       </div>
@@ -500,12 +500,12 @@ async function downloadAllDraft() {
 }
 
 /* ================= INIT ================= */
-loadTable(dataURL, "dataTable", 20);
+loadTable(dataURL, "dataTable", 500);
 loadTable(varURL, "varTable", 100);
 loadCode(rCodeURL, "rCodeBox");
 loadCode(pyCodeURL, "pyCodeBox");
 
-loadTable(dataURL2, "dataTable2", 20);
+loadTable(dataURL2, "dataTable2", 500);
 loadTable(varURL2, "varTable2", 100);
 loadCode(rCodeURL2, "rCodeBox2");
 loadCode(pyCodeURL2, "pyCodeBox2");
