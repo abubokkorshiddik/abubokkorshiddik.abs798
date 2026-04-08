@@ -22,6 +22,25 @@ body {
   font-size:16px;
 }
 
+/* HEADER */
+.header {
+  background: linear-gradient(90deg, #00264d, #004080);
+  color:white;
+  padding:18px 20px;
+  text-align:center;
+}
+
+.header h1 {
+  margin:0;
+  font-size:22px;
+}
+
+.header p {
+  margin:5px 0 0;
+  font-size:14px;
+  opacity:0.9;
+}
+
 /* NAVBAR */
 .navbar {
   background: linear-gradient(90deg, #00264d, #004080);
@@ -132,7 +151,6 @@ th, td {
   font-size:13px;
   max-height:140px;
   overflow:hidden;
-  transition:0.3s;
 }
 
 .code-box.expanded {
@@ -181,10 +199,35 @@ th, td {
   background:#15803d;
 }
 
+/* FOOTER */
+.footer {
+  background:#00264d;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+  font-size:14px;
+}
+
+.footer a {
+  color:#93c5fd;
+  text-decoration:none;
+}
+
+.footer a:hover {
+  text-decoration:underline;
+}
+
 </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Md. Abu Bokkor Shiddik</h1>
+  <p>Research • Data • Digital Lab</p>
+</div>
 
 <!-- NAVBAR -->
 <nav class="navbar">
@@ -222,7 +265,7 @@ th, td {
   </div>
 </nav>
 
-<!-- DATASET -->
+<!-- CONTENT -->
 <div class="section">
   <h2>Dataset Preview</h2>
 
@@ -234,69 +277,17 @@ th, td {
     </div>
 
     <button class="btn" onclick="loadCSV('files/dataset.csv')">Load Data</button>
-    <button class="btn" onclick="loadCSV('files/variables.csv')">Variable Description</button>
   </div>
 </div>
 
-<!-- R CODE -->
-<div class="section">
-  <h2>R Code</h2>
-
-  <div class="card">
-    <div class="code-box" id="rcode">
-# Load data
-library(readr)
-data <- read_csv("dataset.csv")
-
-summary(data)
-
-plot(data$Year, data$Cases)
-    </div>
-
-    <button class="btn" onclick="toggleCode('rcode', this)">Show More</button>
-    <button class="btn copy-btn" onclick="copyCode('rcode')">Copy</button>
-  </div>
-</div>
-
-<!-- PYTHON CODE -->
-<div class="section">
-  <h2>Python Code</h2>
-
-  <div class="card">
-    <div class="code-box" id="pycode">
-import pandas as pd
-import matplotlib.pyplot as plt
-
-df = pd.read_csv("dataset.csv")
-
-print(df.head())
-
-plt.plot(df['Year'], df['Cases'])
-plt.show()
-    </div>
-
-    <button class="btn" onclick="toggleCode('pycode', this)">Show More</button>
-    <button class="btn copy-btn" onclick="copyCode('pycode')">Copy</button>
-  </div>
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 Md. Abu Bokkor Shiddik | 
+  <a href="mailto:your@email.com">Contact</a>
 </div>
 
 <script>
 
-/* toggle code */
-function toggleCode(id, btn){
-  let box = document.getElementById(id);
-  box.classList.toggle("expanded");
-  btn.innerText = box.classList.contains("expanded") ? "Show Less" : "Show More";
-}
-
-/* copy code */
-function copyCode(id){
-  let text = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text);
-  alert("Code copied!");
-}
-
-/* load csv */
 function loadCSV(url){
   fetch(url)
     .then(res => res.text())
@@ -319,7 +310,6 @@ function loadCSV(url){
     });
 }
 
-/* default load */
 loadCSV("files/dataset.csv");
 
 </script>
