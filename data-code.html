@@ -99,7 +99,7 @@ body {
 /* CARD */
 .card {
   background: white;
-  padding: 20px;
+  padding: 22px;
   margin-bottom: 25px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
@@ -133,7 +133,7 @@ th {
 /* CODE BOX */
 .code-box {
   width: 100%;
-  height: 180px;
+  height: 200px;
   margin-top: 10px;
   padding: 10px;
   font-family: monospace;
@@ -220,49 +220,46 @@ footer {
   <!-- DATASET CARD -->
   <div class="card">
 
-    <h2>Global Tuberculosis Dataset</h2>
+    <h2>Global Tuberculosis AI Dataset and Code</h2>
 
     <!-- DOWNLOAD -->
+    <button onclick="downloadAll()">Download Full Package</button>
+
+    <!-- FILE LINKS -->
     <p>
-      <strong>Download complete package:</strong><br>
-      <button onclick="downloadAll()">Download Dataset + Code</button>
+      <strong>Files:</strong><br>
+      <a href="https://github.com/user-attachments/files/26576279/GlobalTB.csv" target="_blank">GlobalTB.csv</a><br>
+      <a href="https://github.com/user-attachments/files/26576280/GlobalTBVariables.csv" target="_blank">Variables.csv</a><br>
+      <a href="https://github.com/user-attachments/files/20176842/TBXAI.txt" target="_blank">TBXAI.txt</a>
     </p>
 
-    <!-- LINKS -->
-    <p><strong>Dataset files:</strong></p>
-    <ul>
-      <li><a href="https://github.com/user-attachments/files/26576279/GlobalTB.csv" target="_blank">GlobalTB.csv</a></li>
-      <li><a href="https://github.com/user-attachments/files/26576280/GlobalTBVariables.csv" target="_blank">Variables.csv</a></li>
-    </ul>
+    <!-- DATASET PREVIEW -->
+    <h3>Dataset Preview</h3>
+    <button onclick="loadCSV()">Load Dataset</button>
 
-    <p><strong>Code:</strong></p>
-    <a href="https://github.com/user-attachments/files/20176842/TBXAI.txt" target="_blank">TBXAI.txt</a>
-
-    <!-- VARIABLES -->
-    <p><strong>Variables:</strong></p>
-    <ul>
-      <li>TB incidence and prevalence</li>
-      <li>GDP and socioeconomic indicators</li>
-      <li>Healthcare access indicators</li>
-      <li>Environmental factors</li>
-      <li>Demographic data</li>
-    </ul>
-
-    <!-- CSV PREVIEW -->
-    <button onclick="loadCSV()">Preview CSV</button>
     <div class="table-wrapper">
       <table id="table"></table>
     </div>
 
+    <!-- VARIABLES PREVIEW -->
+    <h3>Variables Preview</h3>
+    <button onclick="loadVariables()">Load Variables</button>
+
+    <div class="table-wrapper">
+      <table id="varTable"></table>
+    </div>
+
     <!-- CODE PREVIEW -->
-    <button onclick="loadCode()">Preview Code</button>
+    <h3>Code Preview</h3>
+    <button onclick="loadCode()">Load Code</button>
+
     <textarea id="codeBox" class="code-box"></textarea>
 
     <!-- PUBLICATION -->
-    <p><strong>Publication:</strong></p>
+    <h3>Publication</h3>
     <p>
       Rahman, M.S. and Shiddik, A.B. (2025).  
-      Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally.  
+      Utilizing artificial intelligence to predict and analyze tuberculosis globally.  
       <em>Scientific Reports</em>.
     </p>
 
@@ -275,17 +272,17 @@ footer {
   © 2026 Md. Abu Bokkor Shiddik
 </footer>
 
-<!-- JSZIP -->
+<!-- JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
 <script>
 
-/* CSV PREVIEW */
+/* LOAD DATASET */
 function loadCSV() {
 
   fetch("https://github.com/user-attachments/files/26576279/GlobalTB.csv")
-  .then(res => res.text())
+  .then(r => r.text())
   .then(text => {
 
     const rows = text.split("\n").map(r => r.split(","));
@@ -305,18 +302,42 @@ function loadCSV() {
 
 }
 
-/* CODE PREVIEW */
+/* LOAD VARIABLES */
+function loadVariables() {
+
+  fetch("https://github.com/user-attachments/files/26576280/GlobalTBVariables.csv")
+  .then(r => r.text())
+  .then(text => {
+
+    const rows = text.split("\n").map(r => r.split(","));
+    let html = "";
+
+    rows.forEach((row, i) => {
+      html += "<tr>";
+      row.forEach(cell => {
+        html += i === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
+      });
+      html += "</tr>";
+    });
+
+    document.getElementById("varTable").innerHTML = html;
+
+  });
+
+}
+
+/* LOAD CODE */
 function loadCode() {
 
   fetch("https://github.com/user-attachments/files/20176842/TBXAI.txt")
-  .then(res => res.text())
+  .then(r => r.text())
   .then(text => {
     document.getElementById("codeBox").value = text;
   });
 
 }
 
-/* DOWNLOAD ALL */
+/* DOWNLOAD ZIP */
 async function downloadAll() {
 
   const zip = new JSZip();
@@ -330,7 +351,7 @@ async function downloadAll() {
   zip.file("TBXAI.txt", code);
 
   zip.generateAsync({type:"blob"}).then(function(content) {
-    saveAs(content, "TB_Dataset_Package.zip");
+    saveAs(content, "GlobalTB_AI_Package.zip");
   });
 
 }
