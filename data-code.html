@@ -232,7 +232,14 @@ footer {
   color: white;
   padding: 15px;
 }
-
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 </style>
 
 </head>
@@ -282,22 +289,23 @@ footer {
 
 
 
- <!-- REQUIRED LIBRARIES -->
+<!-- REQUIRED LIBRARIES -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
+<!-- ================= CONTAINER ================= -->
+<div class="container">
 
- 
- 
- 
- <!-- ================= DRAFT CARD ================= -->
+<!-- ================= DENGUE CARD ================= -->
 <div class="card">
 
   <h2>District Level Dengue Project</h2>
 
   <button class="btn" onclick="downloadProject(1)">Download All</button>
 
+  <!-- YEARLY -->
   <div class="flex">
+
     <div class="box">
       <h3>Dataset (Yearly)</h3>
       <div class="scroll"><table id="dataTable2"></table></div>
@@ -307,31 +315,43 @@ footer {
       <h3>Variables (Yearly)</h3>
       <div class="scroll"><table id="varTable2"></table></div>
     </div>
+
   </div>
-  <div class="box">
-      <h3>Dataset (monthly)</h3>
+
+  <!-- MONTHLY -->
+  <div class="flex">
+
+    <div class="box">
+      <h3>Dataset (Monthly)</h3>
       <div class="scroll"><table id="dataTable3"></table></div>
     </div>
 
     <div class="box">
-      <h3>Variables (monthly)</h3>
+      <h3>Variables (Monthly)</h3>
       <div class="scroll"><table id="varTable3"></table></div>
     </div>
+
   </div>
+
+  <!-- R CODE -->
   <h3 style="margin-top:15px;">R Code</h3>
   <button class="btn" onclick="copyCode('rCodeBox2')">Copy R Code</button>
   <textarea id="rCodeBox2" readonly></textarea>
 
+  <!-- PYTHON CODE -->
   <h3 style="margin-top:15px;">Python Code</h3>
   <button class="btn" onclick="copyCode('pyCodeBox2')">Copy Python Code</button>
   <textarea id="pyCodeBox2" readonly></textarea>
 
+  <!-- PUBLICATION -->
   <h3 style="margin-top:15px;">Publication</h3>
-  <p>Shiddik, M.A.B., Toshi, F.Z., Yesmin, S. and Rahman, M.S., 2026. District-Level Dengue Early Warning Prediction System in Bangladesh Using Hybrid Explainable AI and Bayesian Deep Learning. Tropical Medicine and Infectious Disease, 11(3), p.73.</p>
+  <p>
+    Shiddik, M.A.B., Toshi, F.Z., Yesmin, S. and Rahman, M.S., 2026. District-Level Dengue Early Warning Prediction System in Bangladesh Using Hybrid Explainable AI and Bayesian Deep Learning. Tropical Medicine and Infectious Disease, 11(3), p.73.
+  </p>
 
 </div>
 
-<!-- ================= MAIN CARD ================= -->
+<!-- ================= TB CARD ================= -->
 <div class="card">
 
   <h2>Global TB Project</h2>
@@ -339,6 +359,7 @@ footer {
   <button class="btn" onclick="downloadProject(0)">Download All</button>
 
   <div class="flex">
+
     <div class="box">
       <h3>Dataset</h3>
       <div class="scroll"><table id="dataTable"></table></div>
@@ -348,20 +369,19 @@ footer {
       <h3>Variables</h3>
       <div class="scroll"><table id="varTable"></table></div>
     </div>
+
   </div>
 
   <h3 style="margin-top:15px;">R Code</h3>
   <button class="btn" onclick="copyCode('rCodeBox')">Copy R Code</button>
   <textarea id="rCodeBox" readonly></textarea>
 
-  
-
   <h3 style="margin-top:15px;">Publication</h3>
   <p>
-    Rahman, M.S. & Shiddik, A.B. (2025).  
-    Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally.  
-    <em>Scientific Reports</em>.
+    Rahman, M.S. & Shiddik, A.B. (2025). Utilizing artificial intelligence to predict and analyze socioeconomic, environmental, and healthcare factors driving tuberculosis globally. <em>Scientific Reports</em>.
   </p>
+
+</div>
 
 </div>
 
@@ -369,34 +389,45 @@ footer {
 
 /* ================= PROJECT CONFIG ================= */
 const projects = [
+
+  /* TB */
   {
-    name: "Global TB Project",
+    name: "Global_TB_Project",
     data: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalTB.csv",
     var: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalTBVariables.csv",
     rcode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/TBXAI.txt",
-   
+    pycode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/TBXAI.txt",
+
     tableId: "dataTable",
     varId: "varTable",
     rId: "rCodeBox",
-    
+    pyId: "pyCodeBox"
   },
+
+  /* DENGUE */
   {
-    name: "District Level Dengue Project",
+    name: "District_Level_Dengue",
+
     data1: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Yearly_Data.csv",
     var1: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Variable1_Yearly.csv",
-       data2: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Monthly_Data.csv",
+
+    data2: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Monthly_Data.csv",
     var2: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Variable2_monthly.csv",
+
     rcode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/RCode_Dengue_BD%20(1).txt",
     pycode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/PythonCode_Dengue_BD.txt",
-    tableId: "dataTable2",
-    varId: "varTable2",
-   tableId: "dataTable3",
-    varId: "varTable3",
+
+    tables: [
+      { data: "data1", var: "var1", dataId: "dataTable2", varId: "varTable2" },
+      { data: "data2", var: "var2", dataId: "dataTable3", varId: "varTable3" }
+    ],
+
     rId: "rCodeBox2",
     pyId: "pyCodeBox2"
   }
+
 ];
- 
+
 /* ================= TABLE LOADER ================= */
 function loadTable(url, id, limit) {
   fetch(url)
@@ -424,9 +455,6 @@ function loadCode(url, id) {
   .then(res => res.text())
   .then(text => {
     document.getElementById(id).value = text.split("\n").slice(0, 600).join("\n");
-  })
-  .catch(() => {
-    document.getElementById(id).value = "No code available";
   });
 }
 
@@ -438,38 +466,63 @@ function copyCode(id) {
   alert("Copied");
 }
 
-/* ================= DOWNLOAD PROJECT ================= */
+/* ================= DOWNLOAD ================= */
 async function downloadProject(index) {
 
   const p = projects[index];
   const zip = new JSZip();
 
   try {
-    zip.file("Dataset.csv", await fetch(p.data).then(r => r.text()));
-    zip.file("Variables.csv", await fetch(p.var).then(r => r.text()));
+
+    if (p.data) {
+      zip.file("Dataset.csv", await fetch(p.data).then(r => r.text()));
+      zip.file("Variables.csv", await fetch(p.var).then(r => r.text()));
+    }
+
+    if (p.tables) {
+      const t1 = p.tables[0];
+      const t2 = p.tables[1];
+
+      zip.file("Dataset_Yearly.csv", await fetch(p[t1.data]).then(r => r.text()));
+      zip.file("Variables_Yearly.csv", await fetch(p[t1.var]).then(r => r.text()));
+
+      zip.file("Dataset_Monthly.csv", await fetch(p[t2.data]).then(r => r.text()));
+      zip.file("Variables_Monthly.csv", await fetch(p[t2.var]).then(r => r.text()));
+    }
+
     zip.file("R_Code.txt", await fetch(p.rcode).then(r => r.text()));
     zip.file("Python_Code.txt", await fetch(p.pycode).then(r => r.text()));
+
   } catch {
-    alert("Files not available");
+    alert("Download error");
     return;
   }
 
-  zip.generateAsync({type:"blob"}).then(c => {
-    saveAs(c, p.name.replace(/\s+/g, "_") + ".zip");
+  zip.generateAsync({type:"blob"}).then(content => {
+    saveAs(content, p.name + ".zip");
   });
 
 }
 
 /* ================= INIT ================= */
 projects.forEach(p => {
-  loadTable(p.data, p.tableId, 500);
-  loadTable(p.var, p.varId, 100);
+
+  if (p.tables) {
+    p.tables.forEach(t => {
+      loadTable(p[t.data], t.dataId, 20);
+      loadTable(p[t.var], t.varId, 100);
+    });
+  }
+
+  if (p.data) loadTable(p.data, p.tableId, 20);
+  if (p.var) loadTable(p.var, p.varId, 100);
+
   loadCode(p.rcode, p.rId);
   loadCode(p.pycode, p.pyId);
+
 });
 
 </script>
-
  
 
 
