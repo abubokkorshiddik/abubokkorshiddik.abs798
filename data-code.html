@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
+
 <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
 
@@ -24,57 +24,63 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: #f8fafc;
   color: #1f2937;
+  line-height: 1.6;
 }
 
 /* HEADER */
 .header {
   background: linear-gradient(135deg, #020617, #0b3a6e);
   color: white;
-  padding: 40px 15px;
+  padding: 45px 15px;
   text-align: center;
 }
 
 .header h1 {
-  font-size: 30px;
+  font-size: 32px;
 }
 
 .header p {
   margin-top: 6px;
-  font-size: 14px;
+  font-size: 15px;
   color: #cbd5e1;
 }
 
 /* NAVBAR */
 .navbar {
-  background: linear-gradient(90deg, #00264d, #004080);
+  background: linear-gradient(90deg, #001f3f, #004080);
   position: sticky;
   top: 0;
   z-index: 9999;
 }
 
+/* CENTERED NAV */
 .nav-inner {
   max-width: 1100px;
   margin: auto;
   padding: 10px 15px;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
 }
 
+/* LINKS */
 .nav-inner a,
 .dropbtn {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  padding: 6px 10px;
-  border-radius: 5px;
+  padding: 8px 12px;
+  border-radius: 6px;
   font-size: 14px;
+  white-space: nowrap;
 }
 
+/* HOVER EFFECT */
 .nav-inner a:hover,
 .dropbtn:hover {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.15);
 }
 
 /* DROPDOWN */
@@ -82,30 +88,33 @@ body {
   position: relative;
 }
 
+/* DROPDOWN CONTENT */
 .dropdown-content {
   display: none;
   position: absolute;
-  background: #0b2d5c;
-  min-width: 160px;
   top: 100%;
   left: 0;
+  background: #0b2d5c;
+  min-width: 180px;
   border-radius: 6px;
+  overflow: hidden;
 }
 
+/* SHOW */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* DROPDOWN LINKS */
 .dropdown-content a {
   display: block;
   padding: 10px;
   color: #cbd5e1;
-  font-size: 14px;
 }
 
 .dropdown-content a:hover {
   background: #1e3a8a;
   color: white;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 
 /* CONTAINER */
@@ -128,8 +137,8 @@ h2 {
   background: white;
   padding: 18px;
   margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
 /* TABLE */
@@ -148,7 +157,7 @@ th, td {
   font-size: 14px;
 }
 
-/* CODE */
+/* CODE BOX */
 .code-box {
   background: #0b1220;
   color: #e5e7eb;
@@ -168,7 +177,7 @@ th, td {
 /* BUTTONS */
 .btn {
   margin-top: 10px;
-  padding: 7px 14px;
+  padding: 8px 14px;
   border: none;
   background: #1d4ed8;
   color: white;
@@ -196,7 +205,7 @@ th, td {
   text-decoration: none;
   color: white;
   background: #16a34a;
-  padding: 7px 14px;
+  padding: 8px 14px;
   border-radius: 5px;
 }
 
@@ -222,6 +231,13 @@ footer a:hover {
   color: white;
 }
 
+/* MOBILE FIX */
+@media (max-width: 600px) {
+  .nav-inner {
+    justify-content: flex-start;
+  }
+}
+
 </style>
 
 </head>
@@ -240,7 +256,6 @@ footer a:hover {
 
     <a href="home.html">Home</a>
     <a href="publications.html">Publications</a>
-    <a href="service.html">Services</a>
 
     <div class="dropdown">
       <button class="dropbtn">Digital Lab ▼</button>
@@ -257,6 +272,8 @@ footer a:hover {
         <a href="conference-and-workshop.html">Conferences & Workshops</a>
       </div>
     </div>
+
+    <a href="service.html">Services</a>
 
     <div class="dropdown">
       <button class="dropbtn">Insights ▼</button>
