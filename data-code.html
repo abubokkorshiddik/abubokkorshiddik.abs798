@@ -443,6 +443,7 @@ const projects = [
     tableId: "dataTable",
     varId: "varTable",
     rId: "rCodeBox",
+    pyId: null
   },
   {
     name: "District Level Dengue Project",
@@ -467,32 +468,103 @@ const projects = [
     tableId: "dataTable4",
     varId: "varTable4",
     rId: "rCodeBox3",
+    pyId: null
   }
 ];
 
+/* ================= SAFE LOAD TABLE ================= */
+function loadTable(url, id, limit) {
+  if (!url || !id) return;
+
+  fetch(url)
+    .then(res => res.text())
+    .then(text => {
+      let rows = text.split("\n").slice(0, limit);
+      let html = "";
+
+      rows.forEach((row, i) => {
+        html += "<tr>";
+        row.split(",").forEach(cell => {
+          html += i === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
+        });
+        html += "</tr>";
+      });
+
+      document.getElementById(id).innerHTML = html;
+    })
+    .catch(() => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = "<tr><td>No data</td></tr>";
+    });
+}
+
+/* ================= SAFE LOAD CODE ================= */
+function loadCode(url, id) {
+  if (!url || !id) return;
+
+  fetch(url)
+    .then(res => res.text())
+    .then(text => {
+      const el = document.getElementById(id);
+      if (el) el.value = text.split("\n").slice(0, 600).join("\n");
+    })
+    .catch(() => {
+      const el = document.getElementById(id);
+      if (el) el.value = "No code available";
+    });
+}
+
+/* ================= COPY ================= */
+function copyCode(id) {
+  const box = document.getElementById(id);
+  if (!box) return;
+
+  box.select();
+  document.execCommand("copy");
+  alert("Copied");
+}
+
+/* ================= DOWNLOAD ================= */
+async function downloadProject(index) {
+
+  const p = projects[index];
+  const zip = new JSZip();
+
+  try {
+    if (p.data) zip.file("Dataset.csv", await fetch(p.data).then(r => r.text()));
+    if (p.var) zip.file("Variables.csv", await fetch(p.var).then(r => r.text()));
+    if (p.rcode) zip.file("R_Code.txt", await fetch(p.rcode).then(r => r.text()));
+    if (p.pycode) zip.file("Python_Code.txt", await fetch(p.pycode).then(r => r.text()));
+  } catch {
+    alert("Files not available");
+    return;
+  }
+
+  zip.generateAsync({ type: "blob" }).then(content => {
+    saveAs(content, p.name.replace(/\s+/g, "_") + ".zip");
+  });
+}
+
 /* ================= INIT ================= */
-projects.forEach((p, i) => {
+projects.forEach(p => {
 
   // dataset
   if (p.data) loadTable(p.data, p.tableId, 500);
 
-  // dengue has two
   if (p.data1) loadTable(p.data1, p.tableId1, 500);
   if (p.data2) loadTable(p.data2, p.tableId2, 500);
 
   // variables
   if (p.var) loadTable(p.var, p.varId, 100);
+
   if (p.var1) loadTable(p.var1, p.varId1, 100);
   if (p.var2) loadTable(p.var2, p.varId2, 100);
 
-  // R code
-  if (p.rcode) loadCode(p.rcode, p.rId);
-
-  // Python code
-  if (p.pycode) loadCode(p.pycode, p.pyId);
+  // code
+  loadCode(p.rcode, p.rId);
+  loadCode(p.pycode, p.pyId);
 
 });
-
  
 </script>
  
