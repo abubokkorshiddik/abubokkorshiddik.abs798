@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Research Resources | Md. Abu Bokkor Shiddik</title>
+<title>Data & Code | Md. Abu Bokkor Shiddik</title>
 
 <style>
 
-/* GLOBAL */
+/* BASE RESET */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin:0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background:#f8fafc;
-  color:#1f2937;
-  line-height:1.6;
-  font-size:16px;
+  background: #f8fafc;
+  color: #1f2937;
 }
 
-/* HEADER */
+/* HEADER (SAME AS COURSE PAGE) */
 .header {
-  background: linear-gradient(90deg, #00264d, #004080);
-  color:white;
-  padding:18px 20px;
-  text-align:center;
+  background: linear-gradient(135deg, #020617, #0b3a6e);
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
 }
 
 .header h1 {
-  margin:0;
-  font-size:22px;
+  font-size: 32px;
 }
 
 .header p {
-  margin:5px 0 0;
-  font-size:14px;
-  opacity:0.9;
+  margin-top: 8px;
+  font-size: 15px;
+  color: #cfd8e8;
 }
 
-/* NAVBAR */
+/* NAVBAR (SAME STYLE) */
 .navbar {
   background: linear-gradient(90deg, #00264d, #004080);
   position: sticky;
@@ -50,25 +52,28 @@ body {
 }
 
 .nav-inner {
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  padding:12px 10px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
 .nav-inner a,
 .dropbtn {
-  color:white;
-  text-decoration:none;
-  font-weight:600;
-  padding:7px 12px;
-  border-radius:6px;
-  font-size:14px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 .nav-inner a:hover,
 .dropbtn:hover {
+  color: #60a5fa;
   background: rgba(255,255,255,0.12);
 }
 
@@ -78,155 +83,155 @@ body {
 }
 
 .dropdown-content {
-  display:none;
-  position:absolute;
-  background:#0f172a;
-  min-width:200px;
-  top:38px;
-  border-radius:6px;
-  overflow:hidden;
-}
-
-.dropdown-content a {
-  display:block;
-  padding:10px;
-  font-size:14px;
-}
-
-.dropdown-content a:hover {
-  background:#1f2937;
+  display: none;
+  position: absolute;
+  background: #0b2d5c;
+  min-width: 160px;
+  top: 100%;
+  left: 0;
+  border-radius: 6px;
 }
 
 .dropdown:hover .dropdown-content {
-  display:block;
+  display: block;
 }
 
-/* SECTION */
-.section {
-  max-width:1100px;
-  margin:40px auto;
-  padding:0 20px;
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #cbd5e1;
+  font-size: 14px;
 }
 
+.dropdown-content a:hover {
+  background: #1e3a8a;
+  color: white;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* SECTION TITLE */
 h2 {
-  font-size:20px;
-  margin-bottom:15px;
-  border-left:5px solid #2563eb;
-  padding-left:12px;
+  font-size: 20px;
+  margin-bottom: 15px;
+  border-left: 5px solid #1d4ed8;
+  padding-left: 10px;
 }
 
 /* CARD */
 .card {
-  background:white;
-  padding:18px;
-  border-radius:12px;
-  box-shadow:0 6px 14px rgba(0,0,0,0.06);
-  margin-bottom:22px;
+  background: white;
+  padding: 18px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 /* TABLE */
 .table-box {
-  overflow-x:auto;
-  margin-top:12px;
+  overflow-x: auto;
 }
 
 table {
-  border-collapse:collapse;
-  width:100%;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 th, td {
-  border:1px solid #e5e7eb;
-  padding:10px;
-  font-size:14px;
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  font-size: 14px;
 }
 
 /* CODE */
 .code-box {
-  background:#0b1220;
-  color:#e5e7eb;
-  padding:12px;
-  border-radius:10px;
+  background: #0b1220;
+  color: #e5e7eb;
+  padding: 12px;
+  border-radius: 8px;
   font-family: monospace;
-  font-size:13px;
-  max-height:140px;
-  overflow:hidden;
+  font-size: 13px;
+  max-height: 140px;
+  overflow: hidden;
 }
 
 .code-box.expanded {
-  max-height:420px;
-  overflow:auto;
+  max-height: 400px;
+  overflow: auto;
 }
 
 /* BUTTONS */
 .btn {
-  margin-top:12px;
-  padding:7px 14px;
-  border:none;
-  background:#2563eb;
-  color:white;
-  border-radius:6px;
-  cursor:pointer;
-  font-size:14px;
+  margin-top: 10px;
+  padding: 7px 14px;
+  border: none;
+  background: #1d4ed8;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .btn:hover {
-  background:#1d4ed8;
+  background: #1e40af;
 }
 
 .copy-btn {
-  background:#9333ea;
-  margin-left:6px;
+  background: #9333ea;
+  margin-left: 6px;
 }
 
 .copy-btn:hover {
-  background:#7e22ce;
+  background: #7e22ce;
 }
 
 /* DOWNLOAD */
 .download {
-  display:inline-block;
-  margin-top:10px;
-  text-decoration:none;
-  color:white;
-  background:#16a34a;
-  padding:7px 14px;
-  border-radius:6px;
-  font-size:14px;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: white;
+  background: #16a34a;
+  padding: 7px 14px;
+  border-radius: 5px;
 }
 
 .download:hover {
-  background:#15803d;
+  background: #15803d;
 }
 
-/* FOOTER */
-.footer {
-  background:#00264d;
-  color:white;
-  text-align:center;
-  padding:20px;
-  margin-top:40px;
-  font-size:14px;
+/* FOOTER (SAME STYLE) */
+footer {
+  background: #020617;
+  color: #e2e8f0;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
 }
 
-.footer a {
-  color:#93c5fd;
-  text-decoration:none;
+footer a {
+  color: #93c5fd;
+  text-decoration: none;
 }
 
-.footer a:hover {
-  text-decoration:underline;
+footer a:hover {
+  color: white;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <!-- HEADER -->
 <div class="header">
-  <h1>Md. Abu Bokkor Shiddik</h1>
-  <p>Research • Data • Digital Lab</p>
+  <h1>Data & Code</h1>
+  <p>Datasets, analytical scripts, and reproducible research resources</p>
 </div>
 
 <!-- NAVBAR -->
@@ -266,7 +271,8 @@ th, td {
 </nav>
 
 <!-- CONTENT -->
-<div class="section">
+<div class="container">
+
   <h2>Dataset Preview</h2>
 
   <div class="card">
@@ -278,15 +284,44 @@ th, td {
 
     <button class="btn" onclick="loadCSV('files/dataset.csv')">Load Data</button>
   </div>
+
+  <h2>Python Code</h2>
+
+  <div class="card">
+    <div class="code-box" id="pycode">
+import pandas as pd
+df = pd.read_csv("dataset.csv")
+print(df.head())
+    </div>
+
+    <button class="btn" onclick="toggleCode('pycode', this)">Show More</button>
+    <button class="btn copy-btn" onclick="copyCode('pycode')">Copy</button>
+  </div>
+
 </div>
 
 <!-- FOOTER -->
-<div class="footer">
-  © 2026 Md. Abu Bokkor Shiddik | 
-  <a href="mailto:your@email.com">Contact</a>
-</div>
+<footer>
+  <p>Md. Abu Bokkor Shiddik</p>
+  <p>
+    <a href="home.html">Home</a> |
+    <a href="publications.html">Publications</a>
+  </p>
+</footer>
 
 <script>
+
+function toggleCode(id, btn){
+  let box = document.getElementById(id);
+  box.classList.toggle("expanded");
+  btn.innerText = box.classList.contains("expanded") ? "Show Less" : "Show More";
+}
+
+function copyCode(id){
+  let text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text);
+  alert("Code copied!");
+}
 
 function loadCSV(url){
   fetch(url)
