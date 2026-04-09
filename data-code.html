@@ -42,10 +42,7 @@ body {
   background: #f8fafc;
 }
 
-/* NAV */
-/* ========================= */
-/* NAVBAR (UPDATED) */
-/* ========================= */
+/* ================= NAVBAR ================= */
 .navbar {
   background: linear-gradient(90deg, #00264d, #004080);
   position: sticky;
@@ -54,96 +51,60 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-/* NAV CONTAINER */
 .nav-inner {
   max-width: 1100px;
   margin: auto;
   padding: 10px 14px;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 6px;
 }
 
-/* LINKS */
-.nav-inner a {
+.nav-inner a,
+.nav-inner .dropbtn {
   color: white;
   text-decoration: none;
   font-weight: 700;
   padding: 6px 10px;
   border-radius: 5px;
-  transition: 0.25s;
-  font-size: 15px;
-}
-
-.nav-inner a:hover {
-  color: #60a5fa;
-  background: rgba(255,255,255,0.12);
-}
-
-/* DROPDOWN */
-.nav-inner .dropdown {
-  position: relative;
-}
-
-.nav-inner .dropbtn {
-  background: none;
-  border: none;
-  color: white;
-  font-weight: 700;
   font-size: 15px;
   cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 5px;
+  background: none;
+  border: none;
 }
 
+.nav-inner a:hover,
 .nav-inner .dropbtn:hover {
   color: #60a5fa;
   background: rgba(255,255,255,0.12);
 }
 
-/* DROPDOWN CONTENT */
-.nav-inner .dropdown-content {
+/* ================= DROPDOWN ================= */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
   display: none;
   position: absolute;
-  background-color: #0b2d5c;
+  background: #0b2d5c;
   min-width: 160px;
-  box-shadow: 0px 6px 16px rgba(0,0,0,0.2);
-  border-radius: 6px;
   top: 100%;
   left: 0;
-  z-index: 9999;
+  border-radius: 6px;
 }
 
-/* DESKTOP HOVER */
-@media (min-width: 601px) {
-  .nav-inner .dropdown:hover .dropdown-content {
-    display: block;
-  }
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
-/* MOBILE CLICK */
- /* full width main sections */
-  .navbar,
-  .header,
-  .main-wrapper,
-  footer {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-  }
+.dropdown-content a {
+  display: block;
+  padding: 8px;
+}
 
-  /* NAVBAR */
-  .nav-inner {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 10px;
-    justify-content: center;
-  }
-
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
   text-align: center;
   background: #020617;
@@ -151,29 +112,18 @@ body {
   padding: 20px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .card {
   max-width: 1100px;
-  margin: 25px auto;
-  padding: 20px;
+  margin: 20px auto;
+  padding: 18px;
   border-radius: 12px;
-
   background: linear-gradient(135deg, #e6e6fa, #ffffff);
-
   border-top: 6px solid #0b3a6e;
-
-  /* deep blue shadow (left + top) */
-  box-shadow: 
-    -6px -6px 0px #0b3a6e,
-     0px 4px 16px rgba(0,0,0,0.08);
-}
- 
-/* TITLE */
-.card h2 {
-  margin-bottom: 10px;
+  box-shadow: -5px -5px 0 #0b3a6e, 0 4px 14px rgba(0,0,0,0.08);
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 .btn {
   background: #1d4ed8;
   color: white;
@@ -188,21 +138,21 @@ body {
   background: #1e40af;
 }
 
-/* FLEX */
+/* ================= LAYOUT ================= */
 .flex {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-/* BOX */
 .box {
   flex: 1;
-  min-width: 320px;
+  min-width: 300px;
 }
 
+/* ================= TABLE ================= */
 .scroll {
-  max-height: 320px;
+  max-height: 280px;
   overflow: auto;
   border: 1px solid #e5e7eb;
 }
@@ -210,13 +160,15 @@ body {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 600px;
+  min-width: 650px;
+  table-layout: fixed;
 }
 
 th, td {
   border: 1px solid #e5e7eb;
-  padding: 6px;
-  font-size: 13px;
+  padding: 5px;
+  font-size: 12px;
+  word-break: break-word;
 }
 
 th {
@@ -224,192 +176,34 @@ th {
   color: white;
 }
 
-/* CODE */
+/* ================= TEXTAREA ================= */
 textarea {
   width: 100%;
-  height: 180px;
-  margin-top: 10px;
+  height: 160px;
   font-family: monospace;
 }
 
-/* FOOTER */
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
   text-align: center;
   padding: 25px;
   background: #020617;
   color: #e2e8f0;
 }
-.container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
- /* ================= TABLET ================= */
-@media (min-width: 768px) and (max-width: 1024px) {
-
-  .container {
-    padding: 10px;
-  }
-
-  .card {
-    margin: 20px;
-    padding: 18px;
-  }
-
-  .flex {
-    flex-direction: column;
-  }
-
-  .box {
-    min-width: 100%;
-  }
-
-  table {
-    min-width: 500px;
-  }
-
-  .nav-inner {
-    justify-content: space-around;
-  }
-
-  textarea {
-    height: 160px;
-  }
-}
-
-
-/* ================= MOBILE ================= */
-@media (max-width: 767px) {
-
-  /* overall fix */
-  body {
-    font-size: 14px;
-  }
-
-  .container {
-    padding: 8px;
-  }
-
-  /* card */
-  .card {
-    margin: 12px;
-    padding: 14px;
-    box-shadow: 
-      -4px -4px 0px #0b3a6e,
-      0px 3px 10px rgba(0,0,0,0.08);
-  }
-
-  /* layout */
-  .flex {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .box {
-    min-width: 100%;
-  }
-
-  /* table scroll fix */
-  .scroll {
-    overflow-x: auto;
-  }
-
-  table {
-    min-width: 500px;
-  }
-
-  /* navbar */
-   
-
-  /* button */
-  .btn {
-    width: 100%;
-    padding: 10px;
-  }
-
-  /* textarea */
-  textarea {
-    height: 140px;
-    font-size: 13px;
-  }
-}
-
- 
-/* ================= TABLE BASE ================= */
-.scroll {
-  max-height: 260px;
-  overflow-x: auto;
-  overflow-y: auto;
-  border: 1px solid #e5e7eb;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 600px;
-  table-layout: fixed;
-}
-
-th, td {
-  padding: 5px;
-  font-size: 12px;
-  word-break: break-word;
-  white-space: normal;
-}
-
-th {
-  background: #0b3a6e;
-  color: white;
-}
 
 /* ================= TABLET ================= */
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  .container {
-    padding: 10px;
-  }
-
-  .card {
-    margin: 18px;
-    padding: 16px;
-  }
-
   .flex {
     flex-direction: column;
   }
 
-  .box {
-    width: 100%;
-    min-width: unset;
-  }
-
-  .scroll {
-    max-height: 280px;
+  .card {
+    margin: 16px;
   }
 
   table {
-    min-width: 700px;
-  }
-
-  .nav-inner {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .nav-inner a,
-  .nav-inner .dropbtn {
-    font-size: 14px;
-    padding: 6px 8px;
-  }
-
-  textarea {
-    height: 160px;
+    min-width: 600px;
   }
 }
 
@@ -418,18 +212,6 @@ th {
 
   body {
     font-size: 14px;
-  }
-
-  .container {
-    padding: 6px;
-  }
-
-  .card {
-    margin: 10px;
-    padding: 12px;
-    box-shadow: 
-      -3px -3px 0px #0b3a6e,
-      0px 2px 8px rgba(0,0,0,0.08);
   }
 
   .flex {
@@ -438,17 +220,20 @@ th {
   }
 
   .box {
-    width: 100%;
+    min-width: 100%;
   }
 
-  /* TABLE FIX */
+  .card {
+    margin: 10px;
+    padding: 12px;
+  }
+
   .scroll {
-    width: 100%;
     overflow-x: auto;
   }
 
   table {
-    min-width: 650px;
+    min-width: 700px;
   }
 
   th, td {
@@ -456,36 +241,12 @@ th {
     padding: 4px;
   }
 
-  /* NAVBAR */
-   /* full width main sections */
-  .navbar,
-  .header,
-  .main-wrapper,
-  footer {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-  }
-
-  /* NAVBAR */
-  .nav-inner {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 10px;
-    justify-content: center;
-  }
-
-  /* BUTTON */
   .btn {
     width: 100%;
-    padding: 10px;
   }
 
-  /* TEXTAREA */
   textarea {
     height: 140px;
-    font-size: 13px;
   }
 }
 </style>
@@ -755,7 +516,7 @@ const projects = [
   },
 
   {
-    name: "District Level Dengue Project",
+    name: "District Dengue",
     data1: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Yearly_Data.csv",
     var1: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Variable1_Yearly.csv",
     data2: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Monthly_Data.csv",
@@ -768,56 +529,33 @@ const projects = [
     varId2: "varTable3",
     rId: "rCodeBox2",
     pyId: "pyCodeBox2"
-  },
-
-  {
-    name: "Global malaria project",
-    data: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalMalariaDataset.csv",
-    var: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalMalariaVariable.csv",
-    rcode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/10325MalariaR.txt",
-    tableId: "dataTable4",
-    varId: "varTable4",
-    rId: "rCodeBox3"
-  },
-
-  {
-    name: "Dengue AI and EWS",
-    data: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/MonthlyDengueBDData.csv",
-    var: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/MonthlyDengueBDVariable.csv",
-    pycode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/CAIPythonCodeDengue.txt",
-    rcode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/EWS_DengueRcode.txt",
-    tableId: "dataTable1",
-    varId: "varTable1",
-    rId: "rCodeBox1",
-    pyId: "pyCodeBox1"
   }
 ];
 
-/* ================= SAFE FETCH ================= */
-async function safeFetchText(url) {
+/* ================= FETCH ================= */
+async function safeFetch(url) {
   try {
     const res = await fetch(url);
-    if (!res.ok) throw new Error("Fetch failed");
+    if (!res.ok) throw new Error();
     return await res.text();
-  } catch (err) {
+  } catch {
     return null;
   }
 }
 
-/* ================= LOAD TABLE ================= */
-async function loadTable(url, id, limit = 500) {
-  if (!url || !id) return;
-
-  const text = await safeFetchText(url);
+/* ================= TABLE LOAD ================= */
+async function loadTable(url, id, limit = 300) {
   const el = document.getElementById(id);
   if (!el) return;
+
+  const text = await safeFetch(url);
 
   if (!text) {
     el.innerHTML = "<tr><td>No data</td></tr>";
     return;
   }
 
-  const rows = text.split("\n").slice(0, limit);
+  let rows = text.split("\n").slice(0, limit);
   let html = "";
 
   rows.forEach((row, i) => {
@@ -832,63 +570,51 @@ async function loadTable(url, id, limit = 500) {
 }
 
 /* ================= LOAD CODE ================= */
-async function loadCode(url, id, limit = 600) {
-  if (!url || !id) return;
-
-  const text = await safeFetchText(url);
+async function loadCode(url, id) {
   const el = document.getElementById(id);
   if (!el) return;
 
-  el.value = text ? text.split("\n").slice(0, limit).join("\n") : "No code available";
+  const text = await safeFetch(url);
+  el.value = text || "No code";
 }
 
-/* ================= COPY CODE ================= */
+/* ================= COPY ================= */
 function copyCode(id) {
-  const box = document.getElementById(id);
-  if (!box) return;
-
-  navigator.clipboard.writeText(box.value)
+  const el = document.getElementById(id);
+  navigator.clipboard.writeText(el.value)
     .then(() => alert("Copied"))
-    .catch(() => alert("Copy failed"));
+    .catch(() => alert("Failed"));
 }
 
-/* ================= DOWNLOAD PROJECT ================= */
+/* ================= DOWNLOAD ================= */
 async function downloadProject(index) {
 
   const p = projects[index];
   const zip = new JSZip();
 
-  try {
-    if (p.data) zip.file("Dataset.csv", await safeFetchText(p.data));
-    if (p.var) zip.file("Variables.csv", await safeFetchText(p.var));
-    if (p.rcode) zip.file("R_Code.txt", await safeFetchText(p.rcode));
-    if (p.pycode) zip.file("Python_Code.txt", await safeFetchText(p.pycode));
-  } catch (err) {
-    alert("Download failed");
-    return;
-  }
+  if (p.data) zip.file("data.csv", await safeFetch(p.data));
+  if (p.var) zip.file("variables.csv", await safeFetch(p.var));
+  if (p.rcode) zip.file("R.txt", await safeFetch(p.rcode));
+  if (p.pycode) zip.file("Python.txt", await safeFetch(p.pycode));
 
-  zip.generateAsync({ type: "blob" }).then(content => {
-    saveAs(content, p.name.replace(/\s+/g, "_") + ".zip");
+  zip.generateAsync({ type: "blob" }).then(blob => {
+    saveAs(blob, p.name.replace(/\s+/g, "_") + ".zip");
   });
 }
 
-/* ================= INIT ALL ================= */
+/* ================= INIT ================= */
 projects.forEach(p => {
 
-  // datasets
   if (p.data) loadTable(p.data, p.tableId);
   if (p.data1) loadTable(p.data1, p.tableId1);
   if (p.data2) loadTable(p.data2, p.tableId2);
 
-  // variables
-  if (p.var) loadTable(p.var, p.varId, 100);
-  if (p.var1) loadTable(p.var1, p.varId1, 100);
-  if (p.var2) loadTable(p.var2, p.varId2, 100);
+  if (p.var) loadTable(p.var, p.varId);
+  if (p.var1) loadTable(p.var1, p.varId1);
+  if (p.var2) loadTable(p.var2, p.varId2);
 
-  // code
-  loadCode(p.rcode, p.rId);
-  loadCode(p.pycode, p.pyId);
+  if (p.rcode) loadCode(p.rcode, p.rId);
+  if (p.pycode) loadCode(p.pycode, p.pyId);
 
 });
 
