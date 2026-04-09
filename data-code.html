@@ -490,7 +490,6 @@ footer {
 
  
 <script>
-
 /* ================= PROJECT CONFIG ================= */
 const projects = [
   {
@@ -504,7 +503,7 @@ const projects = [
   },
 
   {
-    name: "District Dengue",
+    name: "District Level Dengue Project",
     data1: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Yearly_Data.csv",
     var1: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Variable1_Yearly.csv",
     data2: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/DistricLevelDengueBD_Monthly_Data.csv",
@@ -517,40 +516,67 @@ const projects = [
     varId2: "varTable3",
     rId: "rCodeBox2",
     pyId: "pyCodeBox2"
+  },
+
+  {
+    name: "Global malaria project",
+    data: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalMalariaDataset.csv",
+    var: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/GlobalMalariaVariable.csv",
+    rcode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/10325MalariaR.txt",
+    tableId: "dataTable4",
+    varId: "varTable4",
+    rId: "rCodeBox3"
+  },
+
+  {
+    name: "Dengue AI and EWS",
+    data: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/MonthlyDengueBDData.csv",
+    var: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/MonthlyDengueBDVariable.csv",
+    pycode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/CAIPythonCodeDengue.txt",
+    rcode: "https://raw.githubusercontent.com/abubokkorshiddik/Research-and-Publication/main/EWS_DengueRcode.txt",
+    tableId: "dataTable1",
+    varId: "varTable1",
+    rId: "rCodeBox1",
+    pyId: "pyCodeBox1"
   }
 ];
 
-/* ================= FETCH ================= */
+/* ================= SAFE FETCH ================= */
 async function safeFetch(url) {
   try {
     const res = await fetch(url);
-    if (!res.ok) throw new Error();
+    if (!res.ok) throw new Error("fetch error");
     return await res.text();
-  } catch {
+  } catch (err) {
+    console.log("Fetch failed:", url);
     return null;
   }
 }
 
-/* ================= TABLE LOAD ================= */
-async function loadTable(url, id, limit = 300) {
+/* ================= LOAD TABLE ================= */
+async function loadTable(url, id, limit = 400) {
   const el = document.getElementById(id);
   if (!el) return;
 
   const text = await safeFetch(url);
 
   if (!text) {
-    el.innerHTML = "<tr><td>No data</td></tr>";
+    el.innerHTML = "<tr><td>No data available</td></tr>";
     return;
   }
 
-  let rows = text.split("\n").slice(0, limit);
+  const rows = text.split("\n").slice(0, limit);
   let html = "";
 
   rows.forEach((row, i) => {
     html += "<tr>";
+
     row.split(",").forEach(cell => {
-      html += i === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
+      html += i === 0 
+        ? `<th>${cell}</th>` 
+        : `<td>${cell}</td>`;
     });
+
     html += "</tr>";
   });
 
@@ -558,49 +584,67 @@ async function loadTable(url, id, limit = 300) {
 }
 
 /* ================= LOAD CODE ================= */
-async function loadCode(url, id) {
+async function loadCode(url, id, limit = 800) {
   const el = document.getElementById(id);
   if (!el) return;
 
   const text = await safeFetch(url);
-  el.value = text || "No code";
+
+  if (!text) {
+    el.value = "No code available";
+    return;
+  }
+
+  el.value = text.split("\n").slice(0, limit).join("\n");
 }
 
-/* ================= COPY ================= */
+/* ================= COPY CODE ================= */
 function copyCode(id) {
   const el = document.getElementById(id);
+  if (!el) return;
+
   navigator.clipboard.writeText(el.value)
-    .then(() => alert("Copied"))
-    .catch(() => alert("Failed"));
+    .then(() => alert("Copied successfully"))
+    .catch(() => alert("Copy failed"));
 }
 
-/* ================= DOWNLOAD ================= */
+/* ================= DOWNLOAD PROJECT ================= */
 async function downloadProject(index) {
 
   const p = projects[index];
+  if (!p) return;
+
   const zip = new JSZip();
 
-  if (p.data) zip.file("data.csv", await safeFetch(p.data));
-  if (p.var) zip.file("variables.csv", await safeFetch(p.var));
-  if (p.rcode) zip.file("R.txt", await safeFetch(p.rcode));
-  if (p.pycode) zip.file("Python.txt", await safeFetch(p.pycode));
+  try {
+    if (p.data) zip.file("Dataset.csv", await safeFetch(p.data));
+    if (p.var) zip.file("Variables.csv", await safeFetch(p.var));
+    if (p.rcode) zip.file("R_Code.txt", await safeFetch(p.rcode));
+    if (p.pycode) zip.file("Python_Code.txt", await safeFetch(p.pycode));
+  } catch (err) {
+    alert("Download failed");
+    return;
+  }
 
-  zip.generateAsync({ type: "blob" }).then(blob => {
-    saveAs(blob, p.name.replace(/\s+/g, "_") + ".zip");
+  zip.generateAsync({ type: "blob" }).then(content => {
+    saveAs(content, p.name.replace(/\s+/g, "_") + ".zip");
   });
 }
 
-/* ================= INIT ================= */
+/* ================= INIT ALL ================= */
 projects.forEach(p => {
 
+  /* DATA */
   if (p.data) loadTable(p.data, p.tableId);
   if (p.data1) loadTable(p.data1, p.tableId1);
   if (p.data2) loadTable(p.data2, p.tableId2);
 
+  /* VARIABLES */
   if (p.var) loadTable(p.var, p.varId);
   if (p.var1) loadTable(p.var1, p.varId1);
   if (p.var2) loadTable(p.var2, p.varId2);
 
+  /* CODE */
   if (p.rcode) loadCode(p.rcode, p.rId);
   if (p.pycode) loadCode(p.pycode, p.pyId);
 
