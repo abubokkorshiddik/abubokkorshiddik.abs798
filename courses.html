@@ -265,6 +265,77 @@ body{
       .interest-grid { grid-template-columns: 1fr 1fr; }
     }
 
+
+ .course {
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:10px;
+  padding:18px;
+  margin-bottom:14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+}
+
+/* left content */
+.course-left {
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+/* date/title/provider */
+.date {
+  color:#1a56db;
+  font-weight:600;
+  font-size:13px;
+}
+
+.course-title {
+  font-weight:600;
+}
+
+.provider {
+  color:#64748b;
+  font-size:13px;
+}
+
+/* certificate button */
+.cert-btn {
+  background:#1a56db;
+  color:#fff;
+  padding:8px 12px;
+  border-radius:6px;
+  font-size:13px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.2s;
+  white-space:nowrap;
+}
+
+.cert-btn:hover {
+  background:#1648c0;
+  transform:translateY(-1px);
+}
+
+ @media (max-width:600px) {
+  .course {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .course-right {
+    width:100%;
+  }
+
+  .cert-btn {
+    width:100%;
+    text-align:center;
+  }
+}
+
 </style>
 </head>
 
@@ -349,8 +420,15 @@ body{
 <div class="container">
 
 <!-- ALL YOUR COURSES -->
-<div class="course"><div class="date">21 March, 2026</div><div class="course-title">Gen AI use in the research workflow</div><div class="provider">Researcher Academy, Elsevier</div></div>
-
+<div class="course"><div class="date">21 March, 2026</div>
+ <div class="course-title">Gen AI use in the research workflow</div><div class="provider">Researcher Academy, Elsevier</div>
+<div class="course-right">
+    <a class="cert-btn" href="https://drive.google.com/file/d/1c3DxxbyENfF5AlkMfhf6zCzL8_U91Lnw/view" target="_blank">
+      View Certificate
+    </a>
+  </div>
+ </div>
+ 
 <div class="course"><div class="date">14 January, 2026</div><div class="course-title">How to write for an interdisciplinary audience</div><div class="provider">Researcher Academy, Elsevier</div></div>
 
 <div class="course"><div class="date">14 January, 2026</div><div class="course-title">How to write case reports</div><div class="provider">Researcher Academy, Elsevier</div></div>
