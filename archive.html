@@ -1,136 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Archive | Md. Abu Bokkor Shiddik</title>
 
 <style>
 
 /* RESET */
-* { margin:0; padding:0; box-sizing:border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* BODY */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background:#f8fafc;
-  color:#1f2937;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
+/* NAVBAR */
+.navbar {
+  background: linear-gradient(90deg, #00264d, #004080);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-inner a,
+.dropbtn {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 7px 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.nav-inner a:hover,
+.dropbtn:hover {
+  background: rgba(255,255,255,0.15);
+  border-radius: 5px;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #0f172a;
+  min-width: 180px;
+  top: 35px;
+  border-radius: 6px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #cbd5e1;
+}
+
+.dropdown-content a:hover {
+  background: #1f2937;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* HEADER */
 .header {
-  background: linear-gradient(135deg,#020617,#0b3a6e);
-  color:white;
-  text-align:center;
-  padding:40px 15px;
+  background: linear-gradient(135deg, #020617, #0b3a6e);
+  color: white;
+  text-align: center;
+  padding: 40px 15px;
+}
+
+.header h1 {
+  font-size: 30px;
+}
+
+.header p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #cbd5e1;
 }
 
 /* SECTION */
 .section {
-  max-width:1200px;
-  margin:30px auto;
-  padding:0 15px;
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 15px;
 }
 
 .section h2 {
-  font-size:20px;
-  margin-bottom:10px;
-  border-left:5px solid #1d4ed8;
-  padding-left:10px;
+  font-size: 20px;
+  margin-bottom: 15px;
+  border-left: 5px solid #1d4ed8;
+  padding-left: 10px;
 }
 
 /* GRID */
 .grid {
-  display:grid;
-  gap:16px;
+  display: grid;
+  gap: 15px;
 }
 
-/* RESPONSIVE (balanced, not ugly stacking) */
-@media (min-width:1200px){
-  .grid{ grid-template-columns:repeat(4,1fr); }
+/* RESPONSIVE GRID */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
-@media (min-width:768px) and (max-width:1199px){
-  .grid{ grid-template-columns:repeat(3,1fr); }
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-@media (min-width:480px) and (max-width:767px){
-  .grid{ grid-template-columns:repeat(2,1fr); }
-}
-@media (max-width:479px){
-  .grid{ grid-template-columns:repeat(2,1fr); }
+
+@media (max-width: 599px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* CARD */
 .card {
-  background:white;
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-  transition:0.3s;
-  cursor:pointer;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform:translateY(-6px);
+  transform: translateY(-4px);
 }
 
 /* IMAGE */
 .card img {
-  width:100%;
-  height:170px;
-  object-fit:cover;
-  transition:0.4s;
-}
-
-.card:hover img {
-  transform:scale(1.08);
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
 /* TEXT */
 .card p {
-  padding:10px;
-  font-size:13px;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 /* HIDDEN */
-.hidden { display:none; }
+.hidden {
+  display: none;
+}
 
 /* BUTTON */
 .show-btn {
-  display:block;
-  margin:20px auto;
-  padding:10px 18px;
-  background:#1d4ed8;
-  color:white;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 18px;
+  border: none;
+  background: #1d4ed8;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* LIGHTBOX */
-.lightbox {
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:rgba(0,0,0,0.9);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:999;
+.show-btn:hover {
+  background: #1e40af;
 }
 
-.lightbox img {
-  max-width:92%;
-  max-height:92%;
-  border-radius:8px;
+/* FOOTER */
+footer {
+  background: #020617;
+  color: #e2e8f0;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
 }
 
-.lightbox.active { display:flex; }
+footer a {
+  color: #93c5fd;
+  text-decoration: none;
+}
 
-/* MOBILE IMPROVEMENT */
-@media (max-width:480px){
-  .card img { height:140px; }
-  .section h2 { font-size:18px; }
+footer a:hover {
+  color: white;
 }
 
 </style>
@@ -139,137 +219,214 @@ body {
 
 <body>
 
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+
+    <a href="home.html">Home</a>
+    <a href="publications.html">Publications</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Digital Lab ▼</button>
+      <div class="dropdown-content">
+        <a href="projects.html">Projects</a>
+        <a href="data-code.html">Data & Code</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Learning & Events ▼</button>
+      <div class="dropdown-content">
+        <a href="courses.html">Courses & Training</a>
+        <a href="conference-and-workshop.html">Conferences & Workshops</a>
+      </div>
+    </div>
+
+    <a href="service.html">Services</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Insights ▼</button>
+      <div class="dropdown-content">
+        <a href="insights.html">Posts</a>
+        <a href="videos.html">Videos</a>
+        <a href="archive.html">Photos & Archive</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HEADER -->
 <div class="header">
   <h1>Archive</h1>
   <p>Moments, Achievements & Experiences</p>
 </div>
 
-<!-- ART -->
+
+
+
+
+
+
+
+
+
+
+ <!-- Art -->
 <div class="section">
-<h2>My Art and Drawing</h2>
+  <h2>My Art and Drawing</h2>
+  <p>
+    My drawing skills help me to visualize ideas more clearly and think critically. 
+    It also supports my ability to transform complex data into meaningful and easy visual representations.
+  </p>
 
-<div class="grid" id="art">
+  <div class="grid" id="art">
 
-<div class="card"><img loading="lazy" src="https://github.com/user-attachments/assets/f58caf27-92bb-40c7-a70c-789c85ff52ac"><p>Creative artwork collection.</p></div>
-<div class="card"><img loading="lazy" src="https://github.com/user-attachments/assets/c17f783c-0836-435f-a81b-85e2973901d8"><p>Art exhibition moment.</p></div>
-<div class="card"><img loading="lazy" src="https://github.com/user-attachments/assets/fa0f9e8d-51b3-4389-af4c-db37f8de9278"><p>Opera house interior design.</p></div>
+    <div class="card">
+      <img src="https://github.com/user-attachments/assets/f58caf27-92bb-40c7-a70c-789c85ff52ac">
+      <p>A collection of my artworks presented together, reflecting my creative journey.</p>
+    </div>
 
-<div class="card hidden"><img loading="lazy" src="https://github.com/user-attachments/assets/f1d33453-810b-4374-b11a-6e66a73538db"><p>Taj Mahal sketch.</p></div>
-<div class="card hidden"><img loading="lazy" src="https://github.com/user-attachments/assets/ed3f8ee7-904f-4d0f-aee5-40188eb6c3a8"><p>London street view.</p></div>
-<div class="card hidden"><img loading="lazy" src="https://github.com/user-attachments/assets/3e09d7c8-17eb-4053-8111-90a92cae811e"><p>Lonely lighthouse concept.</p></div>
+    <div class="card">
+      <img src="https://github.com/user-attachments/assets/c17f783c-0836-435f-a81b-85e2973901d8">
+      <p>My artworks displayed at an art exhibition, showcasing my passion for visual storytelling.</p>
+    </div>
 
+    <div class="card">
+      <img src="https://github.com/user-attachments/assets/fa0f9e8d-51b3-4389-af4c-db37f8de9278">
+      <p>A detailed interior view of an opera house, focusing on structure, depth, and elegance.</p>
+    </div>
+
+    <div class="card hidden">
+      <img src="https://github.com/user-attachments/assets/f1d33453-810b-4374-b11a-6e66a73538db">
+      <p>A sketch of the Taj Mahal, inspired by its timeless beauty and symmetry.</p>
+    </div>
+
+    <div class="card hidden">
+      <img src="https://github.com/user-attachments/assets/ed3f8ee7-904f-4d0f-aee5-40188eb6c3a8">
+      <p>A street scene inspired by London, capturing urban life and architectural rhythm.</p>
+    </div>
+
+    <div class="card hidden">
+      <img src="https://github.com/user-attachments/assets/3e09d7c8-17eb-4053-8111-90a92cae811e">
+      <p>A lighthouse standing in solitude, symbolizing loneliness while waiting for a distant ship.</p>
+    </div>
+
+    <div class="card hidden">
+      <img src="https://github.com/user-attachments/assets/9a516bbb-546d-4bd9-b212-bb05fd2aae56">
+      <p>A peaceful countryside house in Bangladesh beside a river, reflecting natural beauty and calm life.</p>
+    </div>
+
+    <div class="card hidden">
+      <img src="https://github.com/user-attachments/assets/961d6556-4a16-4139-9837-0a1316914d14">
+      <p>An old abandoned house, once full of life and happiness, now standing silent with fading memories.</p>
+    </div>
+
+    <div class="card hidden">
+      <img src="https://github.com/user-attachments/assets/f4efa897-dff5-4eec-bae9-d4a6ee5e28db">
+      <p>A beautifully detailed street lantern hanging on a wall, highlighting light and shadow.</p>
+    </div>
+
+    <div class="card hidden">
+      <img src="https://github.com/user-attachments/assets/300ffcf3-83af-4849-9726-4c182c499856">
+      <p>A lighthouse under a moonlit night, expressing both loneliness and quiet beauty.</p>
+    </div>
+
+    <div class="card hidden">
+      <img src="https://github.com/user-attachments/assets/9b467720-8d41-401d-ba9a-0efb037a9b48">
+      <p>A hunter’s wooden house deep in the forest, created entirely from imagination.</p>
+    </div>
+
+  </div>
+
+  <button class="show-btn" onclick="showMore('art', this)">Show More</button>
 </div>
 
-<button class="show-btn" onclick="toggleItems('art', this)">Show More</button>
-</div>
 
+  
 <!-- CONFERENCE -->
 <div class="section">
-<h2>Conference</h2>
+  <h2>Conference</h2>
+  <div class="grid" id="conference">
 
-<div class="grid" id="conference">
+    <div class="card"><img src="img/conf1.jpg"><p>Presented research at an international conference.</p></div>
+    <div class="card"><img src="img/conf2.jpg"><p>Networking with global researchers.</p></div>
+    <div class="card"><img src="img/conf3.jpg"><p>Panel discussion participation.</p></div>
 
-<div class="card"><img loading="lazy" src="img/conf1.jpg"><p>Research presentation.</p></div>
-<div class="card"><img loading="lazy" src="img/conf2.jpg"><p>Networking session.</p></div>
-<div class="card"><img loading="lazy" src="img/conf3.jpg"><p>Panel discussion.</p></div>
+    <div class="card hidden"><img src="img/conf4.jpg"><p>Workshop session during conference.</p></div>
+    <div class="card hidden"><img src="img/conf5.jpg"><p>Poster presentation moment.</p></div>
+    <div class="card hidden"><img src="img/conf6.jpg"><p>Group photo with participants.</p></div>
 
-<div class="card hidden"><img loading="lazy" src="img/conf4.jpg"><p>Workshop session.</p></div>
-<div class="card hidden"><img loading="lazy" src="img/conf5.jpg"><p>Poster presentation.</p></div>
-
-</div>
-
-<button class="show-btn" onclick="toggleItems('conference', this)">Show More</button>
+  </div>
+  <button class="show-btn" onclick="showMore('conference', this)">Show More</button>
 </div>
 
 <!-- RESEARCH -->
 <div class="section">
-<h2>Research Work</h2>
+  <h2>Research Work</h2>
+  <div class="grid" id="research">
 
-<div class="grid" id="research">
+    <div class="card"><img src="img/res1.jpg"><p>Analyzing global dataset.</p></div>
+    <div class="card"><img src="img/res2.jpg"><p>Data visualization results.</p></div>
 
-<div class="card"><img loading="lazy" src="img/res1.jpg"><p>Global dataset analysis.</p></div>
-<div class="card"><img loading="lazy" src="img/res2.jpg"><p>Data visualization output.</p></div>
+    <div class="card hidden"><img src="img/res3.jpg"><p>Model building phase.</p></div>
+    <div class="card hidden"><img src="img/res4.jpg"><p>Writing research paper.</p></div>
 
-<div class="card hidden"><img loading="lazy" src="img/res3.jpg"><p>Model building stage.</p></div>
-<div class="card hidden"><img loading="lazy" src="img/res4.jpg"><p>Manuscript writing.</p></div>
-
-</div>
-
-<button class="show-btn" onclick="toggleItems('research', this)">Show More</button>
+  </div>
+  <button class="show-btn" onclick="showMore('research', this)">Show More</button>
 </div>
 
 <!-- TRAVEL -->
 <div class="section">
-<h2>Travel & Visits</h2>
+  <h2>Travel & Visits</h2>
+  <div class="grid" id="travel">
 
-<div class="grid" id="travel">
+    <div class="card"><img src="img/travel1.jpg"><p>Visited National Memorial.</p></div>
+    <div class="card"><img src="img/travel2.jpg"><p>Explored Lalbagh Fort.</p></div>
 
-<div class="card"><img loading="lazy" src="img/travel1.jpg"><p>National memorial visit.</p></div>
-<div class="card"><img loading="lazy" src="img/travel2.jpg"><p>Lalbagh fort exploration.</p></div>
+    <div class="card hidden"><img src="img/travel3.jpg"><p>Historical site visit.</p></div>
+    <div class="card hidden"><img src="img/travel4.jpg"><p>Memorable travel journey.</p></div>
 
-<div class="card hidden"><img loading="lazy" src="img/travel3.jpg"><p>Historic site visit.</p></div>
-<div class="card hidden"><img loading="lazy" src="img/travel4.jpg"><p>Travel journey moment.</p></div>
-
-</div>
-
-<button class="show-btn" onclick="toggleItems('travel', this)">Show More</button>
+  </div>
+  <button class="show-btn" onclick="showMore('travel', this)">Show More</button>
 </div>
 
 <!-- WORKSHOP -->
 <div class="section">
-<h2>Workshop & Meetings</h2>
+  <h2>Workshop & Meetings</h2>
+  <div class="grid" id="workshop">
 
-<div class="grid" id="workshop">
+    <div class="card"><img src="img/work1.jpg"><p>Data science workshop participation.</p></div>
+    <div class="card"><img src="img/work2.jpg"><p>Presentation session.</p></div>
 
-<div class="card"><img loading="lazy" src="img/work1.jpg"><p>Data science workshop.</p></div>
-<div class="card"><img loading="lazy" src="img/work2.jpg"><p>Presentation session.</p></div>
+    <div class="card hidden"><img src="img/work3.jpg"><p>Discussion session.</p></div>
+    <div class="card hidden"><img src="img/work4.jpg"><p>Certificate receiving moment.</p></div>
 
-<div class="card hidden"><img loading="lazy" src="img/work3.jpg"><p>Discussion session.</p></div>
-<div class="card hidden"><img loading="lazy" src="img/work4.jpg"><p>Certificate moment.</p></div>
-
+  </div>
+  <button class="show-btn" onclick="showMore('workshop', this)">Show More</button>
 </div>
 
-<button class="show-btn" onclick="toggleItems('workshop', this)">Show More</button>
-</div>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <img id="lightbox-img">
-</div>
+<!-- FOOTER -->
+<footer>
+  <p>Md. Abu Bokkor Shiddik</p>
+  <p>
+    <a href="home.html">Home</a> |
+    <a href="publications.html">Publications</a>
+  </p>
+</footer>
 
 <script>
 
-/* TOGGLE */
-function toggleItems(id, btn){
-  const sec = document.getElementById(id);
-  const hidden = sec.querySelectorAll('.hidden');
+function showMore(sectionId, btn) {
+  let section = document.getElementById(sectionId);
+  let hiddenItems = section.querySelectorAll('.hidden');
 
-  if(hidden.length > 0){
-    hidden.forEach(el => el.classList.remove('hidden'));
-    btn.innerText = "Show Less";
-  } else {
-    const all = sec.querySelectorAll('.card');
-    all.forEach((el,i)=>{
-      if(i>=3) el.classList.add('hidden');
-    });
-    btn.innerText = "Show More";
-  }
-}
-
-/* LIGHTBOX */
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-
-document.querySelectorAll(".card img").forEach(img=>{
-  img.addEventListener("click", ()=>{
-    lightbox.classList.add("active");
-    lightboxImg.src = img.src;
+  hiddenItems.forEach(item => {
+    item.classList.remove('hidden');
   });
-});
 
-lightbox.addEventListener("click", ()=>{
-  lightbox.classList.remove("active");
-});
+  btn.style.display = "none";
+}
 
 </script>
 
