@@ -1,49 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="
-ABS798,
-ABUBOKKORSHIDDIK,
-AbuBokkorShiddik,
-Abu Bokkor Shiddik,
-Md. Abu Bokkor Shiddik,
-Shiddik ABS,
-BRUR,
-Begum Rokeya University,
-Statistics,
-STAT,
-Data Science,
-Machine Learning,
-Public Health,
-Researcher Bangladesh,
-Bangladesh Research,
-Academic Portfolio,
-Bio Statistics,
-Epidemiology,
-Dengue Research,
-Thesis Work,
-Scientific Research,
-Health Data Analysis
-">
-  
-<title>Insights | Md. Abu Bokkor Shiddik</title>
-<meta name="description" content="Insights, research activities, and learning posts by Md. Abu Bokkor Shiddik.">
-
-<style>
-/* GLOBAL */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Insights — Research notes, methods, and learning posts by Md. Abu Bokkor Shiddik.">
+  <meta name="keywords" content="ABS798, Abu Bokkor Shiddik, Insights, Machine Learning, Public Health, Research Notes, Statistics, BRUR">
+  <title>Insights | Md. Abu Bokkor Shiddik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --navy:       #0b1f3a;
-      --navy2:      #122444;
-      --navy3:      #1a3460;
       --blue:       #1a56db;
       --blue-hover: #1648c0;
       --sky:        #e8f0fe;
@@ -54,6 +26,9 @@ Health Data Analysis
       --purple:     #5b21b6;
       --purple-bg:  #f5f3ff;
       --purple-bd:  #ddd6fe;
+      --amber:      #92400e;
+      --amber-bg:   #fffbeb;
+      --amber-bd:   #fde68a;
       --text:       #0f172a;
       --text2:      #334155;
       --text3:      #64748b;
@@ -64,348 +39,240 @@ Health Data Analysis
       --radius:     8px;
       --radius-lg:  14px;
       --shadow-sm:  0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow:     0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+      --shadow:     0 4px 20px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
     }
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
       color: var(--text);
       font-size: 15.5px;
       line-height: 1.75;
-      background: var(--bg);
     }
-
     a { color: inherit; text-decoration: none; }
 
     /* ── NAVBAR ── */
-    .navbar {
-      background: var(--navy);
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .nav-bar-inner {
-      max-width: 1180px;
-      margin: auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      height: 56px;
-    }
-    .nav-brand {
-      font-size: 14.5px;
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: 0.2px;
-      margin-right: auto;
-      white-space: nowrap;
-    }
+    .navbar { background: var(--navy); position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-bar-inner { max-width: 1180px; margin: auto; padding: 0 24px; display: flex; align-items: center; height: 56px; }
+    .nav-brand { font-size: 14.5px; font-weight: 600; color: #fff; letter-spacing: 0.2px; margin-right: auto; white-space: nowrap; }
     .nav-brand span { color: #93c5fd; font-weight: 300; }
-
     .nav-links { display: flex; align-items: center; gap: 2px; }
     .nav-links > a, .dropbtn {
-      color: rgba(255,255,255,0.75);
-      font-size: 13.5px;
-      font-weight: 500;
-      padding: 6px 11px;
-      border-radius: 6px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      font-family: inherit;
-      transition: background 0.18s, color 0.18s;
-      white-space: nowrap;
-      display: flex;
-      align-items: center;
-      gap: 4px;
+      color: rgba(255,255,255,0.75); font-size: 13.5px; font-weight: 500; padding: 6px 11px;
+      border-radius: 6px; border: none; background: none; cursor: pointer; font-family: inherit;
+      transition: background 0.18s, color 0.18s; white-space: nowrap; display: flex; align-items: center; gap: 4px;
     }
     .nav-links > a:hover, .dropbtn:hover { color: #fff; background: rgba(255,255,255,0.09); }
-
     .dropdown { position: relative; }
     .dropdown-content {
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 0;
-      background: #132444;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px;
-      min-width: 190px;
-      padding: 6px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(6px);
-      transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
-      pointer-events: none;
-      z-index: 9999;
+      position: absolute; top: calc(100% + 6px); left: 0; background: #132444;
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; min-width: 190px; padding: 6px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3); opacity: 0; visibility: hidden; transform: translateY(6px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0.2s; pointer-events: none; z-index: 9999;
     }
-    .dropdown:hover .dropdown-content,
-    .dropdown.active .dropdown-content {
+    .dropdown:hover .dropdown-content, .dropdown.active .dropdown-content {
       opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto;
     }
-    .dropdown-content a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      color: rgba(255,255,255,0.72);
-      font-size: 13px;
-      font-weight: 500;
-      border-radius: 6px;
-      transition: background 0.15s, color 0.15s;
-    }
+    .dropdown-content a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; color: rgba(255,255,255,0.72); font-size: 13px; font-weight: 500; border-radius: 6px; transition: background 0.15s, color 0.15s; }
     .dropdown-content a:hover { background: rgba(255,255,255,0.08); color: #fff; }
-
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 7px;
-      border-radius: 6px;
-      margin-left: 10px;
-      transition: background 0.2s;
-    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 7px; border-radius: 6px; margin-left: 10px; transition: background 0.2s; }
     .hamburger:hover { background: rgba(255,255,255,0.1); }
-    .hamburger span {
-      display: block;
-      width: 21px;
-      height: 2px;
-      background: rgba(255,255,255,0.85);
-      border-radius: 2px;
-      transition: transform 0.28s, opacity 0.28s;
-    }
+    .hamburger span { display: block; width: 21px; height: 2px; background: rgba(255,255,255,0.85); border-radius: 2px; transition: transform 0.28s, opacity 0.28s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* Drawer */
-    .nav-drawer {
-      display: none;
-      background: #0d1c38;
-      border-top: 1px solid rgba(255,255,255,0.07);
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1);
-    }
+    .nav-drawer { display: none; background: #0d1c38; border-top: 1px solid rgba(255,255,255,0.07); overflow: hidden; max-height: 0; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1); }
     .nav-drawer.open { max-height: 700px; }
     .drawer-inner { padding: 8px 0 16px; }
-    .drawer-link {
-      display: block;
-      color: rgba(255,255,255,0.78);
-      font-size: 15px;
-      font-weight: 500;
-      padding: 11px 24px;
-      transition: background 0.15s, color 0.15s;
-    }
+    .drawer-link { display: block; color: rgba(255,255,255,0.78); font-size: 15px; font-weight: 500; padding: 11px 24px; transition: background 0.15s, color 0.15s; }
     .drawer-link:hover { background: rgba(255,255,255,0.06); color: #fff; }
-    .drawer-section-label {
-      font-size: 10.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: rgba(255,255,255,0.3);
-      padding: 14px 24px 4px;
-    }
+    .drawer-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,0.3); padding: 14px 24px 4px; }
     .drawer-sub .drawer-link { padding-left: 38px; font-size: 14px; color: rgba(255,255,255,0.58); }
     .drawer-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 4px 0; }
+    @media (max-width: 900px) { .nav-links { display: none; } .hamburger { display: flex; } .nav-drawer { display: block; } }
 
-    @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .nav-drawer { display: block; }
+    /* ── HERO ── */
+    .page-hero {
+      background: linear-gradient(140deg, #07152a 0%, #0d2247 50%, #0f2d5c 100%);
+      color: white; padding: 58px 24px 50px; position: relative; overflow: hidden;
     }
-/* HEADER (UNCHANGED) */
-.header {
-  background: linear-gradient(135deg, #020617, #0b3a6e);
-  color: white;
-  padding: 45px 20px;
-  text-align: center;
-}
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 80% 25%, rgba(59,130,246,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 1200px; margin: auto; position: relative; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 11.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #93c5fd; margin-bottom: 14px; }
+    .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: #4ade80; border-radius: 50%; }
+    .page-hero h1 { font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 600; line-height: 1.18; margin-bottom: 10px; }
+    .page-hero p { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 560px; }
 
-.header h1 {
-  margin: 0;
-  font-size: 32px;
-}
+    /* ── FILTER BAR ── */
+    .filter-bar { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 56px; z-index: 100; }
+    .filter-inner { max-width: 1200px; margin: auto; padding: 0 24px; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .filter-inner::-webkit-scrollbar { display: none; }
+    .filter-tab {
+      display: inline-flex; align-items: center; gap: 5px; padding: 11px 15px;
+      font-size: 13px; font-weight: 500; color: var(--text3); border-bottom: 2.5px solid transparent;
+      border-top: none; border-left: none; border-right: none; white-space: nowrap; cursor: pointer;
+      transition: color 0.18s, border-color 0.18s; background: none; font-family: inherit;
+      -webkit-tap-highlight-color: transparent; min-height: 44px;
+    }
+    .filter-tab:hover { color: var(--blue); }
+    .filter-tab.active { color: var(--blue); border-bottom-color: var(--blue); }
+    .ftag { font-size: 10.5px; font-weight: 700; background: var(--sky); color: var(--blue); border-radius: 10px; padding: 1px 7px; }
+    .filter-tab.active .ftag { background: var(--blue); color: #fff; }
 
-.header p {
-  margin-top: 6px;
-  font-size: 16px;
-  color: #cfd8e8;
-}
+    /* ── PAGE LAYOUT ── */
+    .page-outer { max-width: 1200px; margin: 0 auto; padding: 36px 24px 80px; display: grid; grid-template-columns: 1fr 280px; gap: 28px; align-items: start; }
+    @media (max-width: 960px) { .page-outer { grid-template-columns: 1fr; } .sidebar { display: none; } }
 
-/* LAYOUT */
-.main-wrapper {
-  display: flex;
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
-  gap: 20px;
-}
+    /* ── SEARCH ── */
+    .search-wrap { position: relative; margin-bottom: 24px; }
+    .search-input { width: 100%; padding: 11px 16px 11px 42px; font-size: 14px; font-family: inherit; background: var(--white); border: 1px solid var(--border2); border-radius: var(--radius-lg); color: var(--text); outline: none; transition: border-color 0.2s, box-shadow 0.2s; box-shadow: var(--shadow-sm); }
+    .search-input:focus { border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(147,197,253,0.2); }
+    .search-icon { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--text3); font-size: 15px; pointer-events: none; }
+    .no-results { text-align: center; padding: 48px 0; color: var(--text3); font-size: 15px; display: none; }
 
-.container {
-  flex: 3;
-}
+    /* ── POST CARD ── */
+    .post-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.25s, border-color 0.25s, transform 0.2s;
+    }
+    .post-card:hover { box-shadow: var(--shadow); border-color: #bfdbfe; transform: translateY(-1px); }
 
-/* POST */
-.post {
-  background: white;
-  margin-bottom: 25px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
+    /* cover image */
+    .post-cover { width: 100%; height: 220px; object-fit: cover; display: block; border-bottom: 1px solid var(--border); }
 
-/* IMAGE FIX (ONLY SAFE CHANGE) */
-.post img {
-  width: 100%;
-  height: auto;
-  max-height: 300px;
-  object-fit: cover;
-  display: block;
-}
+    /* card header */
+    .post-header { padding: 22px 26px 0; }
+    .post-meta-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .cat-badge {
+      display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; padding: 3px 10px; border-radius: 5px;
+    }
+    .cat-ml      { background: var(--sky); color: #1e3a8a; border: 1px solid var(--sky2); }
+    .cat-ph      { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-bd); }
+    .cat-stats   { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-bd); }
+    .cat-methods { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-bd); }
+    .post-date { font-size: 12px; color: var(--text3); }
+    .read-time { font-size: 12px; color: var(--text3); }
 
-/* CONTENT */
-.post-content {
-  padding: 22px 22px 20px 22px;
-  line-height: 1.65;
-}
+    /* title */
+    .post-title {
+      font-family: 'Lora', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
 
-.post-content h3 {
-  margin-top: 18px;
-  margin-bottom: 8px;
-}
+    /* author */
+    .author-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .author-avatar { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid var(--sky2); flex-shrink: 0; }
+    .author-info { font-size: 13px; }
+    .author-name { font-weight: 600; color: var(--text2); }
+    .author-role { font-size: 11.5px; color: var(--text3); }
 
-.post-content p {
-  margin-bottom: 12px;
-}
+    /* body */
+    .post-body { padding: 0 26px 22px; }
+    .post-excerpt { font-size: 14px; color: var(--text2); line-height: 1.75; }
+    .post-full { display: none; }
 
-.post-content ul {
-  margin-bottom: 12px;
-  padding-left: 18px;
-}
+    /* ── POST CONTENT STYLES ── */
+    .post-full h3, .post-excerpt h3 {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 20px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .post-full p, .post-excerpt p { margin-bottom: 12px; font-size: 14px; color: var(--text2); line-height: 1.8; }
+    .post-full ul, .post-full ol { padding-left: 20px; margin-bottom: 12px; font-size: 14px; color: var(--text2); }
+    .post-full li { margin-bottom: 5px; }
+    .post-full pre {
+      background: #020617; color: #e2e8f0; padding: 16px; border-radius: 8px;
+      overflow-x: auto; font-size: 13px; line-height: 1.6; margin: 14px 0;
+    }
+    .formula-block {
+      background: #f8fafc; border: 1px solid var(--border); border-radius: 7px;
+      padding: 12px 16px; font-family: 'Georgia', serif; font-size: 14px;
+      color: var(--text); margin: 12px 0;
+    }
 
-/* BOOK STYLE TABLE */
-.post-content table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 18px 0;
-  font-size: 14.5px;
-  line-height: 1.6;
-}
+    /* ── TABLES ── */
+    .post-full table, .post-excerpt table {
+      width: 100%; border-collapse: collapse; margin: 16px 0;
+      font-size: 13.5px; line-height: 1.6;
+    }
+    .post-full th { text-align: left; padding: 10px 10px; border-bottom: 2px solid var(--text); font-weight: 600; font-size: 13px; }
+    .post-full td { padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .post-full tr:hover td { background: rgba(26,86,219,0.03); }
+    .post-full table, .post-full th, .post-full td { border-left: none; border-right: none; border-top: none; }
 
-/* Header */
-.post-content th {
-  text-align: left;
-  padding: 10px 8px;
-  border-bottom: 2px solid #1e293b;
-  font-weight: 600;
-}
+    /* ── CARD FOOTER ── */
+    .post-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 26px; border-top: 1px solid var(--border);
+      background: #fcfdfe; flex-wrap: wrap; gap: 10px;
+    }
+    .expand-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 13px; font-weight: 600; color: var(--blue);
+      background: none; border: none; cursor: pointer; font-family: inherit;
+      padding: 0; transition: gap 0.15s;
+    }
+    .expand-btn:hover { gap: 8px; }
+    .share-btn-new {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12.5px; font-weight: 600; color: var(--text3);
+      background: var(--bg); border: 1px solid var(--border2); border-radius: 6px;
+      padding: 6px 14px; cursor: pointer; font-family: inherit;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+    }
+    .share-btn-new:hover { background: var(--sky); color: var(--blue); border-color: #93c5fd; }
 
-/* Body cells */
-.post-content td {
-  padding: 10px 8px;
-  border-bottom: 1px solid #e5e7eb;
-}
+    /* ── SIDEBAR ── */
+    .sidebar { position: sticky; top: calc(56px + 44px + 20px); }
+    .sidebar-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 20px; box-shadow: var(--shadow-sm); margin-bottom: 16px;
+    }
+    .sidebar-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text3); margin-bottom: 14px; }
+    .sidebar-link { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--text2); padding: 7px 0; border-bottom: 1px solid var(--border); transition: color 0.15s; cursor: pointer; }
+    .sidebar-link:last-child { border-bottom: none; }
+    .sidebar-link:hover { color: var(--blue); }
+    .sidebar-link-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 6px; }
+    .sidebar-cat { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; font-size: 13px; color: var(--text2); border-bottom: 1px solid var(--border); }
+    .sidebar-cat:last-child { border-bottom: none; }
+    .sidebar-cat-count { font-size: 11px; font-weight: 700; color: var(--blue); background: var(--sky); border-radius: 8px; padding: 1px 7px; }
+    .sidebar-video-link {
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+      background: linear-gradient(135deg, #0f2d5c, #1a56db); color: white;
+      border-radius: var(--radius); font-size: 13.5px; font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .sidebar-video-link:hover { opacity: 0.9; }
 
-/* Remove vertical lines */
-.post-content table,
-.post-content th,
-.post-content td {
-  border-left: none;
-  border-right: none;
-  border-top: none;
-}
+    /* ── SHARE TOAST ── */
+    #share-toast {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: #0f172a; color: #fff; font-size: 13.5px; font-weight: 500;
+      padding: 12px 22px; border-radius: 8px; opacity: 0; pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s; z-index: 9999; white-space: nowrap;
+    }
+    #share-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* Row hover (very subtle, optional) */
-.post-content tr:hover {
-  background: rgba(30, 58, 138, 0.04);
-}
-
-.post-title {
-  font-size: 22px;
-  color: #1e3a8a;
-}
-
-/* AUTHOR (FIXED SIZE ONLY) */
-.author-line {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.author-line img.author-pic {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  min-height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.author-name {
-  text-decoration: none;
-  color: #1f2937;
-  font-weight: 500;
-}
-
-/* META */
-.meta {
-  font-size: 13px;
-  color: #777;
-  margin-bottom: 12px;
-}
-
-/* TEXT */
-.short-text {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-}
-
-.full-text {
-  -webkit-line-clamp: unset;
-}
-
-.read-more {
-  color: #2563eb;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-/* BUTTON */
-.share-btn {
-  margin-top: 15px;
-  background: #1d4ed8;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* SIDEBAR */
-.sidebar {
-  flex: 1;
-  background: #f1f5f9;
-  padding: 15px;
-  border-radius: 10px;
-  position: sticky;
-  top: 100px;
-  max-height: 600px;
-  overflow-y: auto;
-}
-
- /* ── FOOTER ── */
-    footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 44px 24px 32px; margin-top: 60px; }
+    /* ── FOOTER ── */
+    footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 44px 24px 32px; margin-top: 0; }
     .footer-inner { max-width: 1180px; margin: auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.07); }
     .footer-col-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
     .footer-name { font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 8px; }
@@ -416,312 +283,20 @@ Health Data Analysis
     .footer-social-links a:hover { color: #93c5fd; }
     .footer-bottom { max-width: 1180px; margin: 22px auto 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
     .footer-bottom p { font-size: 12px; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      .pub-grid { grid-template-columns: repeat(2, 1fr); }
-      .project-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .hero { padding: 48px 20px 40px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
-      .hero h1 { font-size: 1.75rem; }
-      .hero-photo-wrap { order: -1; flex-direction: row; align-items: center; gap: 20px; }
-      .hero-photo-ring { width: 100px; height: 100px; }
-      .hero-affil { text-align: left; }
-    }
-    @media (max-width: 600px) {
-      .pub-grid { grid-template-columns: 1fr; }
-      .project-grid { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .interest-grid { grid-template-columns: 1fr 1fr; }
-    }: #e2e8f0;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-  /* reset everything */
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-    display: block;
-  }
-
-  /* global box sizing */
-  * {
-    box-sizing: border-box;
-  }
-
-  /* full width main sections */
-  .navbar,
-  .header,
-  .main-wrapper,
-  footer {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-  }
-
-  /* NAVBAR */
-  .nav-inner {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 10px;
-    justify-content: center;
-  }
-
-  /* HEADER */
-  .header {
-    padding: 25px 10px;
-    text-align: center;
-  }
-
-  .header h1 {
-    font-size: 20px;
-  }
-
-  .header p {
-    font-size: 14px;
-  }
-
-  /* MAIN LAYOUT */
-  .main-wrapper {
-    display: block;
-    padding: 10px;
-  }
-
-  /* CONTENT AREA */
-  .container {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* POSTS */
-  .post {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .post-content {
-    padding: 14px;
-    font-size: 14px;
-    overflow-x: auto;
-  }
-
-  .post-title {
-    font-size: 18px;
-  }
-
-  /* TABLE FIX */
-  .post-content table {
-    width: 100%;
-    min-width: 600px;
-  }
-
-  .post-content th,
-  .post-content td {
-    padding: 8px 6px;
-    font-size: 13px;
-  }
-
-  /* SIDEBAR */
-  .sidebar {
-    width: 100%;
-    max-width: 100%;
-    position: relative;
-    top: auto;
-    margin-top: 15px;
-    max-height: none;
-  }
-
-  /* FOOTER */
-  footer {
-    width: 100%;
-    text-align: center;
-    padding: 20px 10px;
-  }
-
-  /* NAV TEXT */
-  .nav-inner a,
-  .nav-inner .dropbtn {
-    font-size: 13px;
-    padding: 6px 8px;
-  }
-
-  /* BUTTON */
-  .share-btn {
-    padding: 6px 10px;
-    font-size: 13px;
-  }
-
-}
-
-
-  @media (max-width: 768px) {
-
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  /* navbar fix */
-  .navbar {
-    width: 100%;
-    position: sticky;
-    top: 0;
-  }
-
-  .nav-bar-inner {
-    padding: 10px 12px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .nav-brand {
-    font-size: 13px;
-  }
-
-  /* header */
-  .header {
-    padding: 18px 10px;
-  }
-
-  .header h1 {
-    font-size: 18px;
-  }
-
-  .header p {
-    font-size: 13px;
-  }
-
-  /* main layout */
-  .main-wrapper {
-    display: block;
-    padding: 10px;
-  }
-
-  .container {
-    width: 100%;
-  }
-
-  /* post card */
-  .post {
-    width: 100%;
-    margin-bottom: 14px;
-    border-radius: 8px;
-  }
-
-  .post-content {
-    padding: 12px;
-    font-size: 13.5px;
-    line-height: 1.6;
-  }
-
-  .post-title {
-    font-size: 16px;
-  }
-
-  .author-line {
-    font-size: 12px;
-  }
-
-  .author-line img.author-pic {
-    width: 30px;
-    height: 30px;
-  }
-
-  .meta {
-    font-size: 12px;
-  }
-
-  /* image fix */
-  .post img {
-    max-height: 200px;
-    object-fit: cover;
-  }
-
-  /* table fix important */
-  .post-content {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .post-content table {
-    width: 100%;
-    min-width: unset;
-    font-size: 12px;
-  }
-
-  .post-content th,
-  .post-content td {
-    padding: 6px 6px;
-    font-size: 12px;
-    word-break: break-word;
-  }
-
-  /* sidebar fix */
-  .sidebar {
-    width: 100%;
-    position: relative;
-    margin-top: 12px;
-    max-height: none;
-  }
-
-  /* buttons */
-  .share-btn {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-
-  .read-more {
-    font-size: 12px;
-  }
-
-  /* nav drawer fix */
-  .nav-drawer {
-    max-height: 0;
-    overflow-y: auto;
-  }
-
-  .nav-drawer.open {
-    max-height: 80vh;
-  }
-
-  .drawer-link {
-    font-size: 14px;
-    padding: 10px 18px;
-  }
-}
-</style>
-
+    @media (max-width: 1024px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } .post-header, .post-body, .post-footer { padding-left: 16px; padding-right: 16px; } .post-title { font-size: 1.1rem; } }
+  </style>
 </head>
-
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-bar-inner">
     <div class="nav-brand">ABS<span> · </span>Abu Bokkor Shiddik</div>
-
     <div class="nav-links">
       <a href="home.html">Home</a>
       <a href="publications.html">Publications</a>
       <a href="service.html">Service</a>
-
       <div class="dropdown">
         <button class="dropbtn">Digital Lab ▾</button>
         <div class="dropdown-content">
@@ -729,7 +304,6 @@ Health Data Analysis
           <a href="data-code.html">💾 Data &amp; Code</a>
         </div>
       </div>
-
       <div class="dropdown">
         <button class="dropbtn">Learning ▾</button>
         <div class="dropdown-content">
@@ -737,7 +311,6 @@ Health Data Analysis
           <a href="conference-and-workshop.html">🏛 Conferences &amp; Workshops</a>
         </div>
       </div>
-
       <div class="dropdown">
         <button class="dropbtn">Insights ▾</button>
         <div class="dropdown-content">
@@ -747,12 +320,10 @@ Health Data Analysis
         </div>
       </div>
     </div>
-
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </div>
-
   <div class="nav-drawer" id="nav-drawer">
     <div class="drawer-inner">
       <a class="drawer-link" href="home.html">Home</a>
@@ -781,671 +352,299 @@ Health Data Analysis
   </div>
 </nav>
 
-<!-- HEADER -->
-<div class="header">
-  <h1>Insights</h1>
-  <p>Research activities and learning posts by Md. Abu Bokkor Shiddik</p>
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Research Notes &amp; Learning</div>
+    <h1>Insights</h1>
+    <p>Short-form research notes, methods explanations, and learning posts on machine learning, statistics, and public health.</p>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-tab active" data-filter="all">All Posts <span class="ftag">3</span></button>
+    <button class="filter-tab" data-filter="Machine Learning">Machine Learning <span class="ftag">2</span></button>
+    <button class="filter-tab" data-filter="Public Health">Public Health <span class="ftag">1</span></button>
+  </div>
 </div>
 
-<!-- MAIN -->
-<div class="main-wrapper">
+<!-- SHARE TOAST -->
+<div id="share-toast">✓ Link copied to clipboard</div>
 
-<div class="container">
+<!-- MAIN LAYOUT -->
+<div class="page-outer">
 
-<!-- POST (FULL CONTENT PRESERVED) -->
-<!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-<!-- POST (FULL CONTENT PRESERVED) -->
-<!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-<!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-     <!-- POST (FULL CONTENT PRESERVED) -->
-<!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-  <!-- POST (FULL CONTENT PRESERVED) -->
-
-<!-- POST (3) -->
-<div class="post" id="post-threshold-selection-outbreak-03" data-category="Machine Learning">
-<img src="https://github.com/user-attachments/assets/3b36f824-5f93-4a1d-8563-3388005915e0">
-
- <div class="share-preview" style="display:none;">
-     <img src="https://github.com/user-attachments/assets/3b36f824-5f93-4a1d-8563-3388005915e0">
-    Threshold selection in outbreak prediction models.  
-    Outbreak prediction models generate probability outputs that must be converted into binary decisions such as outbreak or non outbreak. This step is called threshold selection. It strongly affects sensitivity, false alarms, and early warning performance in public health systems.
- </div>
-
-  <div class="post-content">
-
-    <div class="post-title">Threshold selection in outbreak prediction models</div>
-
-    <div class="author-line">
-      <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" class="author-pic">
-      <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
+  <!-- POSTS COLUMN -->
+  <div>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input class="search-input" id="search" type="text" placeholder="Search posts…" autocomplete="off">
     </div>
-
-    <div class="meta">📅 10 April 2026 | ⏰ 12:00 AM</div>
-
-   <div class="short-text">
-
-  <p>
-    Outbreak prediction models generate probability outputs that represent risk of disease occurrence. These probabilities cannot be directly used for decision making, so they are converted into binary outcomes using a threshold. This step is very important because it affects how early we detect outbreaks, how many false alarms we get, and how reliable the system becomes in real public health use.
-  </p>
-
-  <!-- TABLE 1 -->
-  <h3>Table 1. basic concept of threshold selection in outbreak prediction</h3>
-  <p style="font-size:13px;color:#64748b;">This table explains the basic idea behind threshold selection and its direct interpretation in real systems.</p>
-
-  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
-    <tr>
-      <th>Concept</th>
-      <th>Simple explanation</th>
-      <th>Real discussion</th>
-    </tr>
-    <tr>
-      <td>Threshold</td>
-      <td>Probability cutoff for outbreak decision</td>
-      <td>Controls how sensitive the system is to detecting early disease signals and shapes decision stability</td>
-    </tr>
-    <tr>
-      <td>Low threshold</td>
-      <td>More alerts generated</td>
-      <td>Better for early warning but increases false alarms in routine surveillance</td>
-    </tr>
-    <tr>
-      <td>High threshold</td>
-      <td>Only strong signals detected</td>
-      <td>Reduces false alarms but may miss early outbreak signals in weak transmission periods</td>
-    </tr>
-  </table>
-
-  <p>Overall, threshold acts like a balance control between early detection and operational stability in outbreak systems.</p>
-
-  <!-- TABLE 2 -->
-  <h3>Table 2. suitability levels of threshold methods in practice</h3>
-  <p style="font-size:13px;color:#64748b;">This table categorizes methods based on real world applicability and stability in health systems.</p>
-
-  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
-    <tr>
-      <th>Suitability level</th>
-      <th>What it means</th>
-      <th>Discussion in real systems</th>
-    </tr>
-    <tr>
-      <td>Highly suitable</td>
-      <td>Reliable and widely used</td>
-      <td>Used in operational outbreak systems and public health dashboards where stability is important</td>
-    </tr>
-    <tr>
-      <td>Moderately suitable</td>
-      <td>Condition dependent</td>
-      <td>Works in some datasets but requires tuning and validation before deployment</td>
-    </tr>
-    <tr>
-      <td>Less suitable</td>
-      <td>Mainly theoretical</td>
-      <td>Used mostly in academic comparison rather than real surveillance systems</td>
-    </tr>
-  </table>
-
-  <p>In practice, systems prefer highly suitable methods because reliability is more important than complexity.</p>
-
-  <!-- TABLE 3 -->
-  <h3>Table 3. highly suitable threshold methods and their practical interpretation</h3>
-  <p style="font-size:13px;color:#64748b;">These methods are widely acceptable in operational outbreak prediction systems.</p>
-
-  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
-    <tr>
-      <th>Method</th>
-      <th>Simple idea</th>
-      <th>Discussion</th>
-      <th>Usefulness</th>
-    </tr>
-
-    <tr>
-      <td>Precision recall based</td>
-      <td>Balances detection and precision</td>
-      <td>Best for imbalanced outbreak data where missing cases is critical</td>
-      <td>Very high</td>
-    </tr>
-
-    <tr>
-      <td>Cost sensitive thresholding</td>
-      <td>Minimizes real world loss</td>
-      <td>Useful when outbreak miss cost is higher than false alarm cost</td>
-      <td>Very high</td>
-    </tr>
-
-    <tr>
-      <td>Percentile based</td>
-      <td>Flags top risk values</td>
-      <td>Simple and practical for early warning dashboards</td>
-      <td>High</td>
-    </tr>
-
-    <tr>
-      <td>Mean minus SD</td>
-      <td>Detects abnormal rise</td>
-      <td>Useful in noisy surveillance data with weak labeling</td>
-      <td>Moderate to high</td>
-    </tr>
-
-    <tr>
-      <td>Seasonal adaptive</td>
-      <td>Changes with season</td>
-      <td>Very important for climate sensitive diseases like dengue</td>
-      <td>Very high</td>
-    </tr>
-
-    <tr>
-      <td>Spatial adaptive</td>
-      <td>Region specific threshold</td>
-      <td>Improves accuracy in multi region outbreak monitoring systems</td>
-      <td>Very high</td>
-    </tr>
-
-  </table>
-
-  <p>These methods are considered operationally strong because they adapt to real world variability.</p>
-
-  <!-- TABLE 4 -->
-  <h3>Table 4. moderately suitable threshold methods and limitations</h3>
-  <p style="font-size:13px;color:#64748b;">These methods are useful but require careful use in outbreak prediction systems.</p>
-
-  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
-    <tr>
-      <th>Method</th>
-      <th>What it does</th>
-      <th>Discussion</th>
-    </tr>
-
-    <tr>
-      <td>ROC based (Youden Index)</td>
-      <td>Balances sensitivity and specificity</td>
-      <td>Does not handle imbalance well in outbreak datasets</td>
-    </tr>
-
-    <tr>
-      <td>Maximum sensitivity</td>
-      <td>Detects most outbreaks</td>
-      <td>Leads to many false alarms in real systems</td>
-    </tr>
-
-    <tr>
-      <td>Maximum specificity</td>
-      <td>Reduces false alerts</td>
-      <td>May delay outbreak detection timing</td>
-    </tr>
-
-    <tr>
-      <td>Z score threshold</td>
-      <td>Detects statistical spikes</td>
-      <td>Better suited for anomaly detection than ML prediction</td>
-    </tr>
-
-    <tr>
-      <td>Rolling threshold</td>
-      <td>Updates over time</td>
-      <td>Can become unstable in small datasets</td>
-    </tr>
-
-  </table>
-
-  <p>These methods are supportive but not sufficient alone for deployment systems.</p>
-
-  <!-- TABLE 5 -->
-  <h3>Table 5. less suitable methods in operational outbreak systems</h3>
-  <p style="font-size:13px;color:#64748b;">These methods are mostly used for baseline or academic comparison only.</p>
-
-  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
-    <tr>
-      <th>Method</th>
-      <th>Why it is weak</th>
-      <th>Discussion</th>
-    </tr>
-
-    <tr>
-      <td>0.5 threshold</td>
-      <td>Assumes balanced data</td>
-      <td>Not realistic for rare outbreak events</td>
-    </tr>
-
-    <tr>
-      <td>Mean probability</td>
-      <td>No epidemiological meaning</td>
-      <td>Depends heavily on model output distribution</td>
-    </tr>
-
-    <tr>
-      <td>Median threshold</td>
-      <td>Ignores risk structure</td>
-      <td>Only splits data without decision logic</td>
-    </tr>
-
-    <tr>
-      <td>Control chart methods</td>
-      <td>Old statistical approach</td>
-      <td>Less compatible with modern ML systems</td>
-    </tr>
-
-    <tr>
-      <td>Bayesian threshold</td>
-      <td>Needs strong priors</td>
-      <td>Difficult in real surveillance settings</td>
-    </tr>
-
-    <tr>
-      <td>Expected utility</td>
-      <td>Hard to define costs</td>
-      <td>Theoretical but not operationally simple</td>
-    </tr>
-
-  </table>
-
-  <p>These approaches are mainly useful for research comparison, not field deployment.</p>
-
-  <!-- FINAL INSIGHT -->
-  <h3>final insight</h3>
-
-  <p>
-    In real outbreak prediction systems, threshold selection is not a fixed rule but a decision framework. The most effective systems combine precision recall optimization, cost sensitive learning, and adaptive strategies like seasonal and spatial thresholds to ensure stable and reliable public health action.
-  </p>
-
-</div>
-
-    <span class="read-more" onclick="toggleText(this)">Read more</span>
-
-    <button class="share-btn" onclick="copyLink('post-threshold-selection-outbreak-03')">Share</button>
-
-  </div>
-</div>
-  
- 
-
-
-   <!-- POST (2) -->
-<div class="post" id="post-gather-guidelines-02" data-category="Public Health">
-
-   <img src="https://github.com/user-attachments/assets/bb76126f-aa6f-4c7f-ab7e-e03ef4f3afd0">
-  
- <div class="share-preview" style="display:none;">
-   <img src="https://github.com/user-attachments/assets/bb76126f-aa6f-4c7f-ab7e-e03ef4f3afd0">
-    Understanding GATHER and making health estimates transparent.
-    In health research, we often produce numbers that directly influence decisions, such as national rates, trends, and future projections. 
-These estimates guide policies, funding, and intervention strategies. However, an important question remains: how transparent are these results?
-  </div>
-  
-  <div class="post-content">
-
-    <div class="post-title">Understanding GATHER and making health estimates transparent</div>
-
-    <div class="author-line">
-      <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" class="author-pic">
-      <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
-    </div>
-
-    <div class="meta">📅 6 April 2026 | ⏰ 12:00 AM</div>
-
-   <div class="short-text">
-
-<h3>Why this topic matters</h3>
-<p>
-In health research, we often produce numbers that directly influence decisions, such as national rates, trends, and future projections. 
-These estimates guide policies, funding, and intervention strategies. However, an important question remains: how transparent are these results?
-</p>
-
-<h3>What is GATHER</h3>
-<p>
-GATHER stands for Guidelines for Accurate and Transparent Health Estimates Reporting. Introduced in 2016, it provides a structured way 
-to report health estimates clearly and reproducibly. It is not a method, but a reporting framework that ensures transparency.
-</p>
-
-<h3>Why GATHER matters</h3>
-<ul>
-<li>Health estimates often rely on multiple datasets</li>
-<li>Statistical or machine learning models are used</li>
-<li>Assumptions and adjustments are required</li>
-<li>Uncertainty must be calculated</li>
-</ul>
-
-<p>
-Without proper reporting, results may be difficult to interpret and trust. GATHER helps ensure clarity and reliability.
-</p>
-
-<h3>GATHER reporting domains</h3>
-
-<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
-<tr>
-<th>Category</th>
-<th>Focus area</th>
-<th>Purpose</th>
-</tr>
-<tr>
-<td>Study definition</td>
-<td>Population, time, geography</td>
-<td>Defines scope</td>
-</tr>
-<tr>
-<td>Data inputs</td>
-<td>Sources and characteristics</td>
-<td>Ensures traceability</td>
-</tr>
-<tr>
-<td>Data processing</td>
-<td>Cleaning and adjustment</td>
-<td>Improves reproducibility</td>
-</tr>
-<tr>
-<td>Modeling</td>
-<td>Methods and assumptions</td>
-<td>Explains estimation</td>
-</tr>
-<tr>
-<td>Validation</td>
-<td>Model checking</td>
-<td>Ensures reliability</td>
-</tr>
-<tr>
-<td>Outputs</td>
-<td>Results and uncertainty</td>
-<td>Improves interpretation</td>
-</tr>
-<tr>
-<td>Transparency</td>
-<td>Data and code sharing</td>
-<td>Supports replication</td>
-</tr>
-</table>
-
-<h3>GATHER checklist (18 items)</h3>
-
-<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
-<tr>
-<th>No</th>
-<th>Item</th>
-<th>Description</th>
-</tr>
-<tr><td>1</td><td>Population</td><td>Define scope and time</td></tr>
-<tr><td>2</td><td>Outcomes</td><td>Specify estimates</td></tr>
-<tr><td>3</td><td>Funding</td><td>Disclose funding</td></tr>
-<tr><td>4</td><td>Data sources</td><td>List datasets</td></tr>
-<tr><td>5</td><td>Data access</td><td>Explain retrieval</td></tr>
-<tr><td>6</td><td>Criteria</td><td>Inclusion/exclusion</td></tr>
-<tr><td>7</td><td>Characteristics</td><td>Describe data</td></tr>
-<tr><td>8</td><td>Processing</td><td>Cleaning steps</td></tr>
-<tr><td>9</td><td>Availability</td><td>Share or restrict</td></tr>
-<tr><td>10</td><td>Overview</td><td>Conceptual framework</td></tr>
-<tr><td>11</td><td>Models</td><td>Statistical methods</td></tr>
-<tr><td>12</td><td>Justification</td><td>Why model used</td></tr>
-<tr><td>13</td><td>Assumptions</td><td>State clearly</td></tr>
-<tr><td>14</td><td>Uncertainty</td><td>Explain calculation</td></tr>
-<tr><td>15</td><td>Validation</td><td>Model evaluation</td></tr>
-<tr><td>16</td><td>Results</td><td>Include intervals</td></tr>
-<tr><td>17</td><td>Code</td><td>Share if possible</td></tr>
-<tr><td>18</td><td>Replication</td><td>Ensure reproducibility</td></tr>
-</table>
-
-<h3>Example of reporting estimates</h3>
-
-<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
-<tr>
-<th>Indicator</th>
-<th>Estimate</th>
-<th>Uncertainty interval</th>
-</tr>
-<tr>
-<td>Disease prevalence</td>
-<td>12.5%</td>
-<td>(10.2% – 14.8%)</td>
-</tr>
-<tr>
-<td>Mortality rate</td>
-<td>145 per 100,000</td>
-<td>(120 – 170)</td>
-</tr>
-<tr>
-<td>Projection (2030)</td>
-<td>18.3%</td>
-<td>(15.0% – 21.6%)</td>
-</tr>
-</table>
-
-<h3>Practical tips</h3>
-<ul>
-<li>Report uncertainty with estimates</li>
-<li>Explain model choice clearly</li>
-<li>State assumptions explicitly</li>
-<li>Document missing data handling</li>
-<li>Include validation results</li>
-</ul>
-
-<h3>Why researchers should care</h3>
-<ul>
-<li>Governments allocate resources using these estimates</li>
-<li>Agencies plan interventions</li>
-<li>Global comparisons depend on reliable data</li>
-</ul>
-
-<p>
-GATHER promotes transparent and trustworthy science. It helps ensure that research findings are clear, reproducible, and useful for real-world decisions.
-</p>
-
-</div>
- 
-    <span class="read-more" onclick="toggleText(this)">Read more</span>
-
-    <button class="share-btn" onclick="copyLink('post-gather-guidelines-02')">Share</button>
-
-  </div>
-</div>
-
-  <!-- POST (1) -->
-<div class="post" id="post-normalization-standardization-01" data-category="Machine Learning">
-<img src="https://github.com/user-attachments/assets/196a03ba-b447-45b8-bdd4-e76869c61df5">
-
- <div class="share-preview" style="display:none;">
-     <img src="https://github.com/user-attachments/assets/196a03ba-b447-45b8-bdd4-e76869c61df5">
-    Normalization vs. Standardization.
-   When preparing data for machine learning models, features often have very different ranges and units. 
-    For example, one feature might range from 1 to 1000 while another ranges from 0.1 to 1. Without scaling, 
-    models that rely on distances or gradient-based optimization can perform poorly because features with larger 
-    numeric ranges dominate learning. Normalization and standardization are two common feature scaling techniques 
-    used to address this problem.
-  </div>
-  <div class="post-content">
-
-    <div class="post-title">Normalization vs. Standardization</div>
-
-    <div class="author-line">
-      <img src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" class="author-pic">
-      <a href="index.html" class="author-name">Md. Abu Bokkor Shiddik</a>
-    </div>
-
-    <div class="meta">📅 6 April 2026 | ⏰ 12:00 AM</div>
-
-   <div class="short-text">
-
-  <h3>Normalization vs. Standardization in data preprocessing</h3>
-
-  <p>
-    When preparing data for machine learning models, features often have very different ranges and units. 
-    For example, one feature might range from 1 to 1000 while another ranges from 0.1 to 1. Without scaling, 
-    models that rely on distances or gradient-based optimization can perform poorly because features with larger 
-    numeric ranges dominate learning. Normalization and standardization are two common feature scaling techniques 
-    used to address this problem.
-  </p>
-
-  <h3>What is normalization</h3>
-
-  <p>
-    Normalization scales data to a fixed range, usually 0 to 1 or sometimes −1 to 1. The most common form is 
-    min-max normalization, where each value is rescaled relative to the minimum and maximum values of the feature.
-  </p>
-
-  <p><strong>Min-max normalization equation:</strong></p>
-
-  <p style="background:#f1f5f9; padding:10px; border-radius:6px;">
-    X<sub>norm</sub> = (X − X<sub>min</sub>) / (X<sub>max</sub> − X<sub>min</sub>)
-  </p>
-
-  <p>
-    Here, X is the original value, X<sub>min</sub> is the minimum value, and X<sub>max</sub> is the maximum value of the feature.
-  </p>
-
-  <p>
-    After this transformation, values are in the range [0,1]. This is useful when features have unknown distributions 
-    or are not Gaussian. It is often used in distance-based algorithms like k-NN and K-Means clustering because it 
-    prevents features with larger ranges from dominating distance calculations.
-  </p>
-
-  <h3>What is standardization</h3>
-
-  <p>
-    Standardization (also called z-score scaling) transforms features so they have a mean of 0 and a standard 
-    deviation of 1. This centers the data and scales it relative to how spread out values are.
-  </p>
-
-  <p><strong>Standardization equation:</strong></p>
-
-  <p style="background:#f1f5f9; padding:10px; border-radius:6px;">
-    X<sub>std</sub> = (X − μ) / σ
-  </p>
-
-  <p>
-    Where X is the original value, μ is the mean of the feature, and σ is the standard deviation.
-  </p>
-
-  <p>
-    After standardization, the feature has a distribution centered at 0 with unit variance. This is especially 
-    helpful for gradient-based models such as Support Vector Machines, Logistic Regression, and Neural Networks, 
-    and also for techniques like PCA that are sensitive to feature variance.
-  </p>
-
-  <h3>Key differences</h3>
-
-  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
-    <tr>
-      <th>Feature</th>
-      <th>Normalization</th>
-      <th>Standardization</th>
-    </tr>
-    <tr>
-      <td>Scaling goal</td>
-      <td>Fixed range (0 to 1)</td>
-      <td>Mean = 0, Std = 1</td>
-    </tr>
-    <tr>
-      <td>Typical range</td>
-      <td>[0,1] or [-1,1]</td>
-      <td>Unbounded</td>
-    </tr>
-    <tr>
-      <td>Formula</td>
-      <td>(X − Xmin) / (Xmax − Xmin)</td>
-      <td>(X − μ) / σ</td>
-    </tr>
-    <tr>
-      <td>Best for</td>
-      <td>Distance-based models</td>
-      <td>Statistical & ML models</td>
-    </tr>
-    <tr>
-      <td>Outlier sensitivity</td>
-      <td>High</td>
-      <td>Lower</td>
-    </tr>
-  </table>
-
-  <h3>When to use which</h3>
-
-  <p><strong>Use normalization when:</strong></p>
-  <ul>
-    <li>Data does not follow normal distribution</li>
-    <li>Using distance-based algorithms</li>
-    <li>Need bounded values</li>
-  </ul>
-
-  <p><strong>Use standardization when:</strong></p>
-  <ul>
-    <li>Data is approximately Gaussian</li>
-    <li>Using regression, SVM, PCA</li>
-    <li>Model depends on variance</li>
-  </ul>
-
-  <h3>Practical tips</h3>
-
-  <ul>
-    <li>Normalization is sensitive to outliers, so be careful</li>
-    <li>Standardization is more stable when outliers exist</li>
-    <li>Always fit scaler on training data only</li>
-    <li>Apply same transformation to test data</li>
-  </ul>
-
-  <h3>Example in python</h3>
-
-  <pre style="background:#020617; color:#e2e8f0; padding:12px; border-radius:6px; overflow-x:auto;">
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
-
-# normalization
+    <div class="no-results" id="no-results">No posts match your search.</div>
+
+    <!-- ═══ POST 1 ═══ -->
+    <article class="post-card" id="post-threshold-selection-outbreak-03" data-category="Machine Learning">
+      <img class="post-cover" src="https://github.com/user-attachments/assets/3b36f824-5f93-4a1d-8563-3388005915e0" alt="Threshold selection cover" loading="lazy">
+      <div class="post-header">
+        <div class="post-meta-row">
+          <span class="cat-badge cat-ml">Machine Learning</span>
+          <span class="post-date">📅 10 April 2026</span>
+          <span class="read-time">⏱ 6 min read</span>
+        </div>
+        <h2 class="post-title">Threshold selection in outbreak prediction models</h2>
+        <div class="author-row">
+          <img class="author-avatar" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+          <div class="author-info">
+            <div class="author-name">Md. Abu Bokkor Shiddik</div>
+            <div class="author-role">Researcher · Statistics, BRUR</div>
+          </div>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-excerpt">
+          <p>Outbreak prediction models generate probability outputs that represent risk of disease occurrence. These probabilities cannot be directly used for decision making — they are converted into binary outcomes using a threshold. This step strongly affects how early we detect outbreaks, how many false alarms we get, and how reliable the system becomes in real public health use.</p>
+        </div>
+        <div class="post-full">
+          <h3>Table 1. Basic concept of threshold selection</h3>
+          <p style="font-size:13px;color:#64748b;margin-bottom:10px;">This table explains the basic idea behind threshold selection and its direct interpretation in real systems.</p>
+          <table>
+            <tr><th>Concept</th><th>Simple explanation</th><th>Real discussion</th></tr>
+            <tr><td>Threshold</td><td>Probability cutoff for outbreak decision</td><td>Controls sensitivity to detecting early disease signals and shapes decision stability</td></tr>
+            <tr><td>Low threshold</td><td>More alerts generated</td><td>Better for early warning but increases false alarms in routine surveillance</td></tr>
+            <tr><td>High threshold</td><td>Only strong signals detected</td><td>Reduces false alarms but may miss early outbreak signals in weak transmission periods</td></tr>
+          </table>
+          <p>Overall, threshold acts like a balance control between early detection and operational stability.</p>
+
+          <h3>Table 2. Suitability levels of threshold methods</h3>
+          <table>
+            <tr><th>Suitability level</th><th>What it means</th><th>Discussion in real systems</th></tr>
+            <tr><td>Highly suitable</td><td>Reliable and widely used</td><td>Used in operational outbreak systems where stability is important</td></tr>
+            <tr><td>Moderately suitable</td><td>Condition dependent</td><td>Requires tuning and validation before deployment</td></tr>
+            <tr><td>Less suitable</td><td>Mainly theoretical</td><td>Used mostly in academic comparison rather than real surveillance systems</td></tr>
+          </table>
+
+          <h3>Table 3. Highly suitable threshold methods</h3>
+          <table>
+            <tr><th>Method</th><th>Simple idea</th><th>Discussion</th><th>Usefulness</th></tr>
+            <tr><td>Precision-recall based</td><td>Balances detection and precision</td><td>Best for imbalanced outbreak data where missing cases is critical</td><td>Very high</td></tr>
+            <tr><td>Cost-sensitive thresholding</td><td>Minimizes real world loss</td><td>Useful when outbreak miss cost is higher than false alarm cost</td><td>Very high</td></tr>
+            <tr><td>Percentile based</td><td>Flags top risk values</td><td>Simple and practical for early warning dashboards</td><td>High</td></tr>
+            <tr><td>Mean minus SD</td><td>Detects abnormal rise</td><td>Useful in noisy surveillance data with weak labeling</td><td>Moderate to high</td></tr>
+            <tr><td>Seasonal adaptive</td><td>Changes with season</td><td>Very important for climate-sensitive diseases like dengue</td><td>Very high</td></tr>
+            <tr><td>Spatial adaptive</td><td>Region-specific threshold</td><td>Improves accuracy in multi-region outbreak monitoring systems</td><td>Very high</td></tr>
+          </table>
+
+          <h3>Table 4. Moderately suitable threshold methods</h3>
+          <table>
+            <tr><th>Method</th><th>What it does</th><th>Discussion</th></tr>
+            <tr><td>ROC based (Youden Index)</td><td>Balances sensitivity and specificity</td><td>Does not handle imbalance well in outbreak datasets</td></tr>
+            <tr><td>Maximum sensitivity</td><td>Detects most outbreaks</td><td>Leads to many false alarms in real systems</td></tr>
+            <tr><td>Maximum specificity</td><td>Reduces false alerts</td><td>May delay outbreak detection timing</td></tr>
+            <tr><td>Z-score threshold</td><td>Detects statistical spikes</td><td>Better suited for anomaly detection than ML prediction</td></tr>
+            <tr><td>Rolling threshold</td><td>Updates over time</td><td>Can become unstable in small datasets</td></tr>
+          </table>
+
+          <h3>Table 5. Less suitable methods in operational systems</h3>
+          <table>
+            <tr><th>Method</th><th>Why it is weak</th><th>Discussion</th></tr>
+            <tr><td>0.5 threshold</td><td>Assumes balanced data</td><td>Not realistic for rare outbreak events</td></tr>
+            <tr><td>Mean probability</td><td>No epidemiological meaning</td><td>Depends heavily on model output distribution</td></tr>
+            <tr><td>Median threshold</td><td>Ignores risk structure</td><td>Only splits data without decision logic</td></tr>
+            <tr><td>Bayesian threshold</td><td>Needs strong priors</td><td>Difficult in real surveillance settings</td></tr>
+            <tr><td>Expected utility</td><td>Hard to define costs</td><td>Theoretical but not operationally simple</td></tr>
+          </table>
+
+          <h3>Final insight</h3>
+          <p>In real outbreak prediction systems, threshold selection is not a fixed rule but a decision framework. The most effective systems combine precision-recall optimization, cost-sensitive learning, and adaptive strategies — seasonal and spatial thresholds — to ensure stable and reliable public health action.</p>
+        </div>
+      </div>
+      <div class="post-footer">
+        <button class="expand-btn" data-post="post-threshold-selection-outbreak-03">Read full post →</button>
+        <button class="share-btn-new" data-post="post-threshold-selection-outbreak-03">⎘ Share</button>
+      </div>
+    </article>
+
+    <!-- ═══ POST 2 ═══ -->
+    <article class="post-card" id="post-gather-guidelines-02" data-category="Public Health">
+      <img class="post-cover" src="https://github.com/user-attachments/assets/bb76126f-aa6f-4c7f-ab7e-e03ef4f3afd0" alt="GATHER guidelines cover" loading="lazy">
+      <div class="post-header">
+        <div class="post-meta-row">
+          <span class="cat-badge cat-ph">Public Health</span>
+          <span class="post-date">📅 6 April 2026</span>
+          <span class="read-time">⏱ 5 min read</span>
+        </div>
+        <h2 class="post-title">Understanding GATHER and making health estimates transparent</h2>
+        <div class="author-row">
+          <img class="author-avatar" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+          <div class="author-info">
+            <div class="author-name">Md. Abu Bokkor Shiddik</div>
+            <div class="author-role">Researcher · Statistics, BRUR</div>
+          </div>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-excerpt">
+          <p>In health research, we often produce numbers that directly influence decisions — national rates, trends, and future projections. These estimates guide policies, funding, and intervention strategies. But how transparent are these results? GATHER (Guidelines for Accurate and Transparent Health Estimates Reporting) provides a structured framework to report health estimates clearly and reproducibly.</p>
+        </div>
+        <div class="post-full">
+          <h3>Why GATHER matters</h3>
+          <p>Health estimates often rely on multiple datasets, statistical or machine learning models, assumptions and adjustments, and uncertainty calculations. Without proper reporting, results may be difficult to interpret and trust. GATHER ensures clarity and reliability across all these dimensions.</p>
+
+          <h3>GATHER reporting domains</h3>
+          <table>
+            <tr><th>Category</th><th>Focus area</th><th>Purpose</th></tr>
+            <tr><td>Study definition</td><td>Population, time, geography</td><td>Defines scope</td></tr>
+            <tr><td>Data inputs</td><td>Sources and characteristics</td><td>Ensures traceability</td></tr>
+            <tr><td>Data processing</td><td>Cleaning and adjustment</td><td>Improves reproducibility</td></tr>
+            <tr><td>Modeling</td><td>Methods and assumptions</td><td>Explains estimation</td></tr>
+            <tr><td>Validation</td><td>Model checking</td><td>Ensures reliability</td></tr>
+            <tr><td>Outputs</td><td>Results and uncertainty</td><td>Improves interpretation</td></tr>
+            <tr><td>Transparency</td><td>Data and code sharing</td><td>Supports replication</td></tr>
+          </table>
+
+          <h3>GATHER checklist (18 items)</h3>
+          <table>
+            <tr><th>No</th><th>Item</th><th>Description</th></tr>
+            <tr><td>1</td><td>Population</td><td>Define scope and time</td></tr>
+            <tr><td>2</td><td>Outcomes</td><td>Specify estimates</td></tr>
+            <tr><td>3</td><td>Funding</td><td>Disclose funding</td></tr>
+            <tr><td>4</td><td>Data sources</td><td>List datasets used</td></tr>
+            <tr><td>5</td><td>Data access</td><td>Explain how retrieved</td></tr>
+            <tr><td>6</td><td>Criteria</td><td>Inclusion / exclusion</td></tr>
+            <tr><td>7</td><td>Characteristics</td><td>Describe the data</td></tr>
+            <tr><td>8</td><td>Processing</td><td>Cleaning steps taken</td></tr>
+            <tr><td>9</td><td>Availability</td><td>Share or restrict</td></tr>
+            <tr><td>10</td><td>Overview</td><td>Conceptual framework</td></tr>
+            <tr><td>11</td><td>Models</td><td>Statistical methods used</td></tr>
+            <tr><td>12</td><td>Justification</td><td>Why this model was used</td></tr>
+            <tr><td>13</td><td>Assumptions</td><td>State assumptions clearly</td></tr>
+            <tr><td>14</td><td>Uncertainty</td><td>Explain how calculated</td></tr>
+            <tr><td>15</td><td>Validation</td><td>Model evaluation approach</td></tr>
+            <tr><td>16</td><td>Results</td><td>Include confidence intervals</td></tr>
+            <tr><td>17</td><td>Code</td><td>Share if possible</td></tr>
+            <tr><td>18</td><td>Replication</td><td>Ensure reproducibility</td></tr>
+          </table>
+
+          <h3>Example of reporting estimates</h3>
+          <table>
+            <tr><th>Indicator</th><th>Estimate</th><th>Uncertainty interval</th></tr>
+            <tr><td>Disease prevalence</td><td>12.5%</td><td>(10.2% – 14.8%)</td></tr>
+            <tr><td>Mortality rate</td><td>145 per 100,000</td><td>(120 – 170)</td></tr>
+            <tr><td>Projection (2030)</td><td>18.3%</td><td>(15.0% – 21.6%)</td></tr>
+          </table>
+
+          <h3>Practical tips</h3>
+          <ul>
+            <li>Always report uncertainty alongside point estimates</li>
+            <li>Explain model choice clearly with justification</li>
+            <li>State assumptions explicitly — never hide them</li>
+            <li>Document missing data handling procedures</li>
+            <li>Include validation results for all models</li>
+          </ul>
+          <p>GATHER promotes transparent and trustworthy science. It helps ensure that research findings are clear, reproducible, and useful for real-world decisions — from government resource allocation to global intervention planning.</p>
+        </div>
+      </div>
+      <div class="post-footer">
+        <button class="expand-btn" data-post="post-gather-guidelines-02">Read full post →</button>
+        <button class="share-btn-new" data-post="post-gather-guidelines-02">⎘ Share</button>
+      </div>
+    </article>
+
+    <!-- ═══ POST 3 ═══ -->
+    <article class="post-card" id="post-normalization-standardization-01" data-category="Machine Learning">
+      <img class="post-cover" src="https://github.com/user-attachments/assets/196a03ba-b447-45b8-bdd4-e76869c61df5" alt="Normalization vs Standardization cover" loading="lazy">
+      <div class="post-header">
+        <div class="post-meta-row">
+          <span class="cat-badge cat-ml">Machine Learning</span>
+          <span class="post-date">📅 6 April 2026</span>
+          <span class="read-time">⏱ 4 min read</span>
+        </div>
+        <h2 class="post-title">Normalization vs. Standardization in data preprocessing</h2>
+        <div class="author-row">
+          <img class="author-avatar" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+          <div class="author-info">
+            <div class="author-name">Md. Abu Bokkor Shiddik</div>
+            <div class="author-role">Researcher · Statistics, BRUR</div>
+          </div>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-excerpt">
+          <p>When preparing data for machine learning models, features often have very different ranges and units. Without scaling, models that rely on distances or gradient-based optimization can perform poorly. Normalization and standardization are two core feature scaling techniques used to address this — but they work differently and suit different scenarios.</p>
+        </div>
+        <div class="post-full">
+          <h3>What is normalization?</h3>
+          <p>Normalization scales data to a fixed range, usually 0 to 1. The most common form is min-max normalization, where each value is rescaled relative to the minimum and maximum values of the feature.</p>
+          <div class="formula-block">X<sub>norm</sub> = (X − X<sub>min</sub>) / (X<sub>max</sub> − X<sub>min</sub>)</div>
+          <p>After this transformation, all values fall in [0, 1]. This is useful when features have unknown distributions or are not Gaussian, and works well with distance-based algorithms like k-NN and K-Means.</p>
+
+          <h3>What is standardization?</h3>
+          <p>Standardization (z-score scaling) transforms features so they have mean = 0 and standard deviation = 1. This centers the data and scales relative to its spread.</p>
+          <div class="formula-block">X<sub>std</sub> = (X − μ) / σ</div>
+          <p>This is especially helpful for gradient-based models — SVM, Logistic Regression, Neural Networks — and for techniques like PCA that are sensitive to feature variance.</p>
+
+          <h3>Key differences</h3>
+          <table>
+            <tr><th>Feature</th><th>Normalization</th><th>Standardization</th></tr>
+            <tr><td>Scaling goal</td><td>Fixed range (0 to 1)</td><td>Mean = 0, Std = 1</td></tr>
+            <tr><td>Typical range</td><td>[0, 1] or [−1, 1]</td><td>Unbounded</td></tr>
+            <tr><td>Formula</td><td>(X − Xmin) / (Xmax − Xmin)</td><td>(X − μ) / σ</td></tr>
+            <tr><td>Best for</td><td>Distance-based models</td><td>Statistical &amp; ML models</td></tr>
+            <tr><td>Outlier sensitivity</td><td>High</td><td>Lower</td></tr>
+          </table>
+
+          <h3>When to use which</h3>
+          <p><strong>Use normalization when:</strong> data does not follow normal distribution, using distance-based algorithms, or bounded values are required.</p>
+          <p><strong>Use standardization when:</strong> data is approximately Gaussian, using regression, SVM, or PCA, or the model depends on variance.</p>
+
+          <h3>Example in Python</h3>
+          <pre>from sklearn.preprocessing import MinMaxScaler, StandardScaler
+
+# Normalization
 norm_scaler = MinMaxScaler()
 X_norm = norm_scaler.fit_transform(X_train)
 
-# standardization
+# Standardization
 std_scaler = StandardScaler()
-X_std = std_scaler.fit_transform(X_train)
-  </pre>
+X_std = std_scaler.fit_transform(X_train)</pre>
 
-  <h3>Common misunderstandings</h3>
+          <h3>Practical tips</h3>
+          <ul>
+            <li>Normalization is sensitive to outliers — handle them first</li>
+            <li>Standardization is more stable when outliers are present</li>
+            <li>Always fit the scaler on training data only</li>
+            <li>Apply the same transformation to test and validation data</li>
+          </ul>
+          <p>In ML literature, "normalization" sometimes refers to standardization — the terms are used loosely. But in scikit-learn practice, normalization = MinMaxScaler, standardization = StandardScaler.</p>
+        </div>
+      </div>
+      <div class="post-footer">
+        <button class="expand-btn" data-post="post-normalization-standardization-01">Read full post →</button>
+        <button class="share-btn-new" data-post="post-normalization-standardization-01">⎘ Share</button>
+      </div>
+    </article>
 
-  <p>
-    In statistics, normalization sometimes refers to standardization. But in machine learning, normalization 
-    usually means scaling to a fixed range, while standardization means z-score scaling.
-  </p>
+  </div><!-- /posts column -->
 
-  <h3>Visual intuition</h3>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-title">Posts in this series</div>
+      <div id="sidebar-toc"></div>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-title">By category</div>
+      <div class="sidebar-cat"><span>Machine Learning</span><span class="sidebar-cat-count">2</span></div>
+      <div class="sidebar-cat"><span>Public Health</span><span class="sidebar-cat-count">1</span></div>
+    </div>
+    <a class="sidebar-video-link" href="videos.html">▶ Watch Research Videos →</a>
+  </aside>
 
-  <ul>
-    <li>Normalized data stays between 0 and 1</li>
-    <li>Standardized data centers around 0</li>
-    <li>Spread depends on standard deviation</li>
-  </ul>
+</div><!-- /page-outer -->
 
-</div>
- 
-    <span class="read-more" onclick="toggleText(this)">Read more</span>
-
-    <button class="share-btn" onclick="copyLink('post-normalization-standardization-01')">Share</button>
-
-  </div>
-</div>
-
-</div>
-
-<!-- SIDEBAR -->
-<div class="sidebar">
-  <h3>Quick View</h3>
-  <div id="quick-links"></div>
-  <hr>
-  <a href="videos.html">🎥 Videos</a>
-</div>
-
-</div>
-
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div>
@@ -1466,7 +665,7 @@ X_std = std_scaler.fit_transform(X_train)
     <div>
       <div class="footer-col-title">Connect</div>
       <div class="footer-social-links">
-        <a href="https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/" target="_blank">🌐 Portfolio</a>
+        <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik/" target="_blank">🌐 Portfolio</a>
         <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">in LinkedIn</a>
         <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">🎓 Google Scholar</a>
         <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">✦ ORCID</a>
@@ -1480,123 +679,116 @@ X_std = std_scaler.fit_transform(X_train)
   </div>
 </footer>
 
-
-
-
-
-  
 <script>
-
-function toggleText(el) {
-  const text = el.previousElementSibling;
-
-  if (text.classList.contains("short-text")) {
-    text.classList.remove("short-text");
-    text.classList.add("full-text");
-    el.innerText = "Show less";
-  } else {
-    text.classList.add("short-text");
-    text.classList.remove("full-text");
-    el.innerText = "Read more";
-  }
-}
-
-function copyLink(postId) {
-  const post = document.getElementById(postId);
-
-  const title = post.querySelector(".post-title")?.innerText || "";
-  const preview = post.querySelector(".share-preview")?.innerText || "";
-  const url = window.location.origin + window.location.pathname + "#" + postId;
-
-  const textToCopy =
-`${title}
-
-${preview}
-
-Read more: ${url}`;
-
-  navigator.clipboard.writeText(textToCopy);
-  alert("Post link copied!");
-}
-// AUTO INDEX POSTS INTO QUICK VIEW
-document.addEventListener("DOMContentLoaded", function () {
-
-  const posts = document.querySelectorAll(".post");
-  const container = document.getElementById("quick-links");
-
-  const categories = {};
-
-  posts.forEach(post => {
-    const category = post.getAttribute("data-category") || "Other";
-    const id = post.id;
-    const title = post.querySelector(".post-title").innerText;
-
-    if (!categories[category]) {
-      categories[category] = [];
-    }
-
-    categories[category].push({ id, title });
+/* ── NAVBAR ── */
+document.querySelectorAll('.dropbtn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var dd = btn.closest('.dropdown');
+    var open = dd.classList.contains('active');
+    document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
+    if (!open) dd.classList.add('active');
   });
-
-  for (let cat in categories) {
-
-    const catTitle = document.createElement("div");
-    catTitle.innerText = cat;
-    catTitle.style.fontWeight = "700";
-    catTitle.style.marginTop = "10px";
-    catTitle.style.marginBottom = "5px";
-    catTitle.style.color = "#0f172a";
-
-    container.appendChild(catTitle);
-
-    categories[cat].forEach(item => {
-      const link = document.createElement("a");
-
-      link.href = "#" + item.id;
-      link.innerText = "• " + item.title;
-
-      link.style.display = "block";
-      link.style.fontSize = "13px";
-      link.style.marginBottom = "5px";
-      link.style.color = "#1e3a8a";
-      link.style.textDecoration = "none";
-
-      link.onmouseover = () => link.style.textDecoration = "underline";
-      link.onmouseout = () => link.style.textDecoration = "none";
-
-      container.appendChild(link);
-    });
-
-  }
-
+});
+document.addEventListener('click', function() {
+  document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
+});
+var ham = document.getElementById('hamburger');
+var navDrawer = document.getElementById('nav-drawer');
+ham.addEventListener('click', function() { ham.classList.toggle('open'); navDrawer.classList.toggle('open'); });
+navDrawer.querySelectorAll('a').forEach(function(a) {
+  a.addEventListener('click', function() { ham.classList.remove('open'); navDrawer.classList.remove('open'); });
 });
 
-    document.querySelectorAll('.dropbtn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      const dd = btn.closest('.dropdown');
-      const open = dd.classList.contains('active');
-      document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
-      if (!open) dd.classList.add('active');
-    });
+/* ── EXPAND / COLLAPSE POST ── */
+document.querySelectorAll('.expand-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var card = btn.closest('.post-card');
+    var excerpt = card.querySelector('.post-excerpt');
+    var full = card.querySelector('.post-full');
+    var open = full.style.display === 'block';
+    full.style.display = open ? 'none' : 'block';
+    excerpt.style.display = open ? 'block' : 'none';
+    btn.textContent = open ? 'Read full post →' : 'Show less ↑';
   });
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
-  });
+});
 
-  const ham = document.getElementById('hamburger');
-  const drawer = document.getElementById('nav-drawer');
-  ham.addEventListener('click', () => {
-    ham.classList.toggle('open');
-    drawer.classList.toggle('open');
+/* ── SHARE ── */
+var toast = document.getElementById('share-toast');
+function showToast() {
+  toast.classList.add('show');
+  setTimeout(function() { toast.classList.remove('show'); }, 2200);
+}
+document.querySelectorAll('.share-btn-new').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var postId = btn.dataset.post;
+    var card = document.getElementById(postId);
+    var title = card ? (card.querySelector('.post-title').textContent || '') : '';
+    var url = window.location.origin + window.location.pathname + '#' + postId;
+    var text = title + '\n\n' + url;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(showToast);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta);
+      showToast();
+    }
   });
-  drawer.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      ham.classList.remove('open');
-      drawer.classList.remove('open');
+});
+
+/* ── FILTER TABS ── */
+document.querySelectorAll('.filter-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.filter-tab').forEach(function(t) { t.classList.remove('active'); });
+    tab.classList.add('active');
+    tab.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+    var f = tab.dataset.filter;
+    var count = 0;
+    document.querySelectorAll('.post-card').forEach(function(card) {
+      var cat = card.dataset.category || '';
+      var show = f === 'all' || cat === f;
+      card.style.display = show ? '' : 'none';
+      if (show) count++;
     });
+    document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
   });
+});
+
+/* ── LIVE SEARCH ── */
+document.getElementById('search').addEventListener('input', function() {
+  var q = this.value.toLowerCase().trim();
+  var count = 0;
+  document.querySelectorAll('.post-card').forEach(function(card) {
+    var text = card.textContent.toLowerCase();
+    var show = !q || text.indexOf(q) !== -1;
+    card.style.display = show ? '' : 'none';
+    if (show) count++;
+  });
+  document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
+  if (q) document.querySelectorAll('.filter-tab').forEach(function(t) { t.classList.remove('active'); });
+});
+
+/* ── BUILD SIDEBAR TOC ── */
+document.addEventListener('DOMContentLoaded', function() {
+  var toc = document.getElementById('sidebar-toc');
+  document.querySelectorAll('.post-card').forEach(function(card) {
+    var id = card.id;
+    var title = card.querySelector('.post-title') ? card.querySelector('.post-title').textContent : '';
+    var link = document.createElement('div');
+    link.className = 'sidebar-link';
+    link.innerHTML = '<span class="sidebar-link-dot"></span><span>' + title + '</span>';
+    link.addEventListener('click', function() {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var navbar = document.querySelector('.navbar');
+      var filterBar = document.querySelector('.filter-bar');
+      var offset = (navbar ? navbar.offsetHeight : 56) + (filterBar ? filterBar.offsetHeight : 44) + 12;
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+    });
+    toc.appendChild(link);
+  });
+});
 </script>
-
 </body>
 </html>
