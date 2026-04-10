@@ -677,12 +677,12 @@ Health Data Analysis
   <!-- POST (FULL CONTENT PRESERVED) -->
 
 <!-- POST (3) -->
-<div class="post" id="post14703-threshold-selection-outbreak" data-category="Machine Learning">
+<div class="post" id="post-threshold-selection-outbreak-03" data-category="Machine Learning">
 <img src="https://github.com/user-attachments/assets/3b36f824-5f93-4a1d-8563-3388005915e0">
 
  <div class="share-preview" style="display:none;">
      <img src="https://github.com/user-attachments/assets/3b36f824-5f93-4a1d-8563-3388005915e0">
-    Threshold selection in outbreak prediction models.
+    Threshold selection in outbreak prediction models.  
     Outbreak prediction models generate probability outputs that must be converted into binary decisions such as outbreak or non outbreak. This step is called threshold selection. It strongly affects sensitivity, false alarms, and early warning performance in public health systems.
  </div>
 
@@ -700,11 +700,12 @@ Health Data Analysis
    <div class="short-text">
 
   <p>
-    Outbreak prediction models generate probability outputs that represent risk of disease occurrence. These probabilities cannot be used directly for decision making, so they are converted into binary outcomes using a threshold. This step is very important because it affects how early we detect outbreaks, how many false alarms we get, and how reliable the system becomes in real public health use.
+    Outbreak prediction models generate probability outputs that represent risk of disease occurrence. These probabilities cannot be directly used for decision making, so they are converted into binary outcomes using a threshold. This step is very important because it affects how early we detect outbreaks, how many false alarms we get, and how reliable the system becomes in real public health use.
   </p>
 
   <!-- TABLE 1 -->
-  <h3>Table 1.</h3> Overall meaning of threshold selection in outbreak prediction
+  <h3>Table 1. basic concept of threshold selection in outbreak prediction</h3>
+  <p style="font-size:13px;color:#64748b;">This table explains the basic idea behind threshold selection and its direct interpretation in real systems.</p>
 
   <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
     <tr>
@@ -715,24 +716,25 @@ Health Data Analysis
     <tr>
       <td>Threshold</td>
       <td>Probability cutoff for outbreak decision</td>
-      <td>Controls how sensitive the system is to detecting early disease signals</td>
+      <td>Controls how sensitive the system is to detecting early disease signals and shapes decision stability</td>
     </tr>
     <tr>
       <td>Low threshold</td>
       <td>More alerts generated</td>
-      <td>Good for early warning but may create many false alarms</td>
+      <td>Better for early warning but increases false alarms in routine surveillance</td>
     </tr>
     <tr>
       <td>High threshold</td>
       <td>Only strong signals detected</td>
-      <td>Reduces false alarms but may miss early outbreak signals</td>
+      <td>Reduces false alarms but may miss early outbreak signals in weak transmission periods</td>
     </tr>
   </table>
 
-  <p> This shows how threshold directly controls the balance between early detection and system stability.</p>
+  <p>Overall, threshold acts like a balance control between early detection and operational stability in outbreak systems.</p>
 
   <!-- TABLE 2 -->
-  <h3>Table 2.</h3> Suitability levels of threshold methods
+  <h3>Table 2. suitability levels of threshold methods in practice</h3>
+  <p style="font-size:13px;color:#64748b;">This table categorizes methods based on real world applicability and stability in health systems.</p>
 
   <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
     <tr>
@@ -743,24 +745,25 @@ Health Data Analysis
     <tr>
       <td>Highly suitable</td>
       <td>Reliable and widely used</td>
-      <td>Used in operational outbreak systems and public health dashboards</td>
+      <td>Used in operational outbreak systems and public health dashboards where stability is important</td>
     </tr>
     <tr>
       <td>Moderately suitable</td>
       <td>Condition dependent</td>
-      <td>Works well in some datasets but needs careful tuning</td>
+      <td>Works in some datasets but requires tuning and validation before deployment</td>
     </tr>
     <tr>
       <td>Less suitable</td>
-      <td>Mostly theoretical</td>
-      <td>Used mainly in academic research or baseline comparisons</td>
+      <td>Mainly theoretical</td>
+      <td>Used mostly in academic comparison rather than real surveillance systems</td>
     </tr>
   </table>
 
-  <p> In real outbreak systems, highly suitable methods are preferred because stability matters more than mathematical simplicity.</p>
+  <p>In practice, systems prefer highly suitable methods because reliability is more important than complexity.</p>
 
   <!-- TABLE 3 -->
-  <h3>Table 3.</h3> Highly suitable threshold methods with practical interpretation
+  <h3>Table 3. highly suitable threshold methods and their practical interpretation</h3>
+  <p style="font-size:13px;color:#64748b;">These methods are widely acceptable in operational outbreak prediction systems.</p>
 
   <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
     <tr>
@@ -769,48 +772,56 @@ Health Data Analysis
       <th>Discussion</th>
       <th>Usefulness</th>
     </tr>
+
     <tr>
       <td>Precision recall based</td>
       <td>Balances detection and precision</td>
-      <td>Best for rare outbreak detection where imbalance is high</td>
+      <td>Best for imbalanced outbreak data where missing cases is critical</td>
       <td>Very high</td>
     </tr>
+
     <tr>
       <td>Cost sensitive thresholding</td>
       <td>Minimizes real world loss</td>
-      <td>Useful when missing outbreak is more costly than false alarms</td>
+      <td>Useful when outbreak miss cost is higher than false alarm cost</td>
       <td>Very high</td>
     </tr>
+
     <tr>
       <td>Percentile based</td>
-      <td>Top risk values flagged</td>
-      <td>Simple to implement, good for dashboards and alerts</td>
+      <td>Flags top risk values</td>
+      <td>Simple and practical for early warning dashboards</td>
       <td>High</td>
     </tr>
+
     <tr>
       <td>Mean minus SD</td>
-      <td>Detect abnormal rise</td>
-      <td>Works when data is noisy or labels are weak</td>
+      <td>Detects abnormal rise</td>
+      <td>Useful in noisy surveillance data with weak labeling</td>
       <td>Moderate to high</td>
     </tr>
+
     <tr>
       <td>Seasonal adaptive</td>
       <td>Changes with season</td>
-      <td>Very important for dengue and climate sensitive diseases</td>
+      <td>Very important for climate sensitive diseases like dengue</td>
       <td>Very high</td>
     </tr>
+
     <tr>
       <td>Spatial adaptive</td>
-      <td>Different region different threshold</td>
-      <td>Improves accuracy in multi district systems</td>
+      <td>Region specific threshold</td>
+      <td>Improves accuracy in multi region outbreak monitoring systems</td>
       <td>Very high</td>
     </tr>
+
   </table>
 
-  <p> These methods are widely acceptable in real public health systems because they are both practical and stable over time.</p>
+  <p>These methods are considered operationally strong because they adapt to real world variability.</p>
 
   <!-- TABLE 4 -->
-  <h3>Table 4.</h3> Moderately suitable methods and their discussion
+  <h3>Table 4. moderately suitable threshold methods and limitations</h3>
+  <p style="font-size:13px;color:#64748b;">These methods are useful but require careful use in outbreak prediction systems.</p>
 
   <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
     <tr>
@@ -818,37 +829,44 @@ Health Data Analysis
       <th>What it does</th>
       <th>Discussion</th>
     </tr>
+
     <tr>
       <td>ROC based (Youden Index)</td>
       <td>Balances sensitivity and specificity</td>
-      <td>Often ignores imbalance problem in outbreak data</td>
+      <td>Does not handle imbalance well in outbreak datasets</td>
     </tr>
+
     <tr>
       <td>Maximum sensitivity</td>
       <td>Detects most outbreaks</td>
-      <td>Good detection but too many false alarms in practice</td>
+      <td>Leads to many false alarms in real systems</td>
     </tr>
+
     <tr>
       <td>Maximum specificity</td>
       <td>Reduces false alerts</td>
-      <td>May delay outbreak detection</td>
+      <td>May delay outbreak detection timing</td>
     </tr>
+
     <tr>
       <td>Z score threshold</td>
       <td>Detects statistical spikes</td>
-      <td>Works better for anomaly detection than ML prediction</td>
+      <td>Better suited for anomaly detection than ML prediction</td>
     </tr>
+
     <tr>
       <td>Rolling threshold</td>
       <td>Updates over time</td>
-      <td>Can be unstable in small or noisy datasets</td>
+      <td>Can become unstable in small datasets</td>
     </tr>
+
   </table>
 
-  <p> These methods are useful but should not be used alone in real outbreak systems.</p>
+  <p>These methods are supportive but not sufficient alone for deployment systems.</p>
 
   <!-- TABLE 5 -->
-  <h3>Table 5.</h3> Less suitable methods for operational systems
+  <h3>Table 5. less suitable methods in operational outbreak systems</h3>
+  <p style="font-size:13px;color:#64748b;">These methods are mostly used for baseline or academic comparison only.</p>
 
   <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width:100%;">
     <tr>
@@ -856,58 +874,62 @@ Health Data Analysis
       <th>Why it is weak</th>
       <th>Discussion</th>
     </tr>
+
     <tr>
       <td>0.5 threshold</td>
       <td>Assumes balanced data</td>
       <td>Not realistic for rare outbreak events</td>
     </tr>
+
     <tr>
       <td>Mean probability</td>
       <td>No epidemiological meaning</td>
-      <td>Depends too much on model output distribution</td>
+      <td>Depends heavily on model output distribution</td>
     </tr>
+
     <tr>
       <td>Median threshold</td>
       <td>Ignores risk structure</td>
-      <td>Only splits data, not useful for decision making</td>
+      <td>Only splits data without decision logic</td>
     </tr>
+
     <tr>
       <td>Control chart methods</td>
       <td>Old statistical approach</td>
       <td>Less compatible with modern ML systems</td>
     </tr>
+
     <tr>
       <td>Bayesian threshold</td>
       <td>Needs strong priors</td>
-      <td>Difficult to apply in real world surveillance</td>
+      <td>Difficult in real surveillance settings</td>
     </tr>
+
     <tr>
       <td>Expected utility</td>
       <td>Hard to define costs</td>
       <td>Theoretical but not operationally simple</td>
     </tr>
+
   </table>
 
-  <p> These are mostly used for academic comparison, not for field deployment.</p>
+  <p>These approaches are mainly useful for research comparison, not field deployment.</p>
 
-  <!-- FINAL -->
-  <h3>Final insight</h3>
+  <!-- FINAL INSIGHT -->
+  <h3>final insight</h3>
 
   <p>
-    In real outbreak prediction systems, threshold selection is not a single fixed rule. It is a decision framework.
-    The best systems combine precision recall optimization, cost sensitive adjustment, and adaptive methods like
-    seasonal and spatial thresholds. This makes the system more stable and more useful in real public health action.
+    In real outbreak prediction systems, threshold selection is not a fixed rule but a decision framework. The most effective systems combine precision recall optimization, cost sensitive learning, and adaptive strategies like seasonal and spatial thresholds to ensure stable and reliable public health action.
   </p>
 
 </div>
 
     <span class="read-more" onclick="toggleText(this)">Read more</span>
 
-    <button class="share-btn" onclick="copyLink('post14703-threshold-selection-outbreak')">Share</button>
+    <button class="share-btn" onclick="copyLink('post-threshold-selection-outbreak-03')">Share</button>
 
   </div>
 </div>
-
   
  
 
