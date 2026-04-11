@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Md. Abu Bokkor Shiddik</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:#f8fafc;color:#0f172a}
+
+    :root{
+      --navy:#0b1f3a;
+      --blue:#1a56db;
+      --border:#e2e8f0;
+      --text2:#475569;
+      --white:#fff;
+      --r:10px;
+    }
+
+    /* navbar */
+    .navbar{background:var(--navy);position:sticky;top:0;z-index:999}
+    .nav-inner{max-width:1180px;margin:auto;padding:0 24px;height:56px;display:flex;align-items:center}
+    .nav-brand{color:#fff;font-size:14px;font-weight:600;margin-right:auto}
+    .nav-brand span{color:#93c5fd}
+    .nav-links a{color:rgba(255,255,255,.75);font-size:13px;padding:6px 10px}
+    .nav-links{display:flex;gap:6px}
+
+    /* main layout */
+    .container{
+      max-width:1100px;
+      margin:50px auto;
+      display:grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap:40px;
+      padding:0 20px;
+    }
+
+    /* image */
+    .profile-img{
+      width:100%;
+      border-radius:14px;
+      box-shadow:0 10px 30px rgba(0,0,0,.1);
+      object-fit:cover;
+    }
+
+    /* right content */
+    .content{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:30px 34px;
+    }
+
+    h1{
+      font-family:'Lora',serif;
+      font-size:26px;
+      margin-bottom:10px;
+    }
+
+    .welcome{
+      color:var(--text2);
+      margin-bottom:20px;
+      line-height:1.7;
+    }
+
+    /* contact items */
+    .contact-list{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:10px;
+    }
+
+    .item{
+      padding:12px 14px;
+      border:1px solid var(--border);
+      border-radius:8px;
+      font-size:14px;
+      background:#f9fbff;
+    }
+
+    .label{
+      font-weight:600;
+      display:block;
+      margin-bottom:4px;
+      color:#1a56db;
+    }
+
+    /* responsive */
+    @media(max-width:800px){
+      .container{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- navbar -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <a href="contact.html" style="color:white;">ABS<span> · </span>Abu Bokkor Shiddik</a>
+    </div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="service.html">Service</a>
+      <a href="projects.html">Projects</a>
+    </div>
+  </div>
+</nav>
+
+<!-- main -->
+<div class="container">
+
+  <!-- left image -->
+  <div>
+    <img src="https://raw.githubusercontent.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/main/stst.jpeg" class="profile-img" alt="Profile Photo">
+  </div>
+
+  <!-- right content -->
+  <div class="content">
+    <h1>Welcome</h1>
+    <p class="welcome">
+      Thank you for visiting my profile. I am always open to research collaboration, academic discussion, and innovative ideas in machine learning and global health analytics. Feel free to connect with me through any of the following channels.
+    </p>
+
+    <div class="contact-list">
+      <div class="item">
+        <span class="label">Email</span>
+        abubokkor.brur60@gmail.com
+      </div>
+
+      <div class="item">
+        <span class="label">Phone</span>
+        +880 1874 001360
+      </div>
+
+      <div class="item">
+        <span class="label">Location</span>
+        Rangpur, Bangladesh
+      </div>
+
+      <div class="item">
+        <span class="label">Portfolio</span>
+        abubokkorshiddik.github.io
+      </div>
+
+      <div class="item">
+        <span class="label">LinkedIn</span>
+        linkedin.com/in/abu-bokkor-shiddik-abs798
+      </div>
+
+      <div class="item">
+        <span class="label">Google Scholar</span>
+        scholar.google.com
+      </div>
+
+      <div class="item">
+        <span class="label">GitHub</span>
+        github.com/abubokkorshiddik
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
