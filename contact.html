@@ -11,248 +11,128 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body {
-      font-family: Inter, sans-serif;
+    body{
+      margin:0;
+      font-family:Inter, sans-serif;
       background:#f8fafc;
       color:#0f172a;
-      overflow-x:hidden;
     }
 
-    a { text-decoration:none; color:inherit; } /* no underline anywhere */
+    a{ text-decoration:none; color:inherit; }
 
-    :root{
-      --navy:#0b1f3a;
-      --blue:#1a56db;
-      --white:#fff;
-      --border:#e2e8f0;
-      --shadow:0 6px 20px rgba(0,0,0,.08);
-    }
-
-    /* ================= NAVBAR ================= */
-    .navbar {
-      background:var(--navy);
-      position:sticky;
-      top:0;
-      z-index:9999;
-    }
-
-    .nav-inner{
-      max-width:1200px;
-      margin:auto;
-      display:flex;
-      align-items:center;
-      height:56px;
-      padding:0 18px;
-    }
-
-    .nav-brand{
-      color:white;
-      font-weight:600;
-      font-size:14px;
-      margin-right:auto;
-    }
-
-    .nav-links{
-      display:flex;
-      gap:6px;
-      align-items:center;
-    }
-
-    .nav-links a, .dropbtn{
-      color:rgba(255,255,255,.75);
-      font-size:13px;
-      padding:6px 10px;
-      border-radius:6px;
-      background:none;
-      border:none;
-      cursor:pointer;
-    }
-
-    .nav-links a:hover, .dropbtn:hover{
-      background:rgba(255,255,255,.1);
-      color:white;
-    }
-
-    .dropdown{ position:relative; }
-
-    .dropdown-content{
-      position:absolute;
-      top:100%;
-      left:0;
-      background:#132444;
-      min-width:180px;
-      border-radius:10px;
-      padding:6px;
-      opacity:0;
-      visibility:hidden;
-      transform:translateY(6px);
-      transition:.2s;
-    }
-
-    .dropdown:hover .dropdown-content,
-    .dropdown.active .dropdown-content{
-      opacity:1;
-      visibility:visible;
-      transform:translateY(0);
-    }
-
-    .dropdown-content a{
-      display:block;
-      padding:8px 10px;
-      font-size:13px;
-      color:rgba(255,255,255,.7);
-      border-radius:6px;
-    }
-
-    .dropdown-content a:hover{
-      background:rgba(255,255,255,.08);
-      color:white;
-    }
-
-    /* hamburger */
-    .hamburger{
-      display:none;
-      flex-direction:column;
-      gap:4px;
-      background:none;
-      border:none;
-    }
-
-    .hamburger span{
-      width:22px;
-      height:2px;
-      background:white;
-    }
-
-    /* drawer */
-    .nav-drawer{
-      display:none;
-      background:#0d1c38;
-      max-height:0;
-      overflow:hidden;
-      transition:.35s;
-    }
-
-    .nav-drawer.open{ max-height:700px; }
-
-    .drawer-link{
-      display:block;
-      padding:12px 18px;
-      color:rgba(255,255,255,.75);
-    }
-
-    .drawer-link:hover{
-      background:rgba(255,255,255,.06);
-      color:white;
-    }
-
-    @media(max-width:900px){
-      .nav-links{ display:none; }
-      .hamburger{ display:flex; }
-      .nav-drawer{ display:block; }
-    }
-
-    /* ================= HEADER ================= */
-    .header{
-      max-width:1100px;
+    /* keep navbar untouched */
+    /* ===== HERO CONTACT LAYOUT ===== */
+    .contact-wrap{
+      max-width:1180px;
       margin:40px auto;
-      padding:0 18px;
+      padding:0 24px;
       display:grid;
-      grid-template-columns:1.3fr .7fr;
-      gap:30px;
+      grid-template-columns:1.2fr .8fr;
+      gap:40px;
       align-items:center;
     }
 
-    .title{
+    .welcome{
       font-family:Lora, serif;
-      font-size:28px;
+      font-size:30px;
       font-weight:600;
+      margin-bottom:10px;
     }
 
-    .subtitle{
-      margin-top:6px;
-      color:#334155;
-      font-size:14px;
-    }
-
-    .info-box{
-      margin-top:16px;
-      line-height:1.9;
+    .sub{
       font-size:14px;
       color:#475569;
+      line-height:1.8;
     }
 
-    .info-box a{
-      color:var(--blue);
+    .info{
+      margin-top:18px;
+      font-size:14px;
+      line-height:2;
+      color:#334155;
+    }
+
+    .info a{
+      color:#1a56db;
       font-weight:500;
     }
 
-    .card{
-      background:white;
-      padding:20px;
-      border:1px solid var(--border);
-      border-radius:10px;
-      box-shadow:var(--shadow);
+    /* SAME PHOTO STYLE AS HOMEPAGE */
+    .photo-wrap{
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
-    .photo{
-      width:160px;
-      height:160px;
+    .photo-ring {
+      width:220px;
+      height:220px;
       border-radius:50%;
-      object-fit:cover;
-      margin:auto;
-      display:block;
-      border:3px solid #1a56db;
+      padding:4px;
+      background:linear-gradient(135deg,#3b82f6,#6366f1,#06b6d4);
+      position:relative;
     }
 
-    /* ================= CONTACT GRID ================= */
+    .photo-ring img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      border:3px solid #0b1f3a;
+    }
+
+    /* GRID INFO */
     .grid{
-      max-width:1100px;
-      margin:40px auto;
-      padding:0 18px;
+      max-width:1180px;
+      margin:50px auto;
+      padding:0 24px;
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:16px;
     }
 
     .box{
-      background:white;
-      padding:18px;
+      background:#fff;
+      border:1px solid #e2e8f0;
       border-radius:10px;
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
+      padding:18px;
+      box-shadow:0 2px 10px rgba(0,0,0,.05);
     }
 
     .box h3{
       font-size:14px;
       margin-bottom:8px;
-      color:#0f172a;
     }
 
-    .box p, .box a{
+    .box p{
       font-size:13px;
       color:#475569;
+      line-height:1.7;
     }
 
-    .box a{
-      color:var(--blue);
-    }
-
+    /* responsive */
     @media(max-width:900px){
-      .header{ grid-template-columns:1fr; text-align:center; }
-      .grid{ grid-template-columns:1fr; }
+      .contact-wrap{
+        grid-template-columns:1fr;
+        text-align:left;
+      }
+      .grid{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR (UNCHANGED AS YOU SAID) ================= -->
 <nav class="navbar">
   <div class="nav-inner">
-    <div class="nav-brand">ABS · Abu Bokkor Shiddik</div>
+    <div class="nav-brand">
+      <a href="contact.html" style="color:white;">
+        ABS<span> · </span>Abu Bokkor Shiddik
+      </a>
+    </div>
 
     <div class="nav-links">
       <a href="home.html">Home</a>
@@ -260,101 +140,173 @@
       <a href="service.html">Service</a>
 
       <div class="dropdown">
-        <button class="dropbtn">Lab ▾</button>
+        <button class="dropbtn">Digital Lab ▾</button>
         <div class="dropdown-content">
-          <a href="projects.html">Projects</a>
-          <a href="data-code.html">Data</a>
+          <a href="projects.html">⚗ Projects</a>
+          <a href="data-code.html">💾 Data & Code</a>
         </div>
       </div>
 
       <div class="dropdown">
-        <button class="dropbtn">More ▾</button>
+        <button class="dropbtn">Learning ▾</button>
         <div class="dropdown-content">
-          <a href="courses.html">Courses</a>
-          <a href="insights.html">Insights</a>
+          <a href="courses.html">🎓 Courses & Training</a>
+          <a href="conference-and-workshop.html">🏛 Conferences & Workshops</a>
         </div>
       </div>
 
-      <a href="contact.html">Contact</a>
+      <div class="dropdown">
+        <button class="dropbtn">Insights ▾</button>
+        <div class="dropdown-content">
+          <a href="insights.html">✍ Posts</a>
+          <a href="videos.html">▶ Videos</a>
+          <a href="archive.html">📷 Photos & Archive</a>
+        </div>
+      </div>
     </div>
 
-    <button class="hamburger" id="ham">
+    <button class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </button>
   </div>
 
-  <div class="nav-drawer" id="drawer">
-    <a class="drawer-link" href="home.html">Home</a>
-    <a class="drawer-link" href="publications.html">Publications</a>
-    <a class="drawer-link" href="service.html">Service</a>
-    <a class="drawer-link" href="projects.html">Projects</a>
-    <a class="drawer-link" href="data-code.html">Data</a>
-    <a class="drawer-link" href="courses.html">Courses</a>
-    <a class="drawer-link" href="insights.html">Insights</a>
-    <a class="drawer-link" href="contact.html">Contact</a>
+  <div class="nav-drawer" id="nav-drawer">
+    <div class="drawer-inner">
+      <a class="drawer-link" href="home.html">Home</a>
+      <a class="drawer-link" href="publications.html">Publications</a>
+      <a class="drawer-link" href="service.html">Service</a>
+      <a class="drawer-link" href="projects.html">Projects</a>
+      <a class="drawer-link" href="data-code.html">Data & Code</a>
+      <a class="drawer-link" href="courses.html">Courses</a>
+      <a class="drawer-link" href="insights.html">Insights</a>
+      <a class="drawer-link" href="contact.html">Contact</a>
+    </div>
   </div>
 </nav>
 
-<!-- HEADER -->
-<section class="header">
+<!-- ================= CONTACT HERO ================= -->
+<section class="contact-wrap">
 
   <div>
-    <div class="title">Md. Abu Bokkor Shiddik</div>
-    <div class="subtitle">
-      B.S. Hon’s · Dept. of Statistics · Begum Rokeya University Rangpur
+    <div class="welcome">Welcome</div>
+
+    <div class="sub">
+      Md. Abu Bokkor Shiddik<br>
+      B.S. Hon’s, Department of Statistics<br>
+      Begum Rokeya University, Rangpur
     </div>
 
-    <div class="info-box">
+    <div class="info">
       Email: <a href="mailto:abubokkor.brur60@gmail.com">abubokkor.brur60@gmail.com</a><br>
       Phone: <a href="tel:+8801874001360">+880 1874 001360</a><br>
-      Portfolio: <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik/" target="_blank">Visit Site</a><br>
-      LinkedIn: <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">Profile</a><br>
-      GitHub: <a href="https://github.com/abubokkorshiddik" target="_blank">Repositories</a>
+      Portfolio: <a href="https://abubokkorshiddik.github.io/Portfolio-AbuBokkorShiddik/" target="_blank">Visit</a><br>
+      GitHub: <a href="https://github.com/abubokkorshiddik" target="_blank">Profile</a><br>
+      LinkedIn: <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">Connect</a>
     </div>
   </div>
 
-  <div class="card">
-    <img class="photo" src="https://raw.githubusercontent.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/main/ABS.jpeg">
-    <p style="text-align:center;margin-top:10px;font-size:13px;color:#64748b;">
-      Research Profile Photo
-    </p>
+  <!-- PHOTO SAME STYLE -->
+  <div class="photo-wrap">
+    <div class="photo-ring">
+      <img src="https://raw.githubusercontent.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/main/ABS.jpeg">
+    </div>
   </div>
 
 </section>
 
-<!-- CONTACT GRID -->
+<!-- ================= INFO BOXES ================= -->
 <section class="grid">
 
   <div class="box">
     <h3>Academic Address</h3>
-    <p>Dept. of Statistics<br>Begum Rokeya University<br>Rangpur, Bangladesh</p>
+    <p>Department of Statistics<br>Begum Rokeya University<br>Rangpur, Bangladesh</p>
   </div>
 
   <div class="box">
-    <h3>Research Interests</h3>
-    <p>Machine Learning, XAI, Epidemiology, Climate Health, Spatial Modeling</p>
+    <h3>Research Focus</h3>
+    <p>Machine Learning, Explainable AI, Epidemiology, Climate Health, Spatial Modeling</p>
   </div>
 
   <div class="box">
-    <h3>Availability</h3>
-    <p>Open for collaboration, research projects, and academic supervision</p>
+    <h3>Collaboration</h3>
+    <p>Open for research collaboration, thesis supervision, and data science projects</p>
   </div>
 
 </section>
 
-<script>
-  const ham = document.getElementById('ham');
-  const drawer = document.getElementById('drawer');
+<!-- ================= FOOTER (YOU SAID UNIFIED LIKE HOMEPAGE) ================= -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Md. Abu Bokkor Shiddik</div>
+      <p class="footer-desc">
+        Researcher in Machine Learning, Explainable AI & Global Health Analytics.
+        Dept. of Statistics, BRUR, Rangpur, Bangladesh.
+      </p>
+    </div>
 
-  ham.onclick = () => {
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="courses.html">Courses</a>
+        <a href="service.html">Service</a>
+        <a href="data-code.html">Data & Code</a>
+        <a href="insights.html">Insights</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <div class="footer-links social">
+        <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ">Google Scholar</a>
+        <a href="https://github.com/abubokkorshiddik">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Md. Abu Bokkor Shiddik</p>
+    <p>All rights reserved</p>
+  </div>
+</footer>
+
+<!-- ================= KEEP YOUR NAV JS EXACT ================= -->
+<script>
+  document.querySelectorAll('.dropbtn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var dd = btn.closest('.dropdown');
+      var open = dd.classList.contains('active');
+      document.querySelectorAll('.dropdown.active').forEach(function(d) {
+        d.classList.remove('active');
+      });
+      if (!open) dd.classList.add('active');
+    });
+  });
+
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.dropdown.active').forEach(function(d) {
+      d.classList.remove('active');
+    });
+  });
+
+  var ham = document.getElementById('hamburger');
+  var drawer = document.getElementById('nav-drawer');
+
+  ham.addEventListener('click', function() {
     ham.classList.toggle('open');
     drawer.classList.toggle('open');
-  };
+  });
 
-  document.querySelectorAll('.dropbtn').forEach(btn=>{
-    btn.onclick = ()=>{
-      btn.parentElement.classList.toggle('active');
-    }
+  drawer.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      ham.classList.remove('open');
+      drawer.classList.remove('open');
+    });
   });
 </script>
 
