@@ -161,7 +161,7 @@ const GAMES=[
 ];
 
 // ── STATE ──
-let cGame=null,cStage=0,score=0,best=0,lives=3,gLoop=null,unlocked={};
+  let cGame=null,cStage=0,score=0,best=0,lives=3,intervalId=null,rafId=null,unlocked={};
 GAMES.forEach(g=>{unlocked[g.id]=+(localStorage.getItem('ul_'+g.id)||0)});
 function saveBest(id){localStorage.setItem('b_'+id,best)}
 function loadBest(id){return+(localStorage.getItem('b_'+id)||0)}
@@ -211,7 +211,16 @@ function cleanView(){
   document.getElementById('gview').innerHTML='';
   document.querySelectorAll('.dpad,.act-btn').forEach(e=>e.remove());
 }
-function stopLoop(){if(gLoop!==null){clearInterval(gLoop);clearTimeout(gLoop);try{cancelAnimationFrame(gLoop)}catch(e){}gLoop=null}}
+function stopLoop(){
+  if(intervalId!==null){
+    clearInterval(intervalId);
+    intervalId=null;
+  }
+  if(rafId!==null){
+    cancelAnimationFrame(rafId);
+    rafId=null;
+  }
+}
 function setScore(s){score=s;if(s>best){best=s;saveBest(cGame.id)}updateHUD()}
 function updateHUD(){
   document.getElementById('scoreDisp').textContent=score;
