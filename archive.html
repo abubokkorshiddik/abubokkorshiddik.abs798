@@ -691,24 +691,25 @@ document.querySelectorAll('.photo-grid').forEach(grid => {
 });
 
 /* ── NAVBAR ── */
-document.querySelectorAll('.dropbtn').forEach(btn => {
-  btn.addEventListener('click', e => {
+document.querySelectorAll('.dropbtn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
     e.stopPropagation();
-    const dd = btn.closest('.dropdown');
-    const open = dd.classList.contains('active');
-    document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
+    var dd = btn.closest('.dropdown');
+    var open = dd.classList.contains('active');
+    document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
     if (!open) dd.classList.add('active');
   });
 });
-document.addEventListener('click', () => document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active')));
-const ham = document.getElementById('hamburger');
-const drawer = document.getElementById('nav-drawer');
-ham.addEventListener('click', () => { ham.classList.toggle('open'); drawer.classList.toggle('open'); });
-drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); drawer.classList.remove('open'); }));
+document.addEventListener('click', function() {
+  document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
+});
+var ham = document.getElementById('hamburger');
+var drawer = document.getElementById('nav-drawer');
+ham.addEventListener('click', function() { ham.classList.toggle('open'); drawer.classList.toggle('open'); });
+drawer.querySelectorAll('a').forEach(function(a) {
+  a.addEventListener('click', function() { ham.classList.remove('open'); drawer.classList.remove('open'); });
+});
 
-/* ── TOC SCROLL ── */
-/* IMPORTANT: never name this "scrollTo" — it shadows window.scrollTo causing a crash */
-function jumpToSection(id) {
   var el = document.getElementById(id);
   if (!el) return;
   var navbar = document.querySelector('.navbar');
