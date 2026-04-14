@@ -104,13 +104,17 @@ function loadBest(id){return+(localStorage.getItem('b_'+id)||0)}
 
 // ── CLEAN VIEW ──
 function cleanView(){
-  document.onkeydown=null;
+  document.onkeydown = null;
   stopLoop();
-  const gv=document.getElementById('gview');
-  gv.innerHTML='';
-  document.querySelectorAll('.dpad,.act-btn').forEach(e=>e.remove());
-}
 
+  const gv = document.getElementById('gview');
+  gv.innerHTML = '';
+
+  // ✅ ADD THIS (removes leftover UI screens)
+  document.querySelectorAll('.screen').forEach(e => e.remove());
+
+  document.querySelectorAll('.dpad,.act-btn').forEach(e => e.remove());
+}
 // ── HUD ──
 function setScore(s){
   score=s;
