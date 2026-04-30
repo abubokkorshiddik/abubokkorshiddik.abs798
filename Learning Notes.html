@@ -1,11 +1,208 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Course Notes · Statistics & Probability</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<meta name="description" content="Personal university course learning notes — Statistics, Probability, and Regression Analysis by a BRUR Statistics student.">
+<title>Course Notes · Statistics, Probability & Regression</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ── NAVBAR ── */
+  .site-nav {
+    background: #0b1f3a;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    height: 54px;
+    gap: 8px;
+  }
+  .nav-brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.3px;
+    margin-right: auto;
+    white-space: nowrap;
+  }
+  .nav-brand span { color: #93c5fd; font-weight: 400; }
+  .nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.72);
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.18s, color 0.18s;
+    white-space: nowrap;
+  }
+  .nav-link:hover, .nav-link.active { color: #fff; background: rgba(255,255,255,0.09); }
+  .nav-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(147,197,253,0.18);
+    color: #93c5fd;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 4px;
+  }
+  @media (max-width: 640px) {
+    .nav-link:not(.nav-link-home):not(.nav-link-active) { display: none; }
+  }
+
+  /* ── PAGE HERO ── */
+  .page-hero {
+    background: linear-gradient(140deg, #07152a 0%, #0d2247 55%, #0f2d5c 100%);
+    color: white;
+    padding: 56px 24px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 30%, rgba(59,130,246,0.13) 0%, transparent 55%),
+                radial-gradient(circle at 15% 70%, rgba(74,222,128,0.07) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #93c5fd;
+    margin-bottom: 16px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: #4ade80;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 5vw, 48px);
+    font-weight: 900;
+    line-height: 1.12;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+  .page-hero h1 em { color: #93c5fd; font-style: italic; }
+  .hero-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.58);
+    max-width: 560px;
+    margin-bottom: 22px;
+    line-height: 1.7;
+  }
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    padding: 5px 14px;
+    border-radius: 4px;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .hb-stat  { background: rgba(139,46,10,0.75); }
+  .hb-stat2 { background: rgba(26,74,107,0.75); }
+  .hb-prob  { background: rgba(58,122,74,0.75); }
+  .hb-reg   { background: rgba(100,62,140,0.75); }
+
+  /* ── SITE FOOTER ── */
+  .site-footer {
+    background: #0b1f3a;
+    color: rgba(255,255,255,0.48);
+    padding: 44px 24px 28px;
+    margin-top: 0;
+  }
+  .footer-grid {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 32px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 8px;
+  }
+  .footer-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.45);
+  }
+  .footer-col-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 14px;
+  }
+  .footer-links { display: flex; flex-direction: column; gap: 7px; }
+  .footer-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-links a:hover { color: #93c5fd; }
+  .footer-bottom {
+    max-width: 900px;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.28);
+  }
+  @media (max-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+</style>
 <style>
   :root {
     --ink: #1a1208;
@@ -464,8 +661,8 @@
     font-family: 'DM Mono', monospace;
   }
 
-  /* ── Footer ── */
-  footer {
+  /* ── Footer (notebook internal) ── */
+  .nb-footer {
     text-align: center;
     margin-top: 80px;
     padding-top: 24px;
@@ -488,19 +685,34 @@
 </head>
 <body>
 
-<div class="wrapper">
+<!-- ═══ NAVBAR ═══ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-brand">ABS<span> · </span>Course Notes</div>
+    <a class="nav-link nav-link-home active" href="#">📖 Notes</a>
+    <a class="nav-link" href="https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/home" target="_blank">Home</a>
+    <a class="nav-link" href="https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/insights" target="_blank">Insights</a>
+    <a class="nav-link" href="https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/courses" target="_blank">Courses</a>
+    <span class="nav-tag">BRUR · Statistics</span>
+  </div>
+</nav>
 
-  <!-- Header -->
-  <header class="notebook-header">
-    <span class="course-tag">Personal Learning Notes · University</span>
-    <h1>Statistics & <em>Probability</em></h1>
-    <p class="subtitle">From Origins to Inference — A Complete Study Reference</p>
-    <div class="course-codes">
-      <span class="badge">STAT 1101</span>
-      <span class="badge alt">STAT 1201</span>
-      <span class="badge" style="background:#3a7a4a;">STAT 1102</span>
+<!-- ═══ HERO ═══ -->
+<div class="page-hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Personal Learning Notes · University</div>
+    <h1>Statistics, Probability<br>&amp; <em>Regression Analysis</em></h1>
+    <p class="hero-sub">A complete personal reference notebook covering undergraduate statistics courses — definitions, theory, formulas, applications, and critical notes compiled from lectures and textbooks.</p>
+    <div class="hero-badges">
+      <span class="hero-badge hb-stat">STAT 1101 · Principles of Statistics I</span>
+      <span class="hero-badge hb-stat2">STAT 1201 · Principles of Statistics II</span>
+      <span class="hero-badge hb-prob">STAT 1102 · Probability Theory</span>
+      <span class="hero-badge hb-reg">STAT 2101 · Regression Analysis</span>
     </div>
-  </header>
+  </div>
+</div>
+
+<div class="wrapper">
 
   <!-- TOC -->
   <nav class="toc">
