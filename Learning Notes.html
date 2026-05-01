@@ -5,7 +5,7 @@
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal undergraduate statistics course learning notes — STAT1101, STAT1201, STAT1102, SYAT2102, STAT2101 — by Md. Abu Bokkor Shiddik, BRUR.">
+  <meta name="description" content="Personal undergraduate statistics course learning notes — STAT1101, STAT1201, STAT1102, SYAT2102, STAT2101, STAT3203 — by Md. Abu Bokkor Shiddik, BRUR.">
   <title>Course Learning Notes | Md. Abu Bokkor Shiddik</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { overflow-x: hidden; scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #0f172a;  }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #0f172a; overflow-x: hidden; }
     a { color: inherit; text-decoration: none; }
 
     /* ════════════════════════════
@@ -309,6 +309,7 @@
       <span class="hbadge hb3">STAT1102 · Probability Theory</span>
       <span class="hbadge hb4">SYAT2102 · Probability Distributions</span>
       <span class="hbadge hb5">STAT2101 · Regression Analysis &amp; Diagnostics</span>
+      <span class="hbadge" style="background:rgba(14,92,74,.7);">STAT3203 · Econometrics</span>
     </div>
   </div>
 </section>
@@ -320,6 +321,7 @@
     <button class="cnav-btn" onclick="jumpTo('c-prob')"><span class="cnav-dot" style="background:#1a5c2e"></span>Probability Theory</button>
     <button class="cnav-btn" onclick="jumpTo('c-dist')"><span class="cnav-dot" style="background:#1a4a8a"></span>Probability Distributions</button>
     <button class="cnav-btn" onclick="jumpTo('c-reg')"><span class="cnav-dot" style="background:#5a2080"></span>Regression &amp; Diagnostics</button>
+    <button class="cnav-btn" onclick="jumpTo('c-eco')"><span class="cnav-dot" style="background:#0e5c4a"></span>Econometrics</button>
   </div>
 </div>
 
@@ -756,6 +758,18 @@
     <div class="cb-code">STAT1102 · B.Sc. Statistics · BRUR</div>
     <div class="cb-title">Probability Theory</div>
     <div class="cb-sub">Set Theory · De Morgan's Laws · Probability Axioms · Conditional Probability · Bayes' Theorem · Random Variables · Mathematical Expectation</div>
+  </div>
+
+
+  <div class="toc-box">
+    <div class="toc-box-title">Topics — STAT1102 Probability Theory</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#p1" data-n="P1">Set Theory &amp; Algebra of Sets</a>
+      <a class="toc-link" href="#p2" data-n="P2">Probability Fundamentals &amp; Axioms</a>
+      <a class="toc-link" href="#p3" data-n="P3">Permutations, Combinations &amp; Counting</a>
+      <a class="toc-link" href="#p4" data-n="P4">Conditional Probability &amp; Bayes' Theorem</a>
+      <a class="toc-link" href="#p5" data-n="P5">Random Variables &amp; Mathematical Expectation</a>
+    </div>
   </div>
 
   <div class="topic-section" id="p1">
@@ -1254,6 +1268,243 @@
   </div>
 </div><!-- /c-reg -->
 
+
+<!-- ══════════════════════════════════════════════
+     COURSE 5 — STAT3203 · Econometrics
+══════════════════════════════════════════════ -->
+<div class="divider" style="margin:60px 0 0"><span>STAT3203 · Econometrics</span></div>
+<div class="course-block" id="c-eco">
+  <div class="course-banner" style="background:linear-gradient(135deg,#0a3028,#0e5c3a);">
+    <div class="cb-watermark">Y</div>
+    <div class="cb-code">STAT3203 · B.Sc. Statistics Year 3 · BRUR</div>
+    <div class="cb-title">Econometrics</div>
+    <div class="cb-sub">Classical Linear Model · OLS · Multicollinearity · Heteroscedasticity · Autocorrelation · Specification Errors · Dummy Variables · Simultaneous Equations · Time Series</div>
+  </div>
+
+  <!-- Funny intro callout -->
+  <div class="note" style="background:#e6f4ea;border-left-color:#1a5c2e;font-style:normal;margin-bottom:32px;">
+    <strong style="color:#1a5c2e;">🎓 What is Econometrics?</strong>
+    Econometrics is what happens when statistics and economics go on a date and have a baby called "regression." It asks: <em>"Yes, we think X causes Y in theory — but how strong is that relationship in actual data, and can we prove it?"</em> As Gujarati puts it: <strong>"Econometrics is the art and science of using statistical methods to test economic theories and forecast economic phenomena."</strong> The joke among economists: "Economists use models to explain what has already happened, and models to predict the future — and the same model is usually wrong in both cases." 😄
+  </div>
+
+  <div class="toc-box">
+    <div class="toc-box-title">Topics — STAT3203 Econometrics</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#e1"  data-n="E1">What is Econometrics</a>
+      <a class="toc-link" href="#e2"  data-n="E2">Classical Linear Regression Model (CLRM)</a>
+      <a class="toc-link" href="#e3"  data-n="E3">OLS Estimation &amp; Gauss-Markov</a>
+      <a class="toc-link" href="#e4"  data-n="E4">Multicollinearity</a>
+      <a class="toc-link" href="#e5"  data-n="E5">Heteroscedasticity</a>
+      <a class="toc-link" href="#e6"  data-n="E6">Autocorrelation</a>
+      <a class="toc-link" href="#e7"  data-n="E7">Specification Errors</a>
+      <a class="toc-link" href="#e8"  data-n="E8">Dummy Variables</a>
+      <a class="toc-link" href="#e9"  data-n="E9">Simultaneous Equation Models</a>
+      <a class="toc-link" href="#e10" data-n="E10">Time Series Econometrics</a>
+    </div>
+  </div>
+
+  <!-- ─── E1: What is Econometrics ─── -->
+  <div class="topic-section" id="e1">
+    <div class="topic-header"><div class="topic-num" style="color:#8ed4b8;">E1</div><div class="topic-title-block"><div class="topic-label">Introduction</div><div class="topic-title">What is <span style="color:#0e5c3a;">Econometrics?</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📖</span><div class="card-lbl">What it is</div><h3>Definition</h3><p>Econometrics = <strong>Eco</strong>nomics + <strong>Metric</strong>s. It applies statistical and mathematical methods to <strong>quantify economic relationships</strong>, test economic theories, and forecast future economic activity. Gujarati defines it as the "quantitative analysis of actual economic phenomena."</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">The Three Steps</div><h3>Econometric Methodology</h3><ul><li><strong>1. Economic model:</strong> Theory says Y depends on X₁, X₂,… (e.g., consumption depends on income)</li><li><strong>2. Econometric model:</strong> Add error term — Y = f(X₁,X₂) + ε</li><li><strong>3. Estimate &amp; test:</strong> Use data to estimate parameters and test hypotheses</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Real World Example</div><h3>Keynesian Consumption Function</h3><p>Theory: <em>Consumption increases with income.</em><br>Econometric model: C = β₀ + β₁Y + ε<br>β₁ = Marginal Propensity to Consume (MPC) — how much of each extra taka is consumed. We estimate this from real survey data!</p></div>
+      <div class="card c-where"><span class="card-icon">✅</span><div class="card-lbl">Where Used</div><h3>Applications</h3><ul><li>Estimating wage-education returns (does education pay?)</li><li>Measuring price elasticity of demand</li><li>Evaluating effect of minimum wage on employment</li><li>Forecasting GDP, inflation, exchange rates</li><li>Policy evaluation (did a program reduce poverty?)</li></ul></div>
+    </div>
+    <div class="note"><strong>😂 Econometrician's Joke</strong>"An economist, a physicist, and an econometrician are stranded on an island with canned food. The physicist says 'let's use a rock to open the cans.' The economist says 'assume we have a can opener.' The econometrician says 'let's regress can-opening on island conditions, correct for heteroscedasticity, and check the instrumental variables.'" — Econometrics solves real problems, just very thoroughly! 😄</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- ─── E2: CLRM Assumptions ─── -->
+  <div class="topic-section" id="e2">
+    <div class="topic-header"><div class="topic-num" style="color:#8ed4b8;">E2</div><div class="topic-title-block"><div class="topic-label">Foundation</div><div class="topic-title">Classical Linear Regression Model <span style="color:#0e5c3a;">(CLRM)</span></div></div></div>
+
+    <div class="note" style="background:#fffbeb;border-left-color:#b8820a;font-style:normal;"><strong style="color:#b8820a;">🎯 The CLRM is the Backbone</strong>Every econometrics problem starts by asking: "Which CLRM assumption is violated here?" Like a doctor checking vital signs before treating a patient — you must check the assumptions before trusting the results.</div>
+
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📋</span><div class="card-lbl">The 10 Assumptions</div><h3>CLRM Assumptions (Gujarati)</h3><ul><li><strong>A1: Linear in parameters</strong> — model is linear in β (not necessarily in X)</li><li><strong>A2: Fixed X values</strong> — X is non-stochastic (or fixed in repeated sampling)</li><li><strong>A3: Zero mean error</strong> — E(εᵢ) = 0</li><li><strong>A4: Homoscedasticity</strong> — Var(εᵢ) = σ² (constant)</li><li><strong>A5: No autocorrelation</strong> — Cov(εᵢ, εⱼ) = 0, i≠j</li><li><strong>A6: X non-stochastic</strong> — Cov(εᵢ, Xᵢ) = 0</li><li><strong>A7: n &gt; k</strong> — more observations than parameters</li><li><strong>A8: Variability in X</strong> — Var(X) ≠ 0</li><li><strong>A9: No perfect multicollinearity</strong> — no exact linear relation among Xs</li><li><strong>A10: Normality of ε</strong> — εᵢ ~ N(0, σ²)</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">LINE Simplified</div><h3>Remember: LINE</h3><ul><li><strong>L</strong>inearity — relationship is linear in parameters</li><li><strong>I</strong>ndependence — errors are independent of each other</li><li><strong>N</strong>ormality — errors are normally distributed</li><li><strong>E</strong>qual variance — errors have constant variance (homoscedastic)</li></ul><p style="font-size:12px;color:#3d3020;margin-top:8px;font-style:italic;">😄 Memory tip: "LINE up your assumptions or your results will be crooked!"</p></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">What Happens When Violated</div><h3>Consequences Table</h3><ul><li><strong>A4 violated (hetero):</strong> OLS unbiased but inefficient; wrong SEs</li><li><strong>A5 violated (autocorr):</strong> OLS unbiased but inefficient; wrong SEs</li><li><strong>A9 violated (multicoll):</strong> OLS unbiased but very large variance; unreliable estimates</li><li><strong>Omitted variable:</strong> OLS biased AND inconsistent — the worst!</li></ul></div>
+      <div class="card c-how"><span class="card-icon">🌍</span><div class="card-lbl">Real Scenario</div><h3>Estimating Wage Equation</h3><p>Model: Wage = β₀ + β₁Education + β₂Experience + ε<br>Check: Does error have constant variance? (Workers with more education may have more variable wages → heteroscedasticity). Are education &amp; experience correlated? (Older workers often have more experience AND education → multicollinearity). Always diagnose first!</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">CLRM Model</span><span class="eq-val">Yᵢ = β₁ + β₂X₂ᵢ + β₃X₃ᵢ + … + βₖXₖᵢ + εᵢ</span></div>
+      <div class="eq-row"><span class="eq-name">Error assumptions</span><span class="eq-val">E(εᵢ)=0 ; Var(εᵢ)=σ² ; Cov(εᵢ,εⱼ)=0 (i≠j) ; εᵢ~N(0,σ²)</span></div>
+      <div class="eq-row"><span class="eq-name">Matrix form</span><span class="eq-val">Y = Xβ + ε &nbsp;; &nbsp;β̂ = (X'X)⁻¹X'Y (OLS estimator)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- ─── E3: OLS & Gauss-Markov ─── -->
+  <div class="topic-section" id="e3">
+    <div class="topic-header"><div class="topic-num" style="color:#8ed4b8;">E3</div><div class="topic-title-block"><div class="topic-label">Estimation</div><div class="topic-title">OLS &amp; <span style="color:#0e5c3a;">Gauss-Markov Theorem</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🎯</span><div class="card-lbl">OLS Principle</div><h3>Minimise Squared Errors</h3><p>OLS chooses β̂ to minimise SSE = Σeᵢ² = Σ(Yᵢ − Ŷᵢ)². The "squaring" penalises large errors more — like a strict teacher who really hates big mistakes more than small ones! 😄 The solution is unique and closed-form.</p></div>
+      <div class="card c-idea"><span class="card-icon">🏆</span><div class="card-lbl">Gauss-Markov Theorem</div><h3>BLUE — Why OLS is Best</h3><p>Under assumptions A1–A9 (without normality), OLS estimators are:<br><strong>B</strong>est — minimum variance<br><strong>L</strong>inear — in Y<br><strong>U</strong>nbiased — E(β̂) = β<br><strong>E</strong>stimators<br>No other linear unbiased estimator has smaller variance! Think of it as OLS being the "most efficient honest statistician."</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">OLS Properties</div><h3>Algebraic Properties</h3><ul><li>Σeᵢ = 0 (residuals sum to zero)</li><li>Σeᵢ·Xᵢ = 0 (residuals uncorrelated with X)</li><li>Regression line passes through (X̄, Ȳ)</li><li>Σeᵢ·Ŷᵢ = 0 (residuals uncorrelated with fitted values)</li></ul></div>
+      <div class="card c-form"><span class="card-icon">📐</span><div class="card-lbl">Goodness of Fit</div><h3>R² and its Limits</h3><ul><li>R² ∈ [0,1]; R²=1 perfect fit; R²=0 model explains nothing</li><li><strong>Warning:</strong> High R² ≠ good model! You can have high R² with spurious regression (two random trends)</li><li><strong>Adjusted R²:</strong> Penalises for extra predictors — use for model comparison</li><li>😄 "A high R² in time series is suspicious, not impressive!"</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">OLS slope (simple)</span><span class="eq-val">β̂₂ = Σ(Xᵢ−X̄)(Yᵢ−Ȳ) / Σ(Xᵢ−X̄)² = Cov(X,Y)/Var(X)</span></div>
+      <div class="eq-row"><span class="eq-name">OLS intercept</span><span class="eq-val">β̂₁ = Ȳ − β̂₂·X̄</span></div>
+      <div class="eq-row"><span class="eq-name">Unbiasedness</span><span class="eq-val">E(β̂) = β &nbsp;&nbsp;(on average, hits the true value)</span></div>
+      <div class="eq-row"><span class="eq-name">R²</span><span class="eq-val">R² = ESS/TSS = 1 − RSS/TSS &nbsp;; &nbsp;RSS=Σeᵢ², ESS=Σ(Ŷᵢ−Ȳ)², TSS=Σ(Yᵢ−Ȳ)²</span></div>
+      <div class="eq-row"><span class="eq-name">Adjusted R²</span><span class="eq-val">R̄² = 1 − [(n−1)/(n−k)](1−R²)</span></div>
+    </div>
+    <div class="note"><strong>🌍 Real World</strong>Bangladesh rice yield data: Yield = 1200 + 45·Fertiliser + 30·Rain + ε. R² = 0.82 means 82% of variation in yield is explained by fertiliser and rainfall. β̂₂=45 means: holding rain constant, each kg of fertiliser per acre increases yield by 45 kg. This directly guides agricultural policy!</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- ─── E4: Multicollinearity ─── -->
+  <div class="topic-section" id="e4">
+    <div class="topic-header"><div class="topic-num" style="color:#8ed4b8;">E4</div><div class="topic-title-block"><div class="topic-label">Problem 1</div><div class="topic-title"><span style="color:#0e5c3a;">Multicollinearity</span> — The Identity Crisis</div></div></div>
+
+    <div class="note" style="background:#fdf4ff;border-left-color:#7c3aed;font-style:normal;"><strong style="color:#7c3aed;">😂 The Multicollinearity Joke</strong>"Multicollinearity is like trying to tell apart identical twins by asking their friends — everyone says 'they're basically the same.' Your model literally cannot figure out who is doing what." When X₁ and X₂ are nearly perfectly correlated, the model gets confused about whose "fault" it is when Y changes.</div>
+
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🔍</span><div class="card-lbl">What it is</div><h3>Correlated Predictors</h3><p>Multicollinearity occurs when two or more predictor variables are <strong>highly correlated</strong> with each other. <strong>Perfect multicollinearity</strong> = exact linear relationship (OLS breaks down entirely). <strong>Near-perfect</strong> = high but not perfect correlation (OLS works but gives unreliable estimates).</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Detection</div><h3>How to Detect</h3><ul><li><strong>Correlation matrix:</strong> |rᵢⱼ| &gt; 0.8 between predictors — warning sign</li><li><strong>VIF (Variance Inflation Factor):</strong> VIF &gt; 10 = serious; VIF &gt; 5 = concern</li><li><strong>Condition number:</strong> κ &gt; 30 signals multicollinearity</li><li><strong>Rule of thumb sign:</strong> High R² but few significant individual t-tests</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Consequences</div><h3>What Goes Wrong</h3><ul><li>OLS still <strong>unbiased and BLUE</strong> — estimates are correct on average</li><li>But <strong>standard errors inflate</strong> — estimates are imprecise</li><li>t-statistics become small → variables appear insignificant even when they matter</li><li>Coefficient signs may be wrong or change with small data changes</li><li>Confidence intervals become very wide</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Remedies</div><h3>What to Do</h3><ul><li><strong>Drop a variable</strong> — but risk omitted variable bias</li><li><strong>Ridge regression</strong> — adds a penalty λ to shrink coefficients</li><li><strong>Get more data</strong> — reduces variance (often the best solution)</li><li><strong>Principal Component Analysis (PCA)</strong> — use orthogonal components</li><li><strong>Combine variables</strong> — e.g., use wealth index instead of income + savings</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">VIF formula</span><span class="eq-val">VIF_j = 1/(1 − Rj²) &nbsp;&nbsp;where Rj² = R² from regressing Xⱼ on all other X's</span></div>
+      <div class="eq-row"><span class="eq-name">VIF interpretation</span><span class="eq-val">VIF=1 → no collinearity ; VIF=5 → moderate ; VIF&gt;10 → serious problem</span></div>
+      <div class="eq-row"><span class="eq-name">Var(β̂ⱼ) inflated</span><span class="eq-val">Var(β̂ⱼ) = σ²/[Sⱼⱼ(1−Rⱼ²)] = (σ²/Sⱼⱼ) · VIF_j</span></div>
+    </div>
+    <div class="note"><strong>🌍 Bangladesh Example</strong>Regressing household expenditure on income and wealth. Income and wealth are highly correlated (r=0.92). VIF comes out at 8.2. The model can't tell apart the separate effects of income vs wealth. Solution: use only income, or create a composite "socioeconomic status" score. <br><strong>😄 Tip:</strong> "If two variables always go up together in your data, your model has the same problem as a detective who always finds two suspects at the crime scene at the same time — it cannot tell who did it."</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- ─── E5: Heteroscedasticity ─── -->
+  <div class="topic-section" id="e5">
+    <div class="topic-header"><div class="topic-num" style="color:#8ed4b8;">E5</div><div class="topic-title-block"><div class="topic-label">Problem 2</div><div class="topic-title"><span style="color:#0e5c3a;">Heteroscedasticity</span> — The Unequal Spreader</div></div></div>
+
+    <div class="note" style="background:#fffbeb;border-left-color:#b8820a;font-style:normal;"><strong style="color:#b8820a;">😄 Analogy</strong>"Heteroscedasticity is like a group of students whose test scores vary wildly for rich students (some study hard, some don't) but are very consistent for poor students (all must study). The variance of the 'error' in predicting scores is not equal across income groups." This violates A4!</div>
+
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📡</span><div class="card-lbl">What it is</div><h3>Non-constant Error Variance</h3><p>Heteroscedasticity means Var(εᵢ) = σᵢ² — the variance of the error term is <strong>NOT constant</strong> across observations. It changes with one or more predictors. Very common in cross-sectional data (individuals, firms, countries with very different sizes).</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Detection Tests</div><h3>How to Detect</h3><ul><li><strong>Visual:</strong> Plot residuals vs fitted Ŷ — fan/funnel shape = hetero</li><li><strong>Park test:</strong> Regress ln(eᵢ²) on ln(Xᵢ)</li><li><strong>Glejser test:</strong> Regress |eᵢ| on Xᵢ</li><li><strong>Breusch-Pagan (BP) test:</strong> Lagrange multiplier test — most popular</li><li><strong>White test:</strong> More general — no specific form assumed</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Consequences</div><h3>What Goes Wrong</h3><ul><li>OLS estimators remain <strong>unbiased and consistent</strong></li><li>BUT they are <strong>no longer BLUE</strong> (not minimum variance)</li><li>Standard errors are <strong>biased</strong> → t and F tests unreliable</li><li>Confidence intervals too narrow or too wide</li><li>Hypothesis tests give wrong conclusions</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Remedies</div><h3>Fixing Heteroscedasticity</h3><ul><li><strong>WLS (Weighted Least Squares):</strong> Weight observations by 1/σᵢ² — best if σᵢ² known</li><li><strong>Log transformation:</strong> ln(Y) = β₀ + β₁X — often stabilises variance</li><li><strong>White's HC standard errors:</strong> "Robust" SEs — keeps OLS estimates but corrects SEs</li><li><strong>FGLS:</strong> Feasible GLS when form is estimated</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Heteroscedastic model</span><span class="eq-val">Yᵢ = β₁ + β₂Xᵢ + εᵢ &nbsp;where&nbsp; Var(εᵢ) = σᵢ² ≠ constant</span></div>
+      <div class="eq-row"><span class="eq-name">WLS objective</span><span class="eq-val">Minimise: Σ wᵢeᵢ² &nbsp;where&nbsp; wᵢ = 1/σᵢ² (higher weight = more precise obs.)</span></div>
+      <div class="eq-row"><span class="eq-name">Breusch-Pagan</span><span class="eq-val">BP = n·R² ~ χ²(k) &nbsp;from regressing eᵢ²/σ̂² on all X's</span></div>
+      <div class="eq-row"><span class="eq-name">White test stat</span><span class="eq-val">n·R² ~ χ²(p) &nbsp;where p = number of regressors in auxiliary regression</span></div>
+    </div>
+    <div class="note"><strong>🌍 Real Example</strong>Regressing household food expenditure on income across 1000 Bangladeshi families. Rich families have very variable food spending (some eat lavishly, some save); poor families all spend similarly near subsistence. This creates a fan shape in residuals — classic heteroscedasticity. Remedy: use ln(expenditure) or WLS with weight 1/income².</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- ─── E6: Autocorrelation ─── -->
+  <div class="topic-section" id="e6">
+    <div class="topic-header"><div class="topic-num" style="color:#8ed4b8;">E6</div><div class="topic-title-block"><div class="topic-label">Problem 3</div><div class="topic-title"><span style="color:#0e5c3a;">Autocorrelation</span> — The Time Traveller's Problem</div></div></div>
+
+    <div class="note" style="background:#fef3f2;border-left-color:#dc2626;font-style:normal;"><strong style="color:#dc2626;">😄 The Autocorrelation Joke</strong>"Autocorrelation is like a gossip chain. What happened yesterday affects what people say today, which affects tomorrow. Errors in time series data are like rumours — yesterday's error whispers to today's error." When today's residual tells tomorrow's what to be, you have autocorrelation!</div>
+
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🔗</span><div class="card-lbl">What it is</div><h3>Correlated Error Terms</h3><p>Autocorrelation (serial correlation) means Cov(εᵢ, εⱼ) ≠ 0 for i≠j. Violations of assumption A5. Most common in <strong>time series</strong> data (monthly GDP, daily stock prices, annual inflation). Positive autocorrelation is most common — errors persist in the same direction.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Detection</div><h3>Tests for Autocorrelation</h3><ul><li><strong>Plot residuals over time:</strong> Look for cyclical or trending patterns</li><li><strong>Durbin-Watson (DW) test:</strong> d ≈ 2 → no autocorrelation; d &lt; 1.5 → positive AC; d &gt; 2.5 → negative AC</li><li><strong>Breusch-Godfrey (BG) test:</strong> More general — detects higher-order autocorrelation</li><li><strong>Run test:</strong> Non-parametric test for randomness in residuals</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Consequences</div><h3>What Goes Wrong</h3><ul><li>OLS estimates remain <strong>unbiased and consistent</strong></li><li>But <strong>NOT BLUE</strong> — inefficient; larger variances than GLS</li><li>s² underestimates σ² → t &amp; F tests give inflated significance</li><li><strong>R² is overestimated</strong> — model looks better than it is!</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Remedies</div><h3>Fixing Autocorrelation</h3><ul><li><strong>Generalised Least Squares (GLS):</strong> Use the transformed model (most correct)</li><li><strong>Cochrane-Orcutt method:</strong> Iterative GLS for AR(1) errors</li><li><strong>Include lagged Y (Yₜ₋₁):</strong> Often removes autocorrelation</li><li><strong>Newey-West HAC SEs:</strong> Robust SEs that account for autocorrelation</li><li><strong>First-differencing:</strong> Use ΔY = Yₜ − Yₜ₋₁ as the dependent variable</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">AR(1) error process</span><span class="eq-val">εₜ = ρεₜ₋₁ + uₜ &nbsp;where&nbsp; |ρ| &lt; 1 &nbsp;and&nbsp; uₜ ~ WN(0, σ²)</span></div>
+      <div class="eq-row"><span class="eq-name">Durbin-Watson d</span><span class="eq-val">d = Σₜ(eₜ − eₜ₋₁)² / Σeₜ² ≈ 2(1−ρ̂) ; d∈[0,4]</span></div>
+      <div class="eq-row"><span class="eq-name">ρ̂ estimator</span><span class="eq-val">ρ̂ = Σₜ eₜeₜ₋₁ / Σₜ eₜ₋₁²</span></div>
+      <div class="eq-row"><span class="eq-name">GLS transformation</span><span class="eq-val">Yₜ − ρYₜ₋₁ = β₁(1−ρ) + β₂(Xₜ − ρXₜ₋₁) + uₜ</span></div>
+    </div>
+    <div class="note"><strong>🌍 Bangladesh Example</strong>Regressing annual rice production on fertiliser use and rainfall (1980–2023). The DW statistic = 1.12 signals positive autocorrelation — a good crop year tends to be followed by another good year (farmers reinvest; soil quality persists). Cochrane-Orcutt iteration gives ρ̂ = 0.48, and the corrected model gives more reliable coefficient estimates.</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- ─── E7: Specification Errors ─── -->
+  <div class="topic-section" id="e7">
+    <div class="topic-header"><div class="topic-num" style="color:#8ed4b8;">E7</div><div class="topic-title-block"><div class="topic-label">Model Misspecification</div><div class="topic-title">Specification <span style="color:#0e5c3a;">Errors</span> — Building the Wrong House</div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🏗️</span><div class="card-lbl">What it is</div><h3>Using the Wrong Model</h3><p>Specification errors arise when the model is <strong>incorrectly specified</strong> — wrong variables, wrong functional form, or wrong structural assumptions. The most dangerous error in econometrics!</p></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Type 1: Omitted Variable</div><h3>Leaving Out a Key Variable</h3><ul><li>True model: Y = β₁ + β₂X₂ + β₃X₃ + ε</li><li>Estimated model: Y = α₁ + α₂X₂ + u (X₃ omitted)</li><li>Result: <strong>OLS estimator of β₂ is biased and inconsistent</strong></li><li>Bias direction depends on correlation between X₂ and X₃</li><li>😄 "Like measuring height but ignoring whether you're on a slope!"</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Type 2: Irrelevant Variable</div><h3>Including an Unnecessary Variable</h3><ul><li>True model: Y = β₁ + β₂X₂ + ε</li><li>Estimated model: Y = α₁ + α₂X₂ + α₃X₃ + u (X₃ is irrelevant)</li><li>Result: OLS estimators remain <strong>unbiased</strong> but <strong>inefficient</strong> (larger variance)</li><li>R² increases artificially — use adjusted R² instead!</li></ul></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Type 3: Wrong Functional Form</div><h3>Linear When Non-linear</h3><ul><li>True: Y = β₁ + β₂X + β₃X² + ε (quadratic)</li><li>Fitted: Y = α₁ + α₂X + u (linear)</li><li>Residuals will show a curved pattern</li><li><strong>RESET test</strong> (Ramsey) detects wrong functional form</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Detecting Specification Errors</div><h3>Tests</h3><ul><li><strong>RESET test:</strong> Add Ŷ², Ŷ³ to model; test their joint significance</li><li><strong>Davidson-MacKinnon J-test:</strong> Test between non-nested models</li><li><strong>Residual plots:</strong> Patterns indicate misspecification</li><li><strong>Theory:</strong> Always use economic theory to guide model choice!</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Omitted Variable Bias</span><span class="eq-val">Bias(β̂₂) = β₃ · (Cov(X₂,X₃)/Var(X₂)) &nbsp;&nbsp;≠ 0 if β₃≠0 &amp; X₂,X₃ correlated</span></div>
+      <div class="eq-row"><span class="eq-name">RESET test</span><span class="eq-val">Add Ŷ², Ŷ³ to regression; F-test on their coefficients. Reject H₀ → misspecification.</span></div>
+    </div>
+    <div class="note"><strong>🌍 Classic Example</strong>Wage regression omitting "ability." Model: Wage = β₀ + β₁Education + ε. Problem: Ability affects both wages AND education choices. Omitting ability biases β̂₁ upward — we attribute to education some of what is really due to innate ability. This is the classic "ability bias" in returns to education. Solution: use IQ scores, sibling fixed effects, or instrumental variables (Angrist &amp; Krueger's famous quarter-of-birth IV).</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- ─── E8: Dummy Variables ─── -->
+  <div class="topic-section" id="e8">
+    <div class="topic-header"><div class="topic-num" style="color:#8ed4b8;">E8</div><div class="topic-title-block"><div class="topic-label">Qualitative Predictors</div><div class="topic-title">Dummy Variables — <span style="color:#0e5c3a;">Turning Categories into Numbers</span></div></div></div>
+
+    <div class="note" style="background:#eff6ff;border-left-color:#1a4a8a;font-style:normal;"><strong style="color:#1a4a8a;">💡 What is a Dummy Variable?</strong>A dummy (indicator) variable takes values 0 or 1 to represent a categorical characteristic. Male = 1, Female = 0. Urban = 1, Rural = 0. It's called "dummy" because it's a stand-in number for something that isn't naturally numeric. 😄 "It's not that the variable is stupid — it's just pretending to be a number!"</div>
+
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🔢</span><div class="card-lbl">What it is</div><h3>Binary Indicator Variables</h3><p>For a qualitative variable with m categories, we include <strong>m−1 dummy variables</strong> (omit one — the "base" or "reference" category). Including all m dummies causes perfect multicollinearity — the <strong>dummy variable trap</strong>!</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Interpretation</div><h3>Reading Dummy Coefficients</h3><ul><li>Wage = 5000 + 800·MALE + 200·Education + ε</li><li>MALE=1 (male): avg wage = 5000+800+200·Edu = <strong>5800+200·Edu</strong></li><li>MALE=0 (female): avg wage = 5000+200·Edu = <strong>5000+200·Edu</strong></li><li>So: men earn <strong>800 taka more</strong> than women on average, holding education fixed</li><li>The dummy coefficient is the <strong>shift in intercept</strong> for that category</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Interaction Dummies</div><h3>Dummies with Slopes</h3><ul><li>Wage = β₀ + β₁MALE + β₂Education + β₃(MALE×Education) + ε</li><li>β₃ allows the <strong>slope of education</strong> to differ by gender</li><li>Male return to education: β₂ + β₃</li><li>Female return to education: β₂</li><li>This is the <strong>Chow test</strong> idea — testing if two groups have different regression relationships</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Dummy Trap</div><h3>The Most Common Mistake!</h3><p>For m categories, ALWAYS include m−1 dummies. If you include all m, the sum of all dummies = 1 (a constant) which creates PERFECT multicollinearity. Example: if you have MALE and FEMALE dummies, they always sum to 1 = the intercept column → perfect collinearity. Drop one! The dropped category is the "reference group."</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">General form</span><span class="eq-val">Yᵢ = β₀ + β₁Dᵢ + β₂Xᵢ + εᵢ &nbsp;(D=1 for group A, D=0 for group B)</span></div>
+      <div class="eq-row"><span class="eq-name">Group A mean</span><span class="eq-val">E(Yᵢ|Dᵢ=1,Xᵢ) = (β₀+β₁) + β₂Xᵢ &nbsp;&nbsp;(shifted intercept)</span></div>
+      <div class="eq-row"><span class="eq-name">Group B mean</span><span class="eq-val">E(Yᵢ|Dᵢ=0,Xᵢ) = β₀ + β₂Xᵢ &nbsp;&nbsp;(reference group)</span></div>
+      <div class="eq-row"><span class="eq-name">Interaction (slope shift)</span><span class="eq-val">Yᵢ = β₀ + β₁Dᵢ + β₂Xᵢ + β₃(DᵢXᵢ) + εᵢ</span></div>
+      <div class="eq-row"><span class="eq-name">Chow Test F-stat</span><span class="eq-val">F = [(SSEᵣ − (SSE₁+SSE₂))/k] / [(SSE₁+SSE₂)/(n₁+n₂−2k)]</span></div>
+    </div>
+    <div class="note"><strong>🌍 Bangladesh Policy Example</strong>Evaluating impact of a microfinance program: Treatment = 1 (received loan), Control = 0. Model: Income = β₀ + β₁·Treatment + β₂·Education + β₃·Age + ε. β₁ estimates the Average Treatment Effect (ATE) — did the loan raise income? If β₁ = 2500 (significant), the program raises income by Tk 2500 holding other factors fixed. This is the basis of impact evaluation / program evaluation in development economics!</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- ─── E9: Simultaneous Equations ─── -->
+  <div class="topic-section" id="e9">
+    <div class="topic-header"><div class="topic-num" style="color:#8ed4b8;">E9</div><div class="topic-title-block"><div class="topic-label">Advanced</div><div class="topic-title">Simultaneous Equation Models — <span style="color:#0e5c3a;">Cause and Effect in Both Directions</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🔄</span><div class="card-lbl">What it is</div><h3>Bidirectional Causality</h3><p>In many economic situations, variables determine each other <strong>simultaneously</strong>. Supply &amp; demand: price determines quantity demanded AND quantity supplied determines price. This simultaneity causes OLS to be <strong>biased and inconsistent</strong> — the "simultaneity bias."</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Endogenous vs Exogenous</div><h3>Variable Classification</h3><ul><li><strong>Endogenous (jointly determined):</strong> Price &amp; Quantity in supply-demand system</li><li><strong>Exogenous (determined outside):</strong> Income, weather, policy variables</li><li><strong>Structural form:</strong> The economic behavioural equations</li><li><strong>Reduced form:</strong> Each endogenous variable expressed only in terms of exogenous variables</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Identification Problem</div><h3>Can We Estimate the Equations?</h3><ul><li><strong>Under-identified:</strong> Cannot estimate from data alone</li><li><strong>Exactly identified:</strong> Unique estimates possible</li><li><strong>Over-identified:</strong> Multiple estimates possible; use 2SLS</li><li><strong>Order condition:</strong> (K−k) ≥ (m−1) where K=total exogenous, k=exogenous in equation, m=endogenous in equation</li></ul></div>
+      <div class="card c-form"><span class="card-icon">🔢</span><div class="card-lbl">Estimation Methods</div><h3>How to Estimate</h3><ul><li><strong>ILS (Indirect Least Squares):</strong> For exactly identified equations</li><li><strong>2SLS (Two-Stage Least Squares):</strong> Most popular for over-identified. Stage 1: regress endogenous X on instruments; Stage 2: use fitted X̂ in main regression</li><li><strong>3SLS / FIML:</strong> Full system methods for efficiency</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Demand equation</span><span class="eq-val">Qd = α₀ + α₁P + α₂Income + u₁ &nbsp;&nbsp;(structural)</span></div>
+      <div class="eq-row"><span class="eq-name">Supply equation</span><span class="eq-val">Qs = β₀ + β₁P + β₂Weather + u₂ &nbsp;&nbsp;(structural)</span></div>
+      <div class="eq-row"><span class="eq-name">Equilibrium</span><span class="eq-val">Qd = Qs &nbsp;&nbsp;(market clears)</span></div>
+      <div class="eq-row"><span class="eq-name">2SLS Stage 1</span><span class="eq-val">Regress P on ALL exogenous variables → get P̂</span></div>
+      <div class="eq-row"><span class="eq-name">2SLS Stage 2</span><span class="eq-val">Replace P with P̂ in structural equation → OLS gives consistent estimates</span></div>
+    </div>
+    <div class="note"><strong>😄 Why OLS Fails Here</strong>"Using OLS for a simultaneous system is like trying to figure out who started a fight when both parties hit each other at exactly the same time — you can't tell cause from effect!" Price rises → quantity supplied rises (supply); but quantity demanded falls → price falls (demand). OLS blends these two directions and gives wrong answers for both. 2SLS untangles them using instruments.</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- ─── E10: Time Series Econometrics ─── -->
+  <div class="topic-section" id="e10">
+    <div class="topic-header"><div class="topic-num" style="color:#8ed4b8;">E10</div><div class="topic-title-block"><div class="topic-label">Time Series</div><div class="topic-title">Time Series Econometrics — <span style="color:#0e5c3a;">Stationarity, Unit Roots &amp; Cointegration</span></div></div></div>
+
+    <div class="note" style="background:#fef3f2;border-left-color:#dc2626;font-style:normal;"><strong style="color:#dc2626;">⚡ The Spurious Regression Warning!</strong>Regressing one non-stationary time series on another can give a high R² and significant t-statistics PURELY BY CHANCE — even if they have nothing to do with each other. Example: Bangladesh rice production and global smartphone sales both trend upward → regressing one on the other gives R²=0.94 but it is COMPLETELY MEANINGLESS. Always test for stationarity first!</div>
+
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📈</span><div class="card-lbl">Stationarity</div><h3>The Key Concept in Time Series</h3><p>A time series is <strong>weakly stationary</strong> if its mean, variance, and autocovariances are constant over time (don't depend on t). Most economic time series (GDP, prices, exchange rates) are NON-stationary — they have trends and drifts.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Unit Root Tests</div><h3>Testing for Non-stationarity</h3><ul><li><strong>Augmented Dickey-Fuller (ADF) test:</strong> H₀: series has unit root (non-stationary); Reject H₀ → stationary. The most widely used test.</li><li><strong>Phillips-Perron (PP) test:</strong> Non-parametric correction for serial correlation</li><li><strong>KPSS test:</strong> H₀: stationary (opposite hypothesis — use alongside ADF)</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Cointegration</div><h3>Long-Run Equilibrium</h3><p>Two non-stationary I(1) series are <strong>cointegrated</strong> if their linear combination is stationary I(0). They share a long-run equilibrium relationship. Use Engle-Granger two-step method or Johansen test. If cointegrated: use Error Correction Model (ECM).</p></div>
+      <div class="card c-form"><span class="card-icon">🔢</span><div class="card-lbl">Remedies for Non-stationarity</div><h3>Making Series Stationary</h3><ul><li><strong>Differencing:</strong> ΔYₜ = Yₜ − Yₜ₋₁ removes unit root (most common)</li><li><strong>Log transformation:</strong> ln(Yₜ) — stabilises variance and often stationarises</li><li><strong>Detrending:</strong> Remove deterministic trend by regression</li><li>If I(1) and cointegrated → use ECM instead of differencing</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Random walk (unit root)</span><span class="eq-val">Yₜ = Yₜ₋₁ + εₜ &nbsp;&nbsp;(non-stationary; var grows with t)</span></div>
+      <div class="eq-row"><span class="eq-name">ADF test equation</span><span class="eq-val">ΔYₜ = α + βYₜ₋₁ + Σγⱼ·ΔYₜ₋ⱼ + εₜ &nbsp;&nbsp;H₀: β=0 (unit root)</span></div>
+      <div class="eq-row"><span class="eq-name">Integration order I(d)</span><span class="eq-val">I(0)=stationary ; I(1)=one difference needed ; I(2)=two differences</span></div>
+      <div class="eq-row"><span class="eq-name">Error Correction Model</span><span class="eq-val">ΔYₜ = α + γ(Yₜ₋₁ − β·Xₜ₋₁) + θΔXₜ + εₜ &nbsp;(short-run + long-run)</span></div>
+    </div>
+    <div class="note"><strong>🌍 Bangladesh Application</strong>Testing whether the taka-dollar exchange rate and domestic price level are cointegrated (Purchasing Power Parity). Both series are I(1). Engle-Granger test finds cointegration — a long-run PPP relationship holds. Estimate ECM: the speed-of-adjustment coefficient γ̂ = −0.23 means 23% of any deviation from long-run PPP is corrected each quarter. Highly useful for monetary policy!</div>
+  </div>
+
+</div><!-- /c-eco -->
+
 <!-- ══════════════════════════════════════════════
      REFERENCES
 ══════════════════════════════════════════════ -->
@@ -1265,9 +1516,11 @@
   <div class="ref-entry"><div class="ref-n">[4]</div><div><div class="ref-title">A First Course in Statistics</div><div class="ref-auth">McClave, J.T. &amp; Sincich, T. — Pearson / Prentice Hall · 13th Ed.</div></div></div>
   <div class="ref-entry"><div class="ref-n">[5]</div><div><div class="ref-title">Applied Linear Statistical Models</div><div class="ref-auth">Kutner, M.H., Nachtsheim, C.J., Neter, J., &amp; Li, W. — McGraw-Hill · 5th Ed.</div></div></div>
   <div class="ref-entry"><div class="ref-n">[6]</div><div><div class="ref-title">Introduction to Linear Regression Analysis</div><div class="ref-auth">Montgomery, D.C., Peck, E.A., &amp; Vining, G.G. — John Wiley &amp; Sons · 5th Ed.</div></div></div>
+  <div class="ref-entry"><div class="ref-n">[7]</div><div><div class="ref-title">Basic Econometrics</div><div class="ref-auth">Gujarati, D.N. &amp; Porter, D.C. — McGraw-Hill · 5th Ed.</div></div></div>
+  <div class="ref-entry"><div class="ref-n">[8]</div><div><div class="ref-title">Introductory Econometrics: A Modern Approach</div><div class="ref-auth">Wooldridge, J.M. — Cengage Learning · 7th Ed.</div></div></div>
 </div>
 
-<div class="nb-footer">STAT1101 · STAT1201 · STAT1102 · SYAT2102 · STAT2101 &nbsp;·&nbsp; Dept. of Statistics, BRUR &nbsp;·&nbsp; Personal Study Notes · Md. Abu Bokkor Shiddik</div>
+<div class="nb-footer">STAT1101 · STAT1201 · STAT1102 · SYAT2102 · STAT2101 · STAT3203 &nbsp;·&nbsp; Dept. of Statistics, BRUR &nbsp;·&nbsp; Personal Study Notes · Md. Abu Bokkor Shiddik</div>
 
 </div><!-- /notebook-wrap -->
 
@@ -1338,7 +1591,7 @@ function jumpTo(id) {
 }
 
 /* Auto-highlight course nav on scroll */
-var courseIds = ['c-stat11', 'c-prob', 'c-dist', 'c-reg'];
+var courseIds = ['c-stat11', 'c-prob', 'c-dist', 'c-reg', 'c-eco'];
 var raf = null;
 window.addEventListener('scroll', function() {
   if (raf) return;
