@@ -2,40 +2,24 @@
 <html lang="en">
 <head>
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Md. Abu Bokkor Shiddik — Researcher in Machine Learning, Statistics, and Global Health Analytics at BRUR.">
   <title>Contact — Md. Abu Bokkor Shiddik</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{
-      font-family:'Inter',sans-serif;
-      background:#f8fafc;
-      color:#0f172a;
-      overflow-x:hidden;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #0f172a; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
 
-     a { color: inherit; text-decoration: none; }
-
-    :root {
-      --navy: #0b1f3a; --blue: #1a56db; --blue-h: #1648c0;
-      --sky: #e8f0fe; --sky2: #d2e3fc;
-      --green: #166534; --green-bg: #f0fdf4; --green-bd: #bbf7d0;
-      --purple: #5b21b6; --purple-bg: #f5f3ff; --purple-bd: #ddd6fe;
-      --text: #0f172a; --text2: #334155; --text3: #64748b;
-      --border: #e2e8f0; --border2: #cbd5e1;
-      --bg: #f8fafc; --white: #fff;
-      --r: 8px; --rl: 14px;
-      --sh: 0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
-      --sh2: 0 4px 20px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04);
-    }
-
-    /* ══ NAVBAR ══ */
-    .navbar { background: var(--navy); position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid rgba(255,255,255,.06); }
-    .nav-inner { max-width: 1180px; margin: auto; padding: 0 24px; display: flex; align-items: center; height: 56px; }
-    .nav-brand { font-size: 14.5px; font-weight: 600; color: #fff; margin-right: auto; white-space: nowrap; }
+    /* ══ NAVBAR — exact match to insights.html ══ */
+    .navbar { background: #0b1f3a; position: sticky; top: 0; z-index: 9999; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .nav-bar-inner { max-width: 1180px; margin: auto; padding: 0 24px; display: flex; align-items: center; height: 56px; }
+    .nav-brand { font-size: 14.5px; font-weight: 600; color: #fff; letter-spacing: .2px; margin-right: auto; white-space: nowrap; }
     .nav-brand span { color: #93c5fd; font-weight: 300; }
     .nav-links { display: flex; align-items: center; gap: 2px; }
     .nav-links > a, .dropbtn { color: rgba(255,255,255,.75); font-size: 13.5px; font-weight: 500; padding: 6px 11px; border-radius: 6px; border: none; background: none; cursor: pointer; font-family: inherit; transition: background .18s, color .18s; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
@@ -56,135 +40,306 @@
     .drawer-inner { padding: 8px 0 16px; }
     .drawer-link { display: block; color: rgba(255,255,255,.78); font-size: 15px; font-weight: 500; padding: 11px 24px; transition: background .15s, color .15s; }
     .drawer-link:hover { background: rgba(255,255,255,.06); color: #fff; }
-    .drawer-sec { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,.3); padding: 14px 24px 4px; }
+    .drawer-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,.3); padding: 14px 24px 4px; }
     .drawer-sub .drawer-link { padding-left: 38px; font-size: 14px; color: rgba(255,255,255,.58); }
-    .drawer-div { height: 1px; background: rgba(255,255,255,.06); margin: 4px 0; }
+    .drawer-divider { height: 1px; background: rgba(255,255,255,.06); margin: 4px 0; }
     @media (max-width: 900px) { .nav-links { display: none; } .hamburger { display: flex; } .nav-drawer { display: block; } }
 
-    /* ================= HERO IMAGE ================= */
-    .hero{
-      position:relative;
-      height:420px;
-      background:url('https://raw.githubusercontent.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/main/ABS.jpeg') center/cover no-repeat;
+    /* ══ HERO ══ */
+    .page-hero {
+      position: relative;
+      height: 440px;
+      background: url('https://raw.githubusercontent.com/abubokkorshiddik/Portfolio-AbuBokkorShiddik/main/ABS.jpeg') center / cover no-repeat;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, rgba(7,21,42,.88) 30%, rgba(7,21,42,.25) 100%);
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1180px;
+      margin: auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+    }
+    .hero-text { max-width: 520px; }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: 14px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse-dot 1.8s infinite;
+    }
+    @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+    .hero-text h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.18;
+      margin-bottom: 12px;
+    }
+    .hero-text h1 em { color: #93c5fd; font-style: italic; }
+    .hero-text p {
+      font-size: 14.5px;
+      color: rgba(255,255,255,.62);
+      line-height: 1.75;
+      max-width: 440px;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .hero-tag {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.75);
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(4px);
+    }
+    @media (max-width: 600px) { .page-hero { height: 360px; } }
+
+    /* ══ MAIN CONTENT ══ */
+    .page-outer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 52px 24px 100px;
     }
 
-    /* dark overlay */
-    .hero::after{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:linear-gradient(90deg, rgba(11,31,58,.85) 35%, rgba(11,31,58,.2) 100%);
+    /* Section heading */
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #1a56db;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-family: 'Lora', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 600px;
     }
 
-    /* text LEFT side */
-    .hero-content{
-      position:relative;
-      z-index:1;
-      max-width:1180px;
-      margin:auto;
-      height:100%;
-      display:flex;
-      align-items:center;
-      padding:0 24px;
+    /* Contact card */
+    .contact-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
     }
 
-    .hero-text{
-      max-width:500px;
-      color:#fff;
+    /* Card header strip */
+    .card-header {
+      background: linear-gradient(135deg, #0b1f3a, #1a3a6b);
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .card-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,.25);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .card-header-text {}
+    .card-header-name {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+    .card-header-role {
+      font-size: 12.5px;
+      color: rgba(255,255,255,.6);
+    }
+    .card-header-role span {
+      color: #93c5fd;
     }
 
-    .dot{
-      width:8px;
-      height:8px;
-      background:#4ade80;
-      border-radius:50%;
-      display:inline-block;
-      margin-right:8px;
-      animation:pulse 1.8s infinite;
+    /* Contact items */
+    .contact-items { padding: 8px 0; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 32px;
+      border-bottom: 1px solid #f1f5f9;
+      transition: background .18s;
+    }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-item:hover { background: #f8fafc; }
+    .ci-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .ci-icon.email   { background: #eff6ff; }
+    .ci-icon.phone   { background: #f0fdf4; }
+    .ci-icon.web     { background: #fef3c7; }
+    .ci-icon.li      { background: #eff6ff; }
+    .ci-icon.scholar { background: #fdf4ff; }
+    .ci-icon.orcid   { background: #fff7ed; }
+    .ci-icon.github  { background: #f8fafc; }
+    .ci-body { flex: 1; min-width: 0; }
+    .ci-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #94a3b8;
+      margin-bottom: 3px;
+    }
+    .ci-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: #0f172a;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .ci-value a {
+      color: #1a56db;
+      transition: color .15s;
+    }
+    .ci-value a:hover { color: #1648c0; text-decoration: underline; }
+    .ci-arrow {
+      color: #cbd5e1;
+      font-size: 16px;
+      flex-shrink: 0;
     }
 
-    @keyframes pulse{
-      0%,100%{transform:scale(1);opacity:1}
-      50%{transform:scale(.7);opacity:.5}
+    /* Research interests chips */
+    .interests-section { margin-top: 40px; }
+    .interests-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #94a3b8;
+      margin-bottom: 14px;
     }
-
-    .hero-text h1{
-      font-family:'Lora',serif;
-      font-size:30px;
-      margin:10px 0;
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      font-size: 12.5px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      background: #fff;
+      transition: border-color .2s, color .2s, background .2s;
     }
+    .chip:hover { border-color: #93c5fd; color: #1a56db; background: #eff6ff; }
 
-    .hero-text p{
-      font-size:14px;
-      line-height:1.7;
-      color:rgba(255,255,255,.8);
+    /* Available for */
+    .available-section {
+      margin-top: 40px;
+      background: linear-gradient(135deg, #f0fdf4, #eff6ff);
+      border: 1px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 24px 28px;
     }
-
-    /* ================= CONTACT SECTION ================= */
-    .container{
-      max-width:900px;
-      margin:50px auto;
-      padding:0 20px;
+    .available-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-
-    .title{
-      font-family:'Lora',serif;
-      font-size:22px;
-      margin-bottom:8px;
+    .available-title::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse-dot 1.8s infinite;
     }
-
-    .sub{
-      color:#475569;
-      margin-bottom:18px;
-      font-size:14px;
-      line-height:1.6;
+    .available-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
     }
-
-    .card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:24px;
+    .available-item {
+      font-size: 13px;
+      color: #1e3a5f;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
+    .available-item::before { content: '→'; color: #1a56db; font-weight: 700; }
+    @media (max-width: 500px) { .available-grid { grid-template-columns: 1fr; } }
 
-    .item{
-      padding:12px;
-      border:1px solid var(--border);
-      border-radius:8px;
-      margin-bottom:10px;
-      background:#f9fbff;
-      font-size:14px;
-    }
-
-    .label{
-      font-weight:600;
-      color:var(--blue);
-      display:block;
-      margin-bottom:4px;
-    }
-
-    /* footer */
-    footer{
-      background:var(--navy);
-      color:rgba(255,255,255,.6);
-      text-align:center;
-      padding:18px;
-      margin-top:50px;
-      font-size:13px;
-    }
-
-    /* responsive */
-    @media(max-width:768px){
-      .hero{height:320px}
-      .hero-text{text-align:left}
-    }
-
+    /* ══ FOOTER — exact match to insights.html ══ */
+    footer { background: #0b1f3a; color: rgba(255,255,255,.5); padding: 44px 24px 32px; }
+    .footer-inner { max-width: 1180px; margin: auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .footer-col-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,.35); margin-bottom: 14px; }
+    .footer-name { font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: rgba(255,255,255,.9); margin-bottom: 8px; }
+    .footer-desc { font-size: 12.5px; line-height: 1.7; }
+    .footer-nav-links, .footer-social-links { display: flex; flex-direction: column; gap: 7px; }
+    .footer-nav-links a, .footer-social-links a { font-size: 13px; color: rgba(255,255,255,.55); transition: color .15s; }
+    .footer-nav-links a:hover { color: rgba(255,255,255,.9); }
+    .footer-social-links a:hover { color: #93c5fd; }
+    .footer-bottom { max-width: 1180px; margin: 22px auto 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .footer-bottom p { font-size: 12px; }
+    @media (max-width: 1024px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } .contact-item { padding: 14px 20px; } .card-header { padding: 22px 20px; } .page-outer { padding: 36px 16px 80px; } }
   </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
+<!-- ═══ NAVBAR ═══ -->
 <nav class="navbar">
   <div class="nav-bar-inner">
     <div class="nav-brand">ABS<span> · </span>Abu Bokkor Shiddik</div>
@@ -204,7 +359,7 @@
         <button class="dropbtn">Learning ▾</button>
         <div class="dropdown-content">
           <a href="courses.html">🎓 Courses &amp; Training</a>
-          <a href="Learning Notes.html">🎓 Learning Notes</a>
+          <a href="Learning Notes.html">📖 Learning Notes</a>
           <a href="conference-and-workshop.html">🏛 Conferences &amp; Workshops</a>
         </div>
       </div>
@@ -229,108 +384,230 @@
       <div class="drawer-divider"></div>
       <div class="drawer-section-label">Digital Lab</div>
       <div class="drawer-sub">
-        <a class="drawer-link" href="projects.html">Projects</a>
-        <a class="drawer-link" href="data-code.html">Data &amp; Code</a>
-         <a class="drawer-link" href="game.html">🎮 Games</a>
+        <a class="drawer-link" href="projects.html">⚗ Projects</a>
+        <a class="drawer-link" href="data-code.html">💾 Data &amp; Code</a>
+        <a class="drawer-link" href="game.html">🎮 Games</a>
       </div>
       <div class="drawer-divider"></div>
       <div class="drawer-section-label">Learning &amp; Events</div>
       <div class="drawer-sub">
-        <a class="drawer-link" href="courses.html">Courses &amp; Training</a>
-        <a class="drawer-link" href="Learning Notes.html">🎓 Learning Notes</a>
-        <a class="drawer-link" href="conference-and-workshop.html">Conferences &amp; Workshops</a>
+        <a class="drawer-link" href="courses.html">🎓 Courses &amp; Training</a>
+        <a class="drawer-link" href="Learning Notes.html">📖 Learning Notes</a>
+        <a class="drawer-link" href="conference-and-workshop.html">🏛 Conferences &amp; Workshops</a>
       </div>
       <div class="drawer-divider"></div>
       <div class="drawer-section-label">Insights</div>
       <div class="drawer-sub">
-        <a class="drawer-link" href="insights.html">Posts</a>
-        <a class="drawer-link" href="videos.html">Videos</a>
-        <a class="drawer-link" href="archive.html">Photos &amp; Archive</a>
+        <a class="drawer-link" href="insights.html">✍ Posts</a>
+        <a class="drawer-link" href="videos.html">▶ Videos</a>
+        <a class="drawer-link" href="archive.html">📷 Photos &amp; Archive</a>
       </div>
     </div>
   </div>
 </nav>
 
-
-<!-- HERO IMAGE WITH LEFT TEXT -->
-<section class="hero">
-  <div class="hero-content">
+<!-- ═══ HERO ═══ -->
+<section class="page-hero">
+  <div class="hero-inner">
     <div class="hero-text">
-      <div><span class="dot"></span>Open for Collaboration</div>
-      <h1>Welcome</h1>
-      <p>
-        Feel free to contact me for research collaboration, academic discussion,
-        or data science projects in machine learning and global health analytics.
-      </p>
+      <div class="hero-eyebrow">Open for Collaboration</div>
+      <h1>Get in <em>Touch</em></h1>
+      <p>Reach out for research collaboration, academic discussion, data science projects, or anything related to machine learning and global health analytics.</p>
+      <div class="hero-tags">
+        <span class="hero-tag">🤝 Research Collaboration</span>
+        <span class="hero-tag">📊 Data Science</span>
+        <span class="hero-tag">🧠 Machine Learning</span>
+        <span class="hero-tag">🌍 Global Health</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT BODY -->
-<div class="container">
+<!-- ═══ MAIN ═══ -->
+<div class="page-outer">
 
-  <div class="title">
-    Md. Abu Bokkor Shiddik
+  <div class="section-eyebrow">Contact Information</div>
+  <h2 class="section-title">Md. Abu Bokkor Shiddik</h2>
+  <p class="section-sub">B.Sc. Hon's, Department of Statistics, Begum Rokeya University, Rangpur, Bangladesh. Feel free to reach out through any of the channels below.</p>
+
+  <div class="contact-card">
+
+    <!-- Card header with avatar -->
+    <div class="card-header">
+      <img class="card-avatar"
+           src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg"
+           alt="Md. Abu Bokkor Shiddik"
+           onerror="this.style.display='none'">
+      <div class="card-header-text">
+        <div class="card-header-name">Md. Abu Bokkor Shiddik</div>
+        <div class="card-header-role">Researcher · Statistics, BRUR &nbsp;·&nbsp; <span>Machine Learning &amp; Global Health Analytics</span></div>
+      </div>
+    </div>
+
+    <!-- Contact items -->
+    <div class="contact-items">
+
+      <div class="contact-item">
+        <div class="ci-icon email">📧</div>
+        <div class="ci-body">
+          <div class="ci-label">Email</div>
+          <div class="ci-value"><a href="mailto:abubokkor.brur60@gmail.com">abubokkor.brur60@gmail.com</a></div>
+        </div>
+        <div class="ci-arrow">›</div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci-icon phone">📱</div>
+        <div class="ci-body">
+          <div class="ci-label">Phone / WhatsApp</div>
+          <div class="ci-value"><a href="tel:+8801874001360">+880 1874 001360</a></div>
+        </div>
+        <div class="ci-arrow">›</div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci-icon web">🌐</div>
+        <div class="ci-body">
+          <div class="ci-label">Portfolio Website</div>
+          <div class="ci-value"><a href="https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/" target="_blank">abubokkorshiddik.github.io/AbuBokkorShiddik.abs798</a></div>
+        </div>
+        <div class="ci-arrow">›</div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci-icon li">in</div>
+        <div class="ci-body">
+          <div class="ci-label">LinkedIn</div>
+          <div class="ci-value"><a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">linkedin.com/in/abu-bokkor-shiddik-abs798</a></div>
+        </div>
+        <div class="ci-arrow">›</div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci-icon scholar">🎓</div>
+        <div class="ci-body">
+          <div class="ci-label">Google Scholar</div>
+          <div class="ci-value"><a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">scholar.google.com — Abu Bokkor Shiddik</a></div>
+        </div>
+        <div class="ci-arrow">›</div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci-icon orcid">✦</div>
+        <div class="ci-body">
+          <div class="ci-label">ORCID</div>
+          <div class="ci-value"><a href="https://orcid.org/0009-0002-0424-446X" target="_blank">orcid.org/0009-0002-0424-446X</a></div>
+        </div>
+        <div class="ci-arrow">›</div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci-icon github">{}</div>
+        <div class="ci-body">
+          <div class="ci-label">GitHub</div>
+          <div class="ci-value"><a href="https://github.com/abubokkorshiddik" target="_blank">github.com/abubokkorshiddik</a></div>
+        </div>
+        <div class="ci-arrow">›</div>
+      </div>
+
+    </div>
   </div>
 
-  <div class="sub">
-    B.Sc. Hon’s, Dept. of Statistics, Begum Rokeya University, Rangpur
+  <!-- Research interests -->
+  <div class="interests-section">
+    <div class="interests-title">Research Interests</div>
+    <div class="chips">
+      <span class="chip">Machine Learning</span>
+      <span class="chip">Explainable AI (XAI)</span>
+      <span class="chip">Global Health Analytics</span>
+      <span class="chip">Epidemiology</span>
+      <span class="chip">Statistical Modelling</span>
+      <span class="chip">Outbreak Prediction</span>
+      <span class="chip">Bayesian Statistics</span>
+      <span class="chip">Deep Learning</span>
+      <span class="chip">Public Health Informatics</span>
+      <span class="chip">Survival Analysis</span>
+    </div>
   </div>
 
-  <div class="card">
-
-    <div class="item">
-      <span class="label">Email</span>
-      <a href="mailto:abubokkor.brur60@gmail.com">abubokkor.brur60@gmail.com</a>
+  <!-- Available for -->
+  <div class="available-section">
+    <div class="available-title">Currently Available For</div>
+    <div class="available-grid">
+      <div class="available-item">Research collaboration</div>
+      <div class="available-item">Co-authorship on papers</div>
+      <div class="available-item">Data analysis consulting</div>
+      <div class="available-item">ML model development</div>
+      <div class="available-item">Academic discussion</div>
+      <div class="available-item">Open-source projects</div>
     </div>
-
-    <div class="item">
-      <span class="label">Phone</span>
-      <a href="tel:+8801874001360">+880 1874 001360</a>
-    </div>
-
-    <div class="item">
-      <span class="label">Portfolio</span>
-      <a href="https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/" target="_blank">Visit Site</a>
-    </div>
-
-    <div class="item">
-      <span class="label">LinkedIn</span>
-      <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">Profile</a>
-    </div>
-
-    <div class="item">
-      <span class="label">GitHub</span>
-      <a href="https://github.com/abubokkorshiddik" target="_blank">Repository</a>
-    </div>
-
   </div>
+
 </div>
 
-<!-- FOOTER -->
+<!-- ═══ FOOTER ═══ -->
 <footer>
-  © 2026 Md. Abu Bokkor Shiddik · All rights reserved
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Md. Abu Bokkor Shiddik</div>
+      <p class="footer-desc">Researcher in Machine Learning, Explainable AI &amp; Global Health Analytics. Dept. of Statistics, BRUR, Rangpur, Bangladesh.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <div class="footer-nav-links">
+        <a href="home.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="courses.html">Courses &amp; Training</a>
+        <a href="service.html">Service</a>
+        <a href="conference-and-workshop.html">Conferences</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <div class="footer-social-links">
+        <a href="https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/" target="_blank">🌐 Portfolio</a>
+        <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">in LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">🎓 Google Scholar</a>
+        <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">✦ ORCID</a>
+        <a href="https://github.com/abubokkorshiddik" target="_blank">{} GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Md. Abu Bokkor Shiddik &middot; All rights reserved</p>
+    <p>abubokkor.brur60@gmail.com &middot; +880 1874 001360</p>
+  </div>
 </footer>
+
 <script>
-  /* Navbar */
-  document.querySelectorAll('.dropbtn').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      var dd = btn.closest('.dropdown');
-      var open = dd.classList.contains('active');
-      document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
-      if (!open) dd.classList.add('active');
-    });
-  });
-  document.addEventListener('click', function() {
+/* ── NAVBAR DROPDOWN ── */
+document.querySelectorAll('.dropbtn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var dd = btn.closest('.dropdown');
+    var open = dd.classList.contains('active');
     document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
+    if (!open) dd.classList.add('active');
   });
-  var ham = document.getElementById('hamburger');
-  var drawer = document.getElementById('nav-drawer');
-  ham.addEventListener('click', function() { ham.classList.toggle('open'); drawer.classList.toggle('open'); });
-  drawer.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() { ham.classList.remove('open'); drawer.classList.remove('open'); });
+});
+document.addEventListener('click', function() {
+  document.querySelectorAll('.dropdown.active').forEach(function(d) { d.classList.remove('active'); });
+});
+
+/* ── HAMBURGER ── */
+var ham = document.getElementById('hamburger');
+var drawer = document.getElementById('nav-drawer');
+ham.addEventListener('click', function() {
+  ham.classList.toggle('open');
+  drawer.classList.toggle('open');
+});
+drawer.querySelectorAll('a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    ham.classList.remove('open');
+    drawer.classList.remove('open');
   });
+});
 </script>
 </body>
 </html>
