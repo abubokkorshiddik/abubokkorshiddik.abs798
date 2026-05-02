@@ -5,7 +5,7 @@
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal undergraduate statistics course learning notes — STAT1101, STAT1201, STAT1102, SYAT2102, STAT2101, STAT3203 — by Md. Abu Bokkor Shiddik, BRUR.">
+  <meta name="description" content="Personal undergraduate statistics course learning notes — STAT1101, STAT1201, STAT1102, SYAT2102, STAT2101, STAT3203, STAT4101, STAT4201 — by Md. Abu Bokkor Shiddik, BRUR.">
   <title>Course Learning Notes | Md. Abu Bokkor Shiddik</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { overflow-x: hidden; scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #0f172a;  }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #0f172a; overflow-x: hidden; }
     a { color: inherit; text-decoration: none; }
 
     /* ════════════════════════════
@@ -234,12 +234,10 @@
 </head>
 <body>
 
-<!-- ═══ NAVBAR ═══ -->
+<!-- ═══ NAVBAR — same as insights.html ═══ -->
 <nav class="navbar">
   <div class="nav-bar-inner">
-    <div class="nav-brand">
-      <a href="contact.html" style="color:white;">ABS<span> · </span>Abu Bokkor Shiddik</a>
-    </div>
+    <div class="nav-brand">ABS<span> · </span>Abu Bokkor Shiddik</div>
     <div class="nav-links">
       <a href="home.html">Home</a>
       <a href="publications.html">Publications</a>
@@ -249,14 +247,12 @@
         <div class="dropdown-content">
           <a href="projects.html">⚗ Projects</a>
           <a href="data-code.html">💾 Data &amp; Code</a>
-          <a href="game.html">🎮 Games</a>
         </div>
       </div>
       <div class="dropdown">
         <button class="dropbtn">Learning ▾</button>
         <div class="dropdown-content">
           <a href="courses.html">🎓 Courses &amp; Training</a>
-          <a href="Learning Notes.html">📖 Learning Notes</a>
           <a href="conference-and-workshop.html">🏛 Conferences &amp; Workshops</a>
         </div>
       </div>
@@ -281,28 +277,25 @@
       <div class="drawer-divider"></div>
       <div class="drawer-section-label">Digital Lab</div>
       <div class="drawer-sub">
-        <a class="drawer-link" href="projects.html">⚗ Projects</a>
-        <a class="drawer-link" href="data-code.html">💾 Data &amp; Code</a>
-        <a class="drawer-link" href="game.html">🎮 Games</a>
+        <a class="drawer-link" href="projects.html">Projects</a>
+        <a class="drawer-link" href="data-code.html">Data &amp; Code</a>
       </div>
       <div class="drawer-divider"></div>
       <div class="drawer-section-label">Learning &amp; Events</div>
       <div class="drawer-sub">
-        <a class="drawer-link" href="courses.html">🎓 Courses &amp; Training</a>
-        <a class="drawer-link" href="Learning Notes.html">📖 Learning Notes</a>
-        <a class="drawer-link" href="conference-and-workshop.html">🏛 Conferences &amp; Workshops</a>
+        <a class="drawer-link" href="courses.html">Courses &amp; Training</a>
+        <a class="drawer-link" href="conference-and-workshop.html">Conferences &amp; Workshops</a>
       </div>
       <div class="drawer-divider"></div>
       <div class="drawer-section-label">Insights</div>
       <div class="drawer-sub">
-        <a class="drawer-link" href="insights.html">✍ Posts</a>
-        <a class="drawer-link" href="videos.html">▶ Videos</a>
-        <a class="drawer-link" href="archive.html">📷 Photos &amp; Archive</a>
+        <a class="drawer-link" href="insights.html">Posts</a>
+        <a class="drawer-link" href="videos.html">Videos</a>
+        <a class="drawer-link" href="archive.html">Photos &amp; Archive</a>
       </div>
     </div>
   </div>
 </nav>
-
 
 <!-- ═══ HERO ═══ -->
 <section class="page-hero">
@@ -317,6 +310,8 @@
       <span class="hbadge hb4">SYAT2102 · Probability Distributions</span>
       <span class="hbadge hb5">STAT2101 · Regression Analysis &amp; Diagnostics</span>
       <span class="hbadge" style="background:rgba(14,92,74,.7);">STAT3203 · Econometrics</span>
+      <span class="hbadge" style="background:rgba(124,45,142,.7);">STAT4101 · Multivariate Distribution</span>
+      <span class="hbadge" style="background:rgba(26,80,104,.7);">STAT4201 · Multivariate Analysis II</span>
     </div>
   </div>
 </section>
@@ -329,6 +324,8 @@
     <button class="cnav-btn" onclick="jumpTo('c-dist')"><span class="cnav-dot" style="background:#1a4a8a"></span>Probability Distributions</button>
     <button class="cnav-btn" onclick="jumpTo('c-reg')"><span class="cnav-dot" style="background:#5a2080"></span>Regression &amp; Diagnostics</button>
     <button class="cnav-btn" onclick="jumpTo('c-eco')"><span class="cnav-dot" style="background:#0e5c4a"></span>Econometrics</button>
+    <button class="cnav-btn" onclick="jumpTo('c-mv1')"><span class="cnav-dot" style="background:#7c2d8e"></span>Multivariate I</button>
+    <button class="cnav-btn" onclick="jumpTo('c-mv2')"><span class="cnav-dot" style="background:#1a5068"></span>Multivariate II</button>
   </div>
 </div>
 
@@ -1512,6 +1509,401 @@
 
 </div><!-- /c-eco -->
 
+
+<!-- ══════════════════════════════════════════════
+     COURSE 6 — STAT4101 · Multivariate Distribution
+══════════════════════════════════════════════ -->
+<div class="divider" style="margin:60px 0 0"><span>STAT4101 · Multivariate Distribution</span></div>
+<div class="course-block" id="c-mv1">
+  <div class="course-banner" style="background:linear-gradient(135deg,#3a0a5a,#7c2d8e);">
+    <div class="cb-watermark">Σ</div>
+    <div class="cb-code">STAT4101 · B.Sc. Statistics Year 4 · BRUR</div>
+    <div class="cb-title">Multivariate Distribution</div>
+    <div class="cb-sub">Aspects of MVA · Distances · Matrix Decompositions · Multivariate Normal · MLE · Inference · Hotelling T² · MANOVA · Multivariate Regression</div>
+  </div>
+
+  <div class="note" style="background:#faf4ff;border-left-color:#7c2d8e;font-style:normal;margin-bottom:32px;">
+    <strong style="color:#7c2d8e;">🎓 Why Multivariate Analysis?</strong>
+    "In real life, nothing happens in isolation." Blood pressure AND cholesterol AND BMI together predict heart disease — not one alone. Multivariate analysis handles <strong>p variables simultaneously</strong>, capturing their joint distributions, correlations, and interactions. As Johnson &amp; Wichern put it: <em>"Most data sets encountered in practice contain measurements on several variables that must be analyzed jointly."</em> The key advantage: we preserve the covariance structure that gets lost when analyzing variables one at a time. 😄 Joke: "A univariate statistician sees a forest of trees. A multivariate statistician sees the forest, the ecosystem, the relationships between trees, AND the soil composition — all at once!"
+  </div>
+
+  <div class="toc-box">
+    <div class="toc-box-title">Topics — STAT4101 Multivariate Distribution</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#mv1"  data-n="M1">Aspects of Multivariate Analysis</a>
+      <a class="toc-link" href="#mv2"  data-n="M2">Euclidean &amp; Statistical Distances</a>
+      <a class="toc-link" href="#mv3"  data-n="M3">Matrix Decompositions</a>
+      <a class="toc-link" href="#mv4"  data-n="M4">Covariance Matrix &amp; Generalised Variance</a>
+      <a class="toc-link" href="#mv5"  data-n="M5">Multivariate Normal Distribution</a>
+      <a class="toc-link" href="#mv6"  data-n="M6">MLE of Mean Vector &amp; Covariance Matrix</a>
+      <a class="toc-link" href="#mv7"  data-n="M7">Assessing Multivariate Normality</a>
+      <a class="toc-link" href="#mv8"  data-n="M8">Sampling Distributions &amp; Wishart</a>
+      <a class="toc-link" href="#mv9"  data-n="M9">Inference: Hotelling T² &amp; MANOVA</a>
+      <a class="toc-link" href="#mv10" data-n="M10">Multivariate Multiple Regression</a>
+    </div>
+  </div>
+
+  <!-- M1: Aspects of MVA -->
+  <div class="topic-section" id="mv1">
+    <div class="topic-header"><div class="topic-num" style="color:#d4a8e8;">M1</div><div class="topic-title-block"><div class="topic-label">Introduction</div><div class="topic-title">Aspects of <span style="color:#7c2d8e;">Multivariate Analysis</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📖</span><div class="card-lbl">What it is</div><h3>Meaning &amp; Scope</h3><p>Multivariate Analysis (MVA) refers to statistical techniques for analysing data with <strong>p ≥ 2 variables measured on each observation</strong>. Goal: understand the joint behaviour, interdependencies, and structure of these variables simultaneously — not one at a time.</p></div>
+      <div class="card c-where"><span class="card-icon">✅</span><div class="card-lbl">Applications</div><h3>Where MVA is Used</h3><ul><li><strong>Medical:</strong> Joint analysis of blood pressure, cholesterol, BMI, age for heart disease risk</li><li><strong>Ecology:</strong> Species abundance across multiple environmental variables</li><li><strong>Finance:</strong> Portfolio of stocks — returns, risks, correlations simultaneously</li><li><strong>Psychology:</strong> Intelligence tests measuring multiple cognitive dimensions</li><li><strong>Agriculture:</strong> Crop yield as function of soil, rain, temperature, fertiliser jointly</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Key Concept</div><h3>The Data Matrix</h3><p>MVA operates on an <strong>n × p data matrix X</strong>: n observations (rows), p variables (columns). Each row is a p-dimensional observation vector <strong>xᵢ = (x_{i1}, x_{i2}, …, x_{ip})'</strong>. The entire dataset is the matrix <strong>X</strong> of dimension n×p.</p></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">When NOT to Use</div><h3>Limitations &amp; Cautions</h3><ul><li>Requires multivariate normality for many classical methods — always check!</li><li>Highly sensitive to outliers — a single bad row can distort everything</li><li>Sample size n must be >> p (as a rule: n ≥ 5p minimum)</li><li>Interpretation becomes very challenging as p grows large ("curse of dimensionality")</li></ul></div>
+    </div>
+    <div class="note"><strong>😄 The "Curse of Dimensionality" Joke</strong>"In 1D you need 10 points to understand a distribution. In 10D you need 10¹⁰ points — more than the world's population squared. This is why every multivariate statistician is simultaneously excited about p variables and terrified of having too many." — The curse is real, and MVA is largely about fighting it!</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- M2: Distances -->
+  <div class="topic-section" id="mv2">
+    <div class="topic-header"><div class="topic-num" style="color:#d4a8e8;">M2</div><div class="topic-title-block"><div class="topic-label">Distance Measures</div><div class="topic-title">Euclidean &amp; <span style="color:#7c2d8e;">Statistical Distance</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📏</span><div class="card-lbl">Euclidean Distance</div><h3>Ordinary Geometric Distance</h3><p>The familiar straight-line distance between two points x and y in p-dimensional space: d(x,y) = √[Σᵢ(xᵢ−yᵢ)²]. Simple but has a critical flaw: it treats all variables equally regardless of their scale or correlation. A variable measured in kilometres swamps one measured in centimetres!</p></div>
+      <div class="card c-how"><span class="card-icon">🎯</span><div class="card-lbl">Mahalanobis Distance</div><h3>Statistical Distance — The MVP</h3><p>Mahalanobis distance accounts for the <strong>scale AND correlation structure</strong> of the data via the covariance matrix Σ: d²(x,μ) = (x−μ)'Σ⁻¹(x−μ). It's unit-free and correlation-corrected. <strong>Think of it as Euclidean distance in "standardised space" rotated to remove correlations.</strong></p></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Why Mahalanobis?</div><h3>Advantages Over Euclidean</h3><ul><li>Scale-invariant — variables on different units treated fairly</li><li>Accounts for correlations — correlated variables don't double-count</li><li>Identifies multivariate outliers — points far from the centroid in σ units</li><li>d²(x,μ) ~ χ²(p) under multivariate normality — useful for outlier detection!</li></ul></div>
+      <div class="card c-where"><span class="card-icon">🌍</span><div class="card-lbl">Real Example</div><h3>Medical Diagnosis</h3><p>Patient has systolic BP=140mmHg and age=45 years. Euclidean distance from population mean (120mmHg, 40yrs) = √(20²+5²) = 20.6. But BP and age have different scales AND are correlated. Mahalanobis distance gives a meaningful "how unusual is this patient" measure corrected for both scale and the BP-age correlation.</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Euclidean Distance</span><span class="eq-val">d(x,y) = √[(x−y)'(x−y)] = √[Σᵢ(xᵢ−yᵢ)²]</span></div>
+      <div class="eq-row"><span class="eq-name">Statistical (Mahalanobis)</span><span class="eq-val">d²(x,μ) = (x−μ)' Σ⁻¹ (x−μ)</span></div>
+      <div class="eq-row"><span class="eq-name">Sample version</span><span class="eq-val">d²(xᵢ,x̄) = (xᵢ−x̄)' S⁻¹ (xᵢ−x̄) ~ χ²(p) approximately</span></div>
+      <div class="eq-row"><span class="eq-name">Outlier threshold</span><span class="eq-val">Flag xᵢ as outlier if d²(xᵢ,x̄) &gt; χ²_(0.975)(p)</span></div>
+    </div>
+    <div class="note"><strong>😄 Distance Analogy</strong>"Euclidean distance measures 'as the crow flies.' Mahalanobis distance measures 'as the statistician walks' — taking into account the terrain (correlations) and the different scales of measurement (variances). They're both right, but one is much smarter about context."</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- M3: Matrix Decompositions -->
+  <div class="topic-section" id="mv3">
+    <div class="topic-header"><div class="topic-num" style="color:#d4a8e8;">M3</div><div class="topic-title-block"><div class="topic-label">Linear Algebra Tools</div><div class="topic-title">Matrix Decompositions — <span style="color:#7c2d8e;">Spectral, Cholesky &amp; Square Root</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🔷</span><div class="card-lbl">Spectral Decomposition</div><h3>Eigenvalue Decomposition</h3><p>Every <strong>symmetric positive definite</strong> matrix A can be decomposed as: <strong>A = PΛP'</strong> where P = matrix of eigenvectors (orthonormal columns) and Λ = diagonal matrix of eigenvalues λ₁ ≥ λ₂ ≥ … ≥ λₚ &gt; 0. The eigenvectors give the "principal directions" of the data; eigenvalues give the "lengths" in those directions. Foundation of PCA!</p></div>
+      <div class="card c-how"><span class="card-icon">🔺</span><div class="card-lbl">Cholesky Decomposition</div><h3>Lower-Triangular Factorisation</h3><p>Every positive definite matrix Σ can be written as <strong>Σ = LL'</strong> where L is a lower-triangular matrix with positive diagonal entries. <strong>Why useful?</strong> (1) Simulate multivariate normal data: if Z~N(0,I), then X = μ + LZ ~ N(μ,Σ). (2) Solve linear systems efficiently. (3) Check positive definiteness — Cholesky fails if Σ is not positive definite.</p></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Square Root of Matrix</div><h3>Matrix Square Root A^(1/2)</h3><p>Using spectral decomposition: <strong>A^(1/2) = PΛ^(1/2)P'</strong> where Λ^(1/2) = diag(√λ₁, …, √λₚ). Property: A^(1/2) · A^(1/2) = A. Used to transform data to uncorrelated form: if X ~ Nₚ(μ,Σ), then Σ^(-1/2)(X−μ) ~ Nₚ(0,I) — the "sphering" or "whitening" transformation essential for many multivariate tests.</p></div>
+      <div class="card c-form"><span class="card-icon">🔢</span><div class="card-lbl">Partitioned Covariance</div><h3>Block Structure of Σ</h3><p>Partition the p-vector x = (x₍₁₎', x₍₂₎')' into groups of p₁ and p₂ variables. Then Σ = [[Σ₁₁, Σ₁₂],[Σ₂₁, Σ₂₂]] where Σ₁₁=Var(x₍₁₎), Σ₂₂=Var(x₍₂₎), Σ₁₂=Cov(x₍₁₎,x₍₂₎). Used in canonical correlation, conditional distributions, and regression of one group on another.</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Spectral Decomposition</span><span class="eq-val">Σ = PΛP' = Σᵢ λᵢ eᵢeᵢ' &nbsp;&nbsp;(P orthogonal, Λ diagonal)</span></div>
+      <div class="eq-row"><span class="eq-name">Cholesky</span><span class="eq-val">Σ = LL' &nbsp;&nbsp;(L lower triangular, lᵢᵢ &gt; 0)</span></div>
+      <div class="eq-row"><span class="eq-name">Matrix Square Root</span><span class="eq-val">Σ^(1/2) = PΛ^(1/2)P' &nbsp;&nbsp;where &nbsp; Λ^(1/2)=diag(√λ₁,…,√λₚ)</span></div>
+      <div class="eq-row"><span class="eq-name">Whitening Transform</span><span class="eq-val">Z = Σ^(-1/2)(X − μ) ~ Nₚ(0, Iₚ)</span></div>
+      <div class="eq-row"><span class="eq-name">Conditional (partitioned)</span><span class="eq-val">E(X₁|X₂) = μ₁ + Σ₁₂Σ₂₂⁻¹(X₂−μ₂)</span></div>
+    </div>
+    <div class="note"><strong>😄 Matrix Square Root Joke</strong>"Why can't a matrix go to therapy alone? Because it needs its square root to become 'whole' — and its inverse to undo its past mistakes!" More seriously: the matrix square root is what lets us transform any multivariate normal distribution into a standard one, making everything else tractable.</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- M4: Covariance & Generalised Variance -->
+  <div class="topic-section" id="mv4">
+    <div class="topic-header"><div class="topic-num" style="color:#d4a8e8;">M4</div><div class="topic-title-block"><div class="topic-label">Variation in p Dimensions</div><div class="topic-title">Covariance Matrix &amp; <span style="color:#7c2d8e;">Generalised Variance</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📊</span><div class="card-lbl">Covariance Matrix Σ</div><h3>The Multivariate Analogue of Variance</h3><p>For a p-dimensional random vector X, the covariance matrix Σ (p×p) captures ALL pairwise variances and covariances: σᵢᵢ = Var(Xᵢ) on diagonal; σᵢⱼ = Cov(Xᵢ,Xⱼ) off-diagonal. <strong>Σ is symmetric and positive (semi)definite.</strong> The sample version S = (n−1)⁻¹Σᵢ(xᵢ−x̄)(xᵢ−x̄)' is the unbiased estimator.</p></div>
+      <div class="card c-how"><span class="card-icon">🔢</span><div class="card-lbl">Generalised Variance</div><h3>|Σ| — One Number for All Variation</h3><p>The <strong>determinant |Σ|</strong> is called the generalised variance — it summarises the total variation in all p variables in a single number. Geometrically: |Σ| is proportional to the squared volume of the p-dimensional ellipsoid formed by the data. <strong>|Σ| = 0</strong> means variables are perfectly linearly dependent (degenerate distribution).</p></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Total Variation</div><h3>Trace of Σ — Alternative Summary</h3><p><strong>tr(Σ) = σ₁₁ + σ₂₂ + … + σₚₚ</strong> = sum of all variances. This is the "total variance" measure. tr(Σ) = Σλᵢ (sum of eigenvalues). Used in PCA: proportion of variance explained by kth PC = λₖ/tr(Σ). Both |Σ| and tr(Σ) are used as scalar measures of multivariate scatter.</p></div>
+      <div class="card c-form"><span class="card-icon">🌍</span><div class="card-lbl">Correlation Matrix</div><h3>Standardised Version</h3><p>R = D^(-1/2) Σ D^(-1/2) where D = diag(σ₁₁,…,σₚₚ). All diagonal entries of R = 1; off-diagonal rᵢⱼ ∈ [−1,1]. Working with R (instead of Σ) is equivalent to standardising all variables to unit variance. Most MVA methods can work with either Σ or R — the choice matters for interpretation!</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Population Σ</span><span class="eq-val">Σ = E[(X−μ)(X−μ)'] &nbsp;&nbsp;(p×p symmetric positive definite)</span></div>
+      <div class="eq-row"><span class="eq-name">Sample S</span><span class="eq-val">S = (1/(n−1)) · Σᵢ(xᵢ−x̄)(xᵢ−x̄)'</span></div>
+      <div class="eq-row"><span class="eq-name">Generalised Variance</span><span class="eq-val">|S| = det(S) &nbsp;&nbsp;(volume of data ellipsoid)</span></div>
+      <div class="eq-row"><span class="eq-name">Total Variance</span><span class="eq-val">tr(S) = s₁₁ + s₂₂ + … + sₚₚ = Σᵢ λᵢ</span></div>
+      <div class="eq-row"><span class="eq-name">Correlation Matrix</span><span class="eq-val">R = D^(-1/2) S D^(-1/2) &nbsp;&nbsp;(D = diag of variances)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- M5: Multivariate Normal Distribution -->
+  <div class="topic-section" id="mv5">
+    <div class="topic-header"><div class="topic-num" style="color:#d4a8e8;">M5</div><div class="topic-title-block"><div class="topic-label">Core Distribution</div><div class="topic-title">The <span style="color:#7c2d8e;">Multivariate Normal Distribution</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🔔</span><div class="card-lbl">Definition &amp; Meaning</div><h3>Nₚ(μ, Σ)</h3><p>A p-dimensional random vector X follows a multivariate normal distribution Nₚ(μ,Σ) if every linear combination a'X is (univariate) normal for any non-zero vector a. Parameters: <strong>mean vector μ</strong> (p×1) — location; <strong>covariance matrix Σ</strong> (p×p) — shape and spread. The MVN is completely characterised by just these two parameters!</p></div>
+      <div class="card c-how"><span class="card-icon">📐</span><div class="card-lbl">Properties</div><h3>Key Properties of MVN</h3><ul><li><strong>Marginals are normal:</strong> Each Xᵢ ~ N(μᵢ, σᵢᵢ)</li><li><strong>Conditionals are normal:</strong> (X₁|X₂=x₂) ~ N(μ₁.₂, Σ₁₁.₂)</li><li><strong>Linear combinations:</strong> AX+b ~ N(Aμ+b, AΣA')</li><li><strong>Uncorrelated → Independent:</strong> UNIQUE to MVN! If Cov(Xᵢ,Xⱼ)=0 then Xᵢ⊥Xⱼ</li><li><strong>Quadratic forms:</strong> (X−μ)'Σ⁻¹(X−μ) ~ χ²(p)</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Contours &amp; Geometry</div><h3>Elliptical Contours</h3><p>Contours of constant density for MVN are <strong>ellipsoids</strong> in p-dimensional space: {x : (x−μ)'Σ⁻¹(x−μ) = c²}. The shape/orientation is determined by Σ. Axes of the ellipse = eigenvectors of Σ; lengths proportional to √λᵢ. In 2D: a tilted ellipse if variables are correlated, circles if uncorrelated.</p></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Important Caution</div><h3>Marginals Normal ≠ Joint Normal</h3><p>Each variable being normally distributed does NOT imply joint multivariate normality! A classic counterexample: X~N(0,1) and Y = X if |X|&gt;1, Y = −X otherwise. Then X~N, Y~N but (X,Y) is NOT bivariate normal. Always test joint normality, not just marginals!</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">MVN pdf</span><span class="eq-val">f(x) = (2π)^(-p/2)|Σ|^(-1/2) exp[-½(x−μ)'Σ⁻¹(x−μ)]</span></div>
+      <div class="eq-row"><span class="eq-name">Density contour</span><span class="eq-val">(x−μ)'Σ⁻¹(x−μ) = c² &nbsp;&nbsp;(p-dim ellipsoid)</span></div>
+      <div class="eq-row"><span class="eq-name">Linear transform</span><span class="eq-val">AX + b ~ Nₖ(Aμ+b, AΣA') &nbsp;&nbsp;(A: k×p)</span></div>
+      <div class="eq-row"><span class="eq-name">Quadratic form</span><span class="eq-val">(X−μ)'Σ⁻¹(X−μ) ~ χ²(p)</span></div>
+      <div class="eq-row"><span class="eq-name">Conditional dist.</span><span class="eq-val">X₁|X₂=x₂ ~ N(μ₁+Σ₁₂Σ₂₂⁻¹(x₂−μ₂), Σ₁₁−Σ₁₂Σ₂₂⁻¹Σ₂₁)</span></div>
+    </div>
+
+    <!-- VISUALIZATION: Bivariate Normal Ellipses -->
+    <div class="viz-wrap">
+      <div class="viz-title">Bivariate Normal Contours — Different Correlation Structures</div>
+      <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" font-family="'DM Mono',monospace">
+        <!-- ρ=0 -->
+        <g transform="translate(20,10)">
+          <rect width="180" height="160" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+          <ellipse cx="90" cy="80" rx="55" ry="55" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity=".8"/>
+          <ellipse cx="90" cy="80" rx="38" ry="38" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity=".6"/>
+          <ellipse cx="90" cy="80" rx="20" ry="20" fill="#3b82f625" stroke="#3b82f6" stroke-width="1.5"/>
+          <circle cx="90" cy="80" r="3" fill="#dc2626"/>
+          <line x1="30" y1="80" x2="150" y2="80" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+          <line x1="90" y1="15" x2="90" y2="145" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+          <text x="90" y="178" text-anchor="middle" font-size="10" fill="#0f172a" font-weight="700">ρ = 0 (circles)</text>
+          <text x="90" y="190" text-anchor="middle" font-size="9" fill="#64748b">Independent variables</text>
+        </g>
+        <!-- ρ=0.7 -->
+        <g transform="translate(250,10)">
+          <rect width="180" height="160" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+          <ellipse cx="90" cy="80" rx="65" ry="35" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity=".8" transform="rotate(-40,90,80)"/>
+          <ellipse cx="90" cy="80" rx="45" ry="24" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity=".6" transform="rotate(-40,90,80)"/>
+          <ellipse cx="90" cy="80" rx="25" ry="13" fill="#7c3aed20" stroke="#7c3aed" stroke-width="1.5" transform="rotate(-40,90,80)"/>
+          <circle cx="90" cy="80" r="3" fill="#dc2626"/>
+          <text x="90" y="178" text-anchor="middle" font-size="10" fill="#0f172a" font-weight="700">ρ = +0.7 (tilted ellipse)</text>
+          <text x="90" y="190" text-anchor="middle" font-size="9" fill="#64748b">Positive correlation</text>
+        </g>
+        <!-- ρ=-0.8 -->
+        <g transform="translate(480,10)">
+          <rect width="180" height="160" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+          <ellipse cx="90" cy="80" rx="65" ry="30" fill="none" stroke="#dc2626" stroke-width="1.5" opacity=".8" transform="rotate(40,90,80)"/>
+          <ellipse cx="90" cy="80" rx="45" ry="20" fill="none" stroke="#dc2626" stroke-width="1.5" opacity=".6" transform="rotate(40,90,80)"/>
+          <ellipse cx="90" cy="80" rx="25" ry="11" fill="#dc262620" stroke="#dc2626" stroke-width="1.5" transform="rotate(40,90,80)"/>
+          <circle cx="90" cy="80" r="3" fill="#dc2626"/>
+          <text x="90" y="178" text-anchor="middle" font-size="10" fill="#0f172a" font-weight="700">ρ = −0.8 (tilted other way)</text>
+          <text x="90" y="190" text-anchor="middle" font-size="9" fill="#64748b">Negative correlation</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- M6: MLE -->
+  <div class="topic-section" id="mv6">
+    <div class="topic-header"><div class="topic-num" style="color:#d4a8e8;">M6</div><div class="topic-title-block"><div class="topic-label">Estimation</div><div class="topic-title">MLE of Mean Vector &amp; <span style="color:#7c2d8e;">Covariance Matrix</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🎯</span><div class="card-lbl">MLE of μ</div><h3>Sample Mean Vector</h3><p>The MLE of the mean vector μ is simply the <strong>sample mean vector x̄ = (1/n)Σᵢxᵢ</strong>. It is unbiased E(x̄)=μ and its sampling distribution is: x̄ ~ Nₚ(μ, Σ/n). Larger n → smaller variance of x̄ → more precise estimate. Intuition: just average each variable separately.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">MLE of Σ</div><h3>MLE vs Unbiased Estimator</h3><ul><li><strong>MLE:</strong> Σ̂ = (1/n)Σᵢ(xᵢ−x̄)(xᵢ−x̄)' — biased (uses n, not n−1)</li><li><strong>Unbiased S:</strong> S = (1/(n−1))Σᵢ(xᵢ−x̄)(xᵢ−x̄)' — used in practice</li><li>MLE is biased by factor (n−1)/n — for large n, difference negligible</li><li>Both are consistent estimators (converge to Σ as n→∞)</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Sufficiency</div><h3>Sufficient Statistics for MVN</h3><p>For MVN data, <strong>(x̄, S) is a jointly sufficient statistic</strong> for (μ, Σ) — meaning all information in the sample about the parameters is captured by the sample mean vector and sample covariance matrix. No other summary can add more information. This is the multivariate analogue of the fact that (x̄, s²) is sufficient for (μ,σ²) in univariate normal.</p></div>
+      <div class="card c-warn"><span class="card-icon">📈</span><div class="card-lbl">Large Sample Behaviour</div><h3>Asymptotic Results</h3><ul><li>√n(x̄ − μ) → Nₚ(0, Σ) as n→∞ (multivariate CLT)</li><li>n·(x̄−μ)'S⁻¹(x̄−μ) → χ²(p) as n→∞</li><li>S → Σ in probability (consistency)</li><li>These are the basis for large-sample inference about μ</li></ul></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">MLE of μ</span><span class="eq-val">μ̂ = x̄ = (1/n) Σᵢ xᵢ &nbsp;&nbsp;(unbiased)</span></div>
+      <div class="eq-row"><span class="eq-name">MLE of Σ (biased)</span><span class="eq-val">Σ̂ = (1/n) Σᵢ(xᵢ−x̄)(xᵢ−x̄)'</span></div>
+      <div class="eq-row"><span class="eq-name">Unbiased S</span><span class="eq-val">S = (1/(n−1)) Σᵢ(xᵢ−x̄)(xᵢ−x̄)' &nbsp;&nbsp;(used in tests)</span></div>
+      <div class="eq-row"><span class="eq-name">Distribution of x̄</span><span class="eq-val">x̄ ~ Nₚ(μ, Σ/n)</span></div>
+      <div class="eq-row"><span class="eq-name">Multivariate CLT</span><span class="eq-val">√n(x̄ − μ) →_d Nₚ(0, Σ) &nbsp;&nbsp;as n→∞</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- M7: Assessing MVN -->
+  <div class="topic-section" id="mv7">
+    <div class="topic-header"><div class="topic-num" style="color:#d4a8e8;">M7</div><div class="topic-title-block"><div class="topic-label">Diagnostics</div><div class="topic-title">Assessing <span style="color:#7c2d8e;">Multivariate Normality</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🔬</span><div class="card-lbl">Step 1: Marginal Checks</div><h3>Univariate Marginal Normality</h3><ul><li>Plot histogram and Q-Q plot for each variable separately</li><li>Shapiro-Wilk or Kolmogorov-Smirnov test for each Xⱼ</li><li>Check for skewness and kurtosis near 0 and 3 respectively</li><li><strong>Warning:</strong> All marginals normal ≠ joint MVN! This is necessary but NOT sufficient</li></ul></div>
+      <div class="card c-how"><span class="card-icon">📊</span><div class="card-lbl">Step 2: Bivariate Checks</div><h3>P-P and Q-Q Plots</h3><ul><li><strong>Bivariate Q-Q plot:</strong> Plot ordered chi-square quantiles vs ordered Mahalanobis distances d²ᵢ</li><li>If MVN: points should fall approximately on a 45° line</li><li><strong>Bivariate scatter:</strong> Should show elliptical pattern for each pair</li><li>Departures from ellipse indicate non-normality or outliers</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Step 3: Outlier Detection</div><h3>Finding Multivariate Outliers</h3><ul><li>Compute d²ᵢ = (xᵢ−x̄)'S⁻¹(xᵢ−x̄) for each observation</li><li>Under MVN: d²ᵢ ≈ χ²(p)</li><li>Flag observations with d²ᵢ &gt; χ²_{0.975}(p) as potential outliers</li><li>An outlier in a single variable may not appear as multivariate outlier and vice versa!</li></ul></div>
+      <div class="card c-form"><span class="card-icon">🔄</span><div class="card-lbl">Step 4: Transformations</div><h3>Achieving Near-Normality</h3><ul><li><strong>Square root √x:</strong> Right-skewed count data (Poisson-like)</li><li><strong>Log ln(x):</strong> Right-skewed positive data (income, concentrations)</li><li><strong>Logit ln[p/(1-p)]:</strong> Proportions data bounded in (0,1)</li><li><strong>Box-Cox:</strong> x^(λ) — λ estimated from data; λ=0 gives log, λ=0.5 gives √x</li><li><strong>Fisher's z = ½ln[(1+r)/(1-r)]:</strong> For correlation coefficients</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Chi-sq Q-Q plot</span><span class="eq-val">Plot d²₍ᵢ₎ vs χ²_{i/(n+1)}(p) — should be linear if MVN holds</span></div>
+      <div class="eq-row"><span class="eq-name">Box-Cox transform</span><span class="eq-val">x^(λ) = (xλ−1)/λ if λ≠0 ; ln(x) if λ=0 &nbsp;&nbsp;(choose λ maximising normality)</span></div>
+      <div class="eq-row"><span class="eq-name">Outlier threshold</span><span class="eq-val">d²ᵢ &gt; χ²_{0.975}(p) → potential multivariate outlier</span></div>
+      <div class="eq-row"><span class="eq-name">Fisher's z</span><span class="eq-val">z = 0.5 · ln[(1+r)/(1−r)] ~ N(0.5·ln[(1+ρ)/(1−ρ)], 1/(n−3))</span></div>
+    </div>
+    <div class="note"><strong>😄 Transformation Tip</strong>"Transforming data to normality is like ironing a wrinkled shirt — the content (information) doesn't change, but the shape becomes much more manageable. The Box-Cox transformation is like an automatic iron that figures out the right temperature (λ) by itself!" Remember to always report which transformation was used so results can be back-transformed for interpretation.</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- M8: Sampling Distributions & Wishart -->
+  <div class="topic-section" id="mv8">
+    <div class="topic-header"><div class="topic-num" style="color:#d4a8e8;">M8</div><div class="topic-title-block"><div class="topic-label">Sampling Theory</div><div class="topic-title">Wishart Distribution &amp; <span style="color:#7c2d8e;">Sampling Distributions</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📐</span><div class="card-lbl">Wishart Distribution</div><h3>Multivariate Analogue of χ²</h3><p>If X₁,…,Xₙ are iid Nₚ(0,Σ), then the matrix <strong>W = Σᵢ XᵢXᵢ' ~ Wₚ(n,Σ)</strong> follows a Wishart distribution with n degrees of freedom and scale matrix Σ. The sample covariance matrix satisfies: <strong>(n−1)S ~ Wₚ(n−1,Σ)</strong>. It is the matrix generalisation of the chi-square distribution — just as s² has a chi-square distribution in univariate normal, S has a Wishart distribution!</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Properties of Wishart</div><h3>Key Facts</h3><ul><li>E(W) = nΣ — so E(S) = Σ (unbiased)</li><li>If p=1: W reduces to σ²χ²(n) — the familiar univariate result</li><li>Reproductive: W₁~Wₚ(n₁,Σ) + W₂~Wₚ(n₂,Σ) → W₁+W₂~Wₚ(n₁+n₂,Σ)</li><li>Used in construction of Hotelling T² and Wilks' Lambda test statistics</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Key Sampling Results</div><h3>Distribution of x̄ and S</h3><ul><li>x̄ and S are <strong>independent</strong> when sampling from MVN (multivariate analogue of independence of x̄ and s²)</li><li>x̄ ~ Nₚ(μ, Σ/n)</li><li>(n−1)S ~ Wₚ(n−1, Σ)</li><li>n(x̄−μ)'S⁻¹(x̄−μ) ~ [p(n−1)/(n−p)] · Fₚ,ₙ₋ₚ (Hotelling T²)</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Wishart</span><span class="eq-val">(n−1)S ~ Wₚ(n−1, Σ) &nbsp;&nbsp;when X₁,…,Xₙ iid Nₚ(μ,Σ)</span></div>
+      <div class="eq-row"><span class="eq-name">E(S)</span><span class="eq-val">E(S) = Σ &nbsp;&nbsp;(unbiased)</span></div>
+      <div class="eq-row"><span class="eq-name">Independence</span><span class="eq-val">x̄ ⊥ S &nbsp;&nbsp;(when sampling from MVN)</span></div>
+      <div class="eq-row"><span class="eq-name">Hotelling T² dist.</span><span class="eq-val">T² = n(x̄−μ₀)'S⁻¹(x̄−μ₀) ~ [p(n−1)/(n−p)] · Fₚ,ₙ₋ₚ</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- M9: Hotelling T2 & MANOVA -->
+  <div class="topic-section" id="mv9">
+    <div class="topic-header"><div class="topic-num" style="color:#d4a8e8;">M9</div><div class="topic-title-block"><div class="topic-label">Inference</div><div class="topic-title">Hotelling T² &amp; <span style="color:#7c2d8e;">MANOVA</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🔬</span><div class="card-lbl">Hotelling's T²</div><h3>Multivariate t-Test</h3><p>Tests H₀: μ = μ₀ (mean vector equals a specified vector). Hotelling's T² = n(x̄−μ₀)'S⁻¹(x̄−μ₀). This is the multivariate generalisation of the one-sample t-test. Under H₀: <strong>[(n−p)/p(n−1)]·T² ~ Fₚ,ₙ₋ₚ</strong>. Reject H₀ if this exceeds Fₐ(p,n−p). The TWO-SAMPLE version tests H₀: μ₁=μ₂ using the pooled covariance matrix.</p></div>
+      <div class="card c-how"><span class="card-icon">📊</span><div class="card-lbl">MANOVA</div><h3>Multivariate ANOVA</h3><p>MANOVA tests whether group mean vectors are equal: H₀: μ₁=μ₂=…=μg. Decomposes the total scatter matrix T into: <strong>T = H + E</strong> where H=between-group (hypothesis) matrix and E=within-group (error) matrix. Tests use functions of H and E — primarily <strong>Wilks' Lambda Λ = |E|/|H+E|</strong>.</p></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">MANOVA Test Statistics</div><h3>Four Equivalent Tests</h3><ul><li><strong>Wilks' Lambda:</strong> Λ = |E|/|T| — most widely used</li><li><strong>Pillai's Trace:</strong> tr(H(H+E)⁻¹)</li><li><strong>Hotelling-Lawley Trace:</strong> tr(HE⁻¹)</li><li><strong>Roy's Largest Root:</strong> λ₁/(1+λ₁) — most powerful for single-direction alternatives</li><li>All four equivalent in large samples; differ for small n or specific alternatives</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">MANOVA Assumptions</div><h3>Requirements</h3><ul><li>Multivariate normality within each group</li><li>Homogeneity of covariance matrices: Σ₁=Σ₂=…=Σg (Box's M test)</li><li>Independence of observations</li><li>n > p (more obs than variables — essential!)</li><li>⚠ If assumptions violated → use permutation MANOVA (vegan package)</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Hotelling T²</span><span class="eq-val">T² = n(x̄−μ₀)'S⁻¹(x̄−μ₀)</span></div>
+      <div class="eq-row"><span class="eq-name">T² to F</span><span class="eq-val">F = [(n−p)/p(n−1)] · T² ~ Fₚ,ₙ₋ₚ &nbsp;&nbsp;under H₀</span></div>
+      <div class="eq-row"><span class="eq-name">MANOVA decomp.</span><span class="eq-val">T = H + E &nbsp;&nbsp;(Total = Between + Within)</span></div>
+      <div class="eq-row"><span class="eq-name">Wilks' Lambda</span><span class="eq-val">Λ = |E| / |H + E| ∈ (0,1] &nbsp;&nbsp;(Λ≈1 → H₀ not rejected)</span></div>
+      <div class="eq-row"><span class="eq-name">Pillai's Trace</span><span class="eq-val">V = tr[H(H+E)⁻¹] = Σᵢ λᵢ/(1+λᵢ)</span></div>
+    </div>
+    <div class="note"><strong>😄 MANOVA Analogy</strong>"MANOVA is like ANOVA but instead of asking 'do these groups have different means on ONE measure?' it asks 'do these groups differ on ANY combination of ALL measures simultaneously?' It's like comparing entire personality profiles rather than just one trait. Much more powerful when variables are correlated!" — And Wilks' Lambda is like the p-value's sophisticated older sibling who considers the whole picture.</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- M10: Multivariate Multiple Regression -->
+  <div class="topic-section" id="mv10">
+    <div class="topic-header"><div class="topic-num" style="color:#d4a8e8;">M10</div><div class="topic-title-block"><div class="topic-label">Prediction</div><div class="topic-title">Multivariate <span style="color:#7c2d8e;">Multiple Regression</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📉</span><div class="card-lbl">What it is</div><h3>Multiple Y, Multiple X</h3><p>Multivariate multiple regression has <strong>multiple response variables Y</strong> (n×m matrix) AND multiple predictors X (n×(k+1) matrix). Model: <strong>Y = XB + E</strong> where B (k+1)×m is the coefficient matrix and E is n×m error matrix. Each column of Y is a separate response; they share the same predictors X.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Estimation</div><h3>Matrix OLS</h3><p>OLS estimator: <strong>B̂ = (X'X)⁻¹X'Y</strong>. Each column of B̂ is the OLS solution for that response variable separately — so multivariate regression is equivalent to running m separate univariate regressions! However, joint analysis is more efficient and enables tests involving ALL responses simultaneously.</p></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Why Use Jointly?</div><h3>Advantage of Joint Analysis</h3><ul><li>Tests on coefficient matrix B involving multiple responses simultaneously</li><li>Accounts for correlations among response variables → more powerful tests</li><li>Can test hypotheses of form CBM = 0 (general linear hypothesis)</li><li>Residual covariance matrix Ê'Ê/(n−k−1) estimates Σ — the cross-response correlations</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Model (matrix)</span><span class="eq-val">Y(n×m) = X(n×(k+1)) · B((k+1)×m) + E(n×m)</span></div>
+      <div class="eq-row"><span class="eq-name">OLS estimator</span><span class="eq-val">B̂ = (X'X)⁻¹X'Y</span></div>
+      <div class="eq-row"><span class="eq-name">Residual matrix</span><span class="eq-val">Ê = Y − XB̂ = (I − H)Y &nbsp;&nbsp;where H=X(X'X)⁻¹X'</span></div>
+      <div class="eq-row"><span class="eq-name">Error covariance est.</span><span class="eq-val">Σ̂ = Ê'Ê/(n−k−1)</span></div>
+      <div class="eq-row"><span class="eq-name">General hypothesis</span><span class="eq-val">H₀: CBM = 0 &nbsp;→ test via Wilks' Λ or Hotelling trace</span></div>
+    </div>
+  </div>
+</div><!-- /c-mv1 -->
+
+<!-- ══════════════════════════════════════════════
+     COURSE 7 — STAT4201 · Multivariate Analysis II
+══════════════════════════════════════════════ -->
+<div class="divider" style="margin:60px 0 0"><span>STAT4201 · Multivariate Analysis II</span></div>
+<div class="course-block" id="c-mv2">
+  <div class="course-banner" style="background:linear-gradient(135deg,#0d2a3d,#1a5068);">
+    <div class="cb-watermark">W</div>
+    <div class="cb-code">STAT4201 · B.Sc. Statistics Year 4 · BRUR</div>
+    <div class="cb-title">Multivariate Analysis II</div>
+    <div class="cb-sub">PCA · ICA · Factor Analysis · Cluster Analysis · Discriminant Analysis &amp; Classification</div>
+  </div>
+
+  <div class="note" style="background:#e8f4fd;border-left-color:#1a5068;font-style:normal;margin-bottom:32px;">
+    <strong style="color:#1a5068;">🎓 The Big Picture of MVA II</strong>
+    Where Multivariate I asked "how are variables distributed and how do we test hypotheses about means?", Multivariate II asks <strong>"what structure is hidden in the data?"</strong> PCA finds orthogonal dimensions of maximum variance. Factor Analysis finds latent constructs driving correlations. Cluster Analysis groups similar observations. Discriminant Analysis builds rules to classify new observations. Together, these are the core of <strong>unsupervised and supervised multivariate learning</strong>. 😄 "MVA II is where statistics starts looking suspiciously like machine learning — because it basically is!"
+  </div>
+
+  <div class="toc-box">
+    <div class="toc-box-title">Topics — STAT4201 Multivariate Analysis II</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#mv2-pca"  data-n="A1">Principal Component Analysis (PCA)</a>
+      <a class="toc-link" href="#mv2-ica"  data-n="A2">Independent Component Analysis (ICA)</a>
+      <a class="toc-link" href="#mv2-fa"   data-n="A3">Factor Analysis</a>
+      <a class="toc-link" href="#mv2-ca"   data-n="A4">Cluster Analysis</a>
+      <a class="toc-link" href="#mv2-da"   data-n="A5">Discriminant &amp; Classification Analysis</a>
+    </div>
+  </div>
+
+  <!-- PCA -->
+  <div class="topic-section" id="mv2-pca">
+    <div class="topic-header"><div class="topic-num" style="color:#8ac4e0;">A1</div><div class="topic-title-block"><div class="topic-label">Dimension Reduction</div><div class="topic-title">Principal Component Analysis <span style="color:#1a5068;">(PCA)</span></div></div></div>
+
+    <div class="note" style="background:#e8f4fd;border-left-color:#1a5068;font-style:normal;"><strong style="color:#1a5068;">😄 PCA Analogy</strong>"PCA is like finding the best angle to photograph a 3D sculpture so it reveals the most information in a 2D photo. You rotate your perspective to capture maximum variance in each new direction — the first principal component is the angle with the best overall view, the second adds what the first missed, and so on!" Each photo (PC) is orthogonal to the others.</div>
+
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📊</span><div class="card-lbl">What it is</div><h3>Finding Maximum Variance Directions</h3><p>PCA transforms p correlated variables into p <strong>uncorrelated Principal Components (PCs)</strong> that are linear combinations of the originals. PC1 captures maximum variance; PC2 captures maximum of remaining variance orthogonal to PC1; and so on. Goal: represent data in fewer dimensions with minimal information loss.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">How PCA Works</div><h3>The Eigenvalue Approach</h3><ul><li>Compute S (or R for standardised PCA)</li><li>Find eigenvalues λ₁≥λ₂≥…≥λₚ and eigenvectors e₁,e₂,…,eₚ of S</li><li>ith PC: Yᵢ = eᵢ'X (linear combination with eigenvector weights)</li><li>Var(Yᵢ) = λᵢ; Cov(Yᵢ,Yⱼ) = 0 for i≠j</li><li>Retain k PCs where Σᵢ₌₁ᵏ λᵢ/tr(S) ≥ 0.80 (80% variance rule)</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Choosing # of PCs</div><h3>How Many to Keep?</h3><ul><li><strong>80% variance rule:</strong> Keep enough PCs to explain ≥80% of total variance</li><li><strong>Scree plot:</strong> Plot λᵢ vs i; look for "elbow" — PCs before the bend</li><li><strong>Kaiser criterion:</strong> Keep PCs with λᵢ &gt; 1 (from R, not S)</li><li><strong>Cross-validation:</strong> Prediction error-based selection</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Conditions &amp; Cautions</div><h3>When to Use PCA</h3><ul><li>✅ Use when: variables are correlated; dimension reduction needed; no interpretability required</li><li>❌ Don't use when: variables are already uncorrelated (PCA adds nothing)</li><li>⚠ PCA components have no natural interpretation — a mix of original variables</li><li>⚠ Sensitive to scale — standardise first (use R not S) if variables on different scales</li><li>⚠ PCA is unsupervised — it ignores any response/class labels</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">PCs from eigendecomp.</span><span class="eq-val">S = PΛP' → Yᵢ = eᵢ'(X−x̄) &nbsp;&nbsp;(ith PC)</span></div>
+      <div class="eq-row"><span class="eq-name">Variance of ith PC</span><span class="eq-val">Var(Yᵢ) = λᵢ</span></div>
+      <div class="eq-row"><span class="eq-name">Proportion explained</span><span class="eq-val">PVEᵢ = λᵢ / Σⱼλⱼ = λᵢ / tr(S)</span></div>
+      <div class="eq-row"><span class="eq-name">Loadings</span><span class="eq-val">lᵢⱼ = eᵢⱼ · √λᵢ &nbsp;&nbsp;(correlation between PC i and variable j scaled)</span></div>
+      <div class="eq-row"><span class="eq-name">Communality</span><span class="eq-val">hⱼ² = Σᵢ lᵢⱼ² &nbsp;&nbsp;(variance of Xⱼ explained by retained PCs)</span></div>
+    </div>
+    <div class="note"><strong>🌍 Real Application: Socioeconomic Index</strong>Bangladesh district data: 8 variables (income, education, health access, sanitation, literacy, employment, poverty rate, infrastructure). PCA extracts PC1 (accounts for 62% variance) which has high positive loadings on income, education, infrastructure and negative loading on poverty — this is a "development index" that can rank districts. Avoids multicollinearity issues in regression by replacing 8 correlated variables with 2-3 orthogonal PCs.</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- ICA -->
+  <div class="topic-section" id="mv2-ica">
+    <div class="topic-header"><div class="topic-num" style="color:#8ac4e0;">A2</div><div class="topic-title-block"><div class="topic-label">Signal Separation</div><div class="topic-title">Independent Component Analysis <span style="color:#1a5068;">(ICA)</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🎵</span><div class="card-lbl">What it is</div><h3>Beyond Uncorrelated — Finding Independence</h3><p>ICA decomposes X = AS + noise where S are <strong>statistically independent</strong> source signals and A is the mixing matrix. Goal: estimate A and recover S. Unlike PCA (finds uncorrelated components), ICA finds components that are <strong>statistically independent</strong> — a much stronger condition. Non-Gaussian sources are required!</p></div>
+      <div class="card c-how"><span class="card-icon">🔊</span><div class="card-lbl">The Cocktail Party Problem</div><h3>Classic Motivation</h3><p>Imagine p microphones recording a party with p speakers talking simultaneously. Each microphone records a mixture of all voices. ICA recovers the individual voices (independent sources) from the mixed recordings. Applications: EEG/fMRI brain signal separation, audio source separation, financial return decomposition, image processing.</p></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">ICA vs PCA</div><h3>Key Differences</h3><ul><li><strong>PCA:</strong> Finds uncorrelated components (2nd-order statistics only)</li><li><strong>ICA:</strong> Finds statistically independent components (uses higher-order statistics)</li><li><strong>PCA components:</strong> Gaussian by CLT — but Gaussians with zero covariance ARE independent → PCA = ICA for Gaussian data</li><li><strong>ICA condition:</strong> At most one component can be Gaussian</li><li><strong>ICA is not unique</strong> up to sign and scaling — unlike PCA</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">When to Use ICA</div><h3>Conditions</h3><ul><li>✅ When sources are truly statistically independent (not just uncorrelated)</li><li>✅ When sources are non-Gaussian (critical assumption!)</li><li>✅ Signal/source separation problems</li><li>❌ Don't use when sources are Gaussian — PCA is equivalent and simpler</li><li>⚠ ICA components are not ordered by variance (unlike PCA)</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">ICA model</span><span class="eq-val">X = AS &nbsp;&nbsp;(X=observed, A=mixing matrix, S=independent sources)</span></div>
+      <div class="eq-row"><span class="eq-name">Separation</span><span class="eq-val">Ŝ = WX &nbsp;&nbsp;where W = A⁻¹ is the unmixing matrix (estimated by ICA)</span></div>
+      <div class="eq-row"><span class="eq-name">Non-Gaussianity</span><span class="eq-val">Maximise negentropy: J(y) ≈ [E{G(y)} − E{G(z)}]² (G non-quadratic function)</span></div>
+      <div class="eq-row"><span class="eq-name">FastICA update</span><span class="eq-val">w ← E[Xg(w'X)] − E[g'(w'X)]w &nbsp;&nbsp;(gradient-based iteration)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- Factor Analysis -->
+  <div class="topic-section" id="mv2-fa">
+    <div class="topic-header"><div class="topic-num" style="color:#8ac4e0;">A3</div><div class="topic-title-block"><div class="topic-label">Latent Structure</div><div class="topic-title">Factor Analysis — <span style="color:#1a5068;">Discovering Hidden Constructs</span></div></div></div>
+
+    <div class="note" style="background:#e8f4fd;border-left-color:#1a5068;font-style:normal;"><strong style="color:#1a5068;">😄 Factor Analysis Analogy</strong>"Factor analysis is like figuring out that what students score on reading, writing, and comprehension tests is really driven by a single underlying construct: 'verbal intelligence.' You can't directly measure verbal intelligence, but you can observe its effects on multiple tests. Factor analysis extracts these <em>invisible factors</em> that drive the observable correlations." — Widely used in psychology, social science, and education.</div>
+
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🔍</span><div class="card-lbl">What it is</div><h3>Latent Factor Model</h3><p>Factor Analysis (FA) models p observed variables as linear combinations of m &lt;&lt; p <strong>latent (unobservable) common factors F</strong> plus unique factors: X = μ + LF + ε. L is the (p×m) loading matrix; F are m common factors; ε are p unique (specific) factors. Goal: interpret the common factors as meaningful latent constructs.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">FA vs PCA</div><h3>Critical Differences</h3><ul><li><strong>PCA:</strong> Explains total variance; components are explicit linear combos of X; descriptive</li><li><strong>FA:</strong> Explains common variance only (not unique/error variance); factors are latent unobservables; model-based</li><li><strong>PCA:</strong> Unique solution; components are ordered by variance</li><li><strong>FA:</strong> Solution not unique — rotation can be applied to improve interpretability!</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Factor Rotation</div><h3>Making Factors Interpretable</h3><ul><li><strong>Orthogonal rotation (Varimax):</strong> Maximises variance of squared loadings per column — produces "simple structure" where each variable loads highly on one factor and near-zero on others. Factors remain uncorrelated.</li><li><strong>Oblique rotation (Promax, Oblimin):</strong> Allows factors to be correlated — more realistic when latent constructs are related (e.g., verbal and mathematical intelligence are correlated)</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Conditions</div><h3>When FA is Appropriate</h3><ul><li>✅ Variables are correlated (|R|&lt;1) — if uncorrelated, no common factors exist</li><li>✅ You believe latent constructs drive the correlations (theory-driven)</li><li>✅ Communalities h² should be reasonable — if all h²≈0, model fails</li><li>❌ Don't use FA when all variance is unique — use PCA instead</li><li>⚠ Factor identification requires subjective interpretation — what does Factor 1 "mean"?</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Factor Model</span><span class="eq-val">X − μ = L·F + ε &nbsp;&nbsp;(L: loadings p×m; F: factors m×1; ε: unique factors)</span></div>
+      <div class="eq-row"><span class="eq-name">Covariance structure</span><span class="eq-val">Σ = LL' + Ψ &nbsp;&nbsp;(Ψ = diag unique variances)</span></div>
+      <div class="eq-row"><span class="eq-name">Communality</span><span class="eq-val">hⱼ² = Σₖ lⱼₖ² &nbsp;&nbsp;(proportion of Var(Xⱼ) explained by common factors)</span></div>
+      <div class="eq-row"><span class="eq-name">Uniqueness</span><span class="eq-val">ψⱼ = 1 − hⱼ² &nbsp;&nbsp;(proportion unexplained by common factors)</span></div>
+      <div class="eq-row"><span class="eq-name">Factor scores</span><span class="eq-val">F̂ = L'Σ⁻¹(X−μ) &nbsp;&nbsp;(Bartlett's method)</span></div>
+    </div>
+    <div class="note"><strong>🌍 Bangladesh Application: Poverty Index</strong>10 district-level variables measured: income, education, sanitation, health access, child mortality, malnutrition, electricity, road access, drinking water quality, school enrolment. FA extracts 3 factors: Factor 1 (high loadings on income, electricity, roads) = "Infrastructure & Economy"; Factor 2 (health access, child mortality, malnutrition) = "Health Status"; Factor 3 (education, school enrolment) = "Human Capital". These factors become inputs to a multidimensional poverty index. Much more interpretable than raw 10-variable data!</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- Cluster Analysis -->
+  <div class="topic-section" id="mv2-ca">
+    <div class="topic-header"><div class="topic-num" style="color:#8ac4e0;">A4</div><div class="topic-title-block"><div class="topic-label">Unsupervised Grouping</div><div class="topic-title">Cluster Analysis — <span style="color:#1a5068;">Finding Natural Groups</span></div></div></div>
+
+    <div class="note" style="background:#e8f4fd;border-left-color:#1a5068;font-style:normal;"><strong style="color:#1a5068;">😄 Clustering Joke</strong>"Cluster analysis is what you do when you have data but no one told you what groups exist. It's like showing up at a party where you know nobody — after a while you notice people naturally cluster by interest, age group, or how loudly they speak. Cluster analysis does this mathematically, without you having to mingle!" The key challenge: <em>you don't know the 'right' answer</em> — there's no objective truth in unsupervised learning.</div>
+
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🗂️</span><div class="card-lbl">What it is</div><h3>Grouping Without Labels</h3><p>Cluster analysis partitions n observations into g groups (clusters) such that observations <strong>within a cluster are similar</strong> and observations <strong>between clusters are dissimilar</strong>. It is <strong>unsupervised</strong> — no predefined groups or labels. Goal: discover natural structure in data.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Hierarchical Clustering</div><h3>Building a Dendrogram</h3><ul><li><strong>Agglomerative (bottom-up):</strong> Start with n clusters (each obs = 1 cluster); merge closest pair; repeat until all in 1 cluster. Most common.</li><li><strong>Divisive (top-down):</strong> Start with 1 cluster; split recursively</li><li>Linkage methods: Single (minimum distance), Complete (maximum), Average (UPGMA), Ward's (minimise within-cluster variance)</li><li>Result: Dendrogram — cut at desired level to get g clusters</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">K-Means Clustering</div><h3>Iterative Partitioning</h3><ul><li>Specify k (number of clusters) in advance</li><li>Algorithm: (1) Assign each obs to nearest centroid; (2) Update centroids as cluster means; (3) Repeat until convergence</li><li>Minimises: Σₖ Σᵢ∈Cₖ ‖xᵢ − μₖ‖² (within-cluster sum of squares)</li><li>Sensitive to initial centroids — run multiple times with random starts</li><li>Choosing k: Elbow plot, Silhouette coefficient, Gap statistic</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Conditions &amp; Cautions</div><h3>When Each Method Works</h3><ul><li>✅ Hierarchical: Small-medium n; want to see ALL possible groupings; no need to prespecify k</li><li>✅ K-means: Large n; approximately spherical clusters; k known or can be estimated</li><li>❌ K-means fails for non-spherical clusters (use DBSCAN, Gaussian mixture models)</li><li>⚠ Scale matters enormously — standardise variables before clustering!</li><li>⚠ No "correct" clustering — always validate with external criteria</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">K-Means objective</span><span class="eq-val">Minimise W(C) = Σₖ₌₁ᴷ Σᵢ∈Cₖ ‖xᵢ − μ̄ₖ‖²</span></div>
+      <div class="eq-row"><span class="eq-name">Single linkage d</span><span class="eq-val">d(A,B) = min{d(a,b) : a∈A, b∈B}</span></div>
+      <div class="eq-row"><span class="eq-name">Complete linkage d</span><span class="eq-val">d(A,B) = max{d(a,b) : a∈A, b∈B}</span></div>
+      <div class="eq-row"><span class="eq-name">Ward's linkage</span><span class="eq-val">Merge A and B if merger minimises increase in total within-cluster SS</span></div>
+      <div class="eq-row"><span class="eq-name">Silhouette</span><span class="eq-val">s(i) = [b(i)−a(i)] / max{a(i),b(i)} ∈ [−1,1] &nbsp;(higher=better cluster)</span></div>
+    </div>
+    <div class="note"><strong>🌍 Bangladesh Health Cluster</strong>64 districts clustered on 6 health indicators. K-means (k=3 chosen by elbow plot) identifies: Cluster 1 (12 districts, Dhaka-centred) = high healthcare access, low mortality; Cluster 2 (28 districts) = moderate on all indicators; Cluster 3 (24 districts, Char/haor areas) = low access, high child mortality, high malnutrition. This clustering directly informs resource allocation for the Ministry of Health — districts in Cluster 3 receive priority funding.</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <!-- Discriminant Analysis -->
+  <div class="topic-section" id="mv2-da">
+    <div class="topic-header"><div class="topic-num" style="color:#8ac4e0;">A5</div><div class="topic-title-block"><div class="topic-label">Supervised Classification</div><div class="topic-title">Discriminant &amp; <span style="color:#1a5068;">Classification Analysis</span></div></div></div>
+
+    <div class="note" style="background:#e8f4fd;border-left-color:#1a5068;font-style:normal;"><strong style="color:#1a5068;">😄 Discriminant Analysis Analogy</strong>"Discriminant analysis is like training a sorting machine. You show it thousands of labelled patients ('has disease' / 'no disease') along with their test results. It learns the pattern of test results that best separates the groups. Then when a new patient arrives with only test results (no diagnosis), the machine classifies them. Fisher's Linear Discriminant is one of the oldest and most elegant classification algorithms — predating neural networks by 80+ years!"</div>
+
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🎯</span><div class="card-lbl">What it is</div><h3>Supervised Group Separation</h3><p>Discriminant Analysis has TWO goals: (1) <strong>Description</strong>: find linear combinations of variables (discriminant functions) that best separate g known groups; (2) <strong>Classification</strong>: build a rule to assign future observations to one of the g groups. Unlike cluster analysis: group memberships are KNOWN for the training data.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Fisher's LDA</div><h3>Linear Discriminant Analysis</h3><ul><li>Find direction w that maximises between-group variance / within-group variance: <strong>w = Sₚ⁻¹(x̄₁ − x̄₂)</strong> for 2-group case</li><li>Classify new x to group 1 if: w'x ≥ midpoint(w'x̄₁, w'x̄₂)</li><li>Assumes equal covariance matrices Σ₁=Σ₂ → uses pooled Sₚ</li><li>For g&gt;2: compute g−1 discriminant functions</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Probabilistic Classification</div><h3>Bayes Classification Rules</h3><ul><li><strong>Linear discriminant rule (LDA):</strong> Equal Σ → linear boundary</li><li><strong>Quadratic discriminant (QDA):</strong> Unequal Σ → quadratic boundary (more flexible)</li><li>Classify x to group g* = argmax Pᵢ·f(x|group i) (posterior probability)</li><li><strong>Minimum ECM rule:</strong> Accounts for unequal misclassification costs and prior probabilities</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Evaluating Performance</div><h3>Classification Error</h3><ul><li><strong>APER:</strong> Apparent Error Rate — fraction misclassified on training data (optimistically biased)</li><li><strong>Cross-validated error:</strong> Leave-one-out cross-validation — better estimate of true error</li><li><strong>Confusion matrix:</strong> Rows = actual groups; columns = predicted groups; diagonal = correct classifications</li><li>⚠ APER always underestimates true misclassification rate — always use CV!</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Fisher's discriminant</span><span class="eq-val">w = Sₚ⁻¹(x̄₁ − x̄₂) &nbsp;&nbsp;(direction of maximum separation)</span></div>
+      <div class="eq-row"><span class="eq-name">Pooled covariance</span><span class="eq-val">Sₚ = [(n₁−1)S₁ + (n₂−1)S₂] / (n₁+n₂−2)</span></div>
+      <div class="eq-row"><span class="eq-name">LDA classification</span><span class="eq-val">Assign x to g1 if (x̄₁−x̄₂)'Sₚ⁻¹[x − ½(x̄₁+x̄₂)] ≥ ln(π₂/π₁)</span></div>
+      <div class="eq-row"><span class="eq-name">Mahalanobis criterion</span><span class="eq-val">Assign x to group g* = argminᵢ D²(x, x̄ᵢ) &nbsp;&nbsp;(nearest centroid)</span></div>
+      <div class="eq-row"><span class="eq-name">APER</span><span class="eq-val">APER = (# misclassified) / n &nbsp;&nbsp;(training error — always optimistic)</span></div>
+    </div>
+    <div class="note"><strong>🌍 Bangladesh Medical Application</strong>Classifying TB patients into 3 treatment response groups (rapid/moderate/slow responder) based on 6 baseline clinical variables (age, BMI, sputum grade, haemoglobin, ESR, CD4 count). LDA builds two discriminant functions. Cross-validated APER = 18% (82% correctly classified). The discriminant scores of new patients can be computed from their baseline labs to predict treatment response category — guiding personalised treatment decisions before expensive sensitivity testing is complete.</div>
+  </div>
+
+</div><!-- /c-mv2 -->
+
 <!-- ══════════════════════════════════════════════
      REFERENCES
 ══════════════════════════════════════════════ -->
@@ -1525,9 +1917,10 @@
   <div class="ref-entry"><div class="ref-n">[6]</div><div><div class="ref-title">Introduction to Linear Regression Analysis</div><div class="ref-auth">Montgomery, D.C., Peck, E.A., &amp; Vining, G.G. — John Wiley &amp; Sons · 5th Ed.</div></div></div>
   <div class="ref-entry"><div class="ref-n">[7]</div><div><div class="ref-title">Basic Econometrics</div><div class="ref-auth">Gujarati, D.N. &amp; Porter, D.C. — McGraw-Hill · 5th Ed.</div></div></div>
   <div class="ref-entry"><div class="ref-n">[8]</div><div><div class="ref-title">Introductory Econometrics: A Modern Approach</div><div class="ref-auth">Wooldridge, J.M. — Cengage Learning · 7th Ed.</div></div></div>
+  <div class="ref-entry"><div class="ref-n">[9]</div><div><div class="ref-title">Applied Multivariate Statistical Analysis</div><div class="ref-auth">Johnson, R.A. &amp; Wichern, W.D. — Pearson Prentice Hall · 6th Ed.</div></div></div>
 </div>
 
-<div class="nb-footer">STAT1101 · STAT1201 · STAT1102 · SYAT2102 · STAT2101 · STAT3203 &nbsp;·&nbsp; Dept. of Statistics, BRUR &nbsp;·&nbsp; Personal Study Notes · Md. Abu Bokkor Shiddik</div>
+<div class="nb-footer">STAT1101 · STAT1201 · STAT1102 · SYAT2102 · STAT2101 · STAT3203 · STAT4101 · STAT4201 &nbsp;·&nbsp; Dept. of Statistics, BRUR &nbsp;·&nbsp; Personal Study Notes · Md. Abu Bokkor Shiddik</div>
 
 </div><!-- /notebook-wrap -->
 
@@ -1598,7 +1991,7 @@ function jumpTo(id) {
 }
 
 /* Auto-highlight course nav on scroll */
-var courseIds = ['c-stat11', 'c-prob', 'c-dist', 'c-reg', 'c-eco'];
+var courseIds = ['c-stat11', 'c-prob', 'c-dist', 'c-reg', 'c-eco', 'c-mv1', 'c-mv2'];
 var raf = null;
 window.addEventListener('scroll', function() {
   if (raf) return;
