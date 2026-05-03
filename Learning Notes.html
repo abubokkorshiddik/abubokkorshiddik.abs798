@@ -1916,6 +1916,315 @@
 
 </div><!-- /c-mv2 -->
 
+  <!-- ══ STAT2201 · Sampling Distribution ══ -->
+<div class="divider" style="margin:60px 0 0"><span>STAT2201 · Sampling Distribution</span></div>
+<div class="course-block" id="c-samp">
+  <div class="course-banner" style="background:linear-gradient(135deg,#063a50,#0d5c72);">
+    <div class="cb-watermark">x̄</div>
+    <div class="cb-code">STAT2201 · B.Sc. Statistics Year 2 · BRUR</div>
+    <div class="cb-title">Sampling Distribution</div>
+    <div class="cb-sub">Sampling Distributions of Mean · Variance · Proportions · CLT · t · F · χ² Distributions · Estimation · Confidence Intervals</div>
+  </div>
+  <div class="note" style="background:#e8f6fa;border-left-color:#0d5c72;font-style:normal;margin-bottom:28px;">
+    <strong style="color:#0d5c72;">🎓 What is a Sampling Distribution?</strong>
+    "If you took your sample 10,000 times and computed the mean each time, what would the distribution of those means look like?" THAT is the sampling distribution — not the distribution of data, but the distribution of a statistic over repeated sampling. 😄 <em>"The sampling distribution is the bridge between data and inference — without it, statistics would just be fancy arithmetic."</em>
+  </div>
+  <div class="toc-box">
+    <div class="toc-box-title">Topics — STAT2201</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#sd1" data-n="S1">Population vs Sample · Parameters vs Statistics</a>
+      <a class="toc-link" href="#sd2" data-n="S2">Sampling Distribution of the Mean</a>
+      <a class="toc-link" href="#sd3" data-n="S3">Central Limit Theorem (CLT)</a>
+      <a class="toc-link" href="#sd4" data-n="S4">Chi-Square Distribution · Sampling Distribution of s²</a>
+      <a class="toc-link" href="#sd5" data-n="S5">Student's t Distribution</a>
+      <a class="toc-link" href="#sd6" data-n="S6">F Distribution</a>
+      <a class="toc-link" href="#sd7" data-n="S7">Sampling Distribution of Proportions</a>
+      <a class="toc-link" href="#sd8" data-n="S8">Point &amp; Interval Estimation</a>
+    </div>
+  </div>
+
+  <div class="topic-section" id="sd1">
+    <div class="topic-header"><div class="topic-num" style="color:#8ac8d8;">S1</div><div class="topic-title-block"><div class="topic-label">Foundations</div><div class="topic-title">Population vs Sample · <span style="color:#0d5c72;">Parameters vs Statistics</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🌍</span><div class="card-lbl">Population &amp; Parameters</div><h3>The Complete Set</h3><ul><li><strong>Population (N):</strong> All items of interest — fixed but usually unobservable</li><li><strong>Parameter:</strong> μ, σ², π — numerical summaries of the population, FIXED but UNKNOWN</li><li>Almost never observe the whole population — too large, costly, or destructive</li></ul></div>
+      <div class="card c-how"><span class="card-icon">🔬</span><div class="card-lbl">Sample &amp; Statistics</div><h3>What We Actually Observe</h3><ul><li><strong>Sample (n):</strong> n observations drawn from the population</li><li><strong>Statistic:</strong> x̄, s², p̂ — functions of the sample; RANDOM VARIABLE before sampling</li><li>The KEY insight: statistics vary sample to sample — this variation has a pattern = sampling distribution</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">3 Different Distributions</div><h3>Never Confuse These!</h3><ul><li><strong>Population distribution:</strong> All individuals — shape could be anything</li><li><strong>Sample distribution:</strong> Your n observations — approximates population</li><li><strong>Sampling distribution:</strong> Distribution of the STATISTIC over repeated samples</li><li>😄 "Confusing these three is the #1 intro-stats mistake. The CLT applies to the THIRD one!"</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Standard Error</div><h3>SE ≠ SD</h3><ul><li><strong>SD:</strong> Variability of individual observations (fixed, doesn't shrink with n)</li><li><strong>SE(x̄):</strong> Variability of the sample MEAN over repeated samples = σ/√n</li><li>SE shrinks as n increases — more data → more precise estimate of μ</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Standard Error of x̄</span><span class="eq-val">SE(x̄) = σ/√n &nbsp;&nbsp;(decreases with n — more data = more precise)</span></div>
+      <div class="eq-row"><span class="eq-name">Unbiasedness</span><span class="eq-val">E(x̄) = μ &nbsp;&nbsp;; &nbsp;&nbsp;E(s²) = σ² (why we divide by n−1, not n)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="sd2">
+    <div class="topic-header"><div class="topic-num" style="color:#8ac8d8;">S2</div><div class="topic-title-block"><div class="topic-label">Key Result</div><div class="topic-title">Sampling Distribution of the <span style="color:#0d5c72;">Mean</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📊</span><div class="card-lbl">Normal Population</div><h3>Exact Result (Any n)</h3><p>If X₁,…,Xₙ iid N(μ,σ²), then x̄ ~ N(μ, σ²/n) <strong>exactly</strong> for any n. Standardise: Z = (x̄−μ)/(σ/√n) ~ N(0,1). When σ unknown, replace with s → T = (x̄−μ)/(s/√n) ~ t(n−1).</p></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Effect of n</div><h3>More Data = Narrower Distribution</h3><ul><li>Larger n → smaller SE = σ/√n → sampling distribution narrows around μ</li><li>Doubling n reduces SE by √2 ≈ 1.41 (not by 2 — diminishing returns!)</li><li>To halve the SE, you must QUADRUPLE n — sampling is expensive!</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">x̄ from N(μ,σ²)</span><span class="eq-val">x̄ ~ N(μ, σ²/n) &nbsp;&nbsp;exact for any n</span></div>
+      <div class="eq-row"><span class="eq-name">Z statistic (σ known)</span><span class="eq-val">Z = (x̄ − μ) / (σ/√n) ~ N(0,1)</span></div>
+      <div class="eq-row"><span class="eq-name">t statistic (σ unknown)</span><span class="eq-val">T = (x̄ − μ) / (s/√n) ~ t(n−1)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="sd3">
+    <div class="topic-header"><div class="topic-num" style="color:#8ac8d8;">S3</div><div class="topic-title-block"><div class="topic-label">The Crown Jewel</div><div class="topic-title">Central Limit Theorem <span style="color:#0d5c72;">(CLT)</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">👑</span><div class="card-lbl">The CLT</div><h3>Most Important Theorem in Statistics</h3><p>Let X₁,…,Xₙ be iid with mean μ and <strong>finite</strong> variance σ². Then as n→∞: √n(x̄−μ)/σ →_d N(0,1) regardless of the population distribution shape. For large n: x̄ ≈ N(μ, σ²/n). This is why the normal distribution appears everywhere!</p></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Why it's Magic</div><h3>Any Population → Normal x̄</h3><ul><li>Population can be exponential, uniform, skewed, bimodal — doesn't matter!</li><li>n ≥ 30: CLT approximation usually good; n ≥ 50 for very skewed populations</li><li>Foundation for: t-tests, z-tests, ANOVA, regression inference, and almost everything</li><li>😄 "CLT: Statistics' superhero. No matter what messy distribution you throw at it — average enough and you get normal. Every time."</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">When CLT Fails</div><h3>Important Exceptions</h3><ul><li>Cauchy distribution: NO finite variance → CLT doesn't apply</li><li>Very small n with highly skewed data</li><li>Dependent observations: standard CLT requires independence</li><li>Always use exact t/F/χ² when population is exactly normal</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">CLT (formal)</span><span class="eq-val">√n(x̄ − μ)/σ →_d N(0,1) as n→∞ &nbsp;&nbsp;(iid, finite σ²)</span></div>
+      <div class="eq-row"><span class="eq-name">Practical form</span><span class="eq-val">x̄ ≈ N(μ, σ²/n) for n≥30 approximately</span></div>
+      <div class="eq-row"><span class="eq-name">Sum version</span><span class="eq-val">Sₙ = ΣXᵢ ≈ N(nμ, nσ²) for large n</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="sd4">
+    <div class="topic-header"><div class="topic-num" style="color:#8ac8d8;">S4</div><div class="topic-title-block"><div class="topic-label">Variance Inference</div><div class="topic-title">Chi-Square, <span style="color:#0d5c72;">t</span> &amp; F Distributions</div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📐</span><div class="card-lbl">Chi-Square χ²(k)</div><h3>Sum of Squared Normals</h3><ul><li>χ²(k) = Z₁²+…+Zₖ² where Zᵢ iid N(0,1)</li><li>Mean=k; Var=2k; Right-skewed; always ≥ 0</li><li>Sampling dist of variance: (n−1)s²/σ² ~ χ²(n−1)</li><li>⚠ Requires population normality — sensitive to departures!</li></ul></div>
+      <div class="card c-how"><span class="card-icon">🍺</span><div class="card-lbl">t Distribution</div><h3>Z ÷ √(χ²/ν) — The Guinness Distribution</h3><ul><li>t(ν) = Z/√(χ²(ν)/ν); heavier tails than N(0,1)</li><li>T = (x̄−μ)/(s/√n) ~ t(n−1) when sampling from N(μ,σ²)</li><li>As ν→∞: t(ν) → N(0,1)</li><li>😄 "Invented by Gosset at Guinness Brewery — published as 'Student' because Guinness prohibited employee publications. Cheers to small samples! 🍺"</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">F Distribution</div><h3>Ratio of Two Chi-Squares</h3><ul><li>F(k₁,k₂) = [χ²(k₁)/k₁] / [χ²(k₂)/k₂]</li><li>F = s₁²/s₂² ~ F(n₁−1,n₂−1) for variance ratio test</li><li>F = MSA/MSE in ANOVA; t²(ν) = F(1,ν)</li><li>Named for Ronald Fisher — inventor of ANOVA, p-values, and experimental design</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">χ² from sample variance</span><span class="eq-val">(n−1)s²/σ² ~ χ²(n−1) &nbsp;&nbsp;(population normal)</span></div>
+      <div class="eq-row"><span class="eq-name">CI for σ²</span><span class="eq-val">[(n−1)s²/χ²_{α/2}, (n−1)s²/χ²_{1−α/2}]</span></div>
+      <div class="eq-row"><span class="eq-name">Two-sample t (equal σ)</span><span class="eq-val">T = (x̄₁−x̄₂)/(sₚ√(1/n₁+1/n₂)) ~ t(n₁+n₂−2)</span></div>
+      <div class="eq-row"><span class="eq-name">CI for μ (σ unknown)</span><span class="eq-val">x̄ ± t_{α/2,n−1} · s/√n</span></div>
+      <div class="eq-row"><span class="eq-name">Sample size for μ</span><span class="eq-val">n = (z_{α/2} · σ / E)² &nbsp;&nbsp;(E = desired margin of error)</span></div>
+    </div>
+    <div class="note"><strong>🌍 Bangladesh Example</strong>A nutritionist samples 40 children aged 5–10 from Rangpur to estimate mean height. Sample mean = 112 cm, s = 8.4 cm. 95% CI: 112 ± t_{0.025,39} × 8.4/√40 = 112 ± 2.023 × 1.33 = [109.3, 114.7] cm. We are 95% confident the true population mean height is between 109.3 and 114.7 cm. To halve the margin of error, we would need n = 4×40 = 160 children — quadrupling the sample!</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="sd5">
+    <div class="topic-header"><div class="topic-num" style="color:#8ac8d8;">S5</div><div class="topic-title-block"><div class="topic-label">Proportions</div><div class="topic-title">Sampling Distribution of <span style="color:#0d5c72;">Proportions &amp; Estimation</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📈</span><div class="card-lbl">Sample Proportion</div><h3>For Binary Outcomes</h3><p>p̂ = X/n where X~Binomial(n,p). E(p̂)=p (unbiased); Var(p̂)=p(1−p)/n. By CLT: p̂ ≈ N(p, p(1−p)/n) when np≥10 AND n(1−p)≥10. Standard error: SE(p̂) = √[p(1−p)/n].</p></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">CI Interpretation</div><h3>What 95% CI Really Means</h3><p>A 95% CI: if repeated sampling 100 times and CI computed each time, about 95 of those intervals contain the true μ. It does NOT mean "95% probability μ is in this specific interval" — μ is fixed! 😄 "The CI is a fishing net — 95% of the time it catches the fish (μ). Once cast, the fish is either inside or not."</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">p̂ approx. dist.</span><span class="eq-val">p̂ ≈ N(p, p(1−p)/n) for large n (np≥10 AND n(1−p)≥10)</span></div>
+      <div class="eq-row"><span class="eq-name">95% CI for p</span><span class="eq-val">p̂ ± 1.96 · √[p̂(1−p̂)/n] &nbsp;&nbsp;(Wald interval)</span></div>
+      <div class="eq-row"><span class="eq-name">Sample size for p</span><span class="eq-val">n = z²_{α/2} · p(1−p) / E² &nbsp;&nbsp;(use p=0.5 if unknown)</span></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ══ STAT2203 · ANOVA & DOE ══ -->
+<div class="divider" style="margin:60px 0 0"><span>STAT2203 · Analysis of Variance &amp; Design of Experiment</span></div>
+<div class="course-block" id="c-anova">
+  <div class="course-banner" style="background:linear-gradient(135deg,#4a2000,#7a3a00);">
+    <div class="cb-watermark">F</div>
+    <div class="cb-code">STAT2203 · B.Sc. Statistics Year 2 · BRUR</div>
+    <div class="cb-title">Analysis of Variance &amp; Design of Experiment</div>
+    <div class="cb-sub">One-Way ANOVA · Two-Way ANOVA · Post-Hoc Tests · CRD · RBD · LSD · Factorial Designs · 2ᵏ Designs</div>
+  </div>
+  <div class="note" style="background:#fff8f0;border-left-color:#7a3a00;font-style:normal;margin-bottom:28px;">
+    <strong style="color:#7a3a00;">🎓 ANOVA in one sentence</strong>
+    ANOVA tests whether means of 3+ groups differ — by comparing BETWEEN-group variance to WITHIN-group variance. Why not just do many t-tests? With g groups you'd need C(g,2) t-tests, inflating Type I error massively. ANOVA controls this with ONE test. 😄 <em>"ANOVA: Statistics' way of comparing all your groups at once, without letting false alarms pile up."</em> Fisher's golden rule of DOE: "Block what you can; randomise what you cannot."
+  </div>
+  <div class="toc-box">
+    <div class="toc-box-title">Topics — STAT2203</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#av1" data-n="V1">One-Way ANOVA — Model &amp; F-Test</a>
+      <a class="toc-link" href="#av2" data-n="V2">Assumptions &amp; Diagnostics</a>
+      <a class="toc-link" href="#av3" data-n="V3">Post-Hoc Multiple Comparisons</a>
+      <a class="toc-link" href="#av4" data-n="V4">Two-Way ANOVA &amp; Interaction</a>
+      <a class="toc-link" href="#av5" data-n="V5">CRD · RBD · LSD</a>
+      <a class="toc-link" href="#av6" data-n="V6">Factorial &amp; 2ᵏ Designs</a>
+    </div>
+  </div>
+
+  <div class="topic-section" id="av1">
+    <div class="topic-header"><div class="topic-num" style="color:#e8c090;">V1</div><div class="topic-title-block"><div class="topic-label">Core Test</div><div class="topic-title">One-Way <span style="color:#7a3a00;">ANOVA</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📊</span><div class="card-lbl">What it is</div><h3>Comparing g Group Means</h3><p>H₀: μ₁=μ₂=…=μg vs H₁: at least one μᵢ differs. Partitions total variation: <strong>SST = SSA + SSE</strong>. If between-group (MSA) >> within-group (MSE), groups differ. F = MSA/MSE ~ F(g−1, N−g) under H₀.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">The Logic</div><h3>Why Variance Tests Means</h3><ul><li><strong>MSA (between):</strong> Measures group-mean differences — large if μᵢ differ</li><li><strong>MSE (within):</strong> Measures random error — unaffected by group differences</li><li>Under H₀: both estimate σ² → F≈1. Under H₁: MSA >> MSE → F >> 1</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Effect Size</div><h3>η² — How Meaningful Is the Effect?</h3><p>η² = SSA/SST: proportion of variance explained. Benchmarks: small=0.01, medium=0.06, large=0.14. ALWAYS report — significant F with tiny η² means real but trivially small difference! 😄 "Statistical significance ≠ practical importance."</p></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">What ANOVA Doesn't Tell</div><h3>Which Groups Differ?</h3><p>Significant F only says "at least one mean differs" — need post-hoc tests to find WHICH pairs differ. Never claim the group with highest mean is significantly different without a post-hoc test — that's data dredging!</p></div>
+    </div>
+    <div class="viz-wrap">
+      <div class="viz-title">One-Way ANOVA Table</div>
+      <svg viewBox="0 0 640 150" xmlns="http://www.w3.org/2000/svg" font-family="'DM Mono',monospace" font-size="11">
+        <rect x="10" y="10" width="620" height="28" rx="5" fill="#4a2000"/>
+        <text x="30" y="28" fill="#fbbf24" font-weight="700">Source</text><text x="155" y="28" fill="#fbbf24" font-weight="700">df</text>
+        <text x="215" y="28" fill="#fbbf24" font-weight="700">SS</text><text x="360" y="28" fill="#fbbf24" font-weight="700">MS</text><text x="490" y="28" fill="#fbbf24" font-weight="700">F</text>
+        <rect x="10" y="40" width="620" height="28" fill="#fff8f0"/>
+        <text x="30" y="59" fill="#92400e">Among Groups (Treatment)</text><text x="155" y="59" fill="#92400e">g−1</text>
+        <text x="215" y="59" fill="#92400e">SSA=Σnᵢ(ȳᵢ−ȳ)²</text><text x="360" y="59" fill="#92400e">MSA=SSA/(g−1)</text><text x="490" y="59" fill="#92400e">MSA/MSE</text>
+        <rect x="10" y="70" width="620" height="28" fill="#fef9f5"/>
+        <text x="30" y="89" fill="#7c4a00">Within Groups (Error)</text><text x="155" y="89" fill="#7c4a00">N−g</text>
+        <text x="215" y="89" fill="#7c4a00">SSE=ΣΣ(yᵢⱼ−ȳᵢ)²</text><text x="360" y="89" fill="#7c4a00">MSE=SSE/(N−g)</text><text x="490" y="89" fill="#7c4a00">—</text>
+        <rect x="10" y="100" width="620" height="28" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="30" y="119" fill="#0f172a" font-weight="700">Total</text><text x="155" y="119" fill="#0f172a">N−1</text>
+        <text x="215" y="119" fill="#0f172a">SST=ΣΣ(yᵢⱼ−ȳ)²</text>
+        <text x="320" y="143" text-anchor="middle" fill="#64748b" font-size="10">F ~ F(g−1, N−g) under H₀ &nbsp;|&nbsp; η² = SSA/SST</text>
+      </svg>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">ANOVA model</span><span class="eq-val">Yᵢⱼ = μ + αᵢ + εᵢⱼ &nbsp;&nbsp;(αᵢ=group effect, Σαᵢ=0)</span></div>
+      <div class="eq-row"><span class="eq-name">F statistic</span><span class="eq-val">F = MSA/MSE ~ F(g−1, N−g) under H₀</span></div>
+      <div class="eq-row"><span class="eq-name">Effect size η²</span><span class="eq-val">η² = SSA/SST &nbsp;&nbsp;(small=0.01, medium=0.06, large=0.14)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="av2">
+    <div class="topic-header"><div class="topic-num" style="color:#e8c090;">V2</div><div class="topic-title-block"><div class="topic-label">Checking the Model</div><div class="topic-title">Assumptions, Diagnostics &amp; <span style="color:#7a3a00;">Post-Hoc Tests</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📋</span><div class="card-lbl">3 Assumptions</div><h3>Independence · Equal Variance · Normality</h3><ul><li><strong>Independence:</strong> All observations independent — ensured by randomisation</li><li><strong>Homoscedasticity:</strong> σ₁²=…=σg² — test with Levene's test (robust) or Bartlett's (sensitive to non-normality)</li><li><strong>Normality:</strong> Residuals eᵢⱼ=yᵢⱼ−ȳᵢ. ~ N(0,σ²) — check Q-Q plot or Shapiro-Wilk</li></ul></div>
+      <div class="card c-how"><span class="card-icon">🔍</span><div class="card-lbl">Post-Hoc Tests</div><h3>Finding Which Pairs Differ</h3><ul><li><strong>Tukey's HSD:</strong> Best for all pairwise comparisons — controls FWER</li><li><strong>Bonferroni:</strong> α* = α/m — conservative; good for any planned comparisons</li><li><strong>Scheffé:</strong> Controls FWER for all contrasts — most conservative</li><li><strong>Kruskal-Wallis:</strong> Non-parametric alternative when normality fails</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Tukey HSD</span><span class="eq-val">|ȳᵢ − ȳⱼ| &gt; q_{α,g,N−g} · √(MSE/n) → significant pair</span></div>
+      <div class="eq-row"><span class="eq-name">Bonferroni adjusted α</span><span class="eq-val">α* = α/m &nbsp;&nbsp;(m = number of comparisons)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="av3">
+    <div class="topic-header"><div class="topic-num" style="color:#e8c090;">V3</div><div class="topic-title-block"><div class="topic-label">Two Factors &amp; Interaction</div><div class="topic-title">Two-Way ANOVA &amp; <span style="color:#7a3a00;">Interaction Effect</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📐</span><div class="card-lbl">Two-Way ANOVA</div><h3>Model &amp; Decomposition</h3><p>Tests: (1) Main effect of A; (2) Main effect of B; (3) Interaction A×B. SST = SSA + SSB + SSAB + SSE. Interaction is most interesting — does the effect of A depend on the level of B? Plot interaction plots: parallel lines = no interaction; crossing lines = interaction present.</p></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Interaction</div><h3>It Depends! — The Most Important Result</h3><p>Significant interaction means the effect of fertiliser on yield DEPENDS on which crop variety is used. Cannot interpret main effects in isolation when interaction is significant. 😄 <em>"Interaction is statistics saying: 'it depends' — and that's almost always the most scientifically interesting answer."</em></p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Two-way model</span><span class="eq-val">Yᵢⱼₖ = μ + αᵢ + βⱼ + (αβ)ᵢⱼ + εᵢⱼₖ</span></div>
+      <div class="eq-row"><span class="eq-name">SS decomposition</span><span class="eq-val">SST = SSA + SSB + SSAB + SSE</span></div>
+      <div class="eq-row"><span class="eq-name">F for interaction</span><span class="eq-val">F_{AB} = MSAB/MSE ~ F((a−1)(b−1), ab(n−1))</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="av4">
+    <div class="topic-header"><div class="topic-num" style="color:#e8c090;">V4</div><div class="topic-title-block"><div class="topic-label">Experimental Designs</div><div class="topic-title">CRD · RBD · LSD &amp; <span style="color:#7a3a00;">Factorial Designs</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🎲</span><div class="card-lbl">CRD</div><h3>Completely Randomised Design</h3><p>Treatments randomly assigned to all units with no restrictions. Simplest design — use when units are homogeneous. Analysis: one-way ANOVA. df_error = N−t. Disadvantage: if units are heterogeneous, MSE will be large and F-test will be weak.</p></div>
+      <div class="card c-how"><span class="card-icon">🧱</span><div class="card-lbl">RBD</div><h3>Randomised Block Design</h3><p>Group similar units into blocks; randomise treatments within blocks. Removes block variation from error → smaller MSE → more powerful F-test. Fisher's golden rule: "Block what you can, randomise what you cannot." df_error = (t−1)(b−1). Widely used in agricultural, medical, and industrial experiments.</p></div>
+      <div class="card c-idea"><span class="card-icon">🔲</span><div class="card-lbl">LSD</div><h3>Latin Square Design — Two-Way Blocking</h3><p>Controls TWO nuisance variables (rows and columns) simultaneously. A t×t square where each treatment appears exactly once in each row and column. df_error = (t−1)(t−2). Assumes no three-way interaction between rows, columns, and treatments.</p></div>
+      <div class="card c-form"><span class="card-icon">🔢</span><div class="card-lbl">2ᵏ Factorial</div><h3>k Factors at 2 Levels Each</h3><ul><li>All 2ᵏ combinations of k factors (each at low/high)</li><li>Estimates all main effects AND all interactions</li><li>Fractional 2^{k-p}: half/quarter fractions to reduce runs</li><li>Yates algorithm computes all effects efficiently</li><li>😄 "The 2ᵏ design: maximum information, minimum runs — the statistician's favourite meal."</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">CRD model</span><span class="eq-val">Yᵢⱼ = μ + τᵢ + εᵢⱼ &nbsp;&nbsp;df_error = N−t</span></div>
+      <div class="eq-row"><span class="eq-name">RBD model</span><span class="eq-val">Yᵢⱼ = μ + τᵢ + βⱼ + εᵢⱼ &nbsp;&nbsp;df_error = (t−1)(b−1)</span></div>
+      <div class="eq-row"><span class="eq-name">LSD model</span><span class="eq-val">Yᵢⱼₖ = μ + ρᵢ + γⱼ + τₖ + εᵢⱼₖ &nbsp;&nbsp;df_error = (t−1)(t−2)</span></div>
+      <div class="eq-row"><span class="eq-name">2² main effect A</span><span class="eq-val">Effect A = [(y_a+y_ab) − (y_(1)+y_b)] / 2n</span></div>
+    </div>
+    <div class="note"><strong>🌍 Bangladesh Agricultural Trial</strong>Testing 4 fertiliser treatments (t=4) on rice in 3 blocks (b=3) of similar soil fertility. RBD gives df_error=(4−1)(3−1)=6. Result: F=8.4 (p=0.014), η²=0.62 — treatments explain 62% of variance. Tukey post-hoc: Treatment D significantly outperforms A and B (p&lt;0.05) but not C (p=0.12). Blocking removed soil-fertility variability, making the test sensitive enough to detect real treatment differences that a CRD might have missed.</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- ══ STAT3201 · Hypothesis Testing ══ -->
+<div class="divider" style="margin:60px 0 0"><span>STAT3201 · Hypothesis Testing</span></div>
+<div class="course-block" id="c-hyp">
+  <div class="course-banner" style="background:linear-gradient(135deg,#081a4a,#1a3a8a);">
+    <div class="cb-watermark">H₀</div>
+    <div class="cb-code">STAT3201 · B.Sc. Statistics Year 3 · BRUR</div>
+    <div class="cb-title">Hypothesis Testing</div>
+    <div class="cb-sub">Neyman-Pearson Framework · Type I &amp; II Errors · Power · MP &amp; UMP Tests · Likelihood Ratio Tests · p-values · Non-Parametric Tests</div>
+  </div>
+  <div class="note" style="background:#eff4ff;border-left-color:#1a3a8a;font-style:normal;margin-bottom:28px;">
+    <strong style="color:#1a3a8a;">🎓 The Court of Statistics</strong>
+    We assume H₀ is true (innocent until proven guilty) and ask: how surprising is our data if H₀ were true? If very surprising (small p-value), we reject H₀. 😄 <em>"H₀ is like a stubborn professor — it won't budge unless the evidence is overwhelming. And even then, there's a chance you made a mistake (Type I error)."</em> Key texts: Casella &amp; Berger for theory; Lehmann &amp; Romano for advanced testing.
+  </div>
+  <div class="toc-box">
+    <div class="toc-box-title">Topics — STAT3201</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#ht1" data-n="H1">Hypotheses, Decision Rules &amp; Error Types</a>
+      <a class="toc-link" href="#ht2" data-n="H2">Power Analysis &amp; Sample Size</a>
+      <a class="toc-link" href="#ht3" data-n="H3">Neyman-Pearson Lemma — MP Tests</a>
+      <a class="toc-link" href="#ht4" data-n="H4">UMP Tests &amp; Monotone Likelihood Ratio</a>
+      <a class="toc-link" href="#ht5" data-n="H5">Likelihood Ratio Tests (LRT)</a>
+      <a class="toc-link" href="#ht6" data-n="H6">p-values — Meaning &amp; Misuse</a>
+      <a class="toc-link" href="#ht7" data-n="H7">Common Parametric Tests — Quick Reference</a>
+      <a class="toc-link" href="#ht8" data-n="H8">Non-Parametric Tests</a>
+    </div>
+  </div>
+
+  <div class="topic-section" id="ht1">
+    <div class="topic-header"><div class="topic-num" style="color:#a8bce8;">H1</div><div class="topic-title-block"><div class="topic-label">Framework</div><div class="topic-title">Hypotheses, Decision Rules &amp; <span style="color:#1a3a8a;">Error Types</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📖</span><div class="card-lbl">H₀ and H₁</div><h3>Setting Up the Test</h3><ul><li><strong>H₀:</strong> Status quo / no effect — assumed true by default</li><li><strong>H₁:</strong> What we're trying to demonstrate</li><li><strong>Simple:</strong> Completely specifies distribution (μ=5)</li><li><strong>Composite:</strong> Specifies a class (μ&gt;5)</li><li><strong>One vs two-sided:</strong> H₁: μ&gt;μ₀ vs H₁: μ≠μ₀</li></ul></div>
+      <div class="card c-how"><span class="card-icon">⚖️</span><div class="card-lbl">Error Types</div><h3>Four Outcomes</h3><ul><li>✅ H₀ true, Don't reject: Correct (prob 1−α)</li><li>❌ H₀ true, Reject: <strong>Type I error</strong> α — false alarm</li><li>❌ H₀ false, Don't reject: <strong>Type II error</strong> β — missed detection</li><li>✅ H₀ false, Reject: <strong>Power</strong> = 1−β — correct detection</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">The Tradeoff</div><h3>α↓ → β↑ for Fixed n</h3><p>Decreasing α (fewer false alarms) increases β (more misses) for fixed n. Only way to reduce both: <strong>increase n</strong>. Power = 1−β should be ≥ 0.80 in well-designed studies. 😄 "Demanding 99.9% confidence with n=5 is like demanding perfect night vision in complete darkness — physically impossible with so little data!"</p></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Key Asymmetry</div><h3>H₀ and H₁ Are Not Equal</h3><p>We control α directly. β depends on α, n, and the true parameter. We can NEVER "prove H₀" — only fail to reject it. <strong>"Not guilty ≠ innocent. Fail to reject H₀ ≠ H₀ is true."</strong></p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Type I error α</span><span class="eq-val">P(reject H₀ | H₀ true) — false positive; set before the test</span></div>
+      <div class="eq-row"><span class="eq-name">Type II error β</span><span class="eq-val">P(fail to reject H₀ | H₁ true) — false negative; depends on n, δ, σ</span></div>
+      <div class="eq-row"><span class="eq-name">Power</span><span class="eq-val">1 − β = P(reject H₀ | H₁ true) — ability to detect a real effect</span></div>
+      <div class="eq-row"><span class="eq-name">Sample size (z-test)</span><span class="eq-val">n = σ²(z_α + z_β)² / (μ₁−μ₀)²</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="ht2">
+    <div class="topic-header"><div class="topic-num" style="color:#a8bce8;">H2</div><div class="topic-title-block"><div class="topic-label">Optimal Tests</div><div class="topic-title">Neyman-Pearson Lemma · UMP Tests &amp; <span style="color:#1a3a8a;">LRT</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🏆</span><div class="card-lbl">N-P Lemma</div><h3>Most Powerful Test for Simple H</h3><p>For H₀:θ=θ₀ vs H₁:θ=θ₁ (both simple), the <strong>Most Powerful (MP) test</strong> at level α rejects H₀ when Λ(x) = L(θ₁)/L(θ₀) &gt; k. The N-P Lemma derives the optimal rejection region from the likelihood ratio — no guessing needed. For Gaussian data, this recovers the z-test as optimal.</p></div>
+      <div class="card c-how"><span class="card-icon">🎯</span><div class="card-lbl">UMP &amp; MLR</div><h3>Composite Alternatives</h3><ul><li><strong>UMP test:</strong> Most powerful test for EVERY θ∈H₁ — exists for one-sided hypotheses in exponential families</li><li><strong>MLR (Monotone Likelihood Ratio):</strong> If L(θ₁)/L(θ₀) is monotone in some statistic T(x), then rejecting for large T gives the UMP test for H₀:θ≤θ₀</li><li>Normal, Poisson, Binomial — all have MLR in their natural parameter</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">LRT — General Tests</div><h3>Wilks' Theorem</h3><p>LRT: Λ = L(θ̂₀)/L(θ̂) ∈ [0,1]. Wilks (1938): −2 ln Λ → χ²(r) under H₀ where r = number of restrictions. This makes LRT applicable to ANY hypothesis. The chi-square test of independence is a special case. Reject H₀ if −2 ln Λ &gt; χ²_α(r).</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">N-P MP test</span><span class="eq-val">Reject H₀ if L(θ₁;x)/L(θ₀;x) &gt; k &nbsp;&nbsp;(k: size-α critical value)</span></div>
+      <div class="eq-row"><span class="eq-name">LRT statistic</span><span class="eq-val">Λ = L(θ̂₀)/L(θ̂) &nbsp;&nbsp;(θ̂₀=restricted MLE; θ̂=unrestricted MLE)</span></div>
+      <div class="eq-row"><span class="eq-name">Wilks' theorem</span><span class="eq-val">−2 ln Λ →_d χ²(r) under H₀ &nbsp;&nbsp;(r = #restrictions)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="ht3">
+    <div class="topic-header"><div class="topic-num" style="color:#a8bce8;">H3</div><div class="topic-title-block"><div class="topic-label">Most Misused</div><div class="topic-title">p-values — Meaning, <span style="color:#1a3a8a;">Misuse</span> &amp; Parametric Tests</div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📖</span><div class="card-lbl">What p IS</div><h3>Correct Definition</h3><p>p-value = P(T ≥ t_obs | H₀) = probability of data <em>as extreme or more extreme</em> than observed, assuming H₀ true. Small p → data surprising under H₀ → evidence against H₀. It is a continuous measure of evidence, NOT a binary pass/fail.</p></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">What p is NOT</div><h3>5 Common Misconceptions</h3><ul><li>❌ "P(H₀ is true)" — H₀ has no probability in frequentist stats</li><li>❌ "Probability results occurred by chance"</li><li>❌ "Probability results will replicate"</li><li>❌ Measures effect size — huge n can make trivial effects "significant"</li><li>✅ "How surprising is my data if H₀ were true?"</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Common Tests</div><h3>Parametric Quick Reference</h3><ul><li><strong>One-sample z:</strong> Z = (x̄−μ₀)/(σ/√n) ~ N(0,1)</li><li><strong>One-sample t:</strong> T = (x̄−μ₀)/(s/√n) ~ t(n−1)</li><li><strong>Paired t:</strong> T = d̄/(sD/√n) ~ t(n−1)</li><li><strong>χ² GOF:</strong> χ² = Σ(O−E)²/E ~ χ²(k−1−p)</li><li><strong>χ² independence:</strong> ~ χ²((r−1)(c−1))</li></ul></div>
+      <div class="card c-form"><span class="card-icon">📊</span><div class="card-lbl">Non-Parametric Tests</div><h3>When Assumptions Fail</h3><ul><li><strong>Wilcoxon signed-rank:</strong> Non-parametric one-sample/paired t</li><li><strong>Mann-Whitney U:</strong> Non-parametric two-sample t (ranks)</li><li><strong>Kruskal-Wallis:</strong> Non-parametric one-way ANOVA</li><li><strong>Spearman's ρ:</strong> Non-parametric correlation</li><li>⚠ Less powerful than parametric when assumptions hold — use as backup</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">p-value (two-sided)</span><span class="eq-val">p = 2·P(T ≥ |t_obs| | H₀)</span></div>
+      <div class="eq-row"><span class="eq-name">Decision rule</span><span class="eq-val">Reject H₀ iff p &lt; α &nbsp;&nbsp;(set α before the test!)</span></div>
+      <div class="eq-row"><span class="eq-name">Mann-Whitney U</span><span class="eq-val">U = n₁n₂ + n₁(n₁+1)/2 − R₁ &nbsp;&nbsp;(R₁ = rank sum of group 1)</span></div>
+      <div class="eq-row"><span class="eq-name">Kruskal-Wallis H</span><span class="eq-val">H = [12/N(N+1)] Σ Rᵢ²/nᵢ − 3(N+1) ~ χ²(g−1)</span></div>
+    </div>
+    <div class="note"><strong>😄 The p-hacking Warning</strong>"If you torture your data long enough, it will confess to anything." — Ronald Coase. Running 20 tests and reporting only the p&lt;0.05 result guarantees a false positive. Pre-register your hypotheses before seeing the data, report ALL analyses, and always report effect sizes alongside p-values. The replication crisis in psychology was largely caused by widespread p-hacking and selective reporting. Register your analysis plan first — commit before you look!</div>
+  </div>
+</div>
+  
 <!-- ══════════════════════════════════════════════
      REFERENCES
 ══════════════════════════════════════════════ -->
