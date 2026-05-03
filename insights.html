@@ -749,4 +749,137 @@
           <h3>The Double Injustice of Climate and Health</h3>
           <p>The communities with the smallest carbon footprints face the largest climate health burdens. This is a double injustice: they bear costs they did not create, AND their lower adaptive capacity means they suffer worse health consequences per unit of climate exposure. A Bangladeshi farmer facing monsoon floods has fewer options — financial, geographic, informational — than a Dutch farmer facing the same flood risk, because the Netherlands has invested centuries of wealth into flood protection infrastructure.</p>
           <h3>Mechanisms of Compounding Disadvantage</h3>
-          <p><strong>Occupational exposure:</strong> The poor are disproportionately employed in outdoor, climate-exposed work (agriculture, construction, fishing) with no option to work remotely or in air-conditioned environments. <strong>Housing quality:</s
+          <p><strong>Occupational exposure:</strong> The poor are disproportionately employed in outdoor, climate-exposed work (agriculture, construction, fishing) with no option to work remotely or in air-conditioned environments. <strong>Housing quality:</strong> Informal settlements without adequate insulation, cooling, or storm protection amplify heat and flood risk. <strong>Healthcare access:</strong> When climate disasters strike, the poorest are furthest from functioning health infrastructure. <strong>Nutrition:</strong> Climate crop failure first hits subsistence farmers, not supermarket shoppers.</p>
+          <h3>Loss and Damage: A Policy Framework</h3>
+          <p>The historic COP27 (2022) agreement to establish a Loss and Damage fund acknowledged that beyond mitigation and adaptation, there are irreversible climate harms — loss of land, lives, cultural heritage — requiring compensation. This is the first formal recognition of climate reparations in international law and has direct implications for health financing in vulnerable nations.</p>
+          <div class="key-box"><strong>Research Priority</strong>Developing country researchers must lead climate-health equity research — they understand local contexts, have access to disaggregated data, and bear personal witness to the realities being studied.</div>
+        </div>
+      </div>
+    </div><!-- /post 11 -->
+
+  </div><!-- /main posts column -->
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-title">All Posts</div>
+      <div id="sidebar-toc"></div>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-title">By Category</div>
+      <div class="sidebar-cat"><span>Machine Learning</span><span class="sidebar-count">2</span></div>
+      <div class="sidebar-cat"><span>Public Health</span><span class="sidebar-count">2</span></div>
+      <div class="sidebar-cat"><span>Epidemiology</span><span class="sidebar-count">1</span></div>
+      <div class="sidebar-cat"><span>Climate Health</span><span class="sidebar-count">2</span></div>
+      <div class="sidebar-cat"><span>Explainable AI</span><span class="sidebar-count">1</span></div>
+      <div class="sidebar-cat"><span>Mental Health</span><span class="sidebar-count">1</span></div>
+      <div class="sidebar-cat"><span>Health Policy</span><span class="sidebar-count">2</span></div>
+    </div>
+    <a class="sidebar-cta" href="videos.html">▶ Watch Research Videos →</a>
+  </aside>
+</div><!-- /page-outer -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Md. Abu Bokkor Shiddik</div>
+      <p class="footer-desc">Researcher in Machine Learning, Explainable AI &amp; Global Health Analytics. Dept. of Statistics, BRUR, Rangpur, Bangladesh.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <div class="footer-nav-links">
+        <a href="home.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="courses.html">Courses &amp; Training</a>
+        <a href="service.html">Service</a>
+        <a href="conference-and-workshop.html">Conferences</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <div class="footer-social-links">
+        <a href="https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/home" target="_blank">🌐 Portfolio</a>
+        <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">in LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">🎓 Google Scholar</a>
+        <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">✦ ORCID</a>
+        <a href="https://github.com/abubokkorshiddik" target="_blank">{} GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Md. Abu Bokkor Shiddik &middot; All rights reserved</p>
+    <p>abubokkor.brur60@gmail.com &middot; +880 1874 001360</p>
+  </div>
+</footer>
+
+<script>
+/* NAVBAR */
+document.querySelectorAll('.dropbtn').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();var d=b.closest('.dropdown'),o=d.classList.contains('active');document.querySelectorAll('.dropdown.active').forEach(function(x){x.classList.remove('active')});if(!o)d.classList.add('active')})});
+document.addEventListener('click',function(){document.querySelectorAll('.dropdown.active').forEach(function(d){d.classList.remove('active')})});
+var ham=document.getElementById('hamburger'),drawer=document.getElementById('nav-drawer');
+ham.addEventListener('click',function(){ham.classList.toggle('open');drawer.classList.toggle('open')});
+drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ham.classList.remove('open');drawer.classList.remove('open')})});
+
+/* EXPAND / COLLAPSE */
+document.querySelectorAll('.post-card').forEach(function(card){
+  var btn=card.querySelector('.read-btn');
+  var full=card.querySelector('.post-full');
+  var titleEl=card.querySelector('.card-title');
+  function toggle(){
+    var open=full.classList.contains('open');
+    if(open){full.classList.remove('open');btn.textContent='▶ Read post';btn.classList.remove('open-state');}
+    else{full.classList.add('open');btn.textContent='↑ Close';btn.classList.add('open-state');
+      setTimeout(function(){var nb=document.querySelector('.navbar'),fb=document.querySelector('.filter-bar');
+        var off=(nb?nb.offsetHeight:56)+(fb?fb.offsetHeight:44)+8;
+        window.scrollTo({top:card.getBoundingClientRect().top+window.pageYOffset-off,behavior:'smooth'});},50);
+    }
+  }
+  if(btn)btn.addEventListener('click',toggle);
+  if(titleEl)titleEl.addEventListener('click',toggle);
+});
+
+/* FILTER TABS */
+document.querySelectorAll('.filter-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.filter-tab').forEach(function(t){t.classList.remove('active')});
+    tab.classList.add('active');
+    var f=tab.dataset.filter;var count=0;
+    document.querySelectorAll('.post-card').forEach(function(card){
+      var show=(f==='all'||card.dataset.category===f);
+      card.classList.toggle('visible',show);if(show)count++;
+    });
+    document.getElementById('no-results').style.display=count===0?'block':'none';
+  });
+});
+
+/* SEARCH */
+document.getElementById('search').addEventListener('input',function(){
+  var q=this.value.toLowerCase().trim();var count=0;
+  document.querySelectorAll('.post-card').forEach(function(card){
+    var txt=(card.dataset.title+' '+card.dataset.summary+' '+card.dataset.category).toLowerCase();
+    var show=!q||txt.indexOf(q)!==-1;card.classList.toggle('visible',show);if(show)count++;
+  });
+  document.getElementById('no-results').style.display=count===0?'block':'none';
+  if(q)document.querySelectorAll('.filter-tab').forEach(function(t){t.classList.remove('active')});
+});
+
+/* SIDEBAR TOC */
+document.addEventListener('DOMContentLoaded',function(){
+  var toc=document.getElementById('sidebar-toc');
+  document.querySelectorAll('.post-card').forEach(function(card){
+    var link=document.createElement('div');
+    link.className='sidebar-link';
+    link.innerHTML='<span class="sidebar-dot"></span><span>'+card.dataset.title+'</span>';
+    link.addEventListener('click',function(){
+      var nb=document.querySelector('.navbar'),fb=document.querySelector('.filter-bar');
+      var off=(nb?nb.offsetHeight:56)+(fb?fb.offsetHeight:44)+8;
+      window.scrollTo({top:card.getBoundingClientRect().top+window.pageYOffset-off,behavior:'smooth'});
+    });
+    toc.appendChild(link);
+  });
+});
+</script>
+</body>
+</html>
