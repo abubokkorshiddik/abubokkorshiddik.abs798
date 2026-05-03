@@ -5,229 +5,208 @@
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Research notes, methods, and learning posts by Md. Abu Bokkor Shiddik on machine learning, statistics, and public health.">
-  <meta name="keywords" content="ABS798, Abu Bokkor Shiddik, Insights, Machine Learning, Public Health, Research Notes, Statistics, BRUR">
+  <meta name="description" content="Research notes, methods, and learning posts by Md. Abu Bokkor Shiddik on machine learning, statistics, epidemiology, and public health.">
   <title>Insights | Md. Abu Bokkor Shiddik</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    :root {
-      --navy:#0b1f3a; --navy2:#122444;
-      --blue:#1a56db; --blue-hover:#1648c0; --sky:#e8f0fe; --sky2:#d2e3fc;
-      --green:#166534; --green-bg:#f0fdf4; --green-bd:#bbf7d0;
-      --purple:#5b21b6; --purple-bg:#f5f3ff; --purple-bd:#ddd6fe;
-      --amber:#92400e; --amber-bg:#fffbeb; --amber-bd:#fde68a;
-      --text:#0f172a; --text2:#334155; --text3:#64748b;
-      --border:#e2e8f0; --border2:#cbd5e1; --bg:#f8fafc; --white:#ffffff;
-      --radius:8px; --radius-lg:14px;
-      --shadow-sm:0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);
-      --shadow:0 4px 20px rgba(0,0,0,0.08),0 1px 4px rgba(0,0,0,0.04);
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    :root{
+      --navy:#0b1f3a;--blue:#1a56db;--blue-h:#1648c0;
+      --sky:#e8f0fe;--sky2:#d2e3fc;
+      --green:#166534;--gbg:#f0fdf4;--gbd:#bbf7d0;
+      --purple:#5b21b6;--pbg:#f5f3ff;--pbd:#ddd6fe;
+      --amber:#92400e;--abg:#fffbeb;--abd:#fde68a;
+      --teal:#0e7490;--tbg:#ecfeff;--tbd:#a5f3fc;
+      --rose:#9f1239;--rbg:#fff1f2;--rbd:#fecdd3;
+      --text:#0f172a;--text2:#334155;--text3:#64748b;
+      --border:#e2e8f0;--border2:#cbd5e1;
+      --bg:#f8fafc;--white:#fff;
+      --r:8px;--rl:14px;
+      --sh-sm:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+      --sh:0 4px 20px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04);
     }
-    body { overflow-x:hidden; font-family:'Inter',system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--text); font-size:15.5px; line-height:1.75; }
-    a { color:inherit; text-decoration:none; }
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.75;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
 
-    /* NAV */
-    .navbar { background:var(--navy); position:sticky; top:0; z-index:9999; border-bottom:1px solid rgba(255,255,255,0.06); }
-    .nav-bar-inner { max-width:1180px; margin:auto; padding:0 24px; display:flex; align-items:center; height:56px; }
-    .nav-brand { font-size:14.5px; font-weight:600; color:#fff; letter-spacing:0.2px; margin-right:auto; white-space:nowrap; }
-    .nav-brand span { color:#93c5fd; font-weight:300; }
-    .nav-links { display:flex; align-items:center; gap:2px; }
-    .nav-links > a, .dropbtn { color:rgba(255,255,255,0.75); font-size:13.5px; font-weight:500; padding:6px 11px; border-radius:6px; border:none; background:none; cursor:pointer; font-family:inherit; transition:background 0.18s,color 0.18s; white-space:nowrap; display:flex; align-items:center; gap:4px; }
-    .nav-links > a:hover, .dropbtn:hover { color:#fff; background:rgba(255,255,255,0.09); }
-    .dropdown { position:relative; }
-    .dropdown-content { position:absolute; top:calc(100% + 6px); left:0; background:#132444; border:1px solid rgba(255,255,255,0.1); border-radius:10px; min-width:190px; padding:6px; box-shadow:0 12px 32px rgba(0,0,0,0.3); opacity:0; visibility:hidden; transform:translateY(6px); transition:opacity 0.2s,transform 0.2s,visibility 0.2s; pointer-events:none; z-index:9999; }
-    .dropdown:hover .dropdown-content, .dropdown.active .dropdown-content { opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; }
-    .dropdown-content a { display:flex; align-items:center; gap:8px; padding:8px 12px; color:rgba(255,255,255,0.72); font-size:13px; font-weight:500; border-radius:6px; transition:background 0.15s,color 0.15s; }
-    .dropdown-content a:hover { background:rgba(255,255,255,0.08); color:#fff; }
-    .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:7px; border-radius:6px; margin-left:10px; }
-    .hamburger span { display:block; width:21px; height:2px; background:rgba(255,255,255,0.85); border-radius:2px; transition:transform 0.28s,opacity 0.28s; }
-    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity:0; }
-    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-    .nav-drawer { display:none; background:#0d1c38; border-top:1px solid rgba(255,255,255,0.07); overflow:hidden; max-height:0; transition:max-height 0.38s cubic-bezier(0.4,0,0.2,1); }
-    .nav-drawer.open { max-height:700px; }
-    .drawer-inner { padding:8px 0 16px; }
-    .drawer-link { display:block; color:rgba(255,255,255,0.78); font-size:15px; font-weight:500; padding:11px 24px; transition:background 0.15s,color 0.15s; }
-    .drawer-link:hover { background:rgba(255,255,255,0.06); color:#fff; }
-    .drawer-section-label { font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:1.2px; color:rgba(255,255,255,0.3); padding:14px 24px 4px; }
-    .drawer-sub .drawer-link { padding-left:38px; font-size:14px; color:rgba(255,255,255,0.58); }
-    .drawer-divider { height:1px; background:rgba(255,255,255,0.06); margin:4px 0; }
-    @media (max-width:900px) { .nav-links{display:none;} .hamburger{display:flex;} .nav-drawer{display:block;} }
+    /* ── NAVBAR ── */
+    .navbar{background:var(--navy);position:sticky;top:0;z-index:9999;border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-bar-inner{max-width:1180px;margin:auto;padding:0 24px;display:flex;align-items:center;height:56px}
+    .nav-brand{font-size:14.5px;font-weight:600;color:#fff;letter-spacing:.2px;margin-right:auto;white-space:nowrap}
+    .nav-brand span{color:#93c5fd;font-weight:300}
+    .nav-links{display:flex;align-items:center;gap:2px}
+    .nav-links>a,.dropbtn{color:rgba(255,255,255,.75);font-size:13.5px;font-weight:500;padding:6px 11px;border-radius:6px;border:none;background:none;cursor:pointer;font-family:inherit;transition:background .18s,color .18s;white-space:nowrap;display:flex;align-items:center;gap:4px}
+    .nav-links>a:hover,.dropbtn:hover{color:#fff;background:rgba(255,255,255,.09)}
+    .dropdown{position:relative}
+    .dropdown-content{position:absolute;top:calc(100% + 6px);left:0;background:#132444;border:1px solid rgba(255,255,255,.1);border-radius:10px;min-width:190px;padding:6px;box-shadow:0 12px 32px rgba(0,0,0,.3);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,transform .2s,visibility .2s;pointer-events:none;z-index:9999}
+    .dropdown:hover .dropdown-content,.dropdown.active .dropdown-content{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
+    .dropdown-content a{display:flex;align-items:center;gap:8px;padding:8px 12px;color:rgba(255,255,255,.72);font-size:13px;font-weight:500;border-radius:6px;transition:background .15s,color .15s}
+    .dropdown-content a:hover{background:rgba(255,255,255,.08);color:#fff}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:7px;border-radius:6px;margin-left:10px;transition:background .2s}
+    .hamburger:hover{background:rgba(255,255,255,.1)}
+    .hamburger span{display:block;width:21px;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:transform .28s,opacity .28s}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav-drawer{display:none;background:#0d1c38;border-top:1px solid rgba(255,255,255,.07);overflow:hidden;max-height:0;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
+    .nav-drawer.open{max-height:700px}
+    .drawer-inner{padding:8px 0 16px}
+    .drawer-link{display:block;color:rgba(255,255,255,.78);font-size:15px;font-weight:500;padding:11px 24px;transition:background .15s,color .15s}
+    .drawer-link:hover{background:rgba(255,255,255,.06);color:#fff}
+    .drawer-section-label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.3);padding:14px 24px 4px}
+    .drawer-sub .drawer-link{padding-left:38px;font-size:14px;color:rgba(255,255,255,.58)}
+    .drawer-divider{height:1px;background:rgba(255,255,255,.06);margin:4px 0}
+    @media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.nav-drawer{display:block}}
 
-    /* HERO */
-    .page-hero { background:linear-gradient(140deg,#07152a 0%,#0d2247 50%,#0f2d5c 100%); color:white; padding:58px 24px 50px; position:relative; overflow:hidden; }
-    .page-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 80% 25%,rgba(59,130,246,0.12) 0%,transparent 50%); pointer-events:none; }
-    .hero-inner { max-width:1200px; margin:auto; position:relative; }
-    .hero-eyebrow { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:#93c5fd; margin-bottom:14px; }
-    .hero-eyebrow::before { content:''; width:6px; height:6px; background:#4ade80; border-radius:50%; }
-    .page-hero h1 { font-family:'Lora',serif; font-size:2.2rem; font-weight:600; line-height:1.18; margin-bottom:10px; }
-    .page-hero p { font-size:15px; color:rgba(255,255,255,0.6); max-width:560px; }
+    /* ── HERO ── */
+    .page-hero{background:linear-gradient(140deg,#07152a 0%,#0d2247 50%,#0f2d5c 100%);color:#fff;padding:58px 24px 50px;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 25%,rgba(59,130,246,.12) 0%,transparent 50%),radial-gradient(circle at 10% 80%,rgba(74,222,128,.07) 0%,transparent 40%);pointer-events:none}
+    .hero-inner{max-width:1180px;margin:auto;position:relative}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#93c5fd;margin-bottom:14px}
+    .hero-eyebrow::before{content:'';width:6px;height:6px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .page-hero h1{font-family:'Lora',serif;font-size:2.2rem;font-weight:600;line-height:1.18;margin-bottom:10px}
+    .page-hero p{font-size:15px;color:rgba(255,255,255,.6);max-width:560px}
 
-    /* FILTER BAR */
-    .filter-bar { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:56px; z-index:100; }
-    .filter-inner { max-width:1200px; margin:auto; padding:0 16px; display:flex; gap:0; overflow-x:auto; scrollbar-width:none; }
-    .filter-inner::-webkit-scrollbar { display:none; }
-    .filter-tab { display:inline-flex; align-items:center; gap:5px; padding:11px 14px; font-size:13px; font-weight:500; color:var(--text3); border-bottom:2.5px solid transparent; border-top:none; border-left:none; border-right:none; white-space:nowrap; cursor:pointer; transition:color 0.18s,border-color 0.18s; background:none; font-family:inherit; min-height:44px; }
-    .filter-tab:hover { color:var(--blue); }
-    .filter-tab.active { color:var(--blue); border-bottom-color:var(--blue); }
-    .ftag { font-size:10.5px; font-weight:700; background:var(--sky); color:var(--blue); border-radius:10px; padding:1px 7px; }
-    .filter-tab.active .ftag { background:var(--blue); color:#fff; }
+    /* ── FILTER BAR ── */
+    .filter-bar{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:56px;z-index:100}
+    .filter-inner{max-width:1180px;margin:auto;padding:0 16px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+    .filter-inner::-webkit-scrollbar{display:none}
+    .filter-tab{display:inline-flex;align-items:center;gap:5px;padding:11px 13px;font-size:13px;font-weight:500;color:var(--text3);border-bottom:2.5px solid transparent;border-top:none;border-left:none;border-right:none;white-space:nowrap;cursor:pointer;transition:color .18s,border-color .18s;background:none;font-family:inherit;min-height:44px}
+    .filter-tab:hover{color:var(--blue)}
+    .filter-tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+    .ftag{font-size:10px;font-weight:700;background:var(--sky);color:var(--blue);border-radius:10px;padding:1px 7px}
+    .filter-tab.active .ftag{background:var(--blue);color:#fff}
 
-    /* PAGE LAYOUT */
-    .page-outer { max-width:1200px; margin:0 auto; padding:28px 16px 80px; display:grid; grid-template-columns:minmax(0,1fr) 280px; gap:28px; align-items:start; }
+    /* ── LAYOUT ── */
+    .page-outer{max-width:1180px;margin:0 auto;padding:28px 16px 80px;display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:28px;align-items:start}
+    @media(max-width:960px){.page-outer{grid-template-columns:1fr;padding:20px 12px 60px}.sidebar{display:none}}
 
-    /* SEARCH */
-    .search-wrap { position:relative; margin-bottom:20px; }
-    .search-input { width:100%; padding:11px 16px 11px 42px; font-size:14px; font-family:inherit; background:var(--white); border:1px solid var(--border2); border-radius:var(--radius-lg); color:var(--text); outline:none; transition:border-color 0.2s,box-shadow 0.2s; box-shadow:var(--shadow-sm); }
-    .search-input:focus { border-color:#93c5fd; box-shadow:0 0 0 3px rgba(147,197,253,0.2); }
-    .search-icon { position:absolute; left:13px; top:50%; transform:translateY(-50%); color:var(--text3); font-size:15px; pointer-events:none; }
-    .no-results { text-align:center; padding:48px 0; color:var(--text3); font-size:15px; display:none; }
+    /* ── SEARCH ── */
+    .search-wrap{position:relative;margin-bottom:20px}
+    .search-input{width:100%;padding:11px 16px 11px 42px;font-size:14px;font-family:inherit;background:var(--white);border:1px solid var(--border2);border-radius:var(--rl);color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s;box-shadow:var(--sh-sm)}
+    .search-input:focus{border-color:#93c5fd;box-shadow:0 0 0 3px rgba(147,197,253,.2)}
+    .search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:15px;pointer-events:none}
+    .no-results{text-align:center;padding:48px 0;color:var(--text3);font-size:15px;display:none}
 
-    /* POST CARD */
-    .post-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; margin-bottom:20px; box-shadow:var(--shadow-sm); transition:box-shadow 0.25s,border-color 0.25s,transform 0.2s; width:100%; }
-    .post-card:hover { box-shadow:var(--shadow); border-color:#bfdbfe; transform:translateY(-1px); }
-    /* top accent bar per category */
-    .post-card::before { content:''; display:block; height:3px; }
-    .post-card.cat-Machine-Learning::before { background:linear-gradient(90deg,#1a56db,#6366f1); }
-    .post-card.cat-Public-Health::before { background:linear-gradient(90deg,#059669,#0d9488); }
-    .post-card.cat-Statistics::before { background:linear-gradient(90deg,#7c3aed,#a855f7); }
-    .post-card.cat-Methods::before { background:linear-gradient(90deg,#f59e0b,#ef4444); }
-
-    .post-cover-wrap { overflow:hidden; border-bottom:1px solid var(--border); line-height:0; }
-    .post-cover { width:100%; height:200px; object-fit:cover; display:block; transition:transform 0.3s; }
-    .post-card:hover .post-cover { transform:scale(1.02); }
-
-    .post-header { padding:20px 22px 0; }
-    .post-meta-row { display:flex; align-items:center; flex-wrap:wrap; gap:7px; margin-bottom:10px; }
-    .cat-badge { display:inline-block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; padding:3px 10px; border-radius:5px; }
-    .cat-ml      { background:var(--sky); color:#1e3a8a; border:1px solid var(--sky2); }
-    .cat-ph      { background:var(--green-bg); color:var(--green); border:1px solid var(--green-bd); }
-    .cat-stats   { background:var(--purple-bg); color:var(--purple); border:1px solid var(--purple-bd); }
-    .cat-methods { background:var(--amber-bg); color:var(--amber); border:1px solid var(--amber-bd); }
-    .post-date { font-size:12px; color:var(--text3); }
-    .read-time { font-size:12px; color:var(--text3); }
-
-    .post-title { font-family:'Lora',serif; font-size:1.2rem; font-weight:600; color:var(--text); line-height:1.4; margin-bottom:10px; }
-    .author-row { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
-    .author-avatar { width:32px; height:32px; border-radius:50%; object-fit:cover; border:2px solid var(--sky2); flex-shrink:0; }
-    .author-name { font-size:13px; font-weight:600; color:var(--text2); }
-    .author-role { font-size:11px; color:var(--text3); }
-
-    /* POST BODY */
-    .post-body { padding:0 22px 18px; }
-
-    /* EXCERPT — shown by default */
-    .post-excerpt { font-size:14px; color:var(--text2); line-height:1.75; }
-
-    /* FULL CONTENT — hidden by default */
-    .post-full { display:none; margin-top:16px; }
-    .post-full.open { display:block; }
-
-    .post-full h3 { font-family:'Lora',serif; font-size:1rem; font-weight:600; color:var(--text); margin:22px 0 8px; padding-bottom:6px; border-bottom:1px solid var(--border); }
-    .post-full p  { margin-bottom:12px; font-size:14px; color:var(--text2); line-height:1.8; }
-    .post-full ul, .post-full ol { padding-left:20px; margin-bottom:12px; font-size:14px; color:var(--text2); }
-    .post-full li { margin-bottom:5px; }
-    .post-full strong { color:var(--text); }
-    .post-full pre { background:#020617; color:#e2e8f0; padding:14px 16px; border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.65; margin:14px 0; white-space:pre; }
-    .formula-block { background:#f8fafc; border:1px solid var(--border); border-radius:7px; padding:12px 16px; font-family:'Georgia',serif; font-size:14.5px; color:var(--text); margin:14px 0; }
-
-    /* tables */
-    .tbl-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:16px 0; border-radius:8px; border:1px solid var(--border); }
-    .post-full table { width:100%; border-collapse:collapse; font-size:13px; line-height:1.6; min-width:460px; }
-    .post-full th { text-align:left; padding:9px 12px; background:var(--navy); color:rgba(255,255,255,0.9); font-weight:600; font-size:12px; }
-    .post-full td { padding:8px 12px; border-bottom:1px solid var(--border); vertical-align:top; color:var(--text2); }
-    .post-full tr:last-child td { border-bottom:none; }
-    .post-full tr:hover td { background:rgba(26,86,219,0.03); }
-
-    /* CARD FOOTER */
-    .post-footer { display:flex; align-items:center; justify-content:space-between; padding:12px 22px; border-top:1px solid var(--border); background:#fcfdfe; flex-wrap:wrap; gap:10px; }
-
-    /* EXPAND BUTTON — main CTA */
-    .expand-btn {
-      display:inline-flex; align-items:center; gap:7px;
-      font-size:13.5px; font-weight:700;
-      background:var(--blue); color:#fff;
-      border:none; border-radius:8px;
-      padding:9px 18px; cursor:pointer; font-family:inherit;
-      transition:background 0.18s,transform 0.15s;
+    /* ══ POST CARD — compact list style ══ */
+    .post-card{
+      background:var(--white);border:1px solid var(--border);
+      border-radius:var(--rl);overflow:hidden;margin-bottom:14px;
+      box-shadow:var(--sh-sm);transition:box-shadow .22s,border-color .22s,transform .18s;
+      display:none; /* JS controls visibility */
     }
-    .expand-btn:hover { background:var(--blue-hover); transform:translateY(-1px); }
-    .expand-btn.open-state { background:var(--bg); color:var(--text2); border:1px solid var(--border2); }
-    .expand-btn.open-state:hover { background:var(--border); }
+    .post-card.visible{display:block}
+    .post-card:hover{box-shadow:var(--sh);border-color:var(--border2);transform:translateY(-1px)}
 
-    /* SHARE */
-    .share-wrap { position:relative; }
-    .share-trigger { display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:600; color:var(--text3); background:var(--bg); border:1px solid var(--border2); border-radius:6px; padding:7px 14px; cursor:pointer; font-family:inherit; transition:background 0.18s,color 0.18s; }
-    .share-trigger:hover { background:var(--sky); color:var(--blue); border-color:#93c5fd; }
-    .share-panel { position:absolute; bottom:calc(100% + 8px); right:0; background:var(--white); border:1px solid var(--border); border-radius:12px; box-shadow:0 8px 28px rgba(0,0,0,0.12); padding:14px; width:280px; max-width:calc(100vw - 32px); z-index:500; display:none; }
-    .share-panel.open { display:block; }
-    .share-panel-title { font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.7px; color:var(--text3); margin-bottom:10px; }
-    .share-preview-card { border:1px solid var(--border); border-radius:8px; overflow:hidden; margin-bottom:12px; }
-    .share-preview-img { width:100%; height:90px; object-fit:cover; display:block; }
-    .share-preview-body { padding:8px 10px 10px; }
-    .share-preview-site { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:3px; }
-    .share-preview-title { font-size:12.5px; font-weight:600; color:var(--text); line-height:1.4; margin-bottom:3px; }
-    .share-preview-desc { font-size:11px; color:var(--text3); line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
-    .share-actions { display:flex; flex-direction:column; gap:7px; }
-    .share-action-btn { display:flex; align-items:center; gap:9px; padding:8px 12px; border-radius:7px; font-size:13px; font-weight:500; cursor:pointer; border:1px solid var(--border); background:var(--bg); color:var(--text2); font-family:inherit; transition:background 0.15s; text-align:left; width:100%; }
-    .share-action-btn:hover { background:var(--sky); border-color:#93c5fd; color:var(--blue); }
-    .share-action-icon { font-size:16px; flex-shrink:0; }
-    .share-action-copied { background:var(--green-bg); border-color:var(--green-bd); color:var(--green); }
+    /* left accent bar */
+    .post-card-inner{display:flex;flex-direction:column}
+    .card-accent{height:3px;width:100%;flex-shrink:0}
+    .accent-ml{background:linear-gradient(90deg,#1a56db,#6366f1)}
+    .accent-ph{background:linear-gradient(90deg,#059669,#0d9488)}
+    .accent-stats{background:linear-gradient(90deg,#7c3aed,#a855f7)}
+    .accent-epi{background:linear-gradient(90deg,#0e7490,#0891b2)}
+    .accent-climate{background:linear-gradient(90deg,#16a34a,#15803d)}
+    .accent-xai{background:linear-gradient(90deg,#d97706,#f59e0b)}
+    .accent-mental{background:linear-gradient(90deg,#9f1239,#e11d48)}
+    .accent-policy{background:linear-gradient(90deg,#1d4ed8,#4f46e5)}
 
-    /* SIDEBAR */
-    .sidebar { position:sticky; top:calc(56px + 44px + 20px); }
-    .sidebar-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px; box-shadow:var(--shadow-sm); margin-bottom:16px; }
-    .sidebar-title { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--text3); margin-bottom:14px; }
-    .sidebar-link { display:flex; align-items:flex-start; gap:8px; font-size:13px; color:var(--text2); padding:7px 0; border-bottom:1px solid var(--border); cursor:pointer; transition:color 0.15s; }
-    .sidebar-link:last-child { border-bottom:none; }
-    .sidebar-link:hover { color:var(--blue); }
-    .sidebar-link-dot { width:6px; height:6px; border-radius:50%; background:var(--blue); flex-shrink:0; margin-top:6px; }
-    .sidebar-cat { display:flex; align-items:center; justify-content:space-between; padding:6px 0; font-size:13px; color:var(--text2); border-bottom:1px solid var(--border); }
-    .sidebar-cat:last-child { border-bottom:none; }
-    .sidebar-cat-count { font-size:11px; font-weight:700; color:var(--blue); background:var(--sky); border-radius:8px; padding:1px 7px; }
-    .sidebar-video-link { display:flex; align-items:center; gap:10px; padding:10px 14px; background:linear-gradient(135deg,#0f2d5c,#1a56db); color:white; border-radius:var(--radius); font-size:13.5px; font-weight:600; transition:opacity 0.2s; }
-    .sidebar-video-link:hover { opacity:0.9; }
+    /* card body — horizontal layout */
+    .card-body{padding:16px 20px;display:flex;gap:16px;align-items:flex-start}
+    .card-body-text{flex:1;min-width:0}
 
-    /* TOAST */
-    #share-toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px); background:#0f172a; color:#fff; font-size:13.5px; font-weight:500; padding:12px 22px; border-radius:8px; opacity:0; pointer-events:none; transition:opacity 0.25s,transform 0.25s; z-index:9999; white-space:nowrap; }
-    #share-toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+    /* meta row */
+    .card-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+    .cat-badge{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:2px 9px;border-radius:4px;white-space:nowrap}
+    .badge-ml    {background:var(--sky);color:#1e3a8a;border:1px solid var(--sky2)}
+    .badge-ph    {background:var(--gbg);color:var(--green);border:1px solid var(--gbd)}
+    .badge-stats {background:var(--pbg);color:var(--purple);border:1px solid var(--pbd)}
+    .badge-epi   {background:var(--tbg);color:var(--teal);border:1px solid var(--tbd)}
+    .badge-climate{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+    .badge-xai   {background:var(--abg);color:var(--amber);border:1px solid var(--abd)}
+    .badge-mental{background:var(--rbg);color:var(--rose);border:1px solid var(--rbd)}
+    .badge-policy{background:var(--sky);color:#1e3a8a;border:1px solid var(--sky2)}
 
-    /* FOOTER */
-    footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:44px 24px 32px; }
-    .footer-inner { max-width:1180px; margin:auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:36px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,0.07); }
-    .footer-col-title { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,0.35); margin-bottom:14px; }
-    .footer-name { font-family:'Lora',serif; font-size:16px; font-weight:600; color:rgba(255,255,255,0.9); margin-bottom:8px; }
-    .footer-desc { font-size:12.5px; line-height:1.7; }
-    .footer-nav-links, .footer-social-links { display:flex; flex-direction:column; gap:7px; }
-    .footer-nav-links a, .footer-social-links a { font-size:13px; color:rgba(255,255,255,0.55); transition:color 0.15s; }
-    .footer-nav-links a:hover { color:rgba(255,255,255,0.9); }
-    .footer-social-links a:hover { color:#93c5fd; }
-    .footer-bottom { max-width:1180px; margin:22px auto 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
-    .footer-bottom p { font-size:12px; }
+    .card-date{font-size:11.5px;color:var(--text3)}
+    .card-read{font-size:11.5px;color:var(--text3)}
 
-    /* RESPONSIVE */
-    @media (max-width:960px) {
-      .page-outer { grid-template-columns:minmax(0,1fr); padding:20px 12px 60px; }
-      .sidebar { display:none; }
+    .card-title{font-family:'Lora',serif;font-size:1.05rem;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:6px;cursor:pointer;transition:color .15s}
+    .card-title:hover{color:var(--blue)}
+
+    .card-summary{font-size:13px;color:var(--text2);line-height:1.7;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+    /* author + read more row */
+    .card-footer{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;border-top:1px solid var(--border);background:#fafbfc;flex-wrap:wrap;gap:8px}
+    .author-mini{display:flex;align-items:center;gap:8px}
+    .author-ava{width:26px;height:26px;border-radius:50%;object-fit:cover;border:1.5px solid var(--sky2)}
+    .author-info-mini .author-name{font-size:12px;font-weight:600;color:var(--text2)}
+    .author-info-mini .author-role{font-size:10.5px;color:var(--text3)}
+    .read-btn{font-size:12.5px;font-weight:600;color:var(--blue);background:var(--sky);border:1px solid var(--sky2);border-radius:6px;padding:6px 14px;cursor:pointer;font-family:inherit;transition:background .18s}
+    .read-btn:hover{background:var(--sky2)}
+    .read-btn.open-state{background:var(--bg);color:var(--text2);border-color:var(--border2)}
+
+    /* ── FULL POST PANEL (expands below card) ── */
+    .post-full{display:none;padding:20px 24px 24px;border-top:2px solid var(--sky2);background:#fff;animation:fadeIn .25s ease}
+    .post-full.open{display:block}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
+    .post-full h3{font-family:'Lora',serif;font-size:1rem;font-weight:600;color:var(--text);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+    .post-full h3:first-child{margin-top:0}
+    .post-full p{margin-bottom:12px;font-size:14px;color:var(--text2);line-height:1.82}
+    .post-full ul,.post-full ol{padding-left:20px;margin-bottom:14px;font-size:14px;color:var(--text2)}
+    .post-full li{margin-bottom:5px;line-height:1.7}
+    .post-full strong{color:var(--text)}
+    .post-full em{color:var(--text2)}
+    .post-full pre{background:#020617;color:#e2e8f0;padding:14px 16px;border-radius:8px;overflow-x:auto;font-size:12.5px;line-height:1.65;margin:14px 0;white-space:pre}
+    .formula-block{background:#f8fafc;border:1px solid var(--border);border-radius:7px;padding:12px 16px;font-size:14px;color:var(--text);margin:14px 0;font-style:italic}
+    .key-box{background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid var(--pbd);border-radius:8px;padding:14px 18px;margin:14px 0;font-size:13.5px;color:var(--text2)}
+    .key-box strong{color:var(--purple);font-size:11px;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px}
+    .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0;border-radius:8px;border:1px solid var(--border)}
+    .post-full table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.6;min-width:420px}
+    .post-full th{text-align:left;padding:9px 12px;background:var(--navy);color:rgba(255,255,255,.9);font-weight:600;font-size:12px}
+    .post-full td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text2)}
+    .post-full tr:last-child td{border-bottom:none}
+    .post-full tr:hover td{background:rgba(26,86,219,.03)}
+
+    /* ── SIDEBAR ── */
+    .sidebar{position:sticky;top:calc(56px + 44px + 20px)}
+    .sidebar-card{background:var(--white);border:1px solid var(--border);border-radius:var(--rl);padding:18px;box-shadow:var(--sh-sm);margin-bottom:14px}
+    .sidebar-title{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin-bottom:12px}
+    .sidebar-link{display:flex;align-items:flex-start;gap:7px;font-size:12.5px;color:var(--text2);padding:6px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:color .15s}
+    .sidebar-link:last-child{border-bottom:none}
+    .sidebar-link:hover{color:var(--blue)}
+    .sidebar-dot{width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:6px}
+    .sidebar-cat{display:flex;align-items:center;justify-content:space-between;padding:5px 0;font-size:13px;color:var(--text2);border-bottom:1px solid var(--border)}
+    .sidebar-cat:last-child{border-bottom:none}
+    .sidebar-count{font-size:10.5px;font-weight:700;color:var(--blue);background:var(--sky);border-radius:8px;padding:1px 7px}
+    .sidebar-cta{display:flex;align-items:center;gap:10px;padding:10px 14px;background:linear-gradient(135deg,#0f2d5c,#1a56db);color:#fff;border-radius:var(--r);font-size:13px;font-weight:600;transition:opacity .2s}
+    .sidebar-cta:hover{opacity:.9}
+
+    /* ── TOAST ── */
+    #toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:#0f172a;color:#fff;font-size:13.5px;font-weight:500;padding:12px 22px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:9999;white-space:nowrap}
+    #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    /* ── FOOTER ── */
+    footer{background:var(--navy);color:rgba(255,255,255,.5);padding:44px 24px 32px}
+    .footer-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.07)}
+    .footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);margin-bottom:14px}
+    .footer-name{font-family:'Lora',serif;font-size:16px;font-weight:600;color:rgba(255,255,255,.9);margin-bottom:8px}
+    .footer-desc{font-size:12.5px;line-height:1.7}
+    .footer-nav-links,.footer-social-links{display:flex;flex-direction:column;gap:7px}
+    .footer-nav-links a,.footer-social-links a{font-size:13px;color:rgba(255,255,255,.55);transition:color .15s}
+    .footer-nav-links a:hover{color:rgba(255,255,255,.9)}
+    .footer-social-links a:hover{color:#93c5fd}
+    .footer-bottom{max-width:1180px;margin:22px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+    .footer-bottom p{font-size:12px}
+    @media(max-width:1024px){.footer-inner{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){
+      .footer-inner{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}
+      .page-hero{padding:40px 16px 36px}.page-hero h1{font-size:1.65rem}
+      .card-body{padding:14px 16px}.card-footer{padding:8px 16px}
+      .post-full{padding:16px 16px 20px}
     }
-    @media (max-width:600px) {
-      .page-hero { padding:40px 16px 36px; }
-      .page-hero h1 { font-size:1.65rem; }
-      .post-header { padding:16px 16px 0; }
-      .post-body { padding:0 16px 16px; }
-      .post-footer { padding:10px 16px; gap:8px; }
-      .post-cover { height:160px; }
-      .post-title { font-size:1.05rem; }
-      .post-full pre { font-size:11.5px; padding:10px 12px; }
-      .post-full th, .post-full td { padding:7px 9px; font-size:12px; }
-      .expand-btn { font-size:13px; padding:8px 14px; }
-      .footer-inner { grid-template-columns:1fr; }
-      .footer-bottom { flex-direction:column; text-align:center; }
-    }
-    @media (max-width:1024px) { .footer-inner { grid-template-columns:1fr 1fr; } }
   </style>
 </head>
 <body>
@@ -301,454 +280,473 @@
   </div>
 </nav>
 
+<!-- ═══ HERO ═══ -->
 <section class="page-hero">
   <div class="hero-inner">
     <div class="hero-eyebrow">Research Notes &amp; Learning</div>
     <h1>Insights</h1>
-    <p>Short-form research notes, methods explanations, and learning posts on machine learning, statistics, and public health.</p>
+    <p>Short-form research notes, methods explanations, and learning posts on machine learning, statistics, epidemiology, climate health, and public health.</p>
   </div>
 </section>
 
+<!-- ═══ FILTER BAR ═══ -->
 <div class="filter-bar">
   <div class="filter-inner">
-    <button class="filter-tab active" data-filter="all">All Posts <span class="ftag">3</span></button>
+    <button class="filter-tab active" data-filter="all">All Posts <span class="ftag" id="count-all">11</span></button>
     <button class="filter-tab" data-filter="Machine Learning">Machine Learning <span class="ftag">2</span></button>
-    <button class="filter-tab" data-filter="Public Health">Public Health <span class="ftag">1</span></button>
+    <button class="filter-tab" data-filter="Public Health">Public Health <span class="ftag">2</span></button>
+    <button class="filter-tab" data-filter="Epidemiology">Epidemiology <span class="ftag">1</span></button>
+    <button class="filter-tab" data-filter="Climate Health">Climate Health <span class="ftag">2</span></button>
+    <button class="filter-tab" data-filter="Explainable AI">Explainable AI <span class="ftag">1</span></button>
+    <button class="filter-tab" data-filter="Mental Health">Mental Health <span class="ftag">1</span></button>
+    <button class="filter-tab" data-filter="Health Policy">Health Policy <span class="ftag">2</span></button>
   </div>
 </div>
 
-<div id="share-toast">&#10003; Copied to clipboard</div>
+<div id="toast">✓ Copied to clipboard</div>
 
+<!-- ═══ MAIN ═══ -->
 <div class="page-outer">
   <div>
     <div class="search-wrap">
-      <span class="search-icon">&#128269;</span>
-      <input class="search-input" id="search" type="text" placeholder="Search posts&#8230;" autocomplete="off">
+      <span class="search-icon">🔍</span>
+      <input class="search-input" id="search" type="text" placeholder="Search posts…" autocomplete="off">
     </div>
     <div class="no-results" id="no-results">No posts match your search.</div>
 
-    <!-- POST 1 -->
-    <article class="post-card cat-Machine-Learning" id="post-threshold"
-      data-category="Machine Learning"
-      data-title="Threshold selection in outbreak prediction models"
-      data-desc="Outbreak prediction models generate probability outputs that are converted into binary decisions using a threshold. This step strongly affects early detection, false alarms, and overall system reliability."
-      data-img="https://github.com/user-attachments/assets/3b36f824-5f93-4a1d-8563-3388005915e0">
-      <div class="post-cover-wrap"><img class="post-cover" src="https://github.com/user-attachments/assets/3b36f824-5f93-4a1d-8563-3388005915e0" alt="Threshold selection" loading="lazy"></div>
-      <div class="post-header">
-        <div class="post-meta-row">
-          <span class="cat-badge cat-ml">Machine Learning</span>
-          <span class="post-date">&#128197; 10 April 2026</span>
-          <span class="read-time">&#9201; 6 min read</span>
+    <!-- ══ POST 1 ══ -->
+    <div class="post-card visible" data-category="Machine Learning" data-title="Threshold selection in outbreak prediction models" data-summary="Outbreak prediction models convert probabilities into binary decisions using a threshold — this step determines early detection sensitivity, false alarm rates, and overall system reliability.">
+      <div class="post-card-inner">
+        <div class="card-accent accent-ml"></div>
+        <div class="card-body">
+          <div class="card-body-text">
+            <div class="card-meta">
+              <span class="cat-badge badge-ml">Machine Learning</span>
+              <span class="card-date">📅 10 April 2026</span>
+              <span class="card-read">⏱ 6 min</span>
+            </div>
+            <div class="card-title">Threshold Selection in Outbreak Prediction Models</div>
+            <div class="card-summary">Outbreak prediction models generate probability outputs representing risk of disease occurrence. These probabilities cannot be directly used for decision making — they must be converted into binary outcomes using a threshold, which strongly affects how early we detect outbreaks and how many false alarms we generate.</div>
+          </div>
         </div>
-        <h2 class="post-title">Threshold selection in outbreak prediction models</h2>
-        <div class="author-row">
-          <img class="author-avatar" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
-          <div><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher &middot; Statistics, BRUR</div></div>
+        <div class="card-footer">
+          <div class="author-mini">
+            <img class="author-ava" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+            <div class="author-info-mini"><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher · Statistics, BRUR</div></div>
+          </div>
+          <button class="read-btn">▶ Read post</button>
         </div>
-      </div>
-      <div class="post-body">
-        <div class="post-excerpt"><p>Outbreak prediction models generate probability outputs representing risk of disease occurrence. These probabilities cannot be directly used for decision making &mdash; they must be converted into binary outcomes using a threshold. This step strongly affects how early we detect outbreaks, how many false alarms we get, and how reliable the system becomes in real public health use.</p></div>
         <div class="post-full">
-          <h3>Table 1. Basic concept of threshold selection</h3>
+          <h3>What is a Threshold?</h3>
+          <p>A classification threshold is the probability cutoff point above which a model predicts "outbreak" and below which it predicts "no outbreak." The default threshold of 0.5 assumes equally likely classes — a poor assumption for rare disease outbreaks where case counts are far less common than non-cases.</p>
+          <h3>Why Threshold Matters More Than Model Accuracy</h3>
+          <p>In outbreak surveillance, the cost of <strong>missing a true outbreak</strong> (false negative) is usually far higher than the cost of a false alarm (false positive). A model with 95% accuracy can still fail catastrophically if the threshold is wrong — triggering no alerts during the early phase of an epidemic when probabilities hover around 0.3.</p>
           <div class="tbl-wrap"><table>
-            <tr><th>Concept</th><th>Simple explanation</th><th>Real discussion</th></tr>
-            <tr><td>Threshold</td><td>Probability cutoff for outbreak decision</td><td>Controls sensitivity to detecting early disease signals and shapes decision stability</td></tr>
-            <tr><td>Low threshold</td><td>More alerts generated</td><td>Better for early warning but increases false alarms in routine surveillance</td></tr>
-            <tr><td>High threshold</td><td>Only strong signals detected</td><td>Reduces false alarms but may miss early outbreak signals in weak transmission periods</td></tr>
+            <tr><th>Threshold Strategy</th><th>Effect</th><th>Best Used When</th></tr>
+            <tr><td>Precision-Recall optimised</td><td>Balances detection vs precision</td><td>Imbalanced outbreak data</td></tr>
+            <tr><td>Cost-sensitive</td><td>Minimises real-world loss function</td><td>Miss cost >> false alarm cost</td></tr>
+            <tr><td>Seasonal adaptive</td><td>Changes threshold by season</td><td>Climate-sensitive diseases (dengue, cholera)</td></tr>
+            <tr><td>Spatial adaptive</td><td>Region-specific cutoff</td><td>Multi-region surveillance systems</td></tr>
+            <tr><td>Percentile-based</td><td>Flags top-risk observations</td><td>Early warning dashboards</td></tr>
+            <tr><td>Default 0.5</td><td>Assumes balanced classes</td><td>Balanced datasets only — NOT outbreaks</td></tr>
           </table></div>
-          <p>Overall, threshold acts like a balance control between early detection and operational stability.</p>
-          <h3>Table 2. Suitability levels of threshold methods</h3>
-          <div class="tbl-wrap"><table>
-            <tr><th>Suitability level</th><th>What it means</th><th>Discussion</th></tr>
-            <tr><td>Highly suitable</td><td>Reliable and widely used</td><td>Used in operational outbreak systems where stability is important</td></tr>
-            <tr><td>Moderately suitable</td><td>Condition dependent</td><td>Requires tuning and validation before deployment</td></tr>
-            <tr><td>Less suitable</td><td>Mainly theoretical</td><td>Used mostly in academic comparison rather than real surveillance systems</td></tr>
-          </table></div>
-          <h3>Table 3. Highly suitable threshold methods</h3>
-          <div class="tbl-wrap"><table>
-            <tr><th>Method</th><th>Simple idea</th><th>Discussion</th><th>Usefulness</th></tr>
-            <tr><td>Precision-recall based</td><td>Balances detection and precision</td><td>Best for imbalanced outbreak data where missing cases is critical</td><td>Very high</td></tr>
-            <tr><td>Cost-sensitive thresholding</td><td>Minimizes real world loss</td><td>Useful when outbreak miss cost is higher than false alarm cost</td><td>Very high</td></tr>
-            <tr><td>Percentile based</td><td>Flags top risk values</td><td>Simple and practical for early warning dashboards</td><td>High</td></tr>
-            <tr><td>Seasonal adaptive</td><td>Changes with season</td><td>Very important for climate-sensitive diseases like dengue</td><td>Very high</td></tr>
-            <tr><td>Spatial adaptive</td><td>Region-specific threshold</td><td>Improves accuracy in multi-region outbreak monitoring systems</td><td>Very high</td></tr>
-          </table></div>
-          <h3>Table 4. Moderately suitable methods</h3>
-          <div class="tbl-wrap"><table>
-            <tr><th>Method</th><th>What it does</th><th>Discussion</th></tr>
-            <tr><td>ROC based (Youden Index)</td><td>Balances sensitivity and specificity</td><td>Does not handle imbalance well in outbreak datasets</td></tr>
-            <tr><td>Maximum sensitivity</td><td>Detects most outbreaks</td><td>Leads to many false alarms in real systems</td></tr>
-            <tr><td>Z-score threshold</td><td>Detects statistical spikes</td><td>Better suited for anomaly detection than ML prediction</td></tr>
-          </table></div>
-          <h3>Table 5. Less suitable methods in operational systems</h3>
-          <div class="tbl-wrap"><table>
-            <tr><th>Method</th><th>Why it is weak</th><th>Discussion</th></tr>
-            <tr><td>0.5 default threshold</td><td>Assumes balanced data</td><td>Not realistic for rare outbreak events</td></tr>
-            <tr><td>Mean probability</td><td>No epidemiological meaning</td><td>Depends heavily on model output distribution</td></tr>
-            <tr><td>Bayesian threshold</td><td>Needs strong priors</td><td>Difficult in real surveillance settings</td></tr>
-          </table></div>
-          <h3>Final insight</h3>
-          <p>In real outbreak prediction systems, threshold selection is not a fixed rule but a decision framework. The most effective systems combine precision-recall optimization, cost-sensitive learning, and adaptive strategies &mdash; seasonal and spatial thresholds &mdash; to ensure stable and reliable public health action.</p>
+          <h3>Practical Recommendation</h3>
+          <p>For outbreak prediction: (1) always use the <strong>Precision-Recall curve</strong> rather than ROC for threshold selection; (2) compute the F-beta score with β > 1 to weight recall higher than precision; (3) validate the selected threshold on held-out surveillance data from at least two epidemic seasons before deployment. The threshold is not a model parameter — it is a policy decision that should involve epidemiologists alongside data scientists.</p>
         </div>
       </div>
-      <div class="post-footer">
-        <button class="expand-btn" data-post="post-threshold">&#9654; Read full post</button>
-        <div class="share-wrap">
-          <button class="share-trigger" data-post="post-threshold">&#9003; Share</button>
-          <div class="share-panel" id="sp-post-threshold"></div>
-        </div>
-      </div>
-    </article>
+    </div>
 
-    <!-- POST 2 -->
-    <article class="post-card cat-Public-Health" id="post-gather"
-      data-category="Public Health"
-      data-title="Understanding GATHER and making health estimates transparent"
-      data-desc="GATHER (Guidelines for Accurate and Transparent Health Estimates Reporting) provides a structured 18-item checklist to report health estimates clearly, reproducibly, and with uncertainty quantification."
-      data-img="https://github.com/user-attachments/assets/bb76126f-aa6f-4c7f-ab7e-e03ef4f3afd0">
-      <div class="post-cover-wrap"><img class="post-cover" src="https://github.com/user-attachments/assets/bb76126f-aa6f-4c7f-ab7e-e03ef4f3afd0" alt="GATHER guidelines" loading="lazy"></div>
-      <div class="post-header">
-        <div class="post-meta-row">
-          <span class="cat-badge cat-ph">Public Health</span>
-          <span class="post-date">&#128197; 6 April 2026</span>
-          <span class="read-time">&#9201; 5 min read</span>
+    <!-- ══ POST 2 ══ -->
+    <div class="post-card visible" data-category="Public Health" data-title="Understanding GATHER and making health estimates transparent" data-summary="GATHER provides a structured 18-item checklist to report health estimates — ensuring reproducibility, uncertainty quantification, and trustworthy global health science.">
+      <div class="post-card-inner">
+        <div class="card-accent accent-ph"></div>
+        <div class="card-body">
+          <div class="card-body-text">
+            <div class="card-meta">
+              <span class="cat-badge badge-ph">Public Health</span>
+              <span class="card-date">📅 6 April 2026</span>
+              <span class="card-read">⏱ 5 min</span>
+            </div>
+            <div class="card-title">Understanding GATHER and Making Health Estimates Transparent</div>
+            <div class="card-summary">GATHER (Guidelines for Accurate and Transparent Health Estimates Reporting), introduced in 2016, provides a structured 18-item reporting standard ensuring health estimates are reproducible, clear, and accompanied by uncertainty quantification.</div>
+          </div>
         </div>
-        <h2 class="post-title">Understanding GATHER and making health estimates transparent</h2>
-        <div class="author-row">
-          <img class="author-avatar" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
-          <div><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher &middot; Statistics, BRUR</div></div>
+        <div class="card-footer">
+          <div class="author-mini">
+            <img class="author-ava" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+            <div class="author-info-mini"><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher · Statistics, BRUR</div></div>
+          </div>
+          <button class="read-btn">▶ Read post</button>
         </div>
-      </div>
-      <div class="post-body">
-        <div class="post-excerpt"><p>In health research, we often produce numbers that directly influence decisions &mdash; national rates, trends, and future projections. GATHER (Guidelines for Accurate and Transparent Health Estimates Reporting) introduced in 2016 provides a structured framework to report health estimates clearly and reproducibly. It is not a method, but a reporting standard that ensures transparency.</p></div>
         <div class="post-full">
-          <h3>Why GATHER matters</h3>
-          <p>Health estimates often rely on multiple datasets, statistical or machine learning models, assumptions and adjustments, and uncertainty calculations. Without proper reporting, results may be difficult to interpret and trust.</p>
-          <h3>GATHER reporting domains</h3>
+          <h3>Why Transparent Reporting Matters</h3>
+          <p>Health estimates — national disease burden, mortality rates, future projections — directly drive policy decisions worth billions of dollars and millions of lives. Without a reporting standard, results may be unverifiable, selectively presented, or impossible to reproduce.</p>
+          <h3>The 18-Item GATHER Checklist (Summary)</h3>
           <div class="tbl-wrap"><table>
-            <tr><th>Category</th><th>Focus area</th><th>Purpose</th></tr>
-            <tr><td>Study definition</td><td>Population, time, geography</td><td>Defines scope</td></tr>
-            <tr><td>Data inputs</td><td>Sources and characteristics</td><td>Ensures traceability</td></tr>
-            <tr><td>Data processing</td><td>Cleaning and adjustment</td><td>Improves reproducibility</td></tr>
-            <tr><td>Modeling</td><td>Methods and assumptions</td><td>Explains estimation approach</td></tr>
-            <tr><td>Validation</td><td>Model checking</td><td>Ensures reliability</td></tr>
-            <tr><td>Outputs</td><td>Results and uncertainty</td><td>Improves interpretation</td></tr>
-            <tr><td>Transparency</td><td>Data and code sharing</td><td>Supports replication</td></tr>
+            <tr><th>Domain</th><th>Items</th><th>Purpose</th></tr>
+            <tr><td>Study Definition</td><td>Population, outcomes, time period, geography</td><td>Defines the scope of the estimate</td></tr>
+            <tr><td>Data Inputs</td><td>Sources, access method, inclusion/exclusion criteria</td><td>Ensures traceability and replicability</td></tr>
+            <tr><td>Data Processing</td><td>Cleaning, adjustment, availability</td><td>Enables independent verification</td></tr>
+            <tr><td>Statistical Model</td><td>Framework, methods, assumptions, justification</td><td>Explains how estimates were produced</td></tr>
+            <tr><td>Validation &amp; Results</td><td>Model checking, point estimates, uncertainty intervals</td><td>Assesses reliability and communicates uncertainty</td></tr>
+            <tr><td>Transparency</td><td>Code sharing, data sharing</td><td>Supports full reproducibility</td></tr>
           </table></div>
-          <h3>GATHER checklist (18 items)</h3>
-          <div class="tbl-wrap"><table>
-            <tr><th>No</th><th>Item</th><th>Description</th></tr>
-            <tr><td>1</td><td>Population</td><td>Define scope and time period</td></tr>
-            <tr><td>2</td><td>Outcomes</td><td>Specify what is being estimated</td></tr>
-            <tr><td>3</td><td>Funding</td><td>Disclose all funding sources</td></tr>
-            <tr><td>4</td><td>Data sources</td><td>List all datasets used</td></tr>
-            <tr><td>5</td><td>Data access</td><td>Explain how data was retrieved</td></tr>
-            <tr><td>6</td><td>Criteria</td><td>Inclusion and exclusion criteria</td></tr>
-            <tr><td>7</td><td>Characteristics</td><td>Describe the data used</td></tr>
-            <tr><td>8</td><td>Processing</td><td>Data cleaning steps taken</td></tr>
-            <tr><td>9</td><td>Availability</td><td>State what data is shared or restricted</td></tr>
-            <tr><td>10</td><td>Overview</td><td>Conceptual modeling framework</td></tr>
-            <tr><td>11</td><td>Models</td><td>Statistical methods used</td></tr>
-            <tr><td>12</td><td>Justification</td><td>Why this model was chosen</td></tr>
-            <tr><td>13</td><td>Assumptions</td><td>State all assumptions clearly</td></tr>
-            <tr><td>14</td><td>Uncertainty</td><td>Explain how uncertainty is calculated</td></tr>
-            <tr><td>15</td><td>Validation</td><td>Model evaluation approach</td></tr>
-            <tr><td>16</td><td>Results</td><td>Include confidence intervals</td></tr>
-            <tr><td>17</td><td>Code</td><td>Share code if possible</td></tr>
-            <tr><td>18</td><td>Replication</td><td>Ensure reproducibility</td></tr>
-          </table></div>
-          <h3>Example of reporting estimates</h3>
-          <div class="tbl-wrap"><table>
-            <tr><th>Indicator</th><th>Estimate</th><th>Uncertainty interval</th></tr>
-            <tr><td>Disease prevalence</td><td>12.5%</td><td>(10.2% &ndash; 14.8%)</td></tr>
-            <tr><td>Mortality rate</td><td>145 per 100,000</td><td>(120 &ndash; 170)</td></tr>
-            <tr><td>Projection 2030</td><td>18.3%</td><td>(15.0% &ndash; 21.6%)</td></tr>
-          </table></div>
-          <h3>Practical tips</h3>
-          <ul>
-            <li>Always report uncertainty alongside point estimates</li>
-            <li>Explain model choice clearly with justification</li>
-            <li>State assumptions explicitly &mdash; never hide them</li>
-            <li>Document missing data handling procedures</li>
-            <li>Include validation results for all models</li>
-          </ul>
-          <p>GATHER promotes transparent and trustworthy science &mdash; from government resource allocation to global intervention planning.</p>
+          <h3>The Uncertainty Imperative</h3>
+          <p>GATHER specifically requires that uncertainty intervals accompany every estimate. Reporting "prevalence = 12.5%" is scientifically incomplete. The correct form is: <strong>12.5% (95% UI: 10.2%–14.8%)</strong>. The interval communicates how much confidence we can place in the point estimate, which is essential for policy-makers weighing intervention costs against disease burden.</p>
+          <div class="key-box"><strong>Key Takeaway</strong>GATHER is not a statistical method — it is a scientific communication standard. Following it does not change your analysis; it makes your analysis trustworthy to others.</div>
         </div>
       </div>
-      <div class="post-footer">
-        <button class="expand-btn" data-post="post-gather">&#9654; Read full post</button>
-        <div class="share-wrap">
-          <button class="share-trigger" data-post="post-gather">&#9003; Share</button>
-          <div class="share-panel" id="sp-post-gather"></div>
-        </div>
-      </div>
-    </article>
+    </div>
 
-    <!-- POST 3 -->
-    <article class="post-card cat-Machine-Learning" id="post-scaling"
-      data-category="Machine Learning"
-      data-title="Normalization vs. Standardization in data preprocessing"
-      data-desc="Normalization scales data to a fixed range [0,1] while standardization transforms it to mean=0, std=1. Knowing when to use each is essential for model performance in machine learning."
-      data-img="https://github.com/user-attachments/assets/196a03ba-b447-45b8-bdd4-e76869c61df5">
-      <div class="post-cover-wrap"><img class="post-cover" src="https://github.com/user-attachments/assets/196a03ba-b447-45b8-bdd4-e76869c61df5" alt="Normalization vs Standardization" loading="lazy"></div>
-      <div class="post-header">
-        <div class="post-meta-row">
-          <span class="cat-badge cat-ml">Machine Learning</span>
-          <span class="post-date">&#128197; 6 April 2026</span>
-          <span class="read-time">&#9201; 4 min read</span>
+    <!-- ══ POST 3 ══ -->
+    <div class="post-card visible" data-category="Machine Learning" data-title="Normalization vs Standardization in data preprocessing" data-summary="Normalization scales data to [0,1] while standardization transforms to mean=0, std=1. Choosing correctly between them is essential for model performance.">
+      <div class="post-card-inner">
+        <div class="card-accent accent-ml"></div>
+        <div class="card-body">
+          <div class="card-body-text">
+            <div class="card-meta">
+              <span class="cat-badge badge-ml">Machine Learning</span>
+              <span class="card-date">📅 6 April 2026</span>
+              <span class="card-read">⏱ 4 min</span>
+            </div>
+            <div class="card-title">Normalization vs. Standardization in Data Preprocessing</div>
+            <div class="card-summary">Features with different units and scales distort distance-based and gradient-based models. Normalization and standardization are the two primary scaling techniques — but they work differently and suit different scenarios. Choosing the wrong one quietly degrades model performance.</div>
+          </div>
         </div>
-        <h2 class="post-title">Normalization vs. Standardization in data preprocessing</h2>
-        <div class="author-row">
-          <img class="author-avatar" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
-          <div><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher &middot; Statistics, BRUR</div></div>
+        <div class="card-footer">
+          <div class="author-mini">
+            <img class="author-ava" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+            <div class="author-info-mini"><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher · Statistics, BRUR</div></div>
+          </div>
+          <button class="read-btn">▶ Read post</button>
         </div>
-      </div>
-      <div class="post-body">
-        <div class="post-excerpt"><p>When preparing data for machine learning models, features often have very different ranges and units. Without scaling, models relying on distances or gradient-based optimization can perform poorly because features with larger numeric ranges dominate learning. Normalization and standardization are two core feature scaling techniques to address this &mdash; but they work differently and suit different scenarios.</p></div>
         <div class="post-full">
-          <h3>What is normalization?</h3>
-          <p>Normalization (min-max scaling) rescales features to a fixed range, usually [0, 1].</p>
-          <div class="formula-block">X<sub>norm</sub> = (X &minus; X<sub>min</sub>) / (X<sub>max</sub> &minus; X<sub>min</sub>)</div>
-          <p>After this transformation all values fall in [0, 1]. Works best with distance-based algorithms like k-NN and K-Means. <strong>Sensitive to outliers</strong> &mdash; handle them first.</p>
-          <h3>What is standardization?</h3>
-          <p>Standardization (z-score scaling) transforms features to mean = 0 and standard deviation = 1.</p>
-          <div class="formula-block">X<sub>std</sub> = (X &minus; &mu;) / &sigma;</div>
-          <p>Especially helpful for gradient-based models (SVM, Logistic Regression, Neural Networks) and for PCA which is sensitive to feature variance.</p>
-          <h3>Key differences</h3>
+          <h3>Normalization (Min-Max Scaling)</h3>
+          <p>Rescales all values to fall in [0, 1]: <strong>X_norm = (X − X_min) / (X_max − X_min)</strong>. Preserves the shape of the original distribution. Best for: k-NN, K-Means, neural networks requiring bounded inputs. Fatal weakness: a single outlier can compress all other values into a tiny range.</p>
+          <h3>Standardization (Z-score Scaling)</h3>
+          <p>Transforms to mean = 0, std = 1: <strong>X_std = (X − μ) / σ</strong>. Does not bound the range but is much more robust to outliers. Best for: PCA, SVM, logistic regression, linear discriminant analysis — any method that assumes or benefits from Gaussian-like feature distributions.</p>
           <div class="tbl-wrap"><table>
-            <tr><th>Feature</th><th>Normalization</th><th>Standardization</th></tr>
-            <tr><td>Scaling goal</td><td>Fixed range (0 to 1)</td><td>Mean = 0, Std = 1</td></tr>
-            <tr><td>Typical range</td><td>[0, 1] or [&minus;1, 1]</td><td>Unbounded</td></tr>
-            <tr><td>Best for</td><td>Distance-based models</td><td>Statistical &amp; ML models</td></tr>
-            <tr><td>Outlier sensitivity</td><td>High</td><td>Lower</td></tr>
+            <tr><th>Property</th><th>Normalization</th><th>Standardization</th></tr>
+            <tr><td>Output range</td><td>[0, 1]</td><td>Unbounded (typically −3 to +3)</td></tr>
+            <tr><td>Outlier sensitivity</td><td>Very high</td><td>Moderate</td></tr>
+            <tr><td>Preserves shape</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Best algorithms</td><td>k-NN, K-Means, Neural Nets</td><td>PCA, SVM, Logistic Reg, LDA</td></tr>
+            <tr><td>Use when Gaussian?</td><td>Not required</td><td>Preferred</td></tr>
           </table></div>
-          <h3>When to use which</h3>
-          <p><strong>Use normalization when:</strong> data does not follow a normal distribution, you are using distance-based algorithms, or bounded values are required.</p>
-          <p><strong>Use standardization when:</strong> data is approximately Gaussian, you are using regression, SVM, or PCA, or the model depends on variance structure.</p>
-          <h3>Python example</h3>
-          <pre>from sklearn.preprocessing import MinMaxScaler, StandardScaler
-
-# Normalization
-norm_scaler = MinMaxScaler()
-X_norm = norm_scaler.fit_transform(X_train)
-
-# Standardization
-std_scaler = StandardScaler()
-X_std = std_scaler.fit_transform(X_train)
-
-# Apply same transform to test data (never fit on test!)
-X_test_norm = norm_scaler.transform(X_test)
-X_test_std  = std_scaler.transform(X_test)</pre>
-          <h3>Practical tips</h3>
-          <ul>
-            <li>Normalization is sensitive to outliers &mdash; handle them first</li>
-            <li>Standardization is more stable when outliers are present</li>
-            <li>Always fit the scaler on <strong>training data only</strong></li>
-            <li>Apply the same fitted transformation to test and validation data</li>
-            <li>In sklearn pipelines, use <code>Pipeline</code> to avoid data leakage automatically</li>
-          </ul>
+          <h3>The Golden Rule</h3>
+          <p><strong>Always fit the scaler on training data only.</strong> Apply the fitted scaler (same μ, σ or min, max) to test and validation data. Fitting on test data causes data leakage — your model will appear better than it actually is on new data.</p>
+          <div class="key-box"><strong>Quick Decision Rule</strong>Using tree-based models (Random Forest, XGBoost)? → No scaling needed. Distance-based? → Normalize. Statistics/regression/PCA? → Standardize. Neural networks? → Either, but normalize for image pixels.</div>
         </div>
       </div>
-      <div class="post-footer">
-        <button class="expand-btn" data-post="post-scaling">&#9654; Read full post</button>
-        <div class="share-wrap">
-          <button class="share-trigger" data-post="post-scaling">&#9003; Share</button>
-          <div class="share-panel" id="sp-post-scaling"></div>
+    </div>
+
+    <!-- ══ POST 4 ══ -->
+    <div class="post-card visible" data-category="Epidemiology" data-title="Fundamentals of epidemiologic research design" data-summary="Epidemiologic study designs — cohort, case-control, cross-sectional, RCT — each answer different causal questions with different trade-offs in bias, cost, and feasibility.">
+      <div class="post-card-inner">
+        <div class="card-accent accent-epi"></div>
+        <div class="card-body">
+          <div class="card-body-text">
+            <div class="card-meta">
+              <span class="cat-badge badge-epi">Epidemiology</span>
+              <span class="card-date">📅 18 March 2026</span>
+              <span class="card-read">⏱ 7 min</span>
+            </div>
+            <div class="card-title">Fundamentals of Epidemiologic Research Design</div>
+            <div class="card-summary">Epidemiology is the study of how disease is distributed in populations and what determines that distribution. Choosing the right study design — observational or experimental — is the most consequential methodological decision a researcher makes, because different designs answer fundamentally different causal questions.</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="author-mini">
+            <img class="author-ava" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+            <div class="author-info-mini"><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher · Statistics, BRUR</div></div>
+          </div>
+          <button class="read-btn">▶ Read post</button>
+        </div>
+        <div class="post-full">
+          <h3>The Epidemiologic Triad</h3>
+          <p>Every epidemiologic study investigates the relationship between an <strong>exposure</strong> (risk factor, treatment, environment) and an <strong>outcome</strong> (disease, death, recovery) in a defined <strong>population</strong>. The fundamental measures are incidence (new cases per person-time), prevalence (existing cases at a point in time), and risk (probability of developing disease).</p>
+          <h3>Observational Study Designs</h3>
+          <div class="tbl-wrap"><table>
+            <tr><th>Design</th><th>Direction</th><th>Measure</th><th>Best for</th><th>Key Limitation</th></tr>
+            <tr><td>Cohort (prospective)</td><td>Exposure → Outcome</td><td>Risk Ratio, Rate Ratio</td><td>Rare exposures, incidence estimation</td><td>Expensive, long follow-up</td></tr>
+            <tr><td>Case-Control</td><td>Outcome → Exposure</td><td>Odds Ratio</td><td>Rare outcomes, quick &amp; cheap</td><td>Recall bias, selection bias</td></tr>
+            <tr><td>Cross-sectional</td><td>Simultaneous</td><td>Prevalence Ratio</td><td>Prevalence, hypothesis generation</td><td>Cannot establish temporality</td></tr>
+            <tr><td>Ecological</td><td>Group-level</td><td>Correlation</td><td>Policy-level analysis</td><td>Ecological fallacy</td></tr>
+          </table></div>
+          <h3>Randomised Controlled Trial (RCT) — The Gold Standard</h3>
+          <p>Random allocation of participants to treatment/control eliminates <strong>confounding by design</strong> — the unknown lurking variables that bias observational studies. However, RCTs are expensive, sometimes unethical (cannot randomise people to smoke), and have limited external validity (trial populations differ from real-world patients).</p>
+          <h3>Measures of Association</h3>
+          <p><strong>Risk Ratio (RR):</strong> RR = Risk_exposed / Risk_unexposed. RR = 1 → no association; RR > 1 → positive association; RR < 1 → protective. <strong>Odds Ratio (OR):</strong> OR = (a/b) / (c/d) in a 2×2 table. When outcome is rare, OR ≈ RR. <strong>Attributable Risk (AR):</strong> Risk_exposed − Risk_unexposed → how much disease is attributable to the exposure in absolute terms.</p>
+          <div class="key-box"><strong>Hierarchy of Evidence</strong>Systematic review/meta-analysis → RCT → Prospective cohort → Case-control → Cross-sectional → Case report. Higher is stronger causal evidence, but observational studies remain essential for questions where trials are impossible or unethical.</div>
         </div>
       </div>
-    </article>
-
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-card">
-      <div class="sidebar-title">Posts in this series</div>
-      <div id="sidebar-toc"></div>
     </div>
-    <div class="sidebar-card">
-      <div class="sidebar-title">By category</div>
-      <div class="sidebar-cat"><span>Machine Learning</span><span class="sidebar-cat-count">2</span></div>
-      <div class="sidebar-cat"><span>Public Health</span><span class="sidebar-cat-count">1</span></div>
-    </div>
-    <a class="sidebar-video-link" href="videos.html">&#9654; Watch Research Videos &rarr;</a>
-  </aside>
-</div>
 
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-name">Md. Abu Bokkor Shiddik</div>
-      <p class="footer-desc">Researcher in Machine Learning, Explainable AI &amp; Global Health Analytics. Dept. of Statistics, BRUR, Rangpur, Bangladesh.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Navigation</div>
-      <div class="footer-nav-links">
-        <a href="home.html">Home</a><a href="publications.html">Publications</a>
-        <a href="projects.html">Projects</a><a href="courses.html">Courses &amp; Training</a>
-        <a href="service.html">Service</a><a href="conference-and-workshop.html">Conferences</a>
+    <!-- ══ POST 5 ══ -->
+    <div class="post-card visible" data-category="Climate Health" data-title="Climate change and its effects on human health" data-summary="Rising temperatures, extreme weather, and disrupted ecosystems are reshaping disease burden globally — climate change is the defining health crisis of the 21st century.">
+      <div class="post-card-inner">
+        <div class="card-accent accent-climate"></div>
+        <div class="card-body">
+          <div class="card-body-text">
+            <div class="card-meta">
+              <span class="cat-badge badge-climate">Climate Health</span>
+              <span class="card-date">📅 5 March 2026</span>
+              <span class="card-read">⏱ 6 min</span>
+            </div>
+            <div class="card-title">Climate Change and Its Effects on Human Health</div>
+            <div class="card-summary">The World Health Organization estimates that climate change will cause 250,000 additional deaths per year between 2030–2050 from malnutrition, malaria, diarrhoea, and heat stress alone. The pathways are multiple and intersecting: temperature, extreme events, vector ecology, food systems, and mental health.</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="author-mini">
+            <img class="author-ava" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+            <div class="author-info-mini"><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher · Statistics, BRUR</div></div>
+          </div>
+          <button class="read-btn">▶ Read post</button>
+        </div>
+        <div class="post-full">
+          <h3>Pathways from Climate to Health</h3>
+          <p>Climate change affects health through <strong>direct</strong> pathways (heat stress, extreme weather injuries, UV exposure) and <strong>indirect</strong> pathways (vector-borne diseases, food insecurity, water contamination, displacement, mental health). The indirect pathways are more complex and harder to model, but often cause greater total morbidity.</p>
+          <div class="tbl-wrap"><table>
+            <tr><th>Climate Driver</th><th>Health Outcome</th><th>Vulnerable Population</th></tr>
+            <tr><td>Rising temperatures</td><td>Heat stroke, cardiovascular stress, preterm birth</td><td>Elderly, outdoor workers, pregnant women</td></tr>
+            <tr><td>Vector habitat expansion</td><td>Dengue, malaria, chikungunya shifting northward</td><td>Previously non-endemic regions</td></tr>
+            <tr><td>Flooding &amp; storms</td><td>Diarrhoeal disease, leptospirosis, trauma, displacement</td><td>Coastal and low-lying communities</td></tr>
+            <tr><td>Drought &amp; crop failure</td><td>Malnutrition, stunting, child mortality</td><td>Subsistence farmers in South Asia, Africa</td></tr>
+            <tr><td>Air quality degradation</td><td>COPD, asthma exacerbation, lung cancer</td><td>Urban poor, children</td></tr>
+          </table></div>
+          <h3>Bangladesh as a Case Study</h3>
+          <p>Bangladesh is ranked among the most climate-vulnerable countries. Cyclone Amphan (2020) displaced 2.4 million people. Annual flooding submerges 20–25% of the country, contaminating tube wells and triggering diarrhoeal outbreaks. Average temperatures have risen 0.5°C since 1960, extending the dengue transmission season by approximately 3 weeks per decade. These are not future projections — they are present realities demanding urgent public health action.</p>
+          <h3>Climate-Health Research Methods</h3>
+          <p>Key analytical tools include: <strong>distributed lag non-linear models (DLNM)</strong> for modelling temperature-mortality relationships; <strong>time-series analysis</strong> linking weather patterns to disease surveillance data; <strong>spatial epidemiology</strong> mapping disease burden changes with climate projections; and <strong>scenario modelling</strong> using IPCC pathways (SSP2-4.5, SSP5-8.5) to project future health impacts.</p>
+        </div>
       </div>
     </div>
-    <div>
-      <div class="footer-col-title">Connect</div>
-      <div class="footer-social-links">
-        <a href="https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/home" target="_blank">&#127760; Portfolio</a>
-        <a href="https://www.linkedin.com/in/abu-bokkor-shiddik-abs798/" target="_blank">in LinkedIn</a>
-        <a href="https://scholar.google.com/citations?user=JWeBd3IAAAAJ" target="_blank">&#127891; Google Scholar</a>
-        <a href="https://orcid.org/0009-0002-0424-446X" target="_blank">&#10022; ORCID</a>
-        <a href="https://github.com/abubokkorshiddik" target="_blank">&#123;&#125; GitHub</a>
+
+    <!-- ══ POST 6 ══ -->
+    <div class="post-card visible" data-category="Climate Health" data-title="One Health approach bridging human animal and ecosystem health" data-summary="One Health recognises that human health, animal health, and ecosystem integrity are inseparably connected — most emerging infectious diseases originate in animals and spill over into humans.">
+      <div class="post-card-inner">
+        <div class="card-accent accent-climate"></div>
+        <div class="card-body">
+          <div class="card-body-text">
+            <div class="card-meta">
+              <span class="cat-badge badge-climate">Climate Health</span>
+              <span class="card-date">📅 20 February 2026</span>
+              <span class="card-read">⏱ 5 min</span>
+            </div>
+            <div class="card-title">One Health: Bridging Human, Animal, and Ecosystem Health</div>
+            <div class="card-summary">Approximately 75% of emerging infectious diseases are zoonotic — originating in animals before jumping to humans. One Health is the integrated approach that unites human medicine, veterinary science, and environmental health to prevent pandemics at their source rather than respond after spillover.</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="author-mini">
+            <img class="author-ava" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+            <div class="author-info-mini"><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher · Statistics, BRUR</div></div>
+          </div>
+          <button class="read-btn">▶ Read post</button>
+        </div>
+        <div class="post-full">
+          <h3>What is One Health?</h3>
+          <p>The One Health concept, formally endorsed by the WHO, FAO, UNEP, and WOAH (the "Quadripartite"), recognises that <strong>human health cannot be protected in isolation from animal health and healthy ecosystems</strong>. The three domains are not parallel — they overlap, interact, and mutually determine each other. Deforestation creates human-wildlife interfaces; factory farming breeds antimicrobial resistance; wetland destruction eliminates natural barriers to vector proliferation.</p>
+          <h3>Classic One Health Examples</h3>
+          <div class="tbl-wrap"><table>
+            <tr><th>Disease</th><th>Animal Reservoir</th><th>Ecosystem Driver</th><th>Human Impact</th></tr>
+            <tr><td>COVID-19</td><td>Bats (likely)</td><td>Wildlife trade, urbanisation</td><td>Global pandemic, millions of deaths</td></tr>
+            <tr><td>Nipah virus</td><td>Fruit bats</td><td>Deforestation, mango farming</td><td>Outbreaks in Bangladesh annually</td></tr>
+            <tr><td>Avian influenza H5N1</td><td>Wild birds, poultry</td><td>Live bird markets, migration routes</td><td>High CFR (&gt;60%) in humans</td></tr>
+            <tr><td>Antimicrobial resistance</td><td>Livestock (all species)</td><td>Agriculture overuse of antibiotics</td><td>700,000 deaths/year; projected 10M by 2050</td></tr>
+          </table></div>
+          <h3>One Health in Bangladesh</h3>
+          <p>Bangladesh has experienced multiple Nipah virus outbreaks traced to raw date palm sap contaminated by bat urine — a direct human-animal-environment interface. The response required simultaneous action in public health (case detection), veterinary surveillance (bat monitoring), and environmental management (sap collection practices). This is One Health in practice: no single sector could have solved it alone.</p>
+          <div class="key-box"><strong>Research Implication</strong>One Health research requires interdisciplinary teams — epidemiologists, veterinarians, ecologists, anthropologists, and data scientists. Methods include zoonotic disease modelling, genomic surveillance of pathogens across species, and network analysis of human-animal interfaces.</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2026 Md. Abu Bokkor Shiddik &middot; All rights reserved</p>
-    <p>abubokkor.brur60@gmail.com &middot; +880 1874 001360</p>
-  </div>
-</footer>
 
-<script>
-/* ─── NAV ─── */
-document.querySelectorAll('.dropbtn').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var dd=btn.closest('.dropdown');var open=dd.classList.contains('active');document.querySelectorAll('.dropdown.active').forEach(function(d){d.classList.remove('active')});if(!open)dd.classList.add('active')})});
-document.addEventListener('click',function(){document.querySelectorAll('.dropdown.active').forEach(function(d){d.classList.remove('active')})});
-var ham=document.getElementById('hamburger'),drawer=document.getElementById('nav-drawer');
-ham.addEventListener('click',function(){ham.classList.toggle('open');drawer.classList.toggle('open')});
-drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ham.classList.remove('open');drawer.classList.remove('open')})});
+    <!-- ══ POST 7 ══ -->
+    <div class="post-card visible" data-category="Explainable AI" data-title="Explainable AI making black-box models interpretable in healthcare" data-summary="XAI methods like SHAP, LIME, and attention maps allow clinicians to understand why an AI model made a prediction — essential for trust, safety, and regulatory approval in clinical settings.">
+      <div class="post-card-inner">
+        <div class="card-accent accent-xai"></div>
+        <div class="card-body">
+          <div class="card-body-text">
+            <div class="card-meta">
+              <span class="cat-badge badge-xai">Explainable AI</span>
+              <span class="card-date">📅 10 February 2026</span>
+              <span class="card-read">⏱ 7 min</span>
+            </div>
+            <div class="card-title">Explainable AI: Making Black-Box Models Interpretable in Healthcare</div>
+            <div class="card-summary">Deep learning models achieve superhuman accuracy on medical imaging tasks — yet clinicians cannot use them safely without understanding why a prediction was made. Explainable AI (XAI) bridges this trust gap by providing model-agnostic or model-specific explanations that connect predictions to clinical reasoning.</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="author-mini">
+            <img class="author-ava" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+            <div class="author-info-mini"><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher · Statistics, BRUR</div></div>
+          </div>
+          <button class="read-btn">▶ Read post</button>
+        </div>
+        <div class="post-full">
+          <h3>The Black-Box Problem in Clinical AI</h3>
+          <p>A neural network predicting sepsis risk from 48 hours of ICU vital signs might achieve AUROC = 0.91 — but if the model triggers an alert, the clinician needs to know: <em>which features drove this prediction?</em> Was it lactate, temperature, or a subtle pattern across multiple vitals? Without this, clinicians cannot verify clinical plausibility, catch spurious correlations, or take targeted action.</p>
+          <h3>Key XAI Methods</h3>
+          <div class="tbl-wrap"><table>
+            <tr><th>Method</th><th>Type</th><th>How it Works</th><th>Best For</th></tr>
+            <tr><td>SHAP (SHapley Additive exPlanations)</td><td>Model-agnostic</td><td>Attributes prediction to each feature using game-theoretic Shapley values</td><td>Tabular data, global + local explanations</td></tr>
+            <tr><td>LIME</td><td>Model-agnostic</td><td>Fits a local linear model in the neighbourhood of each prediction</td><td>Any model, quick local explanations</td></tr>
+            <tr><td>Grad-CAM</td><td>CNN-specific</td><td>Highlights image regions driving the classification using gradient flow</td><td>Medical imaging (X-ray, MRI, pathology)</td></tr>
+            <tr><td>Attention Weights</td><td>Transformer-specific</td><td>Visualises which tokens/timepoints the model attends to</td><td>NLP clinical notes, time-series EHR</td></tr>
+            <tr><td>Integrated Gradients</td><td>Deep learning</td><td>Attributes prediction to inputs by integrating gradients from baseline to input</td><td>Genomics, EHR, images</td></tr>
+          </table></div>
+          <h3>SHAP in Practice: Dengue Severity Prediction</h3>
+          <p>In a study predicting severe dengue from clinical features at admission, SHAP values revealed that <strong>platelet count</strong> and <strong>haematocrit rise</strong> were the dominant predictors — consistent with clinical knowledge of dengue pathophysiology. Crucially, SHAP also flagged that the model was partly using "hospital ID" as a proxy feature — a spurious correlation that would fail catastrophically at a new site. XAI caught what accuracy metrics could not.</p>
+          <h3>Regulatory and Ethical Dimensions</h3>
+          <p>The EU AI Act (2024) classifies clinical AI as high-risk and requires explainability documentation. The FDA's 2021 AI/ML guidance similarly emphasises transparency and traceability. Explainability is no longer optional — it is a regulatory and ethical requirement for clinical deployment.</p>
+        </div>
+      </div>
+    </div>
 
-/* ─── POST DATA ─── */
-var POST_DATA = {};
-document.querySelectorAll('.post-card').forEach(function(card){
-  POST_DATA[card.id]={title:card.dataset.title,desc:card.dataset.desc,img:card.dataset.img,url:window.location.origin+window.location.pathname+'#'+card.id};
-});
+    <!-- ══ POST 8 ══ -->
+    <div class="post-card visible" data-category="Mental Health" data-title="Mental health in the era of climate anxiety and ecological grief" data-summary="Climate change is not only a physical health crisis — it is generating a new wave of psychological distress including eco-anxiety, climate grief, and solastalgia, particularly among young people.">
+      <div class="post-card-inner">
+        <div class="card-accent accent-mental"></div>
+        <div class="card-body">
+          <div class="card-body-text">
+            <div class="card-meta">
+              <span class="cat-badge badge-mental">Mental Health</span>
+              <span class="card-date">📅 15 January 2026</span>
+              <span class="card-read">⏱ 5 min</span>
+            </div>
+            <div class="card-title">Mental Health in the Era of Climate Anxiety and Ecological Grief</div>
+            <div class="card-summary">A 2021 global survey of 10,000 young people found that 59% were very or extremely worried about climate change, and 45% said their feelings about it negatively affected their daily functioning. Climate distress is emerging as a significant mental health burden requiring recognition, frameworks, and clinical response.</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="author-mini">
+            <img class="author-ava" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+            <div class="author-info-mini"><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher · Statistics, BRUR</div></div>
+          </div>
+          <button class="read-btn">▶ Read post</button>
+        </div>
+        <div class="post-full">
+          <h3>The Emerging Taxonomy of Climate-Related Distress</h3>
+          <p><strong>Eco-anxiety:</strong> Chronic fear of environmental doom and catastrophe. <strong>Solastalgia:</strong> Grief arising from the degradation of one's home environment (coined by philosopher Glenn Albrecht). <strong>Ecological grief:</strong> Mourning the loss of species, ecosystems, and places. <strong>Climate trauma:</strong> PTSD-like symptoms following direct exposure to extreme weather events such as cyclones, floods, or wildfires. These are not disorders of irrational thinking — they are rational emotional responses to real threats.</p>
+          <h3>Epidemiology of Climate Mental Health</h3>
+          <p>Post-disaster mental health studies consistently show elevated rates of depression, PTSD, and anxiety following climate events. After Cyclone Sidr (2007) in Bangladesh, researchers found PTSD prevalence of 31% among directly affected individuals one year post-disaster. After the 2022 Pakistan floods — the worst in its history — mental health services were overwhelmed simultaneously with physical trauma care.</p>
+          <h3>Differential Vulnerability</h3>
+          <p>Climate mental health impacts are not equally distributed. Young people (who face the longest future of climate impacts) show the highest eco-anxiety rates. Farmers and fisherfolk in climate-vulnerable livelihoods experience the highest rates of chronic stress and depression. Indigenous communities suffer unique solastalgia from the loss of culturally significant landscapes. Women in disaster-affected areas face compounded risks due to caregiving burdens and reduced autonomy.</p>
+          <h3>Research and Clinical Responses</h3>
+          <p>The field needs validated screening tools (the Climate Change Worry Scale, the Climate Distress Scale), longitudinal cohort studies linking climate exposures to mental health trajectories, and climate-informed psychotherapy adaptations. Crucially, addressing eco-anxiety is not merely therapeutic — it is also a driver of climate action. Channelling distress into meaningful engagement reduces paralysis and builds resilience.</p>
+        </div>
+      </div>
+    </div>
 
-/* ─── EXPAND / COLLAPSE ─── */
-document.querySelectorAll('.expand-btn').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var postId = btn.dataset.post;
-    var card = document.getElementById(postId);
-    if(!card) return;
-    var full = card.querySelector('.post-full');
-    var excerpt = card.querySelector('.post-excerpt');
-    var isOpen = full.classList.contains('open');
-    if(isOpen){
-      full.classList.remove('open');
-      full.style.display='none';
-      excerpt.style.display='block';
-      btn.innerHTML='&#9654; Read full post';
-      btn.classList.remove('open-state');
-    } else {
-      full.classList.add('open');
-      full.style.display='block';
-      excerpt.style.display='none';
-      btn.innerHTML='&#8593; Show less';
-      btn.classList.add('open-state');
-      /* smooth scroll to card */
-      setTimeout(function(){
-        var nb=document.querySelector('.navbar');
-        var fb=document.querySelector('.filter-bar');
-        var offset=(nb?nb.offsetHeight:56)+(fb?fb.offsetHeight:44)+12;
-        var top=card.getBoundingClientRect().top+window.pageYOffset-offset;
-        window.scrollTo({top:top,behavior:'smooth'});
-      },50);
-    }
-  });
-});
+    <!-- ══ POST 9 ══ -->
+    <div class="post-card visible" data-category="Health Policy" data-title="Health inequality understanding the social determinants of disease" data-summary="Why does a child born in a poor neighbourhood have a 15-year shorter life expectancy than one born five kilometres away in a wealthy area? The answer lies not in genetics but in the social determinants of health.">
+      <div class="post-card-inner">
+        <div class="card-accent accent-policy"></div>
+        <div class="card-body">
+          <div class="card-body-text">
+            <div class="card-meta">
+              <span class="cat-badge badge-policy">Health Policy</span>
+              <span class="card-date">📅 5 January 2026</span>
+              <span class="card-read">⏱ 6 min</span>
+            </div>
+            <div class="card-title">Health Inequality: Understanding the Social Determinants of Disease</div>
+            <div class="card-summary">The social determinants of health — income, education, housing, employment, neighbourhood environment — explain more of the variation in population health outcomes than medical care does. Addressing health inequality requires upstream policy action, not just more clinics.</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="author-mini">
+            <img class="author-ava" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+            <div class="author-info-mini"><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher · Statistics, BRUR</div></div>
+          </div>
+          <button class="read-btn">▶ Read post</button>
+        </div>
+        <div class="post-full">
+          <h3>What are Social Determinants of Health (SDH)?</h3>
+          <p>The WHO Commission on Social Determinants of Health (Marmot Commission) defines SDH as "the conditions in which people are born, grow, live, work and age." These structural conditions — income distribution, educational access, housing quality, food security, occupational safety, social protection — determine health long before a person ever enters a clinic.</p>
+          <h3>The Social Gradient of Health</h3>
+          <p>Health outcomes follow a near-continuous <strong>social gradient</strong>: with each step down the socioeconomic ladder, health worsens. This is not simply a binary "poor vs rich" effect — managers have worse health than executives; clerks have worse health than managers. The Whitehall Studies of British civil servants demonstrated this gradient across an employed, non-destitute population — ruling out absolute deprivation as the sole explanation.</p>
+          <h3>Measurement in Bangladesh</h3>
+          <div class="tbl-wrap"><table>
+            <tr><th>SDH Domain</th><th>Metric</th><th>Bangladesh Inequality Gap</th></tr>
+            <tr><td>Income</td><td>Under-5 mortality</td><td>Poorest quintile: 65/1000; Richest: 20/1000</td></tr>
+            <tr><td>Education</td><td>Stunting prevalence</td><td>No education mothers: 47%; Higher education: 21%</td></tr>
+            <tr><td>Geography</td><td>Skilled birth attendance</td><td>Urban: 74%; Rural: 41%</td></tr>
+            <tr><td>Gender</td><td>Anaemia</td><td>Women: 36%; Men: 15%</td></tr>
+          </table></div>
+          <h3>Policy Implications: Upstream vs Downstream</h3>
+          <p>Downstream interventions (treating sick people) are necessary but insufficient. Upstream interventions — progressive taxation, housing standards, universal education, social protection — produce the largest and most equitable health gains per taka invested. The economic case is strong: the Marmot Review estimated that health inequalities cost England £31–33 billion annually in lost productivity. Reducing inequality is not just a moral imperative; it is economically rational.</p>
+        </div>
+      </div>
+    </div>
 
-/* ─── SHARE PANEL ─── */
-document.querySelectorAll('.share-trigger').forEach(function(btn){
-  btn.addEventListener('click',function(e){
-    e.stopPropagation();
-    var postId=btn.dataset.post;
-    var panel=document.getElementById('sp-'+postId);
-    if(!panel) return;
-    // close others
-    document.querySelectorAll('.share-panel.open').forEach(function(p){if(p!==panel)p.classList.remove('open')});
-    // build once
-    if(!panel.dataset.built){
-      var d=POST_DATA[postId];
-      panel.innerHTML=
-        '<div class="share-panel-title">Share this post</div>'+
-        '<div class="share-preview-card">'+
-          '<img class="share-preview-img" src="'+d.img+'" alt="" loading="lazy">'+
-          '<div class="share-preview-body">'+
-            '<div class="share-preview-site">ABS &middot; Insights</div>'+
-            '<div class="share-preview-title">'+d.title+'</div>'+
-            '<div class="share-preview-desc">'+d.desc+'</div>'+
-          '</div>'+
-        '</div>'+
-        '<div class="share-actions">'+
-          '<button class="share-action-btn" onclick="copyLink(\''+postId+'\',this)"><span class="share-action-icon">&#128279;</span><span>Copy link</span></button>'+
-          '<a class="share-action-btn" href="https://twitter.com/intent/tweet?text='+encodeURIComponent(d.title)+'&url='+encodeURIComponent(d.url)+'" target="_blank"><span class="share-action-icon">&#120143;</span><span>Share on X / Twitter</span></a>'+
-          '<a class="share-action-btn" href="https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(d.url)+'" target="_blank"><span class="share-action-icon">in</span><span>Share on LinkedIn</span></a>'+
-        '</div>';
-      panel.dataset.built='1';
-    }
-    panel.classList.toggle('open');
-  });
-});
-document.addEventListener('click',function(e){if(!e.target.closest('.share-wrap'))document.querySelectorAll('.share-panel.open').forEach(function(p){p.classList.remove('open')})});
+    <!-- ══ POST 10 ══ -->
+    <div class="post-card visible" data-category="Public Health" data-title="The concept of spillover effects in health policy evaluation" data-summary="When a health program changes behaviour not just in targeted individuals but in untreated neighbours, schools, or communities, standard evaluation methods underestimate both benefits and risks. Spillover effects are ubiquitous and largely unmeasured.">
+      <div class="post-card-inner">
+        <div class="card-accent accent-policy"></div>
+        <div class="card-body">
+          <div class="card-body-text">
+            <div class="card-meta">
+              <span class="cat-badge badge-ph">Public Health</span>
+              <span class="card-date">📅 20 December 2025</span>
+              <span class="card-read">⏱ 6 min</span>
+            </div>
+            <div class="card-title">The Concept of Spillover Effects in Health Policy Evaluation</div>
+            <div class="card-summary">Standard RCT analysis assumes that a treated individual's outcomes depend only on their own treatment status (SUTVA — Stable Unit Treatment Value Assumption). In public health, this assumption is routinely violated: vaccine coverage protects the unvaccinated; deworming treated children improves untreated classmates; mental health programs change household dynamics. These spillovers are the rule, not the exception.</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="author-mini">
+            <img class="author-ava" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+            <div class="author-info-mini"><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher · Statistics, BRUR</div></div>
+          </div>
+          <button class="read-btn">▶ Read post</button>
+        </div>
+        <div class="post-full">
+          <h3>What is SUTVA and Why Does it Fail?</h3>
+          <p>The Stable Unit Treatment Value Assumption (SUTVA) requires that (1) there is only one version of each treatment and (2) potential outcomes for any unit are unaffected by the treatment of other units. In infectious disease control, (2) is obviously false: vaccinating your neighbour reduces your infection risk. In nutrition programs, treating a sibling changes household food allocation. In mental health interventions, treating a depressed parent changes outcomes for untreated children.</p>
+          <h3>Types of Spillover Effects</h3>
+          <div class="tbl-wrap"><table>
+            <tr><th>Type</th><th>Mechanism</th><th>Direction</th><th>Public Health Example</th></tr>
+            <tr><td>Herd immunity</td><td>Reduced pathogen circulation</td><td>Positive</td><td>Vaccine coverage protects unvaccinated</td></tr>
+            <tr><td>Behavioural spillover</td><td>Social norms change</td><td>Positive/Negative</td><td>Hand-washing programs change untreated neighbours</td></tr>
+            <tr><td>Resource reallocation</td><td>Household budget effects</td><td>Positive/Negative</td><td>Cash transfer to mother improves sibling nutrition</td></tr>
+            <tr><td>General equilibrium</td><td>Market/labour market changes</td><td>Often positive</td><td>Deworming increases wages for untreated workers</td></tr>
+            <tr><td>Congestion</td><td>Overcrowded services</td><td>Negative</td><td>Large vaccine campaign overwhelms clinics</td></tr>
+          </table></div>
+          <h3>Methods for Estimating Spillovers</h3>
+          <p><strong>Two-stage randomisation:</strong> Randomise the proportion treated within clusters (villages, schools), then randomise individuals within clusters. Compare outcomes for untreated individuals in high-coverage vs low-coverage clusters. <strong>Network-based approaches:</strong> Model spillovers through social networks, estimating how treatment of network-connected individuals affects outcomes. <strong>Geographic regression discontinuity:</strong> Compare outcomes at boundaries of treated and untreated areas.</p>
+          <h3>The Kenya Deworming Controversy</h3>
+          <p>The famous Kenya Primary School Deworming Project (Miguel &amp; Kremer, 2004) showed enormous positive externalities — the benefit to untreated children in treated schools was so large that the total social benefit was many times larger than the direct benefit to treated children. This spillover-inclusive evaluation completely changed the cost-effectiveness of deworming, making it one of the most cost-effective development interventions ever measured. Ignoring spillovers can therefore produce catastrophically misleading policy guidance in either direction.</p>
+        </div>
+      </div>
+    </div>
 
-function copyLink(postId,btn){
-  var d=POST_DATA[postId];
-  var text=d.title+'\n\n'+d.url;
-  var toast=document.getElementById('share-toast');
-  if(navigator.clipboard){
-    navigator.clipboard.writeText(text).then(function(){
-      var lbl=btn.querySelector('span:last-child');
-      var orig=lbl.textContent;
-      lbl.textContent='Copied!';
-      btn.classList.add('share-action-copied');
-      setTimeout(function(){lbl.textContent=orig;btn.classList.remove('share-action-copied')},2200);
-    });
-  }
-  toast.classList.add('show');
-  setTimeout(function(){toast.classList.remove('show')},2200);
-}
-
-/* ─── FILTER TABS ─── */
-document.querySelectorAll('.filter-tab').forEach(function(tab){
-  tab.addEventListener('click',function(){
-    document.querySelectorAll('.filter-tab').forEach(function(t){t.classList.remove('active')});
-    tab.classList.add('active');
-    var f=tab.dataset.filter;
-    var count=0;
-    document.querySelectorAll('.post-card').forEach(function(card){
-      var show=f==='all'||card.dataset.category===f;
-      card.style.display=show?'':'none';
-      if(show)count++;
-    });
-    document.getElementById('no-results').style.display=count===0?'block':'none';
-  });
-});
-
-/* ─── SEARCH ─── */
-document.getElementById('search').addEventListener('input',function(){
-  var q=this.value.toLowerCase().trim();
-  var count=0;
-  document.querySelectorAll('.post-card').forEach(function(card){
-    var text=(card.dataset.title+' '+card.dataset.desc+' '+card.dataset.category).toLowerCase();
-    var show=!q||text.indexOf(q)!==-1;
-    card.style.display=show?'':'none';
-    if(show)count++;
-  });
-  document.getElementById('no-results').style.display=count===0?'block':'none';
-  if(q)document.querySelectorAll('.filter-tab').forEach(function(t){t.classList.remove('active')});
-});
-
-/* ─── SIDEBAR TOC ─── */
-document.addEventListener('DOMContentLoaded',function(){
-  var toc=document.getElementById('sidebar-toc');
-  document.querySelectorAll('.post-card').forEach(function(card){
-    var link=document.createElement('div');
-    link.className='sidebar-link';
-    link.innerHTML='<span class="sidebar-link-dot"></span><span>'+card.dataset.title+'</span>';
-    link.addEventListener('click',function(){
-      var nb=document.querySelector('.navbar');
-      var fb=document.querySelector('.filter-bar');
-      var offset=(nb?nb.offsetHeight:56)+(fb?fb.offsetHeight:44)+12;
-      window.scrollTo({top:card.getBoundingClientRect().top+window.pageYOffset-offset,behavior:'smooth'});
-    });
-    toc.appendChild(link);
-  });
-});
-</script>
-</body>
-</html>
+    <!-- ══ POST 11 ══ -->
+    <div class="post-card visible" data-category="Health Policy" data-title="Health inequality and climate change intersecting crises" data-summary="Those who contribute least to climate change suffer its health consequences most acutely. The intersection of climate vulnerability and health inequality creates compounding cycles of disadvantage that demand integrated policy responses.">
+      <div class="post-card-inner">
+        <div class="card-accent accent-policy"></div>
+        <div class="card-body">
+          <div class="card-body-text">
+            <div class="card-meta">
+              <span class="cat-badge badge-policy">Health Policy</span>
+              <span class="card-date">📅 1 December 2025</span>
+              <span class="card-read">⏱ 5 min</span>
+            </div>
+            <div class="card-title">Health Inequality and Climate Change: Intersecting Crises</div>
+            <div class="card-summary">Sub-Saharan Africa contributes 3% of global cumulative CO₂ emissions but bears 25% of climate-related disease burden. Bangladesh emits 0.5 tonnes of CO₂ per capita vs 14.7 tonnes in the USA — yet faces existential climate risks. This paper examines the climate-inequality nexus and its implications for global health equity.</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="author-mini">
+            <img class="author-ava" src="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/stst.jpeg" alt="Author">
+            <div class="author-info-mini"><div class="author-name">Md. Abu Bokkor Shiddik</div><div class="author-role">Researcher · Statistics, BRUR</div></div>
+          </div>
+          <button class="read-btn">▶ Read post</button>
+        </div>
+        <div class="post-full">
+          <h3>The Double Injustice of Climate and Health</h3>
+          <p>The communities with the smallest carbon footprints face the largest climate health burdens. This is a double injustice: they bear costs they did not create, AND their lower adaptive capacity means they suffer worse health consequences per unit of climate exposure. A Bangladeshi farmer facing monsoon floods has fewer options — financial, geographic, informational — than a Dutch farmer facing the same flood risk, because the Netherlands has invested centuries of wealth into flood protection infrastructure.</p>
+          <h3>Mechanisms of Compounding Disadvantage</h3>
+          <p><strong>Occupational exposure:</strong> The poor are disproportionately employed in outdoor, climate-exposed work (agriculture, construction, fishing) with no option to work remotely or in air-conditioned environments. <strong>Housing quality:</s
