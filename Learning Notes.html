@@ -2224,6 +2224,342 @@
     <div class="note"><strong>😄 The p-hacking Warning</strong>"If you torture your data long enough, it will confess to anything." — Ronald Coase. Running 20 tests and reporting only the p&lt;0.05 result guarantees a false positive. Pre-register your hypotheses before seeing the data, report ALL analyses, and always report effect sizes alongside p-values. The replication crisis in psychology was largely caused by widespread p-hacking and selective reporting. Register your analysis plan first — commit before you look!</div>
   </div>
 </div>
+
+
+  <!-- ══ STAT4102 · Sampling Techniques ══ -->
+<div class="divider" style="margin:60px 0 0"><span>STAT4102 · Sampling Techniques</span></div>
+<div class="course-block" id="c-samptech">
+  <div class="course-banner" style="background:linear-gradient(135deg,#2a3800,#5a6e00);">
+    <div class="cb-watermark">n</div>
+    <div class="cb-code">STAT4102 · B.Sc. Statistics Year 4 · BRUR</div>
+    <div class="cb-title">Sampling Techniques</div>
+    <div class="cb-sub">SRS · Stratified · Systematic · Cluster · PPS · Ratio &amp; Regression Estimation · Non-Sampling Errors</div>
+  </div>
+  <div class="note" style="background:#f4f8e8;border-left-color:#5a6e00;font-style:normal;margin-bottom:28px;">
+    <strong style="color:#5a6e00;">🎓 Why Sampling?</strong>
+    "You don't need to eat the whole pot of soup to know if it's salty — one spoonful is enough, IF it's well stirred." That's sampling. 😄 The goal: make valid inferences about a population of N units by examining only n &lt;&lt; N units, saving time, cost, and resources while maintaining accuracy.
+  </div>
+  <div class="toc-box">
+    <div class="toc-box-title">Topics — STAT4102</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#st1" data-n="T1">Basic Concepts &amp; Probability Sampling</a>
+      <a class="toc-link" href="#st2" data-n="T2">Simple Random Sampling (SRS)</a>
+      <a class="toc-link" href="#st3" data-n="T3">Stratified Random Sampling</a>
+      <a class="toc-link" href="#st4" data-n="T4">Systematic &amp; Cluster Sampling</a>
+      <a class="toc-link" href="#st5" data-n="T5">Ratio &amp; Regression Estimation</a>
+      <a class="toc-link" href="#st6" data-n="T6">PPS Sampling &amp; Non-Sampling Errors</a>
+    </div>
+  </div>
+
+  <div class="topic-section" id="st1">
+    <div class="topic-header"><div class="topic-num" style="color:#c8d888;">T1</div><div class="topic-title-block"><div class="topic-label">Foundations</div><div class="topic-title">Basic Concepts &amp; <span style="color:#5a6e00;">Probability Sampling</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📖</span><div class="card-lbl">Key Terms</div><h3>Sampling Vocabulary</h3><ul><li><strong>Sampling frame:</strong> List of all N population units — must be complete and up-to-date</li><li><strong>Sampling unit:</strong> The unit selected at each draw</li><li><strong>Inclusion probability πᵢ:</strong> Probability unit i is selected</li><li><strong>Design effect (DEFF):</strong> Ratio of actual variance to SRS variance</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Probability vs Non-Probability</div><h3>Two Types of Sampling</h3><ul><li><strong>Probability:</strong> Every unit has known, non-zero inclusion probability → valid inference possible. SRS, stratified, cluster, systematic.</li><li><strong>Non-probability:</strong> Convenience, purposive, quota — no valid inference to population. Use only for exploratory work.</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Key Principle</div><h3>Unbiasedness &amp; Efficiency</h3><ul><li><strong>Unbiased estimator:</strong> E(ȳ) = Ȳ on average</li><li><strong>Efficiency:</strong> Smaller variance = more information per unit cost</li><li>Goal: choose design that minimises variance for given cost</li></ul></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="st2">
+    <div class="topic-header"><div class="topic-num" style="color:#c8d888;">T2</div><div class="topic-title-block"><div class="topic-label">Baseline Design</div><div class="topic-title">Simple Random Sampling <span style="color:#5a6e00;">(SRS)</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🎲</span><div class="card-lbl">SRSWOR vs SRSWR</div><h3>With vs Without Replacement</h3><ul><li><strong>SRSWOR:</strong> Each unit selected at most once — more common; smaller variance</li><li><strong>SRSWR:</strong> Units can repeat — simpler theory; larger variance</li><li>Finite population correction (FPC) = (1−f) = (1−n/N) — matters when n/N &gt; 0.05</li></ul></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Estimation</div><h3>Mean, Total, Proportion</h3><ul><li>ȳ = (1/n)Σyᵢ — unbiased estimator of Ȳ</li><li>ŷ_total = Nȳ — unbiased estimator of total Y</li><li>p̂ = x/n — unbiased estimator of proportion P</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Var(ȳ) — SRSWOR</span><span class="eq-val">V(ȳ) = (1−f)·S²/n &nbsp;&nbsp;where f=n/N, S²=Σ(yᵢ−Ȳ)²/(N−1)</span></div>
+      <div class="eq-row"><span class="eq-name">Estimated Var</span><span class="eq-val">v(ȳ) = (1−f)·s²/n &nbsp;&nbsp;where s²=Σ(yᵢ−ȳ)²/(n−1)</span></div>
+      <div class="eq-row"><span class="eq-name">95% CI for Ȳ</span><span class="eq-val">ȳ ± 1.96·√v(ȳ)</span></div>
+      <div class="eq-row"><span class="eq-name">Sample size n</span><span class="eq-val">n = N·z²S² / (N·e² + z²S²) &nbsp;&nbsp;(e=desired margin of error)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="st3">
+    <div class="topic-header"><div class="topic-num" style="color:#c8d888;">T3</div><div class="topic-title-block"><div class="topic-label">Improved Efficiency</div><div class="topic-title">Stratified Random <span style="color:#5a6e00;">Sampling</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🗂️</span><div class="card-lbl">What it is</div><h3>Divide &amp; Sample</h3><p>Divide population into L non-overlapping strata; take SRS within each stratum. <strong>Why?</strong> Reduces variance by removing between-stratum variation from the error. Always more efficient than SRS if strata are internally homogeneous.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Allocation Methods</div><h3>How Many from Each Stratum?</h3><ul><li><strong>Proportional:</strong> nₕ = n·(Nₕ/N) — simple; good when σₕ similar</li><li><strong>Optimal (Neyman):</strong> nₕ ∝ Nₕσₕ — minimises variance for fixed n</li><li><strong>Cost-optimal:</strong> nₕ ∝ Nₕσₕ/√cₕ — accounts for variable cost per stratum</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">When to Stratify</div><h3>Good Stratification Criteria</h3><ul><li>Variable highly correlated with study variable Y</li><li>Administrative convenience (districts, regions, age groups)</li><li>Need separate estimates for subgroups (domains)</li><li>Oversampling rare subgroups for adequate representation</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Stratified mean</span><span class="eq-val">ȳ_st = Σₕ Wₕȳₕ &nbsp;&nbsp;(Wₕ = Nₕ/N = stratum weight)</span></div>
+      <div class="eq-row"><span class="eq-name">Var(ȳ_st)</span><span class="eq-val">V(ȳ_st) = Σₕ Wₕ²(1−fₕ)Sₕ²/nₕ</span></div>
+      <div class="eq-row"><span class="eq-name">Neyman allocation</span><span class="eq-val">nₕ = n · (NₕSₕ) / Σₕ(NₕSₕ)</span></div>
+      <div class="eq-row"><span class="eq-name">Proportional alloc.</span><span class="eq-val">nₕ = n · Nₕ/N</span></div>
+    </div>
+    <div class="note"><strong>🌍 Bangladesh HIES Example</strong>Household Income &amp; Expenditure Survey stratifies by division (8) × urban/rural (2) = 16 strata. Neyman allocation samples more from Dhaka (large, variable) and less from Sylhet (small, homogeneous). Result: 40% lower variance than SRS of same total size — more accurate poverty estimates at lower cost.</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="st4">
+    <div class="topic-header"><div class="topic-num" style="color:#c8d888;">T4</div><div class="topic-title-block"><div class="topic-label">Practical Designs</div><div class="topic-title">Systematic &amp; <span style="color:#5a6e00;">Cluster Sampling</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📋</span><div class="card-lbl">Systematic Sampling</div><h3>Every kth Unit</h3><ul><li>k = N/n (sampling interval); select random start r ∈ {1,…,k}; then r, r+k, r+2k, …</li><li>Very easy to implement — just a list and arithmetic</li><li>Efficient when list is in random order (≈SRS)</li><li>⚠ Periodic pattern in list + periodic k = biased disaster!</li></ul></div>
+      <div class="card c-how"><span class="card-icon">🏘️</span><div class="card-lbl">Cluster Sampling</div><h3>Sample Groups, Not Individuals</h3><ul><li>Divide population into clusters; randomly select m clusters; survey ALL units in selected clusters</li><li>Cost-efficient when clusters are geographically compact</li><li>Less efficient statistically — units within cluster tend to be similar (intraclass correlation ρ)</li><li>DEFF = 1 + (b̄−1)ρ where b̄ = avg cluster size</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Two-Stage Cluster</div><h3>Select Clusters, Then Sub-Sample</h3><p>Stage 1: Select m PSUs (primary sampling units) with probability proportional to size. Stage 2: Select n SSUs within each selected PSU. Used in virtually all large national surveys (DHS, MICS, census post-enumeration). More flexible than single-stage cluster sampling.</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Systematic interval k</span><span class="eq-val">k = N/n &nbsp;&nbsp;(round to integer); sample: r, r+k, r+2k, …</span></div>
+      <div class="eq-row"><span class="eq-name">Cluster mean estimator</span><span class="eq-val">ȳ_cl = (1/m)Σᵢȳᵢ &nbsp;&nbsp;(ȳᵢ = mean of ith selected cluster)</span></div>
+      <div class="eq-row"><span class="eq-name">Design effect</span><span class="eq-val">DEFF = V(ȳ_cluster) / V(ȳ_SRS) = 1 + (b̄−1)ρ</span></div>
+      <div class="eq-row"><span class="eq-name">Intraclass corr. ρ</span><span class="eq-val">ρ = (MSB−MSW) / (MSB + (b̄−1)MSW) &nbsp;&nbsp;(between/within cluster)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="st5">
+    <div class="topic-header"><div class="topic-num" style="color:#c8d888;">T5</div><div class="topic-title-block"><div class="topic-label">Auxiliary Information</div><div class="topic-title">Ratio &amp; Regression <span style="color:#5a6e00;">Estimation</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📈</span><div class="card-lbl">Ratio Estimator</div><h3>Using a Correlated Auxiliary Variable</h3><p>If auxiliary variable X (known population total X̄) is highly correlated with Y: ȳ_R = R̂·X̄ where R̂=ȳ/x̄. Biased but often much lower MSE than ȳ. Best when ratio Y/X is more constant than Y itself — e.g., estimating crop yield per hectare.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Regression Estimator</div><h3>OLS-Based Improvement</h3><p>ȳ_reg = ȳ + b̂(X̄−x̄) where b̂ = Σ(xᵢ−x̄)(yᵢ−ȳ)/Σ(xᵢ−x̄)². Always has smaller or equal variance than ȳ. More general than ratio estimator — doesn't require proportionality. <strong>Gain in efficiency ∝ ρ²(X,Y).</strong></p></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">When to Use Each</div><h3>Ratio vs Regression vs SRS</h3><ul><li>Use ratio when Y∝X (passes through origin) and ρ&gt;0.5</li><li>Use regression for general linear relationship</li><li>Both reduce variance when |ρ(X,Y)| is large</li><li>SRS if no good auxiliary variable available</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Ratio estimator</span><span class="eq-val">ȳ_R = (ȳ/x̄)·X̄ = R̂·X̄</span></div>
+      <div class="eq-row"><span class="eq-name">Approx. Var(ȳ_R)</span><span class="eq-val">V(ȳ_R) ≈ (1−f)/n · (Sᵧ² + R²Sₓ² − 2RSₓᵧ)</span></div>
+      <div class="eq-row"><span class="eq-name">Regression estimator</span><span class="eq-val">ȳ_reg = ȳ + b̂(X̄ − x̄)</span></div>
+      <div class="eq-row"><span class="eq-name">Var(ȳ_reg)</span><span class="eq-val">V(ȳ_reg) ≈ (1−f)Sᵧ²(1−ρ²)/n &nbsp;&nbsp;(always ≤ V(ȳ))</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="st6">
+    <div class="topic-header"><div class="topic-num" style="color:#c8d888;">T6</div><div class="topic-title-block"><div class="topic-label">Advanced &amp; Errors</div><div class="topic-title">PPS Sampling &amp; <span style="color:#5a6e00;">Non-Sampling Errors</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">⚖️</span><div class="card-lbl">PPS Sampling</div><h3>Probability Proportional to Size</h3><p>Select PSUs with probability proportional to a size measure (number of households, land area). Larger clusters have higher selection probability. Combined with equal-probability sub-sampling within PSUs → self-weighting sample. Used in almost all national surveys.</p></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Non-Sampling Errors</div><h3>Often Bigger Than Sampling Error!</h3><ul><li><strong>Coverage error:</strong> Frame misses units (undercoverage of homeless, migrants)</li><li><strong>Non-response:</strong> Selected units don't participate — can cause serious bias</li><li><strong>Measurement error:</strong> Wrong answers due to question wording, recall, interviewer bias</li><li><strong>Processing error:</strong> Data entry, coding mistakes</li><li>😄 "A perfectly designed sample with 40% non-response is worse than a simple convenience sample for many questions."</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Hansen-Hurwitz Estimator</div><h3>PPS with Replacement</h3><p>π_i = n·Mᵢ/M₀ (selection probability). Estimator: ȳ_HH = (1/n)Σ(yᵢ/πᵢ). Unbiased. Variance ∝ variation of yᵢ/πᵢ — good PPS reduces this variation dramatically compared to SRS for skewed populations (like business surveys).</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">PPS prob. of selection</span><span class="eq-val">πᵢ = n·Mᵢ / M₀ &nbsp;&nbsp;(Mᵢ=size of unit i, M₀=total size)</span></div>
+      <div class="eq-row"><span class="eq-name">HH estimator</span><span class="eq-val">ȳ_HH = (1/n)·Σᵢ(yᵢ/πᵢ) &nbsp;&nbsp;(unbiased)</span></div>
+      <div class="eq-row"><span class="eq-name">Horvitz-Thompson</span><span class="eq-val">ŷ_HT = Σᵢ∈s (yᵢ/πᵢ) &nbsp;&nbsp;(unbiased for any design)</span></div>
+    </div>
+  </div>
+</div><!-- /c-samptech -->
+
+
+<!-- ══ STAT4106 · Categorical Data Analysis ══ -->
+<div class="divider" style="margin:60px 0 0"><span>STAT4106 · Categorical Data Analysis</span></div>
+<div class="course-block" id="c-catda">
+  <div class="course-banner" style="background:linear-gradient(135deg,#3a0018,#6e1a3a);">
+    <div class="cb-watermark">χ²</div>
+    <div class="cb-code">STAT4106 · B.Sc. Statistics Year 4 · BRUR</div>
+    <div class="cb-title">Categorical Data Analysis</div>
+    <div class="cb-sub">Contingency Tables · χ² Tests · Odds Ratios · Logistic Regression · Log-Linear Models · Ordinal Data · Matched Pairs</div>
+  </div>
+  <div class="note" style="background:#fdf0f5;border-left-color:#6e1a3a;font-style:normal;margin-bottom:28px;">
+    <strong style="color:#6e1a3a;">🎓 Why Categorical Data Analysis?</strong>
+    Most real-world outcomes are categorical — disease/no disease, vote/don't vote, pass/fail. You cannot use t-tests or ANOVA on counts. CDA provides the correct tools: chi-square tests for independence, odds ratios for effect size, logistic regression for prediction, and log-linear models for multi-way tables. As Agresti notes: <em>"Categorical data analysis is arguably more important in practice than normal-theory methods."</em>
+  </div>
+  <div class="toc-box">
+    <div class="toc-box-title">Topics — STAT4106</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#cd1" data-n="C1">Distributions for Categorical Data</a>
+      <a class="toc-link" href="#cd2" data-n="C2">Contingency Tables &amp; χ² Tests</a>
+      <a class="toc-link" href="#cd3" data-n="C3">Measures of Association — OR, RR, φ</a>
+      <a class="toc-link" href="#cd4" data-n="C4">Logistic Regression</a>
+      <a class="toc-link" href="#cd5" data-n="C5">Log-Linear Models</a>
+      <a class="toc-link" href="#cd6" data-n="C6">Ordinal Data &amp; Matched Pairs</a>
+    </div>
+  </div>
+
+  <div class="topic-section" id="cd1">
+    <div class="topic-header"><div class="topic-num" style="color:#e8a8c0;">C1</div><div class="topic-title-block"><div class="topic-label">Foundations</div><div class="topic-title">Distributions for <span style="color:#6e1a3a;">Categorical Data</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📖</span><div class="card-lbl">Key Distributions</div><h3>Binomial, Multinomial &amp; Poisson</h3><ul><li><strong>Binomial(n,π):</strong> n independent trials, count successes. Foundation for proportions.</li><li><strong>Multinomial(n; π₁,…,πk):</strong> n trials, k categories. Joint distribution of cell counts.</li><li><strong>Poisson(μ):</strong> Independent cell counts — used in log-linear models</li></ul></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Sampling Schemes</div><h3>Poisson, Multinomial, Product-Multinomial</h3><ul><li><strong>Poisson:</strong> Both margins random — all counts independent Poisson</li><li><strong>Multinomial:</strong> Grand total n fixed; cell counts ~ Multinomial</li><li><strong>Product-multinomial:</strong> Row totals fixed (prospective study); each row ~ Multinomial</li><li>χ² test gives same result for all three — convenient!</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Binomial PMF</span><span class="eq-val">P(Y=k) = C(n,k)·πᵏ·(1−π)^(n−k)</span></div>
+      <div class="eq-row"><span class="eq-name">Multinomial PMF</span><span class="eq-val">P(n₁,…,nk) = n!/(n₁!…nk!) · π₁^n₁·…·πk^nk</span></div>
+      <div class="eq-row"><span class="eq-name">MLE of π</span><span class="eq-val">π̂ = y/n &nbsp;&nbsp;(sample proportion — unbiased, consistent)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="cd2">
+    <div class="topic-header"><div class="topic-num" style="color:#e8a8c0;">C2</div><div class="topic-title-block"><div class="topic-label">Core Tool</div><div class="topic-title">Contingency Tables &amp; <span style="color:#6e1a3a;">χ² Tests</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📊</span><div class="card-lbl">r×c Contingency Table</div><h3>Cross-Tabulation</h3><p>An r×c table cross-classifies n observations by two categorical variables (r rows, c columns). Cell count nᵢⱼ = observations in row i, column j. Marginal totals: nᵢ₊ (row), n₊ⱼ (column). Test: are the two variables independent?</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Pearson χ² Test</div><h3>Testing Independence</h3><ul><li>H₀: rows and columns are independent (πᵢⱼ = πᵢ₊·π₊ⱼ)</li><li>Expected count: Eᵢⱼ = nᵢ₊·n₊ⱼ/n (under H₀)</li><li>χ² = Σ(nᵢⱼ−Eᵢⱼ)²/Eᵢⱼ ~ χ²((r−1)(c−1)) under H₀</li><li>⚠ Requires Eᵢⱼ ≥ 5 in all cells — use Fisher's exact if violated</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Likelihood Ratio G²</div><h3>Alternative to χ²</h3><p>G² = 2Σnᵢⱼ·ln(nᵢⱼ/Eᵢⱼ) ~ χ²((r−1)(c−1)). Also called the deviance. Preferred in log-linear model context — additive across hierarchical models. χ² and G² converge for large n; differ for small n.</p></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Fisher's Exact Test</div><h3>Small Samples</h3><p>For 2×2 tables with small expected counts: compute exact probability of observing table this extreme, conditioning on both margins fixed. p = C(n₁₊,n₁₁)·C(n₂₊,n₂₁)/C(n,n₊₁). No large-sample approximation needed.</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Expected cell count</span><span class="eq-val">Eᵢⱼ = nᵢ₊·n₊ⱼ / n &nbsp;&nbsp;(under independence)</span></div>
+      <div class="eq-row"><span class="eq-name">Pearson χ²</span><span class="eq-val">X² = Σᵢⱼ(nᵢⱼ−Eᵢⱼ)²/Eᵢⱼ ~ χ²((r−1)(c−1))</span></div>
+      <div class="eq-row"><span class="eq-name">Likelihood ratio G²</span><span class="eq-val">G² = 2Σᵢⱼ nᵢⱼ·ln(nᵢⱼ/Eᵢⱼ) ~ χ²((r−1)(c−1))</span></div>
+      <div class="eq-row"><span class="eq-name">df</span><span class="eq-val">df = (r−1)(c−1) &nbsp;&nbsp;(for r×c independence test)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="cd3">
+    <div class="topic-header"><div class="topic-num" style="color:#e8a8c0;">C3</div><div class="topic-title-block"><div class="topic-label">Effect Size</div><div class="topic-title">Measures of Association — <span style="color:#6e1a3a;">OR, RR &amp; φ</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📐</span><div class="card-lbl">Odds Ratio (OR)</div><h3>Most Important Association Measure</h3><p>OR = (n₁₁·n₂₂)/(n₁₂·n₂₁) = (odds of outcome in group 1)/(odds in group 2). OR=1 means no association. OR&gt;1 means higher odds in group 1. <strong>OR is the natural parameter for logistic regression and case-control studies.</strong> Does not depend on marginal totals — unlike RR.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Relative Risk (RR)</div><h3>Risk Ratio for Prospective Studies</h3><ul><li>RR = (n₁₁/n₁₊) / (n₂₁/n₂₊) = risk in exposed / risk in unexposed</li><li>More intuitive than OR when outcomes are common</li><li>Only valid when row totals are fixed (prospective/cohort design)</li><li>For rare outcomes: OR ≈ RR</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">φ and Cramér's V</div><h3>Symmetric Association Measures</h3><ul><li>φ = √(χ²/n) — for 2×2 tables; ∈ [−1,1]</li><li>Cramér's V = √(χ²/(n·min(r−1,c−1))) — for r×c; ∈ [0,1]</li><li>V=0: no association; V=1: perfect association</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Odds Ratio</span><span class="eq-val">OR = (n₁₁·n₂₂) / (n₁₂·n₂₁) &nbsp;&nbsp;(2×2 table)</span></div>
+      <div class="eq-row"><span class="eq-name">ln(OR) SE</span><span class="eq-val">SE[ln(OR)] = √(1/n₁₁ + 1/n₁₂ + 1/n₂₁ + 1/n₂₂)</span></div>
+      <div class="eq-row"><span class="eq-name">95% CI for OR</span><span class="eq-val">exp[ln(OR) ± 1.96·SE(ln OR)]</span></div>
+      <div class="eq-row"><span class="eq-name">Relative Risk</span><span class="eq-val">RR = (n₁₁/n₁₊) / (n₂₁/n₂₊)</span></div>
+      <div class="eq-row"><span class="eq-name">Cramér's V</span><span class="eq-val">V = √[χ²/(n·min(r−1,c−1))]</span></div>
+    </div>
+    <div class="note"><strong>🌍 Bangladesh TB Study</strong>2×2 table: smokers vs non-smokers, TB vs no TB. OR=3.2 (95% CI: 1.8–5.7, p&lt;0.001). Interpretation: smokers have 3.2 times the odds of TB compared to non-smokers. Since TB is rare (&lt;5%), OR ≈ RR: smokers have approximately 3× the risk. This is statistically significant AND clinically meaningful — OR=3.2 is a strong association.</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="cd4">
+    <div class="topic-header"><div class="topic-num" style="color:#e8a8c0;">C4</div><div class="topic-title-block"><div class="topic-label">Binary Outcomes</div><div class="topic-title">Logistic <span style="color:#6e1a3a;">Regression</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🔢</span><div class="card-lbl">The Model</div><h3>Logit Link Function</h3><p>For binary Y∈{0,1}: log[π/(1−π)] = β₀ + β₁X₁ + … + βₖXₖ where π = P(Y=1|X). The logit link ensures predicted probabilities ∈ (0,1). Estimated by <strong>Maximum Likelihood Estimation (MLE)</strong>, not OLS. Iteratively Reweighted Least Squares (IRLS) algorithm.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Interpretation</div><h3>Coefficients as Log-Odds</h3><ul><li>βⱼ = change in log-odds of Y=1 per unit increase in Xⱼ (others fixed)</li><li>exp(βⱼ) = odds ratio for 1-unit increase in Xⱼ — most interpretable</li><li>exp(βⱼ) &gt; 1: higher Xⱼ → higher odds; &lt; 1: lower odds</li><li>95% CI for OR: exp(βⱼ ± 1.96·SE(βⱼ))</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Model Fit</div><h3>Assessing Goodness of Fit</h3><ul><li><strong>Deviance:</strong> −2·log-likelihood; lower = better; compare nested models</li><li><strong>Hosmer-Lemeshow test:</strong> Goodness of fit for grouped data</li><li><strong>Pseudo R²:</strong> McFadden's, Nagelkerke's — analogue of R² (not identical!)</li><li><strong>AUC-ROC:</strong> Discrimination ability — AUC&gt;0.7 good; &gt;0.8 excellent</li></ul></div>
+      <div class="card c-warn"><span class="card-icon">⚠️</span><div class="card-lbl">Common Extensions</div><h3>Multinomial &amp; Ordinal Logistic</h3><ul><li><strong>Multinomial logistic:</strong> Nominal Y with &gt;2 categories — g−1 logit equations vs reference</li><li><strong>Ordinal logistic (PO model):</strong> Ordered Y — Proportional Odds: log[P(Y≤j)/P(Y&gt;j)] = αⱼ−β'X</li><li>PO assumption: same βs for all cut-points — test with parallel lines test</li></ul></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Logit model</span><span class="eq-val">logit(π) = ln[π/(1−π)] = β₀ + β₁X₁ + … + βₖXₖ</span></div>
+      <div class="eq-row"><span class="eq-name">Predicted probability</span><span class="eq-val">π̂ = exp(β̂'x) / [1 + exp(β̂'x)] = 1/[1+exp(−β̂'x)]</span></div>
+      <div class="eq-row"><span class="eq-name">Odds Ratio</span><span class="eq-val">OR_j = exp(β̂ⱼ) — per unit increase in Xⱼ holding others fixed</span></div>
+      <div class="eq-row"><span class="eq-name">Wald test</span><span class="eq-val">z = β̂ⱼ/SE(β̂ⱼ) ~ N(0,1) &nbsp;&nbsp;(test H₀: βⱼ=0)</span></div>
+      <div class="eq-row"><span class="eq-name">LR test (nested)</span><span class="eq-val">G² = −2[ℓ(reduced) − ℓ(full)] ~ χ²(df_diff)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="cd5">
+    <div class="topic-header"><div class="topic-num" style="color:#e8a8c0;">C5</div><div class="topic-title-block"><div class="topic-label">Multi-Way Tables</div><div class="topic-title">Log-Linear <span style="color:#6e1a3a;">Models</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📦</span><div class="card-lbl">What it is</div><h3>Modelling Cell Counts</h3><p>Log-linear models treat cell counts as Poisson: ln(μᵢⱼ) = λ + λᵢᴬ + λⱼᴮ + λᵢⱼᴬᴮ. All variables are response variables — no distinction between X and Y. Especially useful for 3+ way tables to model partial and conditional independence structures.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Model Hierarchy</div><h3>Saturated vs Parsimonious</h3><ul><li><strong>Saturated:</strong> All interactions included; perfect fit; df=0 — useless for testing</li><li><strong>[AB,AC,BC]:</strong> All 2-way interactions; no 3-way</li><li><strong>[AB,C]:</strong> A and B interact; C independent of both</li><li><strong>[A,B,C]:</strong> Complete independence of A, B, C</li><li>Select model by G² (deviance) and AIC</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Link to Logistic Regression</div><h3>Equivalence Result</h3><p>For a 2×J table (binary Y), the log-linear model [XY, X] is exactly equivalent to logistic regression of Y on X. The association parameter in the log-linear model = the logistic regression coefficient. This provides a unified framework for all categorical models.</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Saturated 2-way</span><span class="eq-val">ln(μᵢⱼ) = λ + λᵢᴬ + λⱼᴮ + λᵢⱼᴬᴮ</span></div>
+      <div class="eq-row"><span class="eq-name">Independence model</span><span class="eq-val">ln(μᵢⱼ) = λ + λᵢᴬ + λⱼᴮ &nbsp;&nbsp;(no interaction term)</span></div>
+      <div class="eq-row"><span class="eq-name">MLE fitted counts</span><span class="eq-val">μ̂ᵢⱼ = nᵢ₊·n₊ⱼ/n &nbsp;&nbsp;(independence model = Eᵢⱼ)</span></div>
+      <div class="eq-row"><span class="eq-name">Model selection</span><span class="eq-val">AIC = G² − 2·df &nbsp;&nbsp;(choose model with lowest AIC)</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="cd6">
+    <div class="topic-header"><div class="topic-num" style="color:#e8a8c0;">C6</div><div class="topic-title-block"><div class="topic-label">Special Topics</div><div class="topic-title">Ordinal Data &amp; <span style="color:#6e1a3a;">Matched Pairs</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📊</span><div class="card-lbl">Ordinal Association</div><h3>Concordant &amp; Discordant Pairs</h3><ul><li><strong>Concordant pair:</strong> Both variables rank same direction</li><li><strong>Discordant pair:</strong> Variables rank opposite directions</li><li><strong>Gamma γ:</strong> (C−D)/(C+D) ∈ [−1,1] — ignores ties</li><li><strong>Kendall's τb:</strong> Accounts for ties — preferred</li><li><strong>Spearman's ρ:</strong> Correlation of ranks</li></ul></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Matched Pairs (McNemar)</div><h3>Paired Binary Data</h3><ul><li>n subjects measured twice (before/after) or matched pairs</li><li>Only discordant pairs (b and c) carry information about change</li><li>McNemar's test: χ² = (b−c)²/(b+c) ~ χ²(1)</li><li>Odds ratio for matched pairs: OR = b/c</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Cochran-Mantel-Haenszel</div><h3>Controlling for Confounding</h3><p>CMH test: test association between X and Y controlling for a third variable Z (stratification). Combines evidence across K strata. Common OR estimate: OR_MH = Σₖ(aₖdₖ/nₖ) / Σₖ(bₖcₖ/nₖ). Essential for removing confounding in observational studies.</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">McNemar χ²</span><span class="eq-val">χ² = (b−c)²/(b+c) ~ χ²(1) &nbsp;&nbsp;(b,c = discordant cell counts)</span></div>
+      <div class="eq-row"><span class="eq-name">Matched OR</span><span class="eq-val">OR = b/c &nbsp;&nbsp;(ratio of discordant pairs)</span></div>
+      <div class="eq-row"><span class="eq-name">Gamma</span><span class="eq-val">γ = (C−D)/(C+D) &nbsp;&nbsp;(C=concordant, D=discordant pairs)</span></div>
+      <div class="eq-row"><span class="eq-name">CMH statistic</span><span class="eq-val">χ²_MH = [Σₖ(aₖ−μₖ)]² / Σₖσₖ² ~ χ²(1)</span></div>
+    </div>
+  </div>
+</div><!-- /c-catda -->
+
+
+<!-- ══ STAT4104 · Research Methodology ══ -->
+<div class="divider" style="margin:60px 0 0"><span>STAT4104 · Research Methodology</span></div>
+<div class="course-block" id="c-resm">
+  <div class="course-banner" style="background:linear-gradient(135deg,#0d1e38,#2a4a6a);">
+    <div class="cb-watermark">R</div>
+    <div class="cb-code">STAT4104 · B.Sc. Statistics Year 4 · BRUR</div>
+    <div class="cb-title">Research Methodology</div>
+    <div class="cb-sub">Research Design · Literature Review · Measurement · Questionnaire Design · Validity &amp; Reliability · Data Collection · Report Writing · Ethics</div>
+  </div>
+  <div class="note" style="background:#eef3fa;border-left-color:#2a4a6a;font-style:normal;margin-bottom:28px;">
+    <strong style="color:#2a4a6a;">🎓 What is Research Methodology?</strong>
+    Research methodology is the systematic framework for conducting scientific inquiry — it answers "HOW do we find out what we want to know?" It covers study design, measurement, data collection, analysis strategy, and reporting. As Saunders et al. describe it: <em>"Research methodology is the theory of how research should be undertaken."</em> 😄 "Good methodology won't save bad ideas, but bad methodology will ruin good ones."
+  </div>
+  <div class="toc-box">
+    <div class="toc-box-title">Topics — STAT4104</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#rm1" data-n="R1">Nature &amp; Types of Research</a>
+      <a class="toc-link" href="#rm2" data-n="R2">Research Design &amp; Paradigms</a>
+      <a class="toc-link" href="#rm3" data-n="R3">Literature Review &amp; Hypothesis Formulation</a>
+      <a class="toc-link" href="#rm4" data-n="R4">Measurement, Scales &amp; Questionnaire Design</a>
+      <a class="toc-link" href="#rm5" data-n="R5">Validity, Reliability &amp; Data Quality</a>
+      <a class="toc-link" href="#rm6" data-n="R6">Data Collection Methods</a>
+      <a class="toc-link" href="#rm7" data-n="R7">Research Ethics</a>
+      <a class="toc-link" href="#rm8" data-n="R8">Report Writing &amp; Dissemination</a>
+    </div>
+  </div>
+
+  <div class="topic-section" id="rm1">
+    <div class="topic-header"><div class="topic-num" style="color:#a0c0e0;">R1</div><div class="topic-title-block"><div class="topic-label">Foundations</div><div class="topic-title">Nature &amp; Types of <span style="color:#2a4a6a;">Research</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📖</span><div class="card-lbl">What is Research?</div><h3>Systematic Inquiry</h3><p>Research is a <strong>systematic, controlled, empirical investigation</strong> of natural phenomena guided by theory and hypotheses about the relationship between variables. It is not just "searching the web" — it requires rigour, replicability, and transparency.</p></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Types by Purpose</div><h3>Basic vs Applied vs Action</h3><ul><li><strong>Basic/Pure:</strong> Advances knowledge without immediate application — testing theory</li><li><strong>Applied:</strong> Solves specific practical problems — policy evaluation, product testing</li><li><strong>Action research:</strong> Researcher is also a participant; improves practice while studying it</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Types by Approach</div><h3>Quantitative vs Qualitative vs Mixed</h3><ul><li><strong>Quantitative:</strong> Numbers, tests, generalisation — large n, structured data</li><li><strong>Qualitative:</strong> Meaning, context, depth — interviews, observation, small n</li><li><strong>Mixed methods:</strong> Combines both — sequential, concurrent, or embedded designs</li></ul></div>
+      <div class="card c-where"><span class="card-icon">✅</span><div class="card-lbl">Types by Time</div><h3>Cross-Sectional vs Longitudinal</h3><ul><li><strong>Cross-sectional:</strong> One point in time — snapshot; cheap but no causation</li><li><strong>Longitudinal:</strong> Same subjects over time — tracks change; expensive but causal insight</li><li><strong>Retrospective:</strong> Past data — case-control; recall bias risk</li><li><strong>Prospective:</strong> Follow forward — cohort; gold standard for temporal causation</li></ul></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="rm2">
+    <div class="topic-header"><div class="topic-num" style="color:#a0c0e0;">R2</div><div class="topic-title-block"><div class="topic-label">Study Design</div><div class="topic-title">Research Design &amp; <span style="color:#2a4a6a;">Paradigms</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🔭</span><div class="card-lbl">Research Paradigms</div><h3>Positivism, Interpretivism &amp; Pragmatism</h3><ul><li><strong>Positivism:</strong> Objective reality exists; can be measured; deductive; quantitative</li><li><strong>Interpretivism:</strong> Reality is socially constructed; context matters; inductive; qualitative</li><li><strong>Pragmatism:</strong> "Whatever works" — mixed methods; research question drives method choice</li><li>Most statistics students work within a positivist paradigm</li></ul></div>
+      <div class="card c-how"><span class="card-icon">⚙️</span><div class="card-lbl">Experimental Design</div><h3>RCT — Gold Standard</h3><ul><li><strong>Randomised Controlled Trial (RCT):</strong> Random assignment to treatment/control → allows causal inference</li><li><strong>Quasi-experiment:</strong> No randomisation but comparison group exists (DID, RDD)</li><li><strong>Observational:</strong> No manipulation — correlation only (unless IV, matching used)</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Causal Inference</div><h3>Why RCTs Rule</h3><p>RCT removes selection bias — treatment and control groups are identical on average (observed AND unobserved). Average Treatment Effect (ATE) = E[Y(1)−Y(0)]. Without randomisation, Y(1) and Y(0) differ systematically — we observe only one potential outcome per person (fundamental problem of causal inference).</p></div>
+    </div>
+    <div class="note"><strong>🌍 Bangladesh Microfinance RCT</strong>Bandhan microfinance RCT (Banerjee et al.): randomly assigned microcredit to some villages; compared income/consumption 2 years later. ATE estimate = positive but modest income effect. RCT design means we can confidently attribute this to the credit program — not to pre-existing differences between borrowers and non-borrowers. Landmark example of rigorous impact evaluation.</div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="rm3">
+    <div class="topic-header"><div class="topic-num" style="color:#a0c0e0;">R3</div><div class="topic-title-block"><div class="topic-label">Before Data Collection</div><div class="topic-title">Literature Review &amp; <span style="color:#2a4a6a;">Hypothesis Formulation</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📚</span><div class="card-lbl">Literature Review</div><h3>Why Review the Literature?</h3><ul><li>Identifies what is already known — avoid duplicating work</li><li>Locates gaps your research fills</li><li>Provides theoretical framework and conceptual models</li><li>Guides appropriate methodology and instruments</li><li>Databases: PubMed, Web of Science, Scopus, Google Scholar, JSTOR</li></ul></div>
+      <div class="card c-how"><span class="card-icon">🎯</span><div class="card-lbl">Hypothesis Formulation</div><h3>Good Hypotheses</h3><ul><li>Stated as relationship between two or more variables</li><li>Testable with available data and methods</li><li>Grounded in theory and prior literature</li><li><strong>Null H₀:</strong> No effect/relationship — what we statistically test</li><li><strong>Directional (one-sided):</strong> Stronger theory → directional; exploratory → two-sided</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">PICO Framework</div><h3>Structuring Research Questions</h3><p>Especially in health research: <strong>P</strong>opulation — <strong>I</strong>ntervention/Exposure — <strong>C</strong>omparison — <strong>O</strong>utcome. Example: Among Bangladeshi children under 5 (P), does exclusive breastfeeding for 6 months (I) compared to mixed feeding (C) reduce stunting rates (O)? Clear PICO prevents vague, unanswerable questions.</p></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="rm4">
+    <div class="topic-header"><div class="topic-num" style="color:#a0c0e0;">R4</div><div class="topic-title-block"><div class="topic-label">Measurement</div><div class="topic-title">Measurement, Scales &amp; <span style="color:#2a4a6a;">Questionnaire Design</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📏</span><div class="card-lbl">Scales of Measurement</div><h3>Nominal · Ordinal · Interval · Ratio</h3><ul><li><strong>Nominal:</strong> Gender, religion, blood type — categories only; mode appropriate</li><li><strong>Ordinal:</strong> Education level, satisfaction rating — ranked; median appropriate</li><li><strong>Interval:</strong> Temperature, IQ — equal intervals, no true zero; mean appropriate</li><li><strong>Ratio:</strong> Income, weight, height — true zero; all measures appropriate</li></ul></div>
+      <div class="card c-how"><span class="card-icon">📝</span><div class="card-lbl">Questionnaire Design</div><h3>Golden Rules</h3><ul><li>Each question measures ONE thing only (no double-barrelled questions)</li><li>Use simple, clear language appropriate for target population</li><li>Avoid leading questions ("Don't you agree that…?")</li><li>Order: easy/non-sensitive first; sensitive/demographics last</li><li>Pilot test with 10–20 people before full deployment</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Response Scales</div><h3>Likert, Semantic Differential &amp; VAS</h3><ul><li><strong>Likert scale:</strong> 1–5 or 1–7 agreement scale; treat as ordinal (or approximately interval for ≥5 points)</li><li><strong>Semantic differential:</strong> Bipolar adjectives (good–bad, fast–slow) on 7-point scale</li><li><strong>VAS (Visual Analogue Scale):</strong> 0–100mm line; continuous; good for pain, intensity</li></ul></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="rm5">
+    <div class="topic-header"><div class="topic-num" style="color:#a0c0e0;">R5</div><div class="topic-title-block"><div class="topic-label">Quality Assurance</div><div class="topic-title">Validity, Reliability &amp; <span style="color:#2a4a6a;">Data Quality</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">🎯</span><div class="card-lbl">Validity</div><h3>Are We Measuring What We Intend?</h3><ul><li><strong>Content validity:</strong> Items cover the full domain</li><li><strong>Construct validity:</strong> Measures the theoretical construct (convergent + discriminant)</li><li><strong>Criterion validity:</strong> Correlates with gold standard (concurrent + predictive)</li><li><strong>Internal validity:</strong> Study design allows causal inference (no confounding)</li><li><strong>External validity:</strong> Results generalise to other populations/settings</li></ul></div>
+      <div class="card c-how"><span class="card-icon">🔁</span><div class="card-lbl">Reliability</div><h3>Consistency of Measurement</h3><ul><li><strong>Test-retest reliability:</strong> Same result on repeated measurement (Pearson r)</li><li><strong>Inter-rater reliability:</strong> Different raters agree (Cohen's κ)</li><li><strong>Internal consistency:</strong> Items in scale hang together (Cronbach's α ≥ 0.7)</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">💡</span><div class="card-lbl">Validity vs Reliability</div><h3>The Dartboard Analogy</h3><p>Reliable but not valid: all darts in tight cluster but hitting the wrong target. Valid but not reliable: darts scattered but centred on the right target. <strong>Reliable AND valid:</strong> tight cluster on the correct target. Reliability is necessary but not sufficient for validity.</p></div>
+    </div>
+    <div class="eq-block">
+      <div class="eq-row"><span class="eq-name">Cronbach's α</span><span class="eq-val">α = (k/(k−1)) · [1 − Σσᵢ²/σ²_total] &nbsp;&nbsp;(k=items; ≥0.7 acceptable)</span></div>
+      <div class="eq-row"><span class="eq-name">Cohen's κ</span><span class="eq-val">κ = (P_o − P_e)/(1 − P_e) &nbsp;&nbsp;(P_o=observed agreement; P_e=expected by chance)</span></div>
+      <div class="eq-row"><span class="eq-name">κ interpretation</span><span class="eq-val">0.0–0.2: slight; 0.21–0.4: fair; 0.41–0.6: moderate; 0.61–0.8: substantial; &gt;0.8: almost perfect</span></div>
+    </div>
+  </div>
+  <div class="divider">· · ·</div>
+
+  <div class="topic-section" id="rm6">
+    <div class="topic-header"><div class="topic-num" style="color:#a0c0e0;">R6</div><div class="topic-title-block"><div class="topic-label">Field Work</div><div class="topic-title">Data Collection Methods &amp; <span style="color:#2a4a6a;">Ethics</span></div></div></div>
+    <div class="cards">
+      <div class="card c-what"><span class="card-icon">📋</span><div class="card-lbl">Collection Methods</div><h3>Survey, Interview, Observation, Secondary</h3><ul><li><strong>Self-administered survey:</strong> Cheap, large scale, no interviewer bias — but low response rate</li><li><strong>Face-to-face interview:</strong> High response, complex questions possible — expensive, interviewer bias</li><li><strong>Telephone/CATI:</strong> Moderate cost, fast — coverage bias (no mobile?)</li><li><strong>CAPI:</strong> Computer-assisted personal interview — error reduction, skip patterns automated</li><li><strong>Secondary data:</strong> HIES, DHS, census, administrative records</li></ul></div>
+      <div class="card c-idea"><span class="card-icon">🛡️</span><div class="card-lbl">Research Ethics</div><h3>Core Principles</h3><ul><li><strong>Informed consent:</strong> Voluntary participation with full information</li><li><strong>Confidentiality:</strong> Individual data not disclosed; anonymise outputs</li><li><strong>No harm:</strong> Physical, psychological, social harm must be minimised</li><li><strong>Honesty:</strong> No fabrication, falsification, or plagiarism of data/results</li><li><strong>IRB/Ethics Board approval:</strong> Required for human subjects research</li></ul></div>
+      <div class="card c-how"><span class="card-icon">📊</span><div class="card-lbl">Report Writing</div><h3>Structure of a Research Report</h3><ul><li><strong>Abstract:</strong> Background, objective, methods, results, conclusions (≤250 words)</li><li><strong>Introduction:</strong> Problem, rationale, objectives, hypotheses</li><li><strong>Methods:</strong> Study design, population, sample, instruments, analysis plan</li><li><strong>Results:</strong> Tables, figures, statistical findings — no interpretation</li><li><strong>Discussion:</strong> Interpret, compare with literature, limitations, implications</li><li><strong>Conclusion:</strong> Answer the research question; recommendations</li></ul></div>
+    </div>
+    <div class="note"><strong>😄 Ethics Reminder</strong>"In research ethics, the three golden rules are: (1) Do not harm participants, (2) Do not lie to participants, (3) Do not lie about participants in your results. The fourth, unofficial rule: (4) Do not ONLY add your supervisor's name to the author list without their contribution — honorary authorship is a form of research misconduct." Always get IRB clearance before data collection, not after — retroactive approval doesn't exist!</div>
+  </div>
+</div><!-- /c-resm -->
   
 <!-- ══════════════════════════════════════════════
      REFERENCES
