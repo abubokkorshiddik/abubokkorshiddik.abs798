@@ -5,7 +5,7 @@
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/abubokkorshiddik/AbuBokkorShiddik.abs798/main/abslogo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal undergraduate statistics course learning notes — STAT1101, STAT1201, STAT1102, SYAT2102, STAT2101, STAT3203, STAT4101, STAT4201 — by Md. Abu Bokkor Shiddik, BRUR.">
+  <meta name="description" content="Personal undergraduate statistics course learning notes — STAT1101, STAT1201, STAT1102, SYAT2102, STAT2101, STAT2201, STAT2203, STAT3201, STAT3203, STAT4101, STAT4102, STAT4104, STAT4106, STAT4201 — by Md. Abu Bokkor Shiddik, BRUR.">
   <title>Course Learning Notes | Md. Abu Bokkor Shiddik</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { overflow-x: hidden; scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #0f172a;  }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #0f172a; overflow-x: hidden; }
     a { color: inherit; text-decoration: none; }
 
     /* ════════════════════════════
@@ -253,7 +253,6 @@
         <button class="dropbtn">Learning ▾</button>
         <div class="dropdown-content">
           <a href="courses.html">🎓 Courses &amp; Training</a>
-          <a href="Learning Notes.html">📖 Learning Notes</a>
           <a href="conference-and-workshop.html">🏛 Conferences &amp; Workshops</a>
         </div>
       </div>
@@ -285,7 +284,6 @@
       <div class="drawer-section-label">Learning &amp; Events</div>
       <div class="drawer-sub">
         <a class="drawer-link" href="courses.html">Courses &amp; Training</a>
-        <a class="drawer-link" href="Learning Notes.html">Learning Notes</a>
         <a class="drawer-link" href="conference-and-workshop.html">Conferences &amp; Workshops</a>
       </div>
       <div class="drawer-divider"></div>
@@ -312,8 +310,14 @@
       <span class="hbadge hb4">SYAT2102 · Probability Distributions</span>
       <span class="hbadge hb5">STAT2101 · Regression Analysis &amp; Diagnostics</span>
       <span class="hbadge" style="background:rgba(14,92,74,.7);">STAT3203 · Econometrics</span>
+      <span class="hbadge" style="background:rgba(13,92,114,.7);">STAT2201 · Sampling Distribution</span>
+      <span class="hbadge" style="background:rgba(122,58,0,.7);">STAT2203 · ANOVA &amp; Design of Experiment</span>
+      <span class="hbadge" style="background:rgba(26,58,138,.7);">STAT3201 · Hypothesis Testing</span>
       <span class="hbadge" style="background:rgba(124,45,142,.7);">STAT4101 · Multivariate Distribution</span>
       <span class="hbadge" style="background:rgba(26,80,104,.7);">STAT4201 · Multivariate Analysis II</span>
+      <span class="hbadge" style="background:rgba(90,110,0,.7);">STAT4102 · Sampling Techniques</span>
+      <span class="hbadge" style="background:rgba(110,26,58,.7);">STAT4106 · Categorical Data Analysis</span>
+      <span class="hbadge" style="background:rgba(42,74,106,.7);">STAT4104 · Research Methodology</span>
     </div>
   </div>
 </section>
@@ -321,13 +325,19 @@
 <!-- ═══ COURSE JUMP NAV ═══ -->
 <div class="course-nav">
   <div class="course-nav-inner">
-    <button class="cnav-btn active" onclick="jumpTo('c-stat11')"><span class="cnav-dot" style="background:#8b2e0a"></span>Statistics I &amp; II</button>
+    <button class="cnav-btn active" onclick="jumpTo('c-stat11')"><span class="cnav-dot" style="background:#8b2e0a"></span>Stats I &amp; II</button>
     <button class="cnav-btn" onclick="jumpTo('c-prob')"><span class="cnav-dot" style="background:#1a5c2e"></span>Probability Theory</button>
-    <button class="cnav-btn" onclick="jumpTo('c-dist')"><span class="cnav-dot" style="background:#1a4a8a"></span>Probability Distributions</button>
-    <button class="cnav-btn" onclick="jumpTo('c-reg')"><span class="cnav-dot" style="background:#5a2080"></span>Regression &amp; Diagnostics</button>
+    <button class="cnav-btn" onclick="jumpTo('c-dist')"><span class="cnav-dot" style="background:#1a4a8a"></span>Prob. Distributions</button>
+    <button class="cnav-btn" onclick="jumpTo('c-reg')"><span class="cnav-dot" style="background:#5a2080"></span>Regression</button>
+    <button class="cnav-btn" onclick="jumpTo('c-samp')"><span class="cnav-dot" style="background:#0d5c72"></span>Sampling Dist.</button>
+    <button class="cnav-btn" onclick="jumpTo('c-anova')"><span class="cnav-dot" style="background:#7a3a00"></span>ANOVA &amp; DOE</button>
+    <button class="cnav-btn" onclick="jumpTo('c-hyp')"><span class="cnav-dot" style="background:#1a3a8a"></span>Hypothesis Testing</button>
     <button class="cnav-btn" onclick="jumpTo('c-eco')"><span class="cnav-dot" style="background:#0e5c4a"></span>Econometrics</button>
     <button class="cnav-btn" onclick="jumpTo('c-mv1')"><span class="cnav-dot" style="background:#7c2d8e"></span>Multivariate I</button>
     <button class="cnav-btn" onclick="jumpTo('c-mv2')"><span class="cnav-dot" style="background:#1a5068"></span>Multivariate II</button>
+    <button class="cnav-btn" onclick="jumpTo('c-samptech')"><span class="cnav-dot" style="background:#5a6e00"></span>Sampling Tech.</button>
+    <button class="cnav-btn" onclick="jumpTo('c-catda')"><span class="cnav-dot" style="background:#6e1a3a"></span>Categorical Data</button>
+    <button class="cnav-btn" onclick="jumpTo('c-resm')"><span class="cnav-dot" style="background:#2a4a6a"></span>Research Methods</button>
   </div>
 </div>
 
@@ -1920,9 +1930,18 @@
   <div class="ref-entry"><div class="ref-n">[7]</div><div><div class="ref-title">Basic Econometrics</div><div class="ref-auth">Gujarati, D.N. &amp; Porter, D.C. — McGraw-Hill · 5th Ed.</div></div></div>
   <div class="ref-entry"><div class="ref-n">[8]</div><div><div class="ref-title">Introductory Econometrics: A Modern Approach</div><div class="ref-auth">Wooldridge, J.M. — Cengage Learning · 7th Ed.</div></div></div>
   <div class="ref-entry"><div class="ref-n">[9]</div><div><div class="ref-title">Applied Multivariate Statistical Analysis</div><div class="ref-auth">Johnson, R.A. &amp; Wichern, W.D. — Pearson Prentice Hall · 6th Ed.</div></div></div>
+  <div class="ref-entry"><div class="ref-n">[10]</div><div><div class="ref-title">Statistical Inference</div><div class="ref-auth">Casella, G. &amp; Berger, R.L. — Duxbury Press / Cengage · 2nd Ed.</div></div></div>
+  <div class="ref-entry"><div class="ref-n">[11]</div><div><div class="ref-title">Testing Statistical Hypotheses</div><div class="ref-auth">Lehmann, E.L. &amp; Romano, J.P. — Springer · 3rd Ed.</div></div></div>
+  <div class="ref-entry"><div class="ref-n">[12]</div><div><div class="ref-title">Sampling Techniques</div><div class="ref-auth">Cochran, W.G. — John Wiley &amp; Sons · 3rd Ed.</div></div></div>
+  <div class="ref-entry"><div class="ref-n">[13]</div><div><div class="ref-title">An Introduction to Categorical Data Analysis</div><div class="ref-auth">Agresti, A. — John Wiley &amp; Sons · 3rd Ed.</div></div></div>
+  <div class="ref-entry"><div class="ref-n">[14]</div><div><div class="ref-title">Categorical Data Analysis</div><div class="ref-auth">Agresti, A. — John Wiley &amp; Sons · 3rd Ed.</div></div></div>
+  <div class="ref-entry"><div class="ref-n">[15]</div><div><div class="ref-title">Design and Analysis of Experiments</div><div class="ref-auth">Montgomery, D.C. — John Wiley &amp; Sons · 10th Ed.</div></div></div>
+  <div class="ref-entry"><div class="ref-n">[16]</div><div><div class="ref-title">The Design of Experiments</div><div class="ref-auth">Fisher, R.A. — Oliver &amp; Boyd · 9th Ed.</div></div></div>
+  <div class="ref-entry"><div class="ref-n">[17]</div><div><div class="ref-title">Research Methods for Business Students</div><div class="ref-auth">Saunders, M., Lewis, P. &amp; Thornhill, A. — Pearson · 8th Ed.</div></div></div>
+  <div class="ref-entry"><div class="ref-n">[18]</div><div><div class="ref-title">Survey Sampling</div><div class="ref-auth">Kish, L. — John Wiley &amp; Sons · Classic Ed.</div></div></div>
 </div>
 
-<div class="nb-footer">STAT1101 · STAT1201 · STAT1102 · SYAT2102 · STAT2101 · STAT3203 · STAT4101 · STAT4201 &nbsp;·&nbsp; Dept. of Statistics, BRUR &nbsp;·&nbsp; Personal Study Notes · Md. Abu Bokkor Shiddik</div>
+<div class="nb-footer">STAT1101 · STAT1201 · STAT1102 · SYAT2102 · STAT2101 · STAT2201 · STAT2203 · STAT3201 · STAT3203 · STAT4101 · STAT4102 · STAT4104 · STAT4106 · STAT4201 &nbsp;·&nbsp; Dept. of Statistics, BRUR &nbsp;·&nbsp; Personal Study Notes · Md. Abu Bokkor Shiddik</div>
 
 </div><!-- /notebook-wrap -->
 
@@ -1993,7 +2012,7 @@ function jumpTo(id) {
 }
 
 /* Auto-highlight course nav on scroll */
-var courseIds = ['c-stat11', 'c-prob', 'c-dist', 'c-reg', 'c-eco', 'c-mv1', 'c-mv2'];
+var courseIds = ['c-stat11','c-prob','c-dist','c-reg','c-samp','c-anova','c-hyp','c-eco','c-mv1','c-mv2','c-samptech','c-catda','c-resm'];
 var raf = null;
 window.addEventListener('scroll', function() {
   if (raf) return;
