@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abubokkorshiddik.github.io/AbuBokkorShiddik.abs798/sitemap.xml
